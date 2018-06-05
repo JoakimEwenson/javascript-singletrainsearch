@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+
+<html lang="SV-se">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    <title>Sök enskilt tåg</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="singleTrain.js"></script>
+
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="extra.css">
+</head>
+
+<body class="w3-small w3-light-gray">
+<!-- Navigation and menu content -->
+<header class="w3-bar w3-dark-gray">
+        <h1 id="pageHeader" class="w3-padding">Sök enskilt tåg</h1>
+    </header>
+    <div class="w3-bar w3-dark-gray" style="display: none">
+        <a href="#" class="w3-bar-item w3-button"><i class="fa fa-home"></i> Startsida</a>
+        <a href="searchStation.html" class="w3-bar-item w3-button"><i class="fa fa-list"></i> Tågläge</a>
+        <a href="singleTrain.html" class="w3-bar-item w3-button"><i class="fa fa-train"></i> Enskilt tåg</a>
+        <a href="#" class="w3-bar-item w3-button w3-right"><i class="fa fa-info"></i> Om sidan</a>
+    </div>
+<!-- End of navigation and menu content -->
+<!-- Page content -->
+    <div class="w3-container w3-padding" style="max-width: 960px; margin-left: auto; margin-right:auto;">
+        <form class="w3-card w3-white w3-margin w3-padding" id="searchForm">
+            <h3>Sök enskilt tåg</h3>
+            <input id="trainIdent" type="number" class="w3-input" placeholder="Tågnummer (00000)" autofocus><br>
+            <input type="date" placeholder="Datum (YYYY-MM-DD)" class="w3-input" id="searchDate"><br>
+            <div class="w3-center">
+                <input type="submit" value="Visa" class="w3-button w3-green w3-round" id="searchTrain">
+                <span id="loader" style="margin-left: 10px; display: none;">Laddar data ...</span>
+            </div>
+        </form>
+        <div class="w3-card w3-white w3-margin w3-padding" id="error" style="display: none">
+            <h3>Felmeddelande</h3>
+            <p id="errorMsg"></p>
+        </div>
+        <div class="w3-card w3-white w3-margin w3-padding" id="status" style="display: none">
+            <h3>Aktuell status tåg <span id="currentStateTrainIdent"></span></h3>
+            <p id="singleTrainState">&nbsp;</p>
+        </div>
+<!-- Schedule in form of a table below -->
+        <div class="w3-card w3-white w3-margin w3-padding w3-responsive" id="schedule" style="display: none">
+            <h3>Tidtabellsinformation tåg <span id="scheduleTrainIdent"></span></h3>
+            <table class="w3-table w3-bordered w3-striped" id="singleTrainScheduleTable">
+                <thead>
+                    <tr>
+                        <th>Plats</th>
+                        <th>Spår</th>
+                        <th>Ank.</th>
+                        <th>Avg.</th>
+                        <th>Eg. ank.</th>
+                        <th>Eg. avg.</th>
+                        <th>Diff. ank.</th>
+                        <th>Diff. avg.</th>
+                        <th>Anm.</th>
+                    </tr>
+                </thead>
+                <tbody id="singleTrainSchedule">
+                <!-- This is where schedule script will output data -->
+                </tbody>
+            </table>
+            <p class="w3-right-align w3-tiny">Senast uppdaterat: <span id="scheduleUpdated"></span></p>
+        </div>
+<!-- End of schedule table -->
+    </div>
+</body>
+</html>
