@@ -14,15 +14,17 @@
  * a few weeks by the time that this was produced.
  */
 
-// API key to access data. Get yours at http://api.trafikinfo.trafikverket.se/
-var apiKey = "enterYourAPIKeyHere";
+// API key to access data. Get yours at https://api.trafikinfo.trafikverket.se/
+var apiKey = "insertYourApiKey";
+
 // Settings for the damn JavaScript DateTime...
 var localeOptions = { hour: '2-digit', minute: '2-digit' }
+
 // Set up empty global variables for later use
 var searchTrainIdent = "";
 var searchDate = "";
 var trainIdent = "";
-var errorMsg = "";
+
 // Debug-bool for setting up refresh later
 var runDebug = false;
 
@@ -55,6 +57,7 @@ class TrainSchedule {
         this.currentArrivalState = "";
         this.currentDepartureState = "";
         this.deviations = "";
+        this.otherInfo = "";
     }
 }
 // Create new TrainSchedule object
@@ -73,7 +76,7 @@ $(document).ready(function () {
     // Run the AJAX setup
     try {
         $.ajaxSetup({
-            url: "http://api.trafikinfo.trafikverket.se/v1.3/data.json",
+            url: "https://api.trafikinfo.trafikverket.se/v2/data.json",
             // Async needs to be false for the script to run i proper order
             async: false,
             error: function (msg) {
@@ -144,22 +147,20 @@ function getSingleTrainState(searchTrainIdent) {
     // Set up API request
     var xmlRequest = "<REQUEST>" +
         "<LOGIN authenticationkey='" + apiKey + "' />" +
-        "<QUERY objecttype='TrainAnnouncement' limit='1' orderby='TimeAtLocation desc'>" +
-        "<FILTER>" +
-        "<AND>" +
-        "<EQ name='AdvertisedTrainIdent' value='" + searchTrainIdent + "' />" +
-        "<EQ name='ScheduledDepartureDateTime' value='" + searchDate + "' />" +
-        "<EXISTS name='TimeAtLocation' value='true' />" +
-        "</AND>" +
-        "</FILTER>" +
-        "<INCLUDE>ActivityType</INCLUDE>" +
-        "<INCLUDE>AdvertisedTimeAtLocation</INCLUDE>" +
-        "<INCLUDE>AdvertisedTrainIdent</INCLUDE>" +
-        "<INCLUDE>LocationSignature</INCLUDE>" +
-        "<INCLUDE>ScheduledDepartureDateTime</INCLUDE>" +
-        "<INCLUDE>TechnicalTrainIdent</INCLUDE>" +
-        "<INCLUDE>TimeAtLocation</INCLUDE>" +
-        "</QUERY>" +
+            "<QUERY objecttype='TrainAnnouncement' schemaversion='1.5' limit='1' orderby='TimeAtLocation desc'>" +
+                "<FILTER>" +
+                    "<EQ name='AdvertisedTrainIdent' value='" + searchTrainIdent + "' />" +
+                    "<EQ name='ScheduledDepartureDateTime' value='" + searchDate + "' />" +
+                    "<EXISTS name='TimeAtLocation' value='true' />" +
+                "</FILTER>" +
+                "<INCLUDE>ActivityType</INCLUDE>" +
+                "<INCLUDE>AdvertisedTimeAtLocation</INCLUDE>" +
+                "<INCLUDE>AdvertisedTrainIdent</INCLUDE>" +
+                "<INCLUDE>LocationSignature</INCLUDE>" +
+                "<INCLUDE>ScheduledDepartureDateTime</INCLUDE>" +
+                "<INCLUDE>TechnicalTrainIdent</INCLUDE>" +
+                "<INCLUDE>TimeAtLocation</INCLUDE>" +
+            "</QUERY>" +
         "</REQUEST>";
     // Run AJAX request
     $.ajax({
@@ -190,18 +191,16 @@ function getSingleTrainSchedule(searchTrainIdent) {
     // Set up API request
     var xmlRequest = "<REQUEST>" +
         "<LOGIN authenticationkey='" + apiKey + "' />" +
-        "<QUERY objecttype='TrainAnnouncement' orderby='AdvertisedTimeAtLocation asc, ActivityType asc'>" +
-        "<FILTER>" +
-        "<AND>" +
-        "<EQ name='AdvertisedTrainIdent' value='" + searchTrainIdent + "' />" +
-        "<EQ name='ScheduledDepartureDateTime' value='" + searchDate + "' />" +
-        "</AND>" +
-        "</FILTER>" +
-        "<EXCLUDE>ActivityId</EXCLUDE>" +
-        "<EXCLUDE>ViaToLocation</EXCLUDE>" +
-        "<EXCLUDE>WebLink</EXCLUDE>" +
-        "<EXCLUDE>WebLinkName</EXCLUDE>" +
-        "</QUERY>" +
+            "<QUERY objecttype='TrainAnnouncement' schemaversion='1.5' orderby='AdvertisedTimeAtLocation asc, ActivityType asc'>" +
+                "<FILTER>" +
+                    "<EQ name='AdvertisedTrainIdent' value='" + searchTrainIdent + "' />" +
+                    "<EQ name='ScheduledDepartureDateTime' value='" + searchDate + "' />" +
+                "</FILTER>" +
+                "<EXCLUDE>ActivityId</EXCLUDE>" +
+                "<EXCLUDE>ViaToLocation</EXCLUDE>" +
+                "<EXCLUDE>WebLink</EXCLUDE>" +
+                "<EXCLUDE>WebLinkName</EXCLUDE>" +
+            "</QUERY>" +
         "</REQUEST>";
     // Run AJAX request
     $.ajax({
@@ -233,21 +232,19 @@ function getSingleTrainScheduleCompletion(searchTrainIdent, searchDate, searchLo
     // Set up API request to get necesary data
     var xmlRequest = "<REQUEST>" +
         "<LOGIN authenticationkey='" + apiKey + "' />" +
-        "<QUERY objecttype='TrainAnnouncement'>" +
-        "<FILTER>" +
-        "<AND>" +
-        "<EQ name='AdvertisedTrainIdent' value='" + searchTrainIdent + "' />" +
-        "<EQ name='ActivityType' value='Avgang' />" +
-        "<EQ name='LocationSignature' value='" + searchLocation + "' />" +
-        "<EQ name='ScheduledDepartureDateTime' value='" + searchDate + "' />" +
-        "</AND>" +
-        "</FILTER>" +
-        "<INCLUDE>AdvertisedTimeAtLocation</INCLUDE>" +
-        "<INCLUDE>AdvertisedTrainIdent</INCLUDE>" +
-        "<INCLUDE>LocationSignature</INCLUDE>" +
-        "<INCLUDE>TimeAtLocation</INCLUDE>" +
-        "<INCLUDE>TrackAtLocation</INCLUDE>" +
-        "</QUERY>" +
+            "<QUERY objecttype='TrainAnnouncement' schemaversion='1.5'>" +
+                "<FILTER>" +
+                    "<EQ name='AdvertisedTrainIdent' value='" + searchTrainIdent + "' />" +
+                    "<EQ name='ActivityType' value='Avgang' />" +
+                    "<EQ name='LocationSignature' value='" + searchLocation + "' />" +
+                    "<EQ name='ScheduledDepartureDateTime' value='" + searchDate + "' />" +
+                "</FILTER>" +
+                "<INCLUDE>AdvertisedTimeAtLocation</INCLUDE>" +
+                "<INCLUDE>AdvertisedTrainIdent</INCLUDE>" +
+                "<INCLUDE>LocationSignature</INCLUDE>" +
+                "<INCLUDE>TimeAtLocation</INCLUDE>" +
+                "<INCLUDE>TrackAtLocation</INCLUDE>" +
+            "</QUERY>" +
         "</REQUEST>";
     // Run AJAX request
     $.ajax({
@@ -271,8 +268,8 @@ function renderCompletion(announcement) {
     $(announcement).each(function (iterator, item) {
         ts.departureTrackAtLocation = item.TrackAtLocation;
         ts.locationSignature = item.LocationSignature;
-        ts.departureAdvertisedTimeAtLocation = new Date(item.AdvertisedTimeAtLocation + offset).toLocaleTimeString("sv-SE", localeOptions);
-        ts.departureTimeAtLocation = (item.TimeAtLocation) ? new Date(item.TimeAtLocation + offset).toLocaleTimeString("sv-SE", localeOptions) : "";
+        ts.departureAdvertisedTimeAtLocation = new Date(item.AdvertisedTimeAtLocation).toLocaleTimeString("sv-SE", localeOptions);
+        ts.departureTimeAtLocation = (item.TimeAtLocation) ? new Date(item.TimeAtLocation).toLocaleTimeString("sv-SE", localeOptions) : "";
         ts.currentDepartureState = getCurrentTrainState(item.AdvertisedTimeAtLocation, item.TimeAtLocation);
         console.table(ts);
     });
@@ -305,6 +302,7 @@ function renderSingleTrainSchedule(announcement) {
         ts.currentArrivalState = "";
         ts.currentDepartureState = "";
         ts.deviations = "";
+        ts.otherInfo = "";
 
         // Collect new data and start filling the object
         ts.trainIdent = item.AdvertisedTrainIdent;
@@ -315,20 +313,25 @@ function renderSingleTrainSchedule(announcement) {
         ts.deviations = "";
         // Check if there is any new estimated times and put that into deviations column.
         if (item.EstimatedTimeAtLocation != null) {
-            var estimatedTimeAtLocation = "" + item.EstimatedTimeAtLocation + offset;
+            var estimatedTimeAtLocation = "" + item.EstimatedTimeAtLocation;
             estimatedTimeAtLocation = new Date(estimatedTimeAtLocation);
             ts.deviations += "<b>Ny tid: " + estimatedTimeAtLocation.toLocaleTimeString("sv-SE", localeOptions) + "</b><br>";
         }
         // Collect any other deviations if available
         $(item.Deviation).each(function (i, deviation) {
-            ts.deviations += deviation + "<br>";
+            ts.deviations += deviation.Description + "<br>";
         });
+
+        // Collect any other info if available
+        $(item.OtherInformation).each(function (i, otherInfo) {
+            ts.deviations += otherInfo.Description + "<br>";
+        })
 
         // Check if activity type is ankomst or avgang and fill the data accordingly
         if (item.ActivityType == "Ankomst") {
             ts.arrivalTrackAtLocation = (item.TrackAtLocation) ? item.TrackAtLocation : ""; // TODO: Create logic to handle different arrival/departure tracks
-            ts.arrivalAdvertisedTimeAtLocation = new Date(item.AdvertisedTimeAtLocation + offset).toLocaleTimeString("sv-SE", localeOptions);
-            ts.arrivalTimeAtLocation = (item.TimeAtLocation) ? new Date(item.TimeAtLocation + offset).toLocaleTimeString("sv-SE", localeOptions) : "";
+            ts.arrivalAdvertisedTimeAtLocation = new Date(item.AdvertisedTimeAtLocation).toLocaleTimeString("sv-SE", localeOptions);
+            ts.arrivalTimeAtLocation = (item.TimeAtLocation) ? new Date(item.TimeAtLocation).toLocaleTimeString("sv-SE", localeOptions) : "";
             ts.currentArrivalState = getCurrentTrainState(item.AdvertisedTimeAtLocation, item.TimeAtLocation);
 
             // Run the completion function to collect missing data from matching "Avgang"-return
@@ -355,8 +358,8 @@ function renderSingleTrainSchedule(announcement) {
         // Check if activity type is "Avgang" and not the same location as previous row
         else if (item.ActivityType == "Avgang" && item.LocationSignature != currentLocationSignature) {
             ts.departureTrackAtLocation = (item.TrackAtLocation) ? item.TrackAtLocation : "";
-            ts.departureAdvertisedTimeAtLocation = new Date(item.AdvertisedTimeAtLocation + offset).toLocaleTimeString("sv-SE", localeOptions);
-            ts.departureTimeAtLocation = (item.TimeAtLocation) ? new Date(item.TimeAtLocation + offset).toLocaleTimeString("sv-SE", localeOptions) : "";
+            ts.departureAdvertisedTimeAtLocation = new Date(item.AdvertisedTimeAtLocation).toLocaleTimeString("sv-SE", localeOptions);
+            ts.departureTimeAtLocation = (item.TimeAtLocation) ? new Date(item.TimeAtLocation).toLocaleTimeString("sv-SE", localeOptions) : "";
             ts.currentDepartureState = getCurrentTrainState(item.AdvertisedTimeAtLocation, item.TimeAtLocation);
             // Check if currentState is a number or not
             if (isNaN(ts.currentDepartureState)) {
@@ -445,8 +448,8 @@ function renderSingleTrainState(announcement) {
             outputMsg += "<b>Tekniskt tågnummer:</b> " + item.TechnicalTrainIdent + "<br>";
         }
         // Add to the output string the last known position, the current state and lataste update time.
-        outputMsg += "<b>Aktuell position:</b> " + item.LocationSignature + " " + prefix + getCurrentTrainState(item.AdvertisedTimeAtLocation, item.TimeAtLocation) + "<br>";
-        outputMsg += "<b>Senast uppdaterat:</b> " + new Date().toLocaleTimeString();
+        outputMsg += "<b>Aktuell position:</b> " + item.LocationSignature + " " + prefix + getCurrentTrainState(item.AdvertisedTimeAtLocation, item.TimeAtLocation) + "<br><br>";
+        outputMsg += "<b>Senast uppdaterat:</b> " + new Date().toLocaleTimeString("sv-SE", localeOptions);
     });
     // Write to page/title
     document.title = currentPosition;
