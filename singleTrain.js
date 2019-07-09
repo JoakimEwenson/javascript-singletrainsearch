@@ -15,7 +15,7 @@
  */
 
 // API key to access data. Get yours at https://api.trafikinfo.trafikverket.se/
-var apiKey = "insertYourApiKey";
+var apiKey = "dfc3b8374d774d5e94655bcd32d7c5c3";
 
 // Settings for the damn JavaScript DateTime...
 var localeOptions = { hour: '2-digit', minute: '2-digit' }
@@ -104,6 +104,8 @@ $(document).ready(function () {
         // Write the Train Ident to the headers
         document.getElementById("currentStateTrainIdent").textContent = trainIdent;
         document.getElementById("scheduleTrainIdent").textContent = trainIdent;
+        // Write train ident to sessionStorage to save in browser session
+        sessionStorage.setItem('trainIdent',trainIdent);
     });
 });
 
@@ -193,6 +195,7 @@ function getSingleTrainSchedule(searchTrainIdent) {
         "<LOGIN authenticationkey='" + apiKey + "' />" +
             "<QUERY objecttype='TrainAnnouncement' schemaversion='1.5' orderby='AdvertisedTimeAtLocation asc, ActivityType asc'>" +
                 "<FILTER>" +
+                    "<EQ name='Advertised' value='true' />" +
                     "<EQ name='AdvertisedTrainIdent' value='" + searchTrainIdent + "' />" +
                     "<EQ name='ScheduledDepartureDateTime' value='" + searchDate + "' />" +
                 "</FILTER>" +
@@ -404,10 +407,8 @@ function renderSingleTrainSchedule(announcement) {
             outputMsg += "<tr>";
             outputMsg += "<td>" + ts.locationSignature + "</td>";
             outputMsg += "<td>" + trackAtLocation + "</td>";
-            outputMsg += "<td>" + ts.arrivalAdvertisedTimeAtLocation + "</td>";
-            outputMsg += "<td>" + ts.departureAdvertisedTimeAtLocation + "</td>";
-            outputMsg += "<td>" + ts.arrivalTimeAtLocation + "</td>";
-            outputMsg += "<td>" + ts.departureTimeAtLocation + "</td>";
+            outputMsg += "<td>" + ts.arrivalAdvertisedTimeAtLocation + "<br><i>" + ts.arrivalTimeAtLocation + "</i></td>";
+            outputMsg += "<td>" + ts.departureAdvertisedTimeAtLocation + "<br><i>" + ts.departureTimeAtLocation + "</i></td>";
             outputMsg += "<td>" + ts.currentArrivalState + "</td>";
             outputMsg += "<td>" + ts.currentDepartureState + "</td>";
             outputMsg += "<td>" + ts.deviations + "</td>";
@@ -448,7 +449,7 @@ function renderSingleTrainState(announcement) {
             outputMsg += "<b>Tekniskt tågnummer:</b> " + item.TechnicalTrainIdent + "<br>";
         }
         // Add to the output string the last known position, the current state and lataste update time.
-        outputMsg += "<b>Aktuell position:</b> " + item.LocationSignature + " " + prefix + getCurrentTrainState(item.AdvertisedTimeAtLocation, item.TimeAtLocation) + "<br><br>";
+        outputMsg += "<b>Aktuell position:</b> " + item.LocationSignature + " " + prefix + getCurrentTrainState(item.AdvertisedTimeAtLocation, item.TimeAtLocation) + "<br>";
         outputMsg += "<b>Senast uppdaterat:</b> " + new Date().toLocaleTimeString("sv-SE", localeOptions);
     });
     // Write to page/title

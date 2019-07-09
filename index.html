@@ -58,8 +58,6 @@
                         <th>Spår</th>
                         <th>Ank.</th>
                         <th>Avg.</th>
-                        <th>Eg. ank.</th>
-                        <th>Eg. avg.</th>
                         <th>Diff. ank.</th>
                         <th>Diff. avg.</th>
                         <th>Anm.</th>
@@ -73,5 +71,11 @@
         </div>
 <!-- End of schedule table -->
     </div>
+
+<script>
+window.onload = function() {
+    document.getElementById("trainIdent").value = sessionStorage.getItem('trainIdent');
+}
+</script>
 </body>
 </html>
