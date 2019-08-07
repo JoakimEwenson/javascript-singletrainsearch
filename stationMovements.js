@@ -202,7 +202,6 @@ function getSingleTrainSchedule(searchTrainIdent) {
         "<LOGIN authenticationkey='" + apiKey + "' />" +
             "<QUERY objecttype='TrainAnnouncement' schemaversion='1.5' orderby='AdvertisedTimeAtLocation asc, ActivityType asc'>" +
                 "<FILTER>" +
-                    //"<EQ name='Advertised' value='true' />" +
                     "<EQ name='AdvertisedTrainIdent' value='" + searchTrainIdent + "' />" +
                     "<EQ name='ScheduledDepartureDateTime' value='" + searchDate + "' />" +
                 "</FILTER>" +
@@ -441,13 +440,13 @@ function renderSingleTrainState(announcement) {
     var trainIdent = "";
 
     $(announcement).each(function (iterator, item) {
+        // Create a string for where the last known position of the train
+        currentPosition = "Status tåg " + item.AdvertisedTrainIdent + ": " + item.LocationSignature + " " + getCurrentTrainState(item.AdvertisedTimeAtLocation, item.TimeAtLocation);
         trainIdent = item.AdvertisedTrainIdent;
         // Check if ActivityType is "Ankomst" and then prefix the time with * to indicate it in output
         if (item.ActivityType == "Ankomst") {
             prefix = "*";
         }
-        // Create a string for where the last known position of the train
-        currentPosition = "Status tåg " + item.AdvertisedTrainIdent + ": " + item.LocationSignature + " " + prefix + getCurrentTrainState(item.AdvertisedTimeAtLocation, item.TimeAtLocation);
         // Get and output the scheduled date for the train (YYYY-MM-DD)
         var date = new Date(item.ScheduledDepartureDateTime);
         outputMsg += "<b>Datum:</b> " + date.toLocaleDateString("sv-SE") + "<br>";
@@ -463,5 +462,4 @@ function renderSingleTrainState(announcement) {
     document.title = currentPosition;
     document.getElementById("singleTrainState").innerHTML = outputMsg;
     document.getElementById("status").style.display = "block";
-    document.getElementById("lastUpdated").style.display = "block";
 }
