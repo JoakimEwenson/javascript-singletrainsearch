@@ -463,5 +463,5 @@ function renderSingleTrainState(announcement) {
     document.title = currentPosition;
     document.getElementById("singleTrainState").innerHTML = outputMsg;
     document.getElementById("status").style.display = "block";
-    document.getElementById("lastUpdated").style.display = "block";
+    document.getElementById("lastUpdated").style.display = "none";
 }
