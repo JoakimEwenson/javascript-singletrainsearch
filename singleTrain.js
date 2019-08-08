@@ -273,6 +273,38 @@ function getSingleTrainScheduleCompletion(searchTrainIdent, searchDate, searchLo
     });
 }
 
+function getStationName(searchLocationSignature) {
+    var output = "";
+    // Set up API request
+    var xmlRequest = "<REQUEST>" +
+        "<LOGIN authenticationkey='" + apiKey + "' />" +
+            "<QUERY objecttype='TrainStation' schemaversion='1'>" +
+                "<FILTER>" +
+                    "<EQ name='LocationSignature' value='" + searchLocationSignature + "' />" +
+                "</FILTER>" +
+                "<INCLUDE>AdvertisedLocationName</INCLUDE>" +
+            "</QUERY>" +
+        "</REQUEST>";
+
+    // Run AJAX request
+    $.ajax({
+        type: "POST",
+        contentType: "text/xml",
+        data: xmlRequest
+    })
+    // If successfull, process data
+    .done(function(response) {
+        //console.log(response.RESPONSE.RESULT[0].TrainStation[0].AdvertisedLocationName);
+        output = response.RESPONSE.RESULT[0].TrainStation[0].AdvertisedLocationName;
+    })
+    // If unsuccessfull, report error in log
+    .fail(function (ex) {
+        console.log(ex);
+    });
+
+    return output;
+}
+
 // Function for completing the TrainSchedule Object
 function renderCompletion(announcement) {
     $(announcement).each(function (iterator, item) {
@@ -281,7 +313,7 @@ function renderCompletion(announcement) {
         ts.departureAdvertisedTimeAtLocation = new Date(item.AdvertisedTimeAtLocation).toLocaleTimeString("sv-SE", localeOptions);
         ts.departureTimeAtLocation = (item.TimeAtLocation) ? new Date(item.TimeAtLocation).toLocaleTimeString("sv-SE", localeOptions) : "";
         ts.currentDepartureState = getCurrentTrainState(item.AdvertisedTimeAtLocation, item.TimeAtLocation);
-        console.table(ts);
+        //console.table(ts);
     });
 }
 
@@ -412,7 +444,7 @@ function renderSingleTrainSchedule(announcement) {
             }
             // Fill output string
             outputMsg += "<tr>";
-            outputMsg += "<td>" + ts.locationSignature + "</td>";
+            outputMsg += "<td>" + getStationName(ts.locationSignature) + "</td>";
             outputMsg += "<td>" + trackAtLocation + "</td>";
             outputMsg += "<td>" + ts.arrivalAdvertisedTimeAtLocation + "<br><i>" + ts.arrivalTimeAtLocation + "</i></td>";
             outputMsg += "<td>" + ts.departureAdvertisedTimeAtLocation + "<br><i>" + ts.departureTimeAtLocation + "</i></td>";
@@ -456,7 +488,7 @@ function renderSingleTrainState(announcement) {
             outputMsg += "<b>Tekniskt tågnummer:</b> " + item.TechnicalTrainIdent + "<br>";
         }
         // Add to the output string the last known position, the current state and lataste update time.
-        outputMsg += "<b>Aktuell position:</b> " + item.LocationSignature + " " + prefix + getCurrentTrainState(item.AdvertisedTimeAtLocation, item.TimeAtLocation) + "<br>";
+        outputMsg += "<b>Aktuell position:</b> " + getStationName(item.LocationSignature) + " " + prefix + getCurrentTrainState(item.AdvertisedTimeAtLocation, item.TimeAtLocation) + "<br>";
         outputMsg += "<b>Senast uppdaterat:</b> " + new Date().toLocaleTimeString("sv-SE", localeOptions);
     });
     // Write to page/title

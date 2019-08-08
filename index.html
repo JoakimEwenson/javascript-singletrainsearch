@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="extra.css">
 </head>
 
-<body class="w3-small w3-light-gray">
+<body class="w3-small w3-dark-gray">
 <!-- Error content -->
 <div class="w3-container w3-margin-bottom w3-white w3-padding" id="error" style="display: none">
     <h4>Felmeddelande</h4>
@@ -28,7 +28,7 @@
 <!-- Schedule in form of a table below -->
 <div class="w3-margin-bottom w3-white w3-responsive" id="schedule" style="display: none">
     <h4 class="w3-margin">Tidtabell tåg <span id="scheduleTrainIdent"></span></h4>
-    <table class="w3-table w3-bordered w3-striped w3-tiny" id="singleTrainScheduleTable">
+    <table class="w3-table w3-bordered w3-striped" id="singleTrainScheduleTable">
         <thead>
             <tr>
                 <th>Plats</th>
@@ -53,7 +53,7 @@
     <input id="trainIdent" type="number" class="w3-input" placeholder="Tågnummer (00000)" autofocus><br>
     <input type="date" placeholder="Datum (YYYY-MM-DD)" class="w3-input" id="searchDate"><br>
     <div class="w3-center">
-        <input type="submit" value="Visa" class="w3-button w3-green w3-round" id="searchTrain">
+        <input type="submit" value="Visa" class="w3-button w3-green w3-round w3-margin-bottom" id="searchTrain">
         <span id="loader" style="margin-left: 10px; display: none;">Laddar data ...</span>
     </div>
 </form>
