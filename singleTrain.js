@@ -46,6 +46,7 @@ class TrainSchedule {
         this.trainIdent = "";
         this.technicalTrainIdent = "";
         this.locationSignature = "";
+        this.locationName = "";
         this.arrivalTrackAtLocation = "";
         this.departureTrackAtLocation = "";
         this.arrivalAdvertisedTimeAtLocation = "";
@@ -350,6 +351,7 @@ function renderSingleTrainSchedule(announcement) {
         ts.trainIdent = item.AdvertisedTrainIdent;
         ts.technicalTrainIdent = item.TechnicalTrainIdent;
         ts.locationSignature = item.LocationSignature;
+        ts.locationName = getStationName(item.LocationSignature);
 
         // Get deviations
         ts.deviations = "";
@@ -444,7 +446,7 @@ function renderSingleTrainSchedule(announcement) {
             }
             // Fill output string
             outputMsg += "<tr>";
-            outputMsg += "<td>" + getStationName(ts.locationSignature) + "</td>";
+            outputMsg += "<td>" + ts.locationName + "</td>";
             outputMsg += "<td>" + trackAtLocation + "</td>";
             outputMsg += "<td>" + ts.arrivalAdvertisedTimeAtLocation + "<br><i>" + ts.arrivalTimeAtLocation + "</i></td>";
             outputMsg += "<td>" + ts.departureAdvertisedTimeAtLocation + "<br><i>" + ts.departureTimeAtLocation + "</i></td>";
