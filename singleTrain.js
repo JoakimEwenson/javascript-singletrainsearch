@@ -542,7 +542,6 @@ function renderSingleTrainState(announcement) {
         trainIdent = item.AdvertisedTrainIdent;
         nextStation = new NextStation();
         nextStation = getNextStation(item.AdvertisedTrainIdent);
-        console.log(nextStation);
         // Check if ActivityType is "Ankomst" and then prefix the time with * to indicate it in output
         if (item.ActivityType == "Ankomst") {
             prefix = "Ankom";
