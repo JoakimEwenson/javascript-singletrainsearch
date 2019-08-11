@@ -5,14 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 
-    <title>Sök enskilt tåg</title>
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="singleTrain.js"></script>
+    <title>Tågläge</title>
 
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-colors-flat.css">
-    <link rel="stylesheet" href="extra.css">
+    <link rel="stylesheet" href="css/extra.css">
 </head>
 
 <body class="w3-small w3-flat-wet-asphalt">
@@ -29,19 +26,17 @@
 <!-- Schedule in form of a table below -->
 <div class="w3-margin-bottom w3-white w3-responsive" id="schedule" style="display: none">
     <h4 class="w3-margin">Tidtabell tåg <span id="scheduleTrainIdent"></span></h4>
-    <table class="w3-table w3-bordered w3-striped" id="singleTrainScheduleTable">
+    <table class="w3-table w3-bordered w3-striped" id="stationArrivalBoard">
         <thead>
             <tr>
-                <th>Plats</th>
+                <th>Tåg</th>
+                <th>Från</th>
+                <th>Tid</th>
                 <th>Spår</th>
-                <th>Ank.</th>
-                <th>Avg.</th>
-                <th>Diff. ank.</th>
-                <th>Diff. avg.</th>
-                <th>Anm.</th>
+                <th>Position</th>
             </tr>
         </thead>
-        <tbody id="singleTrainSchedule">
+        <tbody id="stationArrivals">
         <!-- This is where schedule script will output data -->
         </tbody>
     </table>
@@ -51,7 +46,7 @@
 <!-- Form content -->
 <form class="w3-container w3-white w3-padding" id="searchForm">
     <h4>Sök enskilt tåg</h4>
-    <input id="trainIdent" type="number" class="w3-input" placeholder="Tågnummer (00000)" autofocus><br>
+    <input id="locationSignature" type="text" class="w3-input" placeholder="Plats" autofocus><br>
     <input type="date" placeholder="Datum (YYYY-MM-DD)" class="w3-input" id="searchDate"><br>
     <div class="w3-center">
         <input type="submit" value="H&auml;mta uppgifter" class="w3-button w3-flat-wet-asphalt w3-margin-bottom" id="searchTrain">

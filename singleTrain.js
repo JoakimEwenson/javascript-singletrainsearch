@@ -61,6 +61,17 @@ class TrainSchedule {
         this.otherInfo = "";
     }
 }
+
+// NextStation Object
+class NextStation {
+    constructor() {
+        this.advertisedTimeAtLocation = "";
+        this.estimatedTimeAtLocation = "";
+        this.locationSignature = "";
+        this.trackAtLocation = "";
+    }
+}
+
 // Create new TrainSchedule object
 var ts = new TrainSchedule();
 
@@ -203,7 +214,7 @@ function getSingleTrainSchedule(searchTrainIdent) {
         "<LOGIN authenticationkey='" + apiKey + "' />" +
             "<QUERY objecttype='TrainAnnouncement' schemaversion='1.5' orderby='AdvertisedTimeAtLocation asc, ActivityType asc'>" +
                 "<FILTER>" +
-                    //"<EQ name='Advertised' value='true' />" +
+                    "<EQ name='Advertised' value='true' />" +
                     "<EQ name='AdvertisedTrainIdent' value='" + searchTrainIdent + "' />" +
                     "<EQ name='ScheduledDepartureDateTime' value='" + searchDate + "' />" +
                 "</FILTER>" +
@@ -304,6 +315,58 @@ function getStationName(searchLocationSignature) {
     });
 
     return output;
+}
+
+function getNextStation(searchTrainIdent) {
+    var nextStation = new NextStation();
+    // Check if date is set and if not, return today
+    if (searchDate == null) {
+        searchDate = getToday();
+    }
+    if (trainIdent == null) {
+        trainIdent = searchTrainIdent;
+    }
+
+    // Set up API request
+    var xmlRequest = "<REQUEST>" +
+        "<LOGIN authenticationkey='" + apiKey + "' />" +
+        "<QUERY objecttype='TrainAnnouncement' schemaversion='1.5' orderby='AdvertisedTimeAtLocation asc' limit='1'>" +
+            "<FILTER>" +
+                    "<EQ name='AdvertisedTrainIdent' value='" + searchTrainIdent + "' />" +
+                    "<EQ name='ScheduledDepartureDateTime' value='" + searchDate + "' />" + 
+                    "<EQ name='ActivityType' value='Ankomst' />" +
+                    "<EXISTS name='TimeAtLocation' value='false' />" +
+            "</FILTER>" + 
+            "<INCLUDE>ActivityType</INCLUDE>" +
+            "<INCLUDE>AdvertisedTimeAtLocation</INCLUDE>" +
+            "<INCLUDE>EstimatedTimeAtLocation</INCLUDE>" +
+            "<INCLUDE>LocationSignature</INCLUDE>" +
+            "<INCLUDE>TimeAtLocation</INCLUDE>" + 
+            "<INCLUDE>TrackAtLocation</INCLUDE>" +
+        "</QUERY>" +
+    "</REQUEST>";
+
+    // Run AJAX request
+    $.ajax({
+        type: "POST",
+        contentType: "text/xml",
+        data: xmlRequest
+    })
+    // If successfull, process data
+    .done(function(response) {
+        if (response.RESPONSE.RESULT[0].TrainAnnouncement[0] != null) {
+            nextStation.advertisedTimeAtLocation = response.RESPONSE.RESULT[0].TrainAnnouncement[0].AdvertisedTimeAtLocation;
+            nextStation.estimatedTimeAtLocation = response.RESPONSE.RESULT[0].TrainAnnouncement[0].EstimatedTimeAtLocation;
+            nextStation.locationSignature = response.RESPONSE.RESULT[0].TrainAnnouncement[0].LocationSignature;
+            nextStation.trackAtLocation = response.RESPONSE.RESULT[0].TrainAnnouncement[0].TrackAtLocation;
+        }
+    })
+    // If unsuccessfull, report error in log.
+    .fail(function (ex) {
+        console.log(ex);
+    });
+
+    return nextStation;
 }
 
 // Function for completing the TrainSchedule Object
@@ -472,26 +535,51 @@ function renderSingleTrainState(announcement) {
     var currentPosition = "Sök enskilt tåg";
     var outputMsg = "";
     var prefix = "";
+    var suffix = "";
     var trainIdent = "";
 
     $(announcement).each(function (iterator, item) {
         trainIdent = item.AdvertisedTrainIdent;
+        nextStation = new NextStation();
+        nextStation = getNextStation(item.AdvertisedTrainIdent);
+        console.log(nextStation);
         // Check if ActivityType is "Ankomst" and then prefix the time with * to indicate it in output
         if (item.ActivityType == "Ankomst") {
-            prefix = "*";
+            prefix = "Ankom";
+        }
+        else {
+            prefix = "Avgick";
         }
         // Create a string for where the last known position of the train
-        currentPosition = "Status tåg " + item.AdvertisedTrainIdent + ": " + item.LocationSignature + " " + prefix + getCurrentTrainState(item.AdvertisedTimeAtLocation, item.TimeAtLocation);
+        currentPosition = "Status tåg " + item.AdvertisedTrainIdent + ": " + item.LocationSignature + " " + getCurrentTrainState(item.AdvertisedTimeAtLocation, item.TimeAtLocation);
         // Get and output the scheduled date for the train (YYYY-MM-DD)
         var date = new Date(item.ScheduledDepartureDateTime);
+        outputMsg += "<p>";
         outputMsg += "<b>Datum:</b> " + date.toLocaleDateString("sv-SE") + "<br>";
         // Check if there is a technical train ident and if so, output it.
         if (item.TechnicalTrainIdent) {
             outputMsg += "<b>Tekniskt tågnummer:</b> " + item.TechnicalTrainIdent + "<br>";
         }
+        if (getCurrentTrainState(item.AdvertisedTimeAtLocation, item.TimeAtLocation) < 0) {
+            suffix = "";
+        }
+        else if (getCurrentTrainState(item.AdvertisedTimeAtLocation, item.TimeAtLocation) == 0) {
+            suffix = "";
+        }
+        else {
+            suffix = "";
+        }
         // Add to the output string the last known position, the current state and lataste update time.
-        outputMsg += "<b>Aktuell position:</b> " + getStationName(item.LocationSignature) + " " + prefix + getCurrentTrainState(item.AdvertisedTimeAtLocation, item.TimeAtLocation) + "<br>";
-        outputMsg += "<b>Senast uppdaterat:</b> " + new Date().toLocaleTimeString("sv-SE", localeOptions);
+        outputMsg += "<b>Aktuell position:</b> " + prefix + " " + getStationName(item.LocationSignature) + " " + getCurrentTrainState(item.AdvertisedTimeAtLocation, item.TimeAtLocation) + " " + suffix + "<br>";
+        if (nextStation.locationSignature != "") {
+            outputMsg += "Nästa uppehåll är " + getStationName(nextStation.locationSignature) + " på spår " + nextStation.trackAtLocation + ", kl. " + new Date(nextStation.advertisedTimeAtLocation).toLocaleTimeString("sv-SE", localeOptions);
+            if (nextStation.estimatedTimeAtLocation != null) {
+                outputMsg += " <em>(<b>Ny tid: " + new Date(nextStation.estimatedTimeAtLocation).toLocaleTimeString("sv-SE", localeOptions) + "</b>)</em>";
+            }
+            outputMsg += "<br>";
+        }
+        outputMsg += "</p>";
+        outputMsg += "<p class='w3-tiny w3-right' style='font-size: 6pt !important'>Senast uppdaterat: " + new Date().toLocaleTimeString("sv-SE") + "</p>";
     });
     // Write to page/title
     document.title = currentPosition;
