@@ -330,7 +330,7 @@ function getNextStation(searchTrainIdent) {
     // Set up API request
     var xmlRequest = "<REQUEST>" +
         "<LOGIN authenticationkey='" + apiKey + "' />" +
-        "<QUERY objecttype='TrainAnnouncement' schemaversion='1.5' orderby='AdvertisedTimeAtLocation asc' limit='1'>" +
+        "<QUERY objecttype='TrainAnnouncement' schemaversion='1.5' orderby='AdvertisedTimeAtLocation asc, ActivityType asc' limit='1'>" +
             "<FILTER>" +
                     "<EQ name='AdvertisedTrainIdent' value='" + searchTrainIdent + "' />" +
                     "<EQ name='ScheduledDepartureDateTime' value='" + searchDate + "' />" + 
