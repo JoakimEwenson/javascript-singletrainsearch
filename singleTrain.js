@@ -334,7 +334,6 @@ function getNextStation(searchTrainIdent) {
             "<FILTER>" +
                     "<EQ name='AdvertisedTrainIdent' value='" + searchTrainIdent + "' />" +
                     "<EQ name='ScheduledDepartureDateTime' value='" + searchDate + "' />" + 
-                    "<EQ name='ActivityType' value='Ankomst' />" +
                     "<EXISTS name='TimeAtLocation' value='false' />" +
             "</FILTER>" + 
             "<INCLUDE>ActivityType</INCLUDE>" +
