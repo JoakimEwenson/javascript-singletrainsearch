@@ -5,50 +5,46 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 
-    <title>Tågläge</title>
+    <title>Statiosvy</title>
 
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-colors-flat.css">
     <link rel="stylesheet" href="css/extra.css">
 </head>
 
-<body class="w3-small w3-flat-wet-asphalt">
+<body class="w3-small w3-flat-wet-asphalt w3-padding">
+
 <!-- Error content -->
-<div class="w3-container w3-margin-bottom w3-white w3-padding" style="display: block">
+<div class="w3-container w3-margin-bottom w3-white w3-padding" style="display: none">
     <h4>INFO</h4>
-    <p id="temporaryContent"></p>
+    <p id="errorMsg"></p>
 </div>
 <!-- Schedule in form of a table below -->
-<div class="w3-margin-bottom w3-white w3-responsive" id="schedule" style="display: none">
-    <h4 class="w3-margin">Ankomster <span id="arrivalLocation"></span></h4>
-    <table class="w3-table w3-bordered w3-striped" id="stationArrivalBoard">
-        <thead>
-            <tr>
-                <th>Tåg</th>
-                <th>Från</th>
-                <th>Tid</th>
-                <th>Spår</th>
-                <th>Position</th>
-            </tr>
-        </thead>
-        <tbody id="stationArrivals">
+<div id="departureBoardDiv" class="w3-card w3-margin-bottom w3-white" id="schedule" style="display: none">
+    <h4 class="w3-margin">Avgångar <span id="departureLocation"></span></h4>
+    <table class="w3-table w3-bordered w3-striped" id="departureBoard">
         <!-- This is where schedule script will output data -->
-        </tbody>
+    </table>
+</div>
+<div id="arrivalBoardDiv" class="w3-card w3-margin-bottom w3-white" style="display: none">
+    <h4 class="w3-margin">Ankomster <span id="arrivalLocation"></span></h4>
+    <table class="w3-table w3-bordered w3-striped" id="arrivalBoard">
+        <!-- This is where schedule script will output data -->
     </table>
 </div>
 <!-- End of schedule table -->
 
 <!-- Form content -->
-<form class="w3-container w3-white w3-padding" id="searchForm" style="display: none">
-    <h4>Sök enskilt tåg</h4>
+<form class="w3-container w3-white w3-padding" id="searchForm" style="display: block" onsubmit="event.preventDefault(); getStationBoards()">
+    <h4>Sök driftplats</h4>
     <input id="locationSignature" type="text" class="w3-input" placeholder="Plats" autofocus><br>
-    <input type="date" placeholder="Datum (YYYY-MM-DD)" class="w3-input" id="searchDate"><br>
     <div class="w3-center">
-        <input type="submit" value="H&auml;mta uppgifter" class="w3-button w3-flat-wet-asphalt w3-margin-bottom" id="searchTrain">
+        <input type="submit" value="H&auml;mta uppgifter" class="w3-button w3-flat-wet-asphalt w3-margin-bottom">
     </div>
 </form>
 
 <p id="lastUpdated" class="w3-right-align w3-margin w3-tiny" style="display: none; font-size:6pt !important;">Senast uppdaterat: <span id="scheduleUpdated"></span></p>
+
 
 <script src="js/ApiCollector.js"></script>
 <script>
@@ -56,40 +52,88 @@
 var apiKey = "dfc3b8374d774d5e94655bcd32d7c5c3";
 
 // Set up default values
+var searchLocationSignature = "G";
 var searchTrainIdent = "360";
 var searchDate = "2019-08-12";
 
-// Set up data to send through ApiCollector
+// Populate page with return
+function getStationBoards() {
+    searchLocationSignature = document.getElementById("locationSignature").value;
+
+    // Set up ArrivalBoard request
+    var arrivalBoardData = "<REQUEST>" +
+            "<LOGIN authenticationkey='" + apiKey + "' />" +
+            "<QUERY objecttype='TrainAnnouncement' schemaversion='1.5' orderby='AdvertisedTimeAtLocation' limit='25'>" +
+                "<FILTER>" +
+                    "<AND>" +
+                        "<EQ name='ActivityType' value='Ankomst' />" +
+                        "<EQ name='Advertised' value='true' />" +
+                        "<EQ name='LocationSignature' value='" + searchLocationSignature + "' />" +
+                        "<OR>" +
+                            "<AND>" +
+                                "<GT name='AdvertisedTimeAtLocation' value='$dateadd(-00:15:00)' />" +
+                                "<LT name='AdvertisedTimeAtLocation' value='$dateadd(14:00:00)' />" +
+                            "</AND>" +
+                            "<AND>" +
+                                "<LT name='AdvertisedTimeAtLocation' value='$dateadd(00:30:00)' />" +
+                                "<GT name='EstimatedTimeAtLocation' value='$dateadd(-00:15:00)' />" +
+                            "</AND>" +
+                        "</OR>" +
+                    "</AND>" +
+                "</FILTER>" +
+            "</QUERY>" +
+        "</REQUEST>";
+
+    // Set up DepartureBoard request
+    var departureBoardData = "<REQUEST>" +
+            "<LOGIN authenticationkey='" + apiKey + "' />" +
+            "<QUERY objecttype='TrainAnnouncement' schemaversion='1.5' orderby='AdvertisedTimeAtLocation' limit='25'>" +
+                "<FILTER>" +
+                    "<AND>" +
+                        "<EQ name='ActivityType' value='Avgang' />" +
+                        "<EQ name='Advertised' value='true' />" +
+                        "<EQ name='LocationSignature' value='" + searchLocationSignature + "' />" +
+                        "<OR>" +
+                            "<AND>" +
+                                "<GT name='AdvertisedTimeAtLocation' value='$dateadd(-00:15:00)' />" +
+                                "<LT name='AdvertisedTimeAtLocation' value='$dateadd(14:00:00)' />" +
+                            "</AND>" +
+                            "<AND>" +
+                                "<LT name='AdvertisedTimeAtLocation' value='$dateadd(00:30:00)' />" +
+                                "<GT name='EstimatedTimeAtLocation' value='$dateadd(-00:15:00)' />" +
+                            "</AND>" +
+                        "</OR>" +
+                    "</AND>" +
+                "</FILTER>" +
+            "</QUERY>" +
+        "</REQUEST>";
+
+    ApiCollector("arrivalBoard",arrivalBoardData);
+    ApiCollector("departureBoard",departureBoardData);
+
+    setInterval(function() { ApiCollector('arrivalBoard',arrivalBoardData)}, 60000);
+    setInterval(function() { ApiCollector('departureBoard',departureBoardData)}, 60000);
+
+    document.getElementById("arrivalLocation").textContent = searchLocationSignature;
+    document.getElementById("departureLocation").textContent = searchLocationSignature;
+
+    document.getElementById("departureBoardDiv").style.display = "block";
+    document.getElementById("arrivalBoardDiv").style.display = "block";
+
+    return true;
+}
+
+// Set up TrainStationName request
 var trainStationData = "<REQUEST>" +
         "<LOGIN authenticationkey='" + apiKey + "' />" +
         "<QUERY objecttype='TrainStation' schemaversion='1' limit='50'>" +
-        "<FILTER>" +
-        "</FILTER>" +
-        "<INCLUDE>AdvertisedLocationName</INCLUDE>" +
-        "<INCLUDE>LocationSignature</INCLUDE>" +
+            "<FILTER>" +
+            "</FILTER>" +
+            "<INCLUDE>AdvertisedLocationName</INCLUDE>" +
+            "<INCLUDE>LocationSignature</INCLUDE>" +
         "</QUERY>" +
     "</REQUEST>";
 
-// Set up API request
-var trainAnnouncementData = "<REQUEST>" +
-    "<LOGIN authenticationkey='" + apiKey + "' />" +
-        "<QUERY objecttype='TrainAnnouncement' schemaversion='1.5' orderby='AdvertisedTimeAtLocation asc'>" +
-            "<FILTER>" +
-                "<EQ name='AdvertisedTrainIdent' value='" + searchTrainIdent + "' />" +
-                "<EQ name='ScheduledDepartureDateTime' value='" + searchDate + "' />" +
-                //"<EXISTS name='TimeAtLocation' value='true' />" +
-            "</FILTER>" +
-            "<INCLUDE>ActivityType</INCLUDE>" +
-            "<INCLUDE>AdvertisedTimeAtLocation</INCLUDE>" +
-            "<INCLUDE>AdvertisedTrainIdent</INCLUDE>" +
-            "<INCLUDE>LocationSignature</INCLUDE>" +
-            "<INCLUDE>ScheduledDepartureDateTime</INCLUDE>" +
-            "<INCLUDE>TechnicalTrainIdent</INCLUDE>" +
-            "<INCLUDE>TimeAtLocation</INCLUDE>" +
-        "</QUERY>" +
-    "</REQUEST>";
-// Populate page with return
-ApiCollector("singleTrainState",trainAnnouncementData);
 </script>
 </body>
 </html>
