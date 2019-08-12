@@ -14,18 +14,13 @@
 
 <body class="w3-small w3-flat-wet-asphalt">
 <!-- Error content -->
-<div class="w3-container w3-margin-bottom w3-white w3-padding" id="error" style="display: none">
-    <h4>Felmeddelande</h4>
+<div class="w3-container w3-margin-bottom w3-white w3-padding" id="error" style="display: block">
+    <h4>INFO</h4>
     <p id="errorMsg"></p>
-</div>
-<!-- Current state content -->
-<div class="w3-container w3-margin-bottom w3-white w3-padding" id="status" style="display: none">
-    <h4>Status tåg <span id="currentStateTrainIdent"></span></h4>
-    <p id="singleTrainState">&nbsp;</p>
 </div>
 <!-- Schedule in form of a table below -->
 <div class="w3-margin-bottom w3-white w3-responsive" id="schedule" style="display: none">
-    <h4 class="w3-margin">Tidtabell tåg <span id="scheduleTrainIdent"></span></h4>
+    <h4 class="w3-margin">Ankomster <span id="arrivalLocation"></span></h4>
     <table class="w3-table w3-bordered w3-striped" id="stationArrivalBoard">
         <thead>
             <tr>
@@ -44,7 +39,7 @@
 <!-- End of schedule table -->
 
 <!-- Form content -->
-<form class="w3-container w3-white w3-padding" id="searchForm">
+<form class="w3-container w3-white w3-padding" id="searchForm" style="display: none">
     <h4>Sök enskilt tåg</h4>
     <input id="locationSignature" type="text" class="w3-input" placeholder="Plats" autofocus><br>
     <input type="date" placeholder="Datum (YYYY-MM-DD)" class="w3-input" id="searchDate"><br>
@@ -54,5 +49,10 @@
 </form>
 
 <p id="lastUpdated" class="w3-right-align w3-margin w3-tiny" style="display: none; font-size:6pt !important;">Senast uppdaterat: <span id="scheduleUpdated"></span></p>
+
+<script src="js/ApiCollector.js"></script>
+<script>
+document.getElementById("errorMsg").innerHTML = ApiCollector();
+</script>
 </body>
 </html>

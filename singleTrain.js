@@ -32,6 +32,7 @@ var runDebug = false;
 var currentTimestamp = new Date();
 var timezoneOffset = currentTimestamp.getTimezoneOffset();
 var offset = "";
+
 if (timezoneOffset == -60) {
     offset = "+01:00";
 } else if (timezoneOffset == -120) {
@@ -86,7 +87,7 @@ $(document).ready(function () {
         //getSingleTrainSchedule(trainIdent);
     }
     // Set up Cross domain requests
-    $.support.cors = true
+    $.support.cors = true;
     // Collect fields for error data
     var errorCard = document.getElementById("error");
     var errorField = document.getElementById("errorMsg");
@@ -518,7 +519,7 @@ function renderSingleTrainSchedule(announcement) {
             outputMsg += "</tr>";
             // Write to page
             document.getElementById("singleTrainSchedule").innerHTML = outputMsg;
-            document.getElementById("scheduleUpdated").textContent = new Date().toLocaleTimeString("sv-SE", localeOptions);
+            document.getElementById("scheduleUpdated").textContent = new Date().toLocaleTimeString("sv-SE");
             document.getElementById("schedule").style.display = "block";
         }
 
@@ -583,5 +584,5 @@ function renderSingleTrainState(announcement) {
     document.title = currentPosition;
     document.getElementById("singleTrainState").innerHTML = outputMsg;
     document.getElementById("status").style.display = "block";
-    document.getElementById("lastUpdated").style.display = "none";
+    document.getElementById("lastUpdated").style.display = "block";
 }
