@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 
-    <title>Statiosvy</title>
+    <title>Stationsvy</title>
 
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-colors-flat.css">
@@ -20,13 +20,13 @@
     <p id="errorMsg"></p>
 </div>
 <!-- Schedule in form of a table below -->
-<div id="departureBoardDiv" class="w3-card w3-margin-bottom w3-white" id="schedule" style="display: none">
+<div id="departureBoardDiv" class="w3-card w3-margin-bottom w3-white w3-responsive" id="schedule" style="display: none">
     <h4 class="w3-margin">Avgångar <span id="departureLocation"></span></h4>
     <table class="w3-table w3-bordered w3-striped" id="departureBoard">
         <!-- This is where schedule script will output data -->
     </table>
 </div>
-<div id="arrivalBoardDiv" class="w3-card w3-margin-bottom w3-white" style="display: none">
+<div id="arrivalBoardDiv" class="w3-card w3-margin-bottom w3-white w3-responsive" style="display: none">
     <h4 class="w3-margin">Ankomster <span id="arrivalLocation"></span></h4>
     <table class="w3-table w3-bordered w3-striped" id="arrivalBoard">
         <!-- This is where schedule script will output data -->
@@ -55,6 +55,7 @@ var apiKey = "dfc3b8374d774d5e94655bcd32d7c5c3";
 var searchLocationSignature = "G";
 var searchTrainIdent = "360";
 var searchDate = "2019-08-12";
+var searchLimit = "15";
 
 // Populate page with return
 function getStationBoards() {
@@ -63,7 +64,7 @@ function getStationBoards() {
     // Set up ArrivalBoard request
     var arrivalBoardData = "<REQUEST>" +
             "<LOGIN authenticationkey='" + apiKey + "' />" +
-            "<QUERY objecttype='TrainAnnouncement' schemaversion='1.5' orderby='AdvertisedTimeAtLocation' limit='25'>" +
+            "<QUERY objecttype='TrainAnnouncement' schemaversion='1.5' orderby='AdvertisedTimeAtLocation' limit='" + searchLimit + "'>" +
                 "<FILTER>" +
                     "<AND>" +
                         "<EQ name='ActivityType' value='Ankomst' />" +
@@ -87,7 +88,7 @@ function getStationBoards() {
     // Set up DepartureBoard request
     var departureBoardData = "<REQUEST>" +
             "<LOGIN authenticationkey='" + apiKey + "' />" +
-            "<QUERY objecttype='TrainAnnouncement' schemaversion='1.5' orderby='AdvertisedTimeAtLocation' limit='25'>" +
+            "<QUERY objecttype='TrainAnnouncement' schemaversion='1.5' orderby='AdvertisedTimeAtLocation' limit='" + searchLimit + "'>" +
                 "<FILTER>" +
                     "<AND>" +
                         "<EQ name='ActivityType' value='Avgang' />" +
