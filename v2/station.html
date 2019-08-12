@@ -14,9 +14,9 @@
 
 <body class="w3-small w3-flat-wet-asphalt">
 <!-- Error content -->
-<div class="w3-container w3-margin-bottom w3-white w3-padding" id="error" style="display: block">
+<div class="w3-container w3-margin-bottom w3-white w3-padding" style="display: block">
     <h4>INFO</h4>
-    <p id="errorMsg"></p>
+    <p id="temporaryContent"></p>
 </div>
 <!-- Schedule in form of a table below -->
 <div class="w3-margin-bottom w3-white w3-responsive" id="schedule" style="display: none">
@@ -52,7 +52,44 @@
 
 <script src="js/ApiCollector.js"></script>
 <script>
-document.getElementById("errorMsg").innerHTML = ApiCollector();
+// Set up API key
+var apiKey = "dfc3b8374d774d5e94655bcd32d7c5c3";
+
+// Set up default values
+var searchTrainIdent = "360";
+var searchDate = "2019-08-12";
+
+// Set up data to send through ApiCollector
+var trainStationData = "<REQUEST>" +
+        "<LOGIN authenticationkey='" + apiKey + "' />" +
+        "<QUERY objecttype='TrainStation' schemaversion='1' limit='50'>" +
+        "<FILTER>" +
+        "</FILTER>" +
+        "<INCLUDE>AdvertisedLocationName</INCLUDE>" +
+        "<INCLUDE>LocationSignature</INCLUDE>" +
+        "</QUERY>" +
+    "</REQUEST>";
+
+// Set up API request
+var trainAnnouncementData = "<REQUEST>" +
+    "<LOGIN authenticationkey='" + apiKey + "' />" +
+        "<QUERY objecttype='TrainAnnouncement' schemaversion='1.5' orderby='AdvertisedTimeAtLocation asc'>" +
+            "<FILTER>" +
+                "<EQ name='AdvertisedTrainIdent' value='" + searchTrainIdent + "' />" +
+                "<EQ name='ScheduledDepartureDateTime' value='" + searchDate + "' />" +
+                //"<EXISTS name='TimeAtLocation' value='true' />" +
+            "</FILTER>" +
+            "<INCLUDE>ActivityType</INCLUDE>" +
+            "<INCLUDE>AdvertisedTimeAtLocation</INCLUDE>" +
+            "<INCLUDE>AdvertisedTrainIdent</INCLUDE>" +
+            "<INCLUDE>LocationSignature</INCLUDE>" +
+            "<INCLUDE>ScheduledDepartureDateTime</INCLUDE>" +
+            "<INCLUDE>TechnicalTrainIdent</INCLUDE>" +
+            "<INCLUDE>TimeAtLocation</INCLUDE>" +
+        "</QUERY>" +
+    "</REQUEST>";
+// Populate page with return
+ApiCollector("singleTrainState",trainAnnouncementData);
 </script>
 </body>
 </html>
