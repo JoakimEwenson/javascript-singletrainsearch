@@ -5,11 +5,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+
     <title>Tågläge</title>
 
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-colors-flat.css">
     <link rel="stylesheet" href="css/extra.css">
+
+    <script src="js/ApiCollector.js"></script>
+
 </head>
 
 <body class="w3-small w3-flat-wet-asphalt w3-padding">
@@ -19,8 +26,9 @@
     <p id="errorMsg"></p>
 </div>
 <!-- Schedule in form of a table below -->
-<div class="w3-card w3-margin-bottom w3-white" id="schedule" style="display: block">
+<div class="w3-card w3-margin-bottom w3-white w3-responsive" id="schedule" style="display: block">
     <h4 class="w3-margin">Tidtabell <span id="trainIdentResult"></span></h4>
+    <span class="w3-margin-right w3-tiny w3-right" style="font-size: 6pt !important" id="scheduleTimestamp"></span>
     <table class="w3-table w3-bordered w3-striped" id="trainSchedule">
         <!-- This is where schedule script will output data -->
     </table>
@@ -38,45 +46,57 @@
 
 <p id="lastUpdated" class="w3-right-align w3-margin w3-tiny" style="display: none; font-size:6pt !important;">Senast uppdaterat: <span id="scheduleUpdated"></span></p>
 
-<script src="js/ApiCollector.js"></script>
 <script>
 // Set up API key
 var apiKey = "dfc3b8374d774d5e94655bcd32d7c5c3";
 
 // Set up default values
 var searchTrainIdent = "360";
-var searchDate = "2019-08-12";
+var searchDate = "2019-08-13";
 
 function getTrainSchedule() {
+    clearInterval(myTimer);
     searchTrainIdent = document.getElementById("trainIdent").value;
 
     // Set up SingleTrain request
     var trainAnnouncementData = "<REQUEST>" +
         "<LOGIN authenticationkey='" + apiKey + "' />" +
-            "<QUERY objecttype='TrainAnnouncement' schemaversion='1.5' orderby='AdvertisedTimeAtLocation asc'>" +
+            "<QUERY objecttype='TrainAnnouncement' schemaversion='1.5' orderby='AdvertisedTimeAtLocation asc, ActivityType asc'>" +
                 "<FILTER>" +
-                    "<EQ name='Advertised' value='true' />" +
                     "<EQ name='AdvertisedTrainIdent' value='" + searchTrainIdent + "' />" +
                     "<EQ name='ScheduledDepartureDateTime' value='" + searchDate + "' />" +
-                    //"<EXISTS name='TimeAtLocation' value='true' />" +
                 "</FILTER>" +
-                /*
+            "</QUERY>" +
+        "</REQUEST>";
+
+    // Populate page with return
+    ApiCollector(trainAnnouncementData, renderSingleTrainSchedule);
+
+    var myTimer = setInterval(function() {ApiCollector(trainAnnouncementData, renderSingleTrainSchedule)}, 60000);
+}
+
+function getTrainState(searchTrainIdent) {
+    //searchTrainIdent = document.getElementById("trainIdent").value;
+
+    var trainAnnouncementData = "<REQUEST>" +
+        "<LOGIN authenticationkey='" + apiKey + "' />" +
+            "<QUERY objecttype='TrainAnnouncement' schemaversion='1.5' orderby='TimeAtLocation desc' limit='1'>" +
+                "<FILTER>" +
+                    "<EQ name='AdvertisedTrainIdent' value='" + searchTrainIdent + "' />" +
+                    "<EQ name='ScheduledDepartureDateTime' value='" + searchDate + "' />" +
+                    "<EXISTS name='TimeAtLocation' value='true' />" +
+                "</FILTER>" +
                 "<INCLUDE>ActivityType</INCLUDE>" +
                 "<INCLUDE>AdvertisedTimeAtLocation</INCLUDE>" +
                 "<INCLUDE>AdvertisedTrainIdent</INCLUDE>" +
                 "<INCLUDE>LocationSignature</INCLUDE>" +
                 "<INCLUDE>ScheduledDepartureDateTime</INCLUDE>" +
-                "<INCLUDE>TechnicalTrainIdent</INCLUDE>" +
                 "<INCLUDE>TimeAtLocation</INCLUDE>" +
-                */
             "</QUERY>" +
         "</REQUEST>";
 
-    // Populate page with return
-    ApiCollector("singleTrainSchedule",trainAnnouncementData);
-    setInterval(function() { ApiCollector("singleTrainSchedule",trainAnnouncementData)}, 60000);
+    ApiCollector(trainAnnouncementData, getTrainState);
 }
-
 </script>
 </body>
 </html>
