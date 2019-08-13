@@ -100,10 +100,10 @@ function renderArrivalBoard(obj) {
     output = "";
     output += "<thead>";
     output += "<tr>";
+    output += "<th>AdvertisedTrainIdent</th>";
     output += "<th>AdvertisedTimeAtLocation</th>";
     output += "<th>TrackAtLocation</th>";
     output += "<th>FromLocation</th>";
-    output += "<th>AdvertisedTrainIdent</th>";
     output += "<th>Deviation</th>";
     output += "<th>Booking</th>";
     output += "<th>Service</th>";
@@ -114,6 +114,7 @@ function renderArrivalBoard(obj) {
     output += "<tbody>";
     for (var i in obj.RESPONSE.RESULT[0].TrainAnnouncement) {
         output += "<tr>";
+        output += "<td>" + obj.RESPONSE.RESULT[0].TrainAnnouncement[i].AdvertisedTrainIdent + "</td>";
         output += "<td>";
         output += new Date(obj.RESPONSE.RESULT[0].TrainAnnouncement[i].AdvertisedTimeAtLocation).toLocaleTimeString("sv-SE", localeOptions)
         if (obj.RESPONSE.RESULT[0].TrainAnnouncement[i].EstimatedTimeAtLocation) {
@@ -122,7 +123,6 @@ function renderArrivalBoard(obj) {
         output += "</td>";
         output += "<td>" + obj.RESPONSE.RESULT[0].TrainAnnouncement[i].TrackAtLocation + "</td>";
         output += "<td>" + obj.RESPONSE.RESULT[0].TrainAnnouncement[i].FromLocation[0].LocationName + "</td>";
-        output += "<td>" + obj.RESPONSE.RESULT[0].TrainAnnouncement[i].ProductInformation[0].Description + "<br>Tåg " + obj.RESPONSE.RESULT[0].TrainAnnouncement[i].AdvertisedTrainIdent + "</td>";
         output += "<td>";
         for (var j in obj.RESPONSE.RESULT[0].TrainAnnouncement[i].Deviation) {
             output += obj.RESPONSE.RESULT[0].TrainAnnouncement[i].Deviation[j].Description + "<br>";
@@ -160,11 +160,11 @@ function renderArrivalBoard(obj) {
 function renderDepartureBoard(obj) {
     output = "";
     output += "<thead>";
-    output += "<tr>";
+    output += "<tr>"
+    output += "<th>AdvertisedTrainIdent</th>";
     output += "<th>AdvertisedTimeAtLocation</th>";
     output += "<th>TrackAtLocation</th>";
     output += "<th>ToLocation</th>";
-    output += "<th>AdvertisedTrainIdent</th>";
     output += "<th>Deviation</th>";
     output += "<th>Booking</th>";
     output += "<th>Service</th>";
@@ -175,6 +175,7 @@ function renderDepartureBoard(obj) {
     output += "<tbody>";
     for (var i in obj.RESPONSE.RESULT[0].TrainAnnouncement) {
         output += "<tr>";
+        output += "<td>" + obj.RESPONSE.RESULT[0].TrainAnnouncement[i].AdvertisedTrainIdent + "</td>";
         output += "<td>";
         output += new Date(obj.RESPONSE.RESULT[0].TrainAnnouncement[i].AdvertisedTimeAtLocation).toLocaleTimeString("sv-SE", localeOptions);
         if (obj.RESPONSE.RESULT[0].TrainAnnouncement[i].EstimatedTimeAtLocation) {
@@ -184,7 +185,6 @@ function renderDepartureBoard(obj) {
         
         output += "<td>" + obj.RESPONSE.RESULT[0].TrainAnnouncement[i].TrackAtLocation + "</td>";
         output += "<td>" + obj.RESPONSE.RESULT[0].TrainAnnouncement[i].ToLocation[0].LocationName + "</td>";
-        output += "<td>" + obj.RESPONSE.RESULT[0].TrainAnnouncement[i].ProductInformation[0].Description + "<br>Tåg " + obj.RESPONSE.RESULT[0].TrainAnnouncement[i].AdvertisedTrainIdent + "</td>";
         output += "<td>";
         for (var j in obj.RESPONSE.RESULT[0].TrainAnnouncement[i].Deviation) {
             output += obj.RESPONSE.RESULT[0].TrainAnnouncement[i].Deviation[j].Description + "<br>";
