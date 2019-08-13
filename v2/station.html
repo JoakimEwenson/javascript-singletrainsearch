@@ -18,22 +18,22 @@
     <script src="js/ApiCollector.js"></script>
 </head>
 
-<body class="w3-small w3-flat-wet-asphalt w3-padding">
+<body class="w3-small w3-flat-wet-asphalt">
 
 <!-- Error content -->
-<div class="w3-container w3-margin-bottom w3-white w3-padding" style="display: none">
+<div class="w3-container w3-margin w3-white w3-padding" style="display: none">
     <h4>INFO</h4>
     <p id="errorMsg"></p>
 </div>
 <!-- Schedule in form of a table below -->
-<div id="departureBoardDiv" class="w3-card w3-margin-bottom w3-white w3-responsive" id="schedule" style="display: none">
+<div id="departureBoardDiv" class="w3-card w3-margin w3-white w3-responsive" id="schedule" style="display: none">
     <h4 class="w3-margin">Avgångar <span id="departureLocation"></span></h4>
     <span class="w3-margin w3-tiny w3-right" style="font-size: 6pt !important" id="departureTimestamp"></span>
     <table class="w3-table w3-bordered w3-striped" id="departureBoard">
         <!-- This is where schedule script will output data -->
     </table>
 </div>
-<div id="arrivalBoardDiv" class="w3-card w3-margin-bottom w3-white w3-responsive" style="display: none">
+<div id="arrivalBoardDiv" class="w3-card w3-margin w3-white w3-responsive" style="display: none">
     <h4 class="w3-margin">Ankomster <span id="arrivalLocation"></span></h4>
     <span class="w3-margin w3-tiny w3-right" style="font-size: 6pt !important" id="arrivalTimestamp"></span>
     <table class="w3-table w3-bordered w3-striped" id="arrivalBoard">
@@ -43,7 +43,7 @@
 <!-- End of schedule table -->
 
 <!-- Form content -->
-<form class="w3-container w3-white w3-padding" id="searchForm" style="display: block" onsubmit="event.preventDefault(); getStationBoards()">
+<form class="w3-container w3-card w3-white w3-margin w3-padding" id="searchForm" style="display: block" onsubmit="event.preventDefault(); getStationBoards()">
     <h4>Sök driftplats</h4>
     <input id="locationSignature" type="text" class="w3-input" placeholder="Plats" autofocus><br>
     <div class="w3-center">

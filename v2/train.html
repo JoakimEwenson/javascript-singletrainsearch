@@ -19,14 +19,14 @@
 
 </head>
 
-<body class="w3-small w3-flat-wet-asphalt w3-padding">
+<body class="w3-small w3-flat-wet-asphalt">
 <!-- Error content -->
 <div class="w3-container w3-margin-bottom w3-white w3-padding" style="display: none">
     <h4>INFO</h4>
     <p id="errorMsg"></p>
 </div>
 <!-- Schedule in form of a table below -->
-<div class="w3-card w3-margin-bottom w3-white w3-responsive" id="schedule" style="display: block">
+<div class="w3-card w3-margin w3-white w3-responsive" id="schedule" style="display: none">
     <h4 class="w3-margin">Tidtabell <span id="trainIdentResult"></span></h4>
     <span class="w3-margin-right w3-tiny w3-right" style="font-size: 6pt !important" id="scheduleTimestamp"></span>
     <table class="w3-table w3-bordered w3-striped" id="trainSchedule">
@@ -36,7 +36,7 @@
 <!-- End of schedule table -->
 
 <!-- Form content -->
-<form class="w3-container w3-white w3-padding" id="searchForm" style="display: block" onsubmit="event.preventDefault(); getTrainSchedule()">
+<form class="w3-container w3-card w3-margin w3-white w3-padding" id="searchForm" style="display: block" onsubmit="event.preventDefault(); getTrainSchedule()">
     <h4>Sök enskilt tåg</h4>
     <input id="trainIdent" type="number" class="w3-input" placeholder="Tågnummer" autofocus><br>
     <div class="w3-center">
@@ -73,6 +73,7 @@ function getTrainSchedule() {
     ApiCollector(trainAnnouncementData, renderSingleTrainSchedule);
 
     var myTimer = setInterval(function() {ApiCollector(trainAnnouncementData, renderSingleTrainSchedule)}, 60000);
+    document.getElementById("schedule").style.display = "block";
 }
 
 function getTrainState(searchTrainIdent) {
