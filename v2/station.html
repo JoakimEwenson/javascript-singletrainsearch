@@ -60,12 +60,13 @@ var apiKey = "dfc3b8374d774d5e94655bcd32d7c5c3";
 
 // Set up default values
 var searchLocationSignature = "G";
-var searchTrainIdent = "360";
-var searchDate = "2019-08-13";
-var searchLimit = "15";
+var searchDate = getToday();
+var searchLimit = "25";
+var myTimer;
 
 // Populate page with return
 function getStationBoards() {
+    clearInterval(myTimer);
     searchLocationSignature = document.getElementById("locationSignature").value;
 
     // Set up ArrivalBoard request
@@ -119,8 +120,10 @@ function getStationBoards() {
     ApiCollector(arrivalBoardData,renderArrivalBoard);
     ApiCollector(departureBoardData,renderDepartureBoard);
 
-    setInterval(function() { ApiCollector(arrivalBoardData,renderArrivalBoard)}, 60000);
-    setInterval(function() { ApiCollector(departureBoardData,renderDepartureBoard)}, 60000);
+    myTimer = setInterval(function() {
+        ApiCollector(arrivalBoardData,renderArrivalBoard);
+        ApiCollector(departureBoardData,renderDepartureBoard);
+    }, 60000);
 
     getLocation(searchLocationSignature);
 
@@ -128,22 +131,6 @@ function getStationBoards() {
     document.getElementById("arrivalBoardDiv").style.display = "block";
 
     return true;
-}
-
-function getLocation(searchLocationSignature) {
-    // Set up TrainStationName request
-    var trainStationData = "<REQUEST>" +
-            "<LOGIN authenticationkey='" + apiKey + "' />" +
-            "<QUERY objecttype='TrainStation' schemaversion='1'>" +
-                "<FILTER>" +
-                    "<EQ name='LocationSignature' value='" + searchLocationSignature + "' />" +
-                "</FILTER>" +
-                "<INCLUDE>AdvertisedLocationName</INCLUDE>" +
-            "</QUERY>" +
-        "</REQUEST>";
-
-    var response = ApiCollector(trainStationData,getLocationName);
-    console.log("Response: " + response);
 }
 
 </script>

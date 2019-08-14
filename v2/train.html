@@ -51,8 +51,9 @@
 var apiKey = "dfc3b8374d774d5e94655bcd32d7c5c3";
 
 // Set up default values
-var searchTrainIdent = "360";
-var searchDate = "2019-08-13";
+var searchTrainIdent;
+var searchDate = getToday();
+var myTimer;
 
 function getTrainSchedule() {
     clearInterval(myTimer);
@@ -71,8 +72,13 @@ function getTrainSchedule() {
 
     // Populate page with return
     ApiCollector(trainAnnouncementData, renderSingleTrainSchedule);
+    getTrainState(searchTrainIdent);
 
-    var myTimer = setInterval(function() {ApiCollector(trainAnnouncementData, renderSingleTrainSchedule)}, 60000);
+    myTimer = setInterval(function() {
+        ApiCollector(trainAnnouncementData, renderSingleTrainSchedule)
+        getTrainState(searchTrainIdent);
+    }, 20000);
+
     document.getElementById("schedule").style.display = "block";
 }
 
@@ -96,7 +102,7 @@ function getTrainState(searchTrainIdent) {
             "</QUERY>" +
         "</REQUEST>";
 
-    ApiCollector(trainAnnouncementData, getTrainState);
+    AnotherApiCollector(trainAnnouncementData).then(res => console.log(res.RESPONSE.RESULT[0].TrainAnnouncement[0].LocationSignature + " kl. " + new Date(res.RESPONSE.RESULT[0].TrainAnnouncement[0].TimeAtLocation).toLocaleTimeString("sv-SE",localeOptions)));
 }
 </script>
 </body>

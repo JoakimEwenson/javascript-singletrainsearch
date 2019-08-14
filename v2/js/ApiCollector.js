@@ -40,10 +40,47 @@ function ApiCollector(data, cbFunction) {
     xhr.send(data);
 }
 
+function AnotherApiCollector(data) {
+    var xhr = new XMLHttpRequest();
+    xhr.withCredentials = false;
+
+    return new Promise((resolve, reject) => {
+
+        xhr.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                resolve(JSON.parse(this.responseText));
+            }
+        };
+
+        xhr.open("POST", "https://api.trafikinfo.trafikverket.se/v2/data.json");
+        xhr.setRequestHeader("Content-Type", "text/xml");
+
+        xhr.send(data);
+    });
+}
+
 function getTrainState(obj) {
     output = obj.RESPONSE.RESULT[0].TrainAnnouncement[0].LocationSignature + " at " + new Date(obj.RESPONSE.RESULT[0].TrainAnnouncement[0].TimeAtLocation).toLocaleTimeString("sv-SE",localeOptions);
     console.log(output);
     return output;
+}
+
+async function getLocation(searchLocationSignature) {
+    // Set up TrainStationName request
+    var trainStationData = "<REQUEST>" +
+            "<LOGIN authenticationkey='" + apiKey + "' />" +
+            "<QUERY objecttype='TrainStation' schemaversion='1'>" +
+                "<FILTER>" +
+                    "<EQ name='LocationSignature' value='" + searchLocationSignature + "' />" +
+                "</FILTER>" +
+                "<INCLUDE>AdvertisedLocationName</INCLUDE>" +
+            "</QUERY>" +
+        "</REQUEST>";
+
+    var output;
+    await AnotherApiCollector(trainAnnouncementData).then(res => console.log(res.RESPONSE.RESULT[0].TrainAnnouncement[0].LocationSignature + res.RESPONSE.RESULT[0].TrainAnnouncement[0].TimeAtLocation));
+
+    return await output;
 }
 
 function getLocationName(obj) {
@@ -78,6 +115,7 @@ function renderSingleTrainSchedule(obj) {
     output += "<th></th>";
     output += "<th>Tid</th>";
     output += "<th>Faktisk</th>";
+    output += "<th>Diff</th>";
     output += "<th>Info</th>";
     output += "</tr>";
     output += "</thead>";
@@ -108,6 +146,13 @@ function renderSingleTrainSchedule(obj) {
         else {
             output += "<td></td>";
         }
+        // Print difference between advertised and actual time at location
+        if (obj.RESPONSE.RESULT[0].TrainAnnouncement[i].TimeAtLocation) {
+            output += "<td>" + getCurrentTrainState(obj.RESPONSE.RESULT[0].TrainAnnouncement[i].AdvertisedTimeAtLocation, obj.RESPONSE.RESULT[0].TrainAnnouncement[i].TimeAtLocation) + "</td>";
+        }
+        else {
+            output += "<td></td>";
+        }
         output += "<td>";
         for (var j in obj.RESPONSE.RESULT[0].TrainAnnouncement[i].Deviation) {
             output += obj.RESPONSE.RESULT[0].TrainAnnouncement[i].Deviation[j].Description + "<br>";
@@ -130,9 +175,15 @@ function renderSingleTrainSchedule(obj) {
     }
     output += "</tbody>";
 
+
     document.getElementById("trainSchedule").innerHTML = output;
     document.getElementById("trainIdentResult").textContent = obj.RESPONSE.RESULT[0].TrainAnnouncement[0].AdvertisedTrainIdent;
     document.getElementById("scheduleTimestamp").textContent = "Senast uppdaterat: " + new Date().toLocaleTimeString("sv-SE");
+}
+
+function renderCurrentState() {
+    var currentLocation = obj.RESPONSE.RESULT[0].TrainAnnouncement[0].AdvertisedTrainIdent + " " + obj.RESPONSE.RESULT[0].TrainAnnouncement[0].LocationSignature + " " + getCurrentTrainState(obj.RESPONSE.RESULT[0].TrainAnnouncement[i].AdvertisedTimeAtLocation, obj.RESPONSE.RESULT[0].TrainAnnouncement[0].TimeAtLocation);
+    document.title = "Status " + currentLocation;
 }
 
 function renderArrivalBoard(obj) {
@@ -156,7 +207,10 @@ function renderArrivalBoard(obj) {
         output += "<td>" + obj.RESPONSE.RESULT[0].TrainAnnouncement[i].AdvertisedTrainIdent + "</td>";
         output += "<td>";
         output += new Date(obj.RESPONSE.RESULT[0].TrainAnnouncement[i].AdvertisedTimeAtLocation).toLocaleTimeString("sv-SE", localeOptions)
-        if (obj.RESPONSE.RESULT[0].TrainAnnouncement[i].EstimatedTimeAtLocation) {
+        if (obj.RESPONSE.RESULT[0].TrainAnnouncement[i].TimeAtLocation) {
+            output += "<br><em>Ank. " + new Date(obj.RESPONSE.RESULT[0].TrainAnnouncement[i].TimeAtLocation).toLocaleTimeString("sv-SE", localeOptions) + "</em>";
+        }
+        else if (obj.RESPONSE.RESULT[0].TrainAnnouncement[i].EstimatedTimeAtLocation) {
             output += "<br><em><b>" + new Date(obj.RESPONSE.RESULT[0].TrainAnnouncement[i].EstimatedTimeAtLocation).toLocaleTimeString("sv-SE", localeOptions) + "</b></em>";
         }
         output += "</td>";
@@ -192,7 +246,7 @@ function renderArrivalBoard(obj) {
     output += "</tbody>";
 
     document.getElementById("arrivalBoard").innerHTML = output;
-    document.getElementById("arrivalTimestamp").textContent = new Date().toLocaleTimeString("sv-SE");
+    document.getElementById("arrivalTimestamp").textContent = "Senast uppdaterat: " + new Date().toLocaleTimeString("sv-SE");
 
 }
 
@@ -217,7 +271,10 @@ function renderDepartureBoard(obj) {
         output += "<td>" + obj.RESPONSE.RESULT[0].TrainAnnouncement[i].AdvertisedTrainIdent + "</td>";
         output += "<td>";
         output += new Date(obj.RESPONSE.RESULT[0].TrainAnnouncement[i].AdvertisedTimeAtLocation).toLocaleTimeString("sv-SE", localeOptions);
-        if (obj.RESPONSE.RESULT[0].TrainAnnouncement[i].EstimatedTimeAtLocation) {
+        if (obj.RESPONSE.RESULT[0].TrainAnnouncement[i].TimeAtLocation) {
+            output += "<br><em>Avg. " + new Date(obj.RESPONSE.RESULT[0].TrainAnnouncement[i].TimeAtLocation).toLocaleTimeString("sv-SE", localeOptions) + "</em>";
+        }
+        else if (obj.RESPONSE.RESULT[0].TrainAnnouncement[i].EstimatedTimeAtLocation) {
             output += "<br><em><b>" + new Date(obj.RESPONSE.RESULT[0].TrainAnnouncement[i].EstimatedTimeAtLocation).toLocaleTimeString("sv-SE", localeOptions) + "</b></em>";
         }
         output += "</td>";
@@ -254,5 +311,5 @@ function renderDepartureBoard(obj) {
     output += "</tbody>";
 
     document.getElementById("departureBoard").innerHTML = output;
-    document.getElementById("departureTimestamp").textContent = new Date().toLocaleTimeString("sv-SE");
+    document.getElementById("departureTimestamp").textContent = "Senast uppdaterat: " + new Date().toLocaleTimeString("sv-SE");
 }
