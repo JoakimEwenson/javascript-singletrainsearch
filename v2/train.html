@@ -13,7 +13,11 @@
 
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-colors-flat.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/extra.css">
+
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
 
     <script src="js/ApiCollector.js"></script>
 
@@ -25,9 +29,16 @@
     <h4>INFO</h4>
     <p id="errorMsg"></p>
 </div>
+<!-- End of error content -->
+<div class="w3-card w3-margin w3-white w3-responsive" id="trainState" style="display: block;">
+        <h4 class="w3-margin"><i class="fa fa-train"></i>&nbsp;&nbsp;Status</h4>
+        <div class="w3-container" id="stateContent">
+            <!-- This is where script will output data -->
+        </div>
+    </div>
 <!-- Schedule in form of a table below -->
 <div class="w3-card w3-margin w3-white w3-responsive" id="schedule" style="display: none">
-    <h4 class="w3-margin">Tidtabell <span id="trainIdentResult"></span></h4>
+    <h4 class="w3-margin"><i class="fa fa-list"></i>&nbsp;&nbsp;Tidtabell <span id="trainIdentResult"></span></h4>
     <span class="w3-margin-right w3-tiny w3-right" style="font-size: 6pt !important" id="scheduleTimestamp"></span>
     <table class="w3-table w3-bordered w3-striped" id="trainSchedule">
         <!-- This is where schedule script will output data -->
@@ -85,24 +96,20 @@ function getTrainSchedule() {
 function getTrainState(searchTrainIdent) {
     //searchTrainIdent = document.getElementById("trainIdent").value;
 
-    var trainAnnouncementData = "<REQUEST>" +
+    var trainStateAnnouncementData = "<REQUEST>" +
         "<LOGIN authenticationkey='" + apiKey + "' />" +
-            "<QUERY objecttype='TrainAnnouncement' schemaversion='1.5' orderby='TimeAtLocation desc' limit='1'>" +
+            "<QUERY objecttype='TrainAnnouncement' schemaversion='1.5' orderby='' limit='1'>" +
                 "<FILTER>" +
+                    "<EQ name='Advertised' value='true' />" +
                     "<EQ name='AdvertisedTrainIdent' value='" + searchTrainIdent + "' />" +
                     "<EQ name='ScheduledDepartureDateTime' value='" + searchDate + "' />" +
                     "<EXISTS name='TimeAtLocation' value='true' />" +
                 "</FILTER>" +
-                "<INCLUDE>ActivityType</INCLUDE>" +
-                "<INCLUDE>AdvertisedTimeAtLocation</INCLUDE>" +
-                "<INCLUDE>AdvertisedTrainIdent</INCLUDE>" +
-                "<INCLUDE>LocationSignature</INCLUDE>" +
-                "<INCLUDE>ScheduledDepartureDateTime</INCLUDE>" +
-                "<INCLUDE>TimeAtLocation</INCLUDE>" +
             "</QUERY>" +
         "</REQUEST>";
-
-    AnotherApiCollector(trainAnnouncementData).then(res => console.log(res.RESPONSE.RESULT[0].TrainAnnouncement[0].LocationSignature + " kl. " + new Date(res.RESPONSE.RESULT[0].TrainAnnouncement[0].TimeAtLocation).toLocaleTimeString("sv-SE",localeOptions)));
+    
+    ApiCollector(trainStateAnnouncementData,renderSingleTrainState);
+    //AnotherApiCollector(trainStateAnnouncementData).then(res => console.log(res.RESPONSE.RESULT[0].TrainAnnouncement[0].LocationSignature + " kl. " + new Date(res.RESPONSE.RESULT[0].TrainAnnouncement[0].TimeAtLocation).toLocaleTimeString("sv-SE",localeOptions)));
 }
 </script>
 </body>

@@ -13,7 +13,11 @@
 
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-colors-flat.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/extra.css">
+
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
     
     <script src="js/ApiCollector.js"></script>
 </head>
@@ -26,33 +30,39 @@
     <p id="errorMsg"></p>
 </div>
 <!-- Schedule in form of a table below -->
-<div id="departureBoardDiv" class="w3-card w3-margin w3-white w3-responsive" id="schedule" style="display: none">
-    <h4 class="w3-margin">Avgångar <span id="departureLocation"></span></h4>
-    <span class="w3-margin w3-tiny w3-right" style="font-size: 6pt !important" id="departureTimestamp"></span>
-    <table class="w3-table w3-bordered w3-striped" id="departureBoard">
-        <!-- This is where schedule script will output data -->
-    </table>
+<div class="w3-row-padding w3-section w3-stretch w3-card w3-white w3-margin">
+    <div id="arrivalBoardDiv" class="w3-half w3-white w3-responsive" style="display: none;">
+        <h4 class="w3-margin"><i class="fa fa-train"></i>&nbsp;&nbsp;Ankomster <span id="arrivalLocation"></span></h4>
+        <span class="w3-margin w3-tiny w3-right" style="font-size: 6pt !important" id="arrivalTimestamp"></span>
+        <table class="w3-table w3-bordered w3-striped" id="arrivalBoard">
+            <!-- This is where schedule script will output data -->
+        </table>
+    </div>
+    <div id="departureBoardDiv" class="w3-half w3-white w3-responsive" style="display: none;">
+        <h4 class="w3-margin"><i class="fa fa-train"></i>&nbsp;&nbsp;Avgångar <span id="departureLocation"></span></h4>
+        <span class="w3-margin w3-tiny w3-right" style="font-size: 6pt !important" id="departureTimestamp"></span>
+        <table class="w3-table w3-bordered w3-striped" id="departureBoard">
+            <!-- This is where schedule script will output data -->
+        </table>
+    </div>
 </div>
-<div id="arrivalBoardDiv" class="w3-card w3-margin w3-white w3-responsive" style="display: none">
-    <h4 class="w3-margin">Ankomster <span id="arrivalLocation"></span></h4>
-    <span class="w3-margin w3-tiny w3-right" style="font-size: 6pt !important" id="arrivalTimestamp"></span>
-    <table class="w3-table w3-bordered w3-striped" id="arrivalBoard">
-        <!-- This is where schedule script will output data -->
-    </table>
+<div id="messageBoard" class="w3-row-padding w3-card w3-white w3-margin" style="display: none;">
+    <h4 class="w3-margin"><i class="fa fa-exclamation-triangle"></i>&nbsp;&nbsp;Trafikinformation</h4>
+    <div class="w3-container" id="stationMessages">
+        <!-- This is where station messages are generated-->
+    </div>
 </div>
+
 <!-- End of schedule table -->
 
 <!-- Form content -->
 <form class="w3-container w3-card w3-white w3-margin w3-padding" id="searchForm" style="display: block" onsubmit="event.preventDefault(); getStationBoards()">
-    <h4>Sök driftplats</h4>
+    <h4><i class="fa fa-list"></i>&nbsp;&nbsp;Sök driftplats</h4>
     <input id="locationSignature" type="text" class="w3-input" placeholder="Plats" autofocus><br>
     <div class="w3-center">
         <input type="submit" value="H&auml;mta uppgifter" class="w3-button w3-flat-wet-asphalt w3-margin-bottom">
     </div>
 </form>
-
-<p id="lastUpdated" class="w3-right-align w3-margin w3-tiny" style="display: none; font-size:6pt !important;">Senast uppdaterat: <span id="scheduleUpdated"></span></p>
-
 
 <script>
 // Set up API key
@@ -117,18 +127,30 @@ function getStationBoards() {
             "</QUERY>" +
         "</REQUEST>";
 
+    var stationMessagesData = "<REQUEST>" +
+            "<LOGIN authenticationkey='" + apiKey + "' />" +
+            "<QUERY objecttype='TrainMessage' schemaversion='1.4'>" +
+                "<FILTER>" +
+                    "<EQ name='AffectedLocation' value='" + searchLocationSignature + "' />" +
+                "</FILTER>" +
+            "</QUERY>" +
+        "</REQUEST>";
+
     ApiCollector(arrivalBoardData,renderArrivalBoard);
     ApiCollector(departureBoardData,renderDepartureBoard);
+    ApiCollector(stationMessagesData,renderStationMessages);
 
     myTimer = setInterval(function() {
         ApiCollector(arrivalBoardData,renderArrivalBoard);
         ApiCollector(departureBoardData,renderDepartureBoard);
+        ApiCollector(stationMessagesData,renderStationMessages);
     }, 60000);
 
-    getLocation(searchLocationSignature);
+    //getLocation(searchLocationSignature);
 
     document.getElementById("departureBoardDiv").style.display = "block";
     document.getElementById("arrivalBoardDiv").style.display = "block";
+    document.getElementById("messageBoard").style.display = "block";
 
     return true;
 }
