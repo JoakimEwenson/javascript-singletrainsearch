@@ -402,6 +402,7 @@ function renderTrainSchedule(obj) {
     
     for (var i in schedule) {
         var trackAtLocation;
+        console.log(schedule);
         if (schedule[i].arrivalTrackAtLocation) {
             trackAtLocation = schedule[i].arrivalTrackAtLocation;
         }
@@ -419,19 +420,24 @@ function renderTrainSchedule(obj) {
         output += "<td>" + trackAtLocation + "</td>";
         output += "<td>";
         output += schedule[i].advertisedArrivalTime + "<br>";
-        if (schedule[i].estimatedArrivalTime) {
-            output += "<b>Ny tid: " + schedule[i].estimatedArrivalTime + "</b>";
-        } else {
-            output += "<em>" + schedule[i].actualArrivalTime + "</em>"
-
-        }
+        if (schedule[i].estimatedArrivalTime || schedule[i].actualArrivalTime) {
+            if (schedule[i].actualArrivalTime) {
+                output += "<em>" + schedule[i].actualArrivalTime + "</em>";
+            }
+            else {
+                output += "<b>Ny tid: " + schedule[i].estimatedArrivalTime + "</b>";
+            }
+        } 
         output += "</td>";
         output += "<td>";
         output += schedule[i].advertisedDepartureTime + "<br>";
-        if (schedule[i].estimatedDepartureTime) {
-            output += "<b>Ny tid: " + schedule[i].estimatedDepartureTime + "</b>";
-        } else {
-            output += "<em>" + schedule[i].actualDepartureTime + "</em>"
+        if (schedule[i].estimatedDepartureTime || schedule[i].actualDepartureTime) {
+            if (schedule[i].actualDepartureTime) {
+                output += "<em>" + schedule[i].actualDepartureTime + "</em>";
+            } 
+            else {
+                output += "<b>Ny tid: " + schedule[i].estimatedDepartureTime + "</b>";
+            }
         }
         output += "</td>";
         output += "<td>" + schedule[i].diffArrival + "</td>";
