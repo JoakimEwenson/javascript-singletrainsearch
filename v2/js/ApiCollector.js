@@ -358,11 +358,10 @@ function createSchedule(obj) {
                     ts.actualDepartureTime = departureData[1].departureTimeAtLocation;
                     ts.diffDeparture = departureData[1].diffDeparture;
                     if (departureData[1].departureDeviation) {
-                        deviations.push(departureData[1].departureDeviation + "<br>");
+                        ts.deviations = departureData[1].departureDeviation;
+                        //deviations.push(departureData[1].departureDeviation);
                     }
-                }
-
-                ts.deviations = deviations;
+                }                
             }
             else if (scheduleBuilder[j].activityType == "Avgang" && scheduleBuilder[j].locationSignature != location) {
                 ts.advertisedDepartureTime = scheduleBuilder[j].departureAdvertisedTimeAtLocation;
@@ -437,7 +436,11 @@ function renderTrainSchedule(obj) {
         output += "</td>";
         output += "<td>" + schedule[i].diffArrival + "</td>";
         output += "<td>" + schedule[i].diffDeparture + "</td>";
-        output += "<td>" + schedule[i].deviations + "</td>";
+        output += "<td>";
+        for (var j in schedule[i].deviations) {
+         output += schedule[i].deviations[j] + "<br>";
+        }
+        output += "</td>";
         output += "</tr>";
     }
 
