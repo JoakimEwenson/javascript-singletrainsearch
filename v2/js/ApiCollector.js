@@ -38,7 +38,7 @@ class TrainScheduleRow {
         this.actualDepartureTime = "";
         this.diffArrival = "";
         this.diffDeparture = "";
-        this.deviations = "";
+        this.deviations = [];
     }
 }
 
@@ -153,7 +153,7 @@ function renderStationNameList(obj) {
 }
 
 function renderSingleTrainState(obj) {
-    if (!obj.RESPONSE.RESULT[0].TrainAnnouncement[0]) {
+    if (!obj.RESPONSE.RESULT[0].TrainAnnouncement) {
         trainDataOutput = "";
         console.log("Single train state, fail!");
     }
@@ -272,6 +272,9 @@ function createSchedule(obj) {
                 if (obj.RESPONSE.RESULT[0].TrainAnnouncement[i].TrackAtLocation) {
                     tar.arrivalTrackAtLocation = obj.RESPONSE.RESULT[0].TrainAnnouncement[i].TrackAtLocation;
                 }
+                else {
+                    tar.arrivalTrackAtLocation = "";
+                }
 
                 if (obj.RESPONSE.RESULT[0].TrainAnnouncement[i].AdvertisedTimeAtLocation) {
                     tar.arrivalAdvertisedTimeAtLocation = new Date(obj.RESPONSE.RESULT[0].TrainAnnouncement[i].AdvertisedTimeAtLocation).toLocaleTimeString("sv-SE",localeOptions);
@@ -291,7 +294,6 @@ function createSchedule(obj) {
                          deviations.push(obj.RESPONSE.RESULT[0].TrainAnnouncement[i].Deviation[j].Description);
                     }
                     tar.arrivalDeviation = deviations;
-                    console.log(tar.arrivalDeviation);
                 }
                 
                 
@@ -299,6 +301,9 @@ function createSchedule(obj) {
             else {
                 if (obj.RESPONSE.RESULT[0].TrainAnnouncement[i].TrackAtLocation) {
                     tar.departureTrackAtLocation = obj.RESPONSE.RESULT[0].TrainAnnouncement[i].TrackAtLocation;
+                }
+                else {
+                    tar.departureTrackAtLocation = "";
                 }
 
                 if (obj.RESPONSE.RESULT[0].TrainAnnouncement[i].AdvertisedTimeAtLocation) {
@@ -320,7 +325,6 @@ function createSchedule(obj) {
                          deviations.push(obj.RESPONSE.RESULT[0].TrainAnnouncement[i].Deviation[j].Description);
                     }
                     tar.departureDeviation = deviations;
-                    console.log(tar.departureDeviation);
                 }
             }
 
@@ -330,6 +334,7 @@ function createSchedule(obj) {
         var location;
         var schedule = []
         for (var j in scheduleBuilder) {
+            var deviations = [];
             ts = new TrainScheduleRow();
             ts.locationSignature = scheduleBuilder[j].locationSignature;
             ts.advertisedTrainIdent = scheduleBuilder[j].advertisedTrainIdent;
@@ -341,6 +346,9 @@ function createSchedule(obj) {
                 ts.estimatedArrivalTime = scheduleBuilder[j].arrivalEstimatedTimeAtLocation;
                 ts.actualArrivalTime = scheduleBuilder[j].arrivalTimeAtLocation;
                 ts.diffArrival = scheduleBuilder[j].diffArrival;
+                if (scheduleBuilder[j].arrivalDeviation) {
+                    //deviations.push(scheduleBuilder[j].arrivalDeviation);
+                }
 
                 if (departureData[1]) {
                     location = departureData[1].locationSignature;
@@ -349,7 +357,12 @@ function createSchedule(obj) {
                     ts.estimatedDepartureTime = departureData[1].departureEstimatedTimeAtLocation;
                     ts.actualDepartureTime = departureData[1].departureTimeAtLocation;
                     ts.diffDeparture = departureData[1].diffDeparture;
+                    if (departureData[1].departureDeviation) {
+                        deviations.push(departureData[1].departureDeviation + "<br>");
+                    }
                 }
+
+                ts.deviations = deviations;
             }
             else if (scheduleBuilder[j].activityType == "Avgang" && scheduleBuilder[j].locationSignature != location) {
                 ts.advertisedDepartureTime = scheduleBuilder[j].departureAdvertisedTimeAtLocation;
@@ -357,6 +370,7 @@ function createSchedule(obj) {
                 ts.estimatedDepartureTime = scheduleBuilder[j].departureEstimatedTimeAtLocation;
                 ts.actualDepartureTime = scheduleBuilder[j].departureTimeAtLocation;
                 ts.diffDeparture = scheduleBuilder[j].diffDeparture;
+                ts.deviations = scheduleBuilder[j].departureDeviation;
             }
             else {
                 continue;
@@ -399,13 +413,28 @@ function renderTrainSchedule(obj) {
             trackAtLocation = "Ank: " + schedule[i].arrivalTrackAtLocation + "/Avg: " + schedule[i].departureTrackAtLocation;
         }
         else {
-            
+            trackAtLocation = "";
         }
         output += "<tr>";
         output += "<td>" + schedule[i].locationSignature + "</td>";
         output += "<td>" + trackAtLocation + "</td>";
-        output += "<td>" + schedule[i].advertisedArrivalTime + "<br><em>" + schedule[i].actualArrivalTime + "</em></td>";
-        output += "<td>" + schedule[i].advertisedDepartureTime + "<br><em>" + schedule[i].actualDepartureTime + "</em></td>";
+        output += "<td>";
+        output += schedule[i].advertisedArrivalTime + "<br>";
+        if (schedule[i].estimatedArrivalTime) {
+            output += "<b>Ny tid: " + schedule[i].estimatedArrivalTime + "</b>";
+        } else {
+            output += "<em>" + schedule[i].actualArrivalTime + "</em>"
+
+        }
+        output += "</td>";
+        output += "<td>";
+        output += schedule[i].advertisedDepartureTime + "<br>";
+        if (schedule[i].estimatedDepartureTime) {
+            output += "<b>Ny tid: " + schedule[i].estimatedDepartureTime + "</b>";
+        } else {
+            output += "<em>" + schedule[i].actualDepartureTime + "</em>"
+        }
+        output += "</td>";
         output += "<td>" + schedule[i].diffArrival + "</td>";
         output += "<td>" + schedule[i].diffDeparture + "</td>";
         output += "<td>" + schedule[i].deviations + "</td>";
