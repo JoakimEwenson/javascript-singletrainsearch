@@ -30,7 +30,7 @@
     <p id="errorMsg"></p>
 </div>
 <!-- End of error content -->
-<div class="w3-card w3-margin w3-white w3-responsive" id="trainState" style="display: block;">
+<div class="w3-card w3-margin w3-white w3-responsive" id="trainState" style="display: none;">
         <h4 class="w3-margin"><i class="fa fa-train"></i>&nbsp;&nbsp;Status</h4>
         <div class="w3-container" id="stateContent">
             <!-- This is where script will output data -->
@@ -50,6 +50,7 @@
 <form class="w3-container w3-card w3-margin w3-white w3-padding" id="searchForm" style="display: block" onsubmit="event.preventDefault(); getTrainSchedule()">
     <h4>Sök enskilt tåg</h4>
     <input id="trainIdent" type="number" class="w3-input" placeholder="Tågnummer" autofocus><br>
+    <input id="searchDate" type="date" class="w3-input" placeholder="Datum (YYYY-MM-DD)"><br>
     <div class="w3-center">
         <input type="submit" value="H&auml;mta uppgifter" class="w3-button w3-flat-wet-asphalt w3-margin-bottom" id="searchTrain">
     </div>
@@ -61,14 +62,20 @@
 // Set up API key
 var apiKey = "dfc3b8374d774d5e94655bcd32d7c5c3";
 
-// Set up default values
+// Set up variables for later
 var searchTrainIdent;
-var searchDate = getToday();
+var searchDate;
 var myTimer;
 
 function getTrainSchedule() {
     clearInterval(myTimer);
     searchTrainIdent = document.getElementById("trainIdent").value;
+    if (document.getElementById("searchDate").value) {
+        searchDate = document.getElementById("searchDate").value;
+    }
+    else {
+        searchDate = getToday();
+    }
 
     // Set up SingleTrain request
     var trainAnnouncementData = "<REQUEST>" +
@@ -91,14 +98,13 @@ function getTrainSchedule() {
     }, 20000);
 
     document.getElementById("schedule").style.display = "block";
+    document.getElementById("trainState").style.display = "block";
 }
 
 function getTrainState(searchTrainIdent) {
-    //searchTrainIdent = document.getElementById("trainIdent").value;
-
     var trainStateAnnouncementData = "<REQUEST>" +
         "<LOGIN authenticationkey='" + apiKey + "' />" +
-            "<QUERY objecttype='TrainAnnouncement' schemaversion='1.5' orderby='' limit='1'>" +
+            "<QUERY objecttype='TrainAnnouncement' schemaversion='1.5' orderby='ActivityType desc' limit='1'>" +
                 "<FILTER>" +
                     "<EQ name='Advertised' value='true' />" +
                     "<EQ name='AdvertisedTrainIdent' value='" + searchTrainIdent + "' />" +
@@ -111,6 +117,9 @@ function getTrainState(searchTrainIdent) {
     ApiCollector(trainStateAnnouncementData,renderSingleTrainState);
     //AnotherApiCollector(trainStateAnnouncementData).then(res => console.log(res.RESPONSE.RESULT[0].TrainAnnouncement[0].LocationSignature + " kl. " + new Date(res.RESPONSE.RESULT[0].TrainAnnouncement[0].TimeAtLocation).toLocaleTimeString("sv-SE",localeOptions)));
 }
+
+// Set today in searchDate field
+document.getElementById("searchDate").value = getToday();
 </script>
 </body>
 </html>
