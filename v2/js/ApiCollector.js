@@ -324,7 +324,7 @@ function renderStationMessages(obj) {
     output = "";
     for (var i in obj.RESPONSE.RESULT[0].TrainMessage) {
         output += "<p><b>" + obj.RESPONSE.RESULT[0].TrainMessage[i].Header + "</b><br>";
-        output += "<em>Starttid: " + new Date(obj.RESPONSE.RESULT[0].TrainMessage[i].StartDateTime).toLocaleDateString("sv-SE") + " | Senast uppdaterat: " + new Date(obj.RESPONSE.RESULT[0].TrainMessage[i].LastUpdateDateTime).toLocaleDateString("sv-SE") + "</em></p>";
+        output += "<em>Starttid: " + new Date(obj.RESPONSE.RESULT[0].TrainMessage[i].StartDateTime).toLocaleString("sv-SE") + " | Senast uppdaterat: " + new Date(obj.RESPONSE.RESULT[0].TrainMessage[i].LastUpdateDateTime).toLocaleString("sv-SE") + "</em></p>";
         output += "<p>" + obj.RESPONSE.RESULT[0].TrainMessage[i].ExternalDescription + "</p>";
     }
 

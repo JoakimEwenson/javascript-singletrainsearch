@@ -71,7 +71,7 @@ var apiKey = "dfc3b8374d774d5e94655bcd32d7c5c3";
 // Set up default values
 var searchLocationSignature = "G";
 var searchDate = getToday();
-var searchLimit = "15";
+var searchLimit = "25";
 var myTimer;
 
 // Populate page with return
@@ -129,10 +129,15 @@ function getStationBoards() {
 
     var stationMessagesData = "<REQUEST>" +
             "<LOGIN authenticationkey='" + apiKey + "' />" +
-            "<QUERY objecttype='TrainMessage' schemaversion='1.4'>" +
+            "<QUERY objecttype='TrainMessage' schemaversion='1.4' orderby='LastUpdateDateTime desc'>" +
                 "<FILTER>" +
                     "<EQ name='AffectedLocation' value='" + searchLocationSignature + "' />" +
                 "</FILTER>" +
+                "<INCLUDE>StartDateTime</INCLUDE>" + 
+                "<INCLUDE>LastUpdateDateTime</INCLUDE>" +
+                "<INCLUDE>ExternalDescription</INCLUDE>" +
+                "<INCLUDE>Header</INCLUDE>" +
+                "<INCLUDE>ReasonCodeText</INCLUDE>" +
             "</QUERY>" +
         "</REQUEST>";
 
