@@ -33,6 +33,20 @@
 <div class="w3-card w3-margin w3-white w3-responsive" id="trainState" style="display: none;">
         <h4 class="w3-margin"><i class="fa fa-train"></i>&nbsp;&nbsp;Status</h4>
         <div class="w3-container" id="stateContent">
+            <p id="trainData">
+            </p>
+            <p>
+                <span id="currentPosition"></span>
+            </p>
+            <p>
+                <span id="nextPosition"></span>
+            </p>
+            <p>
+                <span id="trainInfo"></span>
+            </p>
+            <p>
+                <span id="trainDeviations"></span>
+            </p>
             <!-- This is where script will output data -->
         </div>
     </div>
@@ -82,6 +96,7 @@ function getTrainSchedule() {
         "<LOGIN authenticationkey='" + apiKey + "' />" +
             "<QUERY objecttype='TrainAnnouncement' schemaversion='1.5' orderby='AdvertisedTimeAtLocation asc, ActivityType asc'>" +
                 "<FILTER>" +
+                    //"<EQ name='Advertised' value='true' />" +
                     "<EQ name='AdvertisedTrainIdent' value='" + searchTrainIdent + "' />" +
                     "<EQ name='ScheduledDepartureDateTime' value='" + searchDate + "' />" +
                 "</FILTER>" +
@@ -89,19 +104,20 @@ function getTrainSchedule() {
         "</REQUEST>";
 
     // Populate page with return
-    ApiCollector(trainAnnouncementData, renderSingleTrainSchedule);
-    getTrainState(searchTrainIdent);
+    ApiCollector(trainAnnouncementData, renderTrainSchedule);
+    getTrainState(searchTrainIdent,searchDate);
+    getTrainPosition(searchTrainIdent, searchDate);
 
     myTimer = setInterval(function() {
-        ApiCollector(trainAnnouncementData, renderSingleTrainSchedule)
-        getTrainState(searchTrainIdent);
-    }, 20000);
+        ApiCollector(trainAnnouncementData, renderTrainSchedule)
+        getTrainState(searchTrainIdent,searchDate);
+        getTrainPosition(searchTrainIdent, searchDate);
+    }, 60000);
 
     document.getElementById("schedule").style.display = "block";
-    document.getElementById("trainState").style.display = "block";
 }
 
-function getTrainState(searchTrainIdent) {
+function getTrainState(searchTrainIdent,searchDate) {
     var trainStateAnnouncementData = "<REQUEST>" +
         "<LOGIN authenticationkey='" + apiKey + "' />" +
             "<QUERY objecttype='TrainAnnouncement' schemaversion='1.5' orderby='ActivityType desc' limit='1'>" +
@@ -116,6 +132,22 @@ function getTrainState(searchTrainIdent) {
     
     ApiCollector(trainStateAnnouncementData,renderSingleTrainState);
     //AnotherApiCollector(trainStateAnnouncementData).then(res => console.log(res.RESPONSE.RESULT[0].TrainAnnouncement[0].LocationSignature + " kl. " + new Date(res.RESPONSE.RESULT[0].TrainAnnouncement[0].TimeAtLocation).toLocaleTimeString("sv-SE",localeOptions)));
+}
+
+function getTrainPosition(searchTrainIdent,searchDate) {
+    var trainPositionData = "<REQUEST>" +
+        "<LOGIN authenticationkey='" + apiKey + "' />" +
+            "<QUERY objecttype='TrainAnnouncement' schemaversion='1.5' orderby='TimeAtLocation desc' limit='1'>" +
+                "<FILTER>" +
+                    "<EQ name='AdvertisedTrainIdent' value='" + searchTrainIdent + "' />" +
+                    "<EQ name='ScheduledDepartureDateTime' value='" + searchDate + "' />" +
+                    "<EXISTS name='TimeAtLocation' value='true' />" +
+                "</FILTER>" +
+            "</QUERY>" +
+        "</REQUEST>";
+
+    ApiCollector(trainPositionData,renderSingleTrainPosition);
+
 }
 
 // Set today in searchDate field
