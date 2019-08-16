@@ -81,6 +81,9 @@ function ApiCollector(data, cbFunction) {
     xhr.open("POST", "https://api.trafikinfo.trafikverket.se/v2/data.json");
     xhr.setRequestHeader("Content-Type", "text/xml");
     xhr.setRequestHeader("Cache-Control", "no-cache");
+    xhr.setRequestHeader("Access-Control-Allow-Origin", "*");
+    xhr.setRequestHeader("Access-Control-Allow-Origin", "https://www.ewenson.se");
+    xhr.setRequestHeader("Accept", "*/*");
 
     xhr.send(data);
 }
@@ -402,7 +405,6 @@ function renderTrainSchedule(obj) {
     
     for (var i in schedule) {
         var trackAtLocation;
-        console.log(schedule);
         if (schedule[i].arrivalTrackAtLocation) {
             trackAtLocation = schedule[i].arrivalTrackAtLocation;
         }
