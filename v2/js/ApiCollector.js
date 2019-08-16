@@ -42,6 +42,20 @@ class TrainScheduleRow {
     }
 }
 
+class TrainStationListRow {
+    constructor() {
+        this.locationName = "";
+        this.locationSignature = "";
+    }
+}
+
+
+// Set up a global list for station names
+var trainStationList = [];
+
+// Set up API key
+var apiKey = "dfc3b8374d774d5e94655bcd32d7c5c3";
+
 // Settings for Javascript datetime
 var localeOptions = { hour: '2-digit', minute: '2-digit' }
 
@@ -58,6 +72,28 @@ function getToday() {
     var today = now.getFullYear() + "-" + month + "-" + day;
 
     return today;
+}
+
+function getStationList() {
+    var stationListData = "<REQUEST>" +
+            "<LOGIN authenticationkey='" + apiKey + "' />" +
+            "<QUERY objecttype='TrainStation' schemaversion='1'>" +
+                "<FILTER>" +
+                "</FILTER>" +
+                "<INCLUDE>AdvertisedLocationName</INCLUDE>" + 
+                "<INCLUDE>LocationSignature</INCLUDE>" +
+            "</QUERY>" +
+        "</REQUEST>";
+
+    ApiCollector(stationListData,createStationList);
+}
+
+function findStationName(loc) {
+    var location = trainStationList.filter(l => l.locationSignature == loc);
+
+    console.log(location);
+
+    return location.locationName;
 }
 
 function getCurrentTrainState(advertisedTimeAtLocation, timeAtLocation) {
@@ -225,7 +261,7 @@ function renderSingleTrainPosition(obj) {
                 suffix = " minuter";
             }
     
-            stateOutput = ", " + Math.abs(currentState) + suffix + " sent";
+            stateOutput = " " + Math.abs(currentState) + suffix + " sent";
         }
         else if (currentState > 0) {
             if (currentState == 1) {
@@ -234,10 +270,10 @@ function renderSingleTrainPosition(obj) {
             else {
                 suffix = " minuter";
             }
-            stateOutput = ", " + currentState + suffix + " tidigt";
+            stateOutput = " " + currentState + suffix + " tidigt";
         }
         else {
-            stateOutput = "i rätt tid";
+            stateOutput = " i rätt tid";
         }
     
         if (obj.RESPONSE.RESULT[0].TrainAnnouncement[0].ActivityType == "Ankomst") {
@@ -247,10 +283,11 @@ function renderSingleTrainPosition(obj) {
             activity = "Avgick"
         }
         output = "<b>Nuvarande position:</b><br>";
-        output += activity + " " + obj.RESPONSE.RESULT[0].TrainAnnouncement[0].LocationSignature + " kl " + new Date(obj.RESPONSE.RESULT[0].TrainAnnouncement[0].TimeAtLocation).toLocaleTimeString("sv-SE",localeOptions) + " " + stateOutput;
+        output += activity + " " + obj.RESPONSE.RESULT[0].TrainAnnouncement[0].LocationSignature + " kl " + new Date(obj.RESPONSE.RESULT[0].TrainAnnouncement[0].TimeAtLocation).toLocaleTimeString("sv-SE",localeOptions) + ", " + stateOutput;
     }
 
     document.getElementById("currentPosition").innerHTML = output;
+    document.title = "Tåg " + obj.RESPONSE.RESULT[0].TrainAnnouncement[0].AdvertisedTrainIdent + " " + activity.toLowerCase() + " " + obj.RESPONSE.RESULT[0].TrainAnnouncement[0].LocationSignature + stateOutput;
 }
 
 function renderNextStop(obj) {
@@ -258,6 +295,19 @@ function renderNextStop(obj) {
     output += "<em>Ännu inte implementerat</em>";
 
     document.getElementById("nextPosition").innerHTML = output;
+}
+
+function createStationList(obj) {
+    if (obj.RESPONSE.RESULT[0].TrainStation) {
+        for (var i in obj.RESPONSE.RESULT[0].TrainStation) {
+            tslr = new TrainStationListRow();
+
+            tslr.locationName = obj.RESPONSE.RESULT[0].TrainStation[i].AdvertisedLocationName;
+            tslr.locationSignature = obj.RESPONSE.RESULT[0].TrainStation[i].LocationSignature;
+
+            trainStationList.push(tslr);
+        }
+    }
 }
 
 // Function for creating a list of schedule objects for drawing a correct schedule later
