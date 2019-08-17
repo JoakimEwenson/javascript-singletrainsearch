@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+
+<html lang="SV-se">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    <title>Sök enskilt tåg</title>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="singleTrain.js"></script>
+
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-colors-flat.css">
+    <link rel="stylesheet" href="extra.css">
+</head>
+
+<body class="w3-small w3-flat-wet-asphalt">
+<!-- Error content -->
+<div class="w3-container w3-margin-bottom w3-white w3-padding" id="error" style="display: none">
+    <h4>Felmeddelande</h4>
+    <p id="errorMsg"></p>
+</div>
+<!-- Current state content -->
+<div class="w3-container w3-margin-bottom w3-white w3-padding" id="status" style="display: none">
+    <h4>Status tåg <span id="currentStateTrainIdent"></span></h4>
+    <p id="singleTrainState">&nbsp;</p>
+</div>
+<!-- Schedule in form of a table below -->
+<div class="w3-margin-bottom w3-white w3-responsive" id="schedule" style="display: none">
+    <h4 class="w3-margin">Tidtabell tåg <span id="scheduleTrainIdent"></span></h4>
+    <table class="w3-table w3-bordered w3-striped" id="singleTrainScheduleTable">
+        <thead>
+            <tr>
+                <th>Plats</th>
+                <th>Spår</th>
+                <th>Ank.</th>
+                <th>Avg.</th>
+                <th>Diff. ank.</th>
+                <th>Diff. avg.</th>
+                <th>Anm.</th>
+            </tr>
+        </thead>
+        <tbody id="singleTrainSchedule">
+        <!-- This is where schedule script will output data -->
+        </tbody>
+    </table>
+    <p id="lastUpdated" class="w3-right-align w3-margin w3-tiny" style="display: none; font-size:6pt !important;">Senast uppdaterat: <span id="scheduleUpdated"></span></p>
+</div>
+<!-- End of schedule table -->
+
+<!-- Form content -->
+<form class="w3-container w3-white w3-padding" id="searchForm">
+    <h4>Sök enskilt tåg</h4>
+    <input id="trainIdent" type="number" class="w3-input" placeholder="Tågnummer (00000)" autofocus><br>
+    <input type="date" placeholder="Datum (YYYY-MM-DD)" class="w3-input" id="searchDate"><br>
+    <div class="w3-center">
+        <input type="submit" value="H&auml;mta uppgifter" class="w3-button w3-flat-wet-asphalt w3-margin-bottom" id="searchTrain">
+    </div>
+</form>
+
+</body>
+</html>
