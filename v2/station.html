@@ -64,15 +64,25 @@
     </div>
 </form>
 
+<div class="w3-container w3-margin w3-center">
+    <a href="train.html">Tågsökning</a>
+</div>
+
 <script>
 // Set up API key
 var apiKey = "dfc3b8374d774d5e94655bcd32d7c5c3";
 
 // Set up default values
-var searchLocationSignature = "G";
+var searchLocationSignature;
 var searchDate = getToday();
 var searchLimit = "25";
 var myTimer;
+
+if (sessionStorage.getItem("locationSignature")) {
+    searchLocationSignature = sessionStorage.getItem("locationSignature");
+    document.getElementById("locationSignature").value = searchLocationSignature;
+    getStationBoards();
+}
 
 // Populate page with return
 function getStationBoards() {
@@ -156,6 +166,9 @@ function getStationBoards() {
     document.getElementById("departureBoardDiv").style.display = "block";
     document.getElementById("arrivalBoardDiv").style.display = "block";
     document.getElementById("messageBoard").style.display = "block";
+
+    // Set session storage items
+    sessionStorage.setItem("locationSignature", searchLocationSignature);
 
     return true;
 }

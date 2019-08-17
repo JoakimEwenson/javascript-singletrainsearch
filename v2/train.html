@@ -69,6 +69,10 @@
     </div>
 </form>
 
+<div class="w3-container w3-margin w3-center">
+    <a href="station.html">Stationssökning</a>
+</div>
+
 <p id="lastUpdated" class="w3-right-align w3-margin w3-tiny" style="display: none; font-size:6pt !important;">Senast uppdaterat: <span id="scheduleUpdated"></span></p>
 
 <script>
@@ -77,8 +81,18 @@ var apiKey = "dfc3b8374d774d5e94655bcd32d7c5c3";
 
 // Set up variables for later
 var searchTrainIdent;
-var searchDate;
+var searchDate = getToday();
 var myTimer;
+
+if (sessionStorage.getItem("searchTrainIdent")) {
+    searchTrainIdent = sessionStorage.getItem("searchTrainIdent");
+    searchDate = sessionStorage.getItem("searchDate");
+    document.getElementById("trainIdent").value = searchTrainIdent;
+    document.getElementById("searchDate").value = searchDate;
+    console.log("Train ident:" + sessionStorage.getItem("searchTrainIdent"));
+    console.log("Date: " + sessionStorage.getItem("searchDate"));
+    getTrainSchedule();
+}
 
 function getTrainSchedule() {
     clearInterval(myTimer);
@@ -111,9 +125,12 @@ function getTrainSchedule() {
         ApiCollector(trainAnnouncementData, renderTrainSchedule)
         getTrainState(searchTrainIdent,searchDate);
         getTrainPosition(searchTrainIdent, searchDate);
-    }, 60000);
+    }, 30000);
 
     document.getElementById("schedule").style.display = "block";
+    // Set session storage items
+    sessionStorage.setItem("searchTrainIdent",searchTrainIdent);
+    sessionStorage.setItem("searchDate",searchDate);
 }
 
 function getTrainState(searchTrainIdent,searchDate) {
