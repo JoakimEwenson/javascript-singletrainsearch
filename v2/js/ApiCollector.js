@@ -602,7 +602,7 @@ function renderArrivalBoard(obj) {
     output += "<tr>";
     output += "<th>Tåg</th>";
     output += "<th>Från</th>";
-    output += "<th>Avg.tid</th>";
+    output += "<th>Ank.tid</th>";
     output += "<th>Spår</th>";
     output += "<th>Position</th>";
     output += "<th>Info</th>";
