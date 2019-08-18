@@ -89,7 +89,7 @@ if (sessionStorage.getItem("searchTrainIdent")) {
     searchDate = sessionStorage.getItem("searchDate");
     document.getElementById("trainIdent").value = searchTrainIdent;
     document.getElementById("searchDate").value = searchDate;
-    console.log("Train ident:" + sessionStorage.getItem("searchTrainIdent"));
+    console.log("Train ident: " + sessionStorage.getItem("searchTrainIdent"));
     console.log("Date: " + sessionStorage.getItem("searchDate"));
     getTrainSchedule();
 }
@@ -141,7 +141,7 @@ function getTrainState(searchTrainIdent,searchDate) {
                     "<EQ name='Advertised' value='true' />" +
                     "<EQ name='AdvertisedTrainIdent' value='" + searchTrainIdent + "' />" +
                     "<EQ name='ScheduledDepartureDateTime' value='" + searchDate + "' />" +
-                    "<EXISTS name='TimeAtLocation' value='true' />" +
+                    //"<EXISTS name='TimeAtLocation' value='false' />" +
                 "</FILTER>" +
             "</QUERY>" +
         "</REQUEST>";
