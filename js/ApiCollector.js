@@ -67,6 +67,16 @@ class StationBoard {
     }
 }
 
+class StationMessage {
+    constructor() {
+        this.header = "";
+        this.reasonCode = "";
+        this.startDateTime = "";
+        this.updatedDateTime = "";
+        this.description = "";
+    }
+}
+
 class TrainStationListRow {
     constructor() {
         this.locationName = "";
@@ -345,6 +355,35 @@ function createStationList(obj) {
             trainStationList.push(tslr);
         }
     }
+}
+
+function createStationMessageList(obj) {
+    // Create empty array to hold data later
+    var messages = [];
+    // Check if result is not empty
+    if (obj.RESPONSE.RESULT[0].TrainMessage) {
+        for (var i in obj.RESPONSE.RESULT[0].TrainMessage) {
+            sm = new StationMessage();
+
+            if (obj.RESPONSE.RESULT[0].TrainMessage[i].Header) {
+                sm.header = obj.RESPONSE.RESULT[0].TrainMessage[i].Header;
+            }
+            else if (obj.RESPONSE.RESULT[0].TrainMessage[i].ReasonCodeText) {
+                sm.header = obj.RESPONSE.RESULT[0].TrainMessage[i].ReasonCodeText;
+            }
+            else {
+                sm.header = "";
+            }
+            sm.reasonCode = obj.RESPONSE.RESULT[0].TrainMessage[i].ReasonCodeText;
+            sm.startDateTime = obj.RESPONSE.RESULT[0].TrainMessage[i].StartDateTime;
+            sm.updatedDateTime = obj.RESPONSE.RESULT[0].TrainMessage[i].LastUpdateDateTime;
+            sm.description = obj.RESPONSE.RESULT[0].TrainMessage[i].ExternalDescription;
+
+            messages.push(sm);
+        }
+    }
+    // Return array of messages from the function
+    return messages;
 }
 
 // Function for creating a list of schedule objects for drawing a correct schedule later
@@ -708,11 +747,12 @@ function renderDepartureBoard(obj) {
 }
 
 function renderStationMessages(obj) {
+    var message = createStationMessageList(obj);
     output = "";
-    for (var i in obj.RESPONSE.RESULT[0].TrainMessage) {
-        output += "<p><b>" + obj.RESPONSE.RESULT[0].TrainMessage[i].Header + "</b><br>";
-        output += "<em>Starttid: " + new Date(obj.RESPONSE.RESULT[0].TrainMessage[i].StartDateTime).toLocaleString("sv-SE") + " | Senast uppdaterat: " + new Date(obj.RESPONSE.RESULT[0].TrainMessage[i].LastUpdateDateTime).toLocaleString("sv-SE") + "</em></p>";
-        output += "<p>" + obj.RESPONSE.RESULT[0].TrainMessage[i].ExternalDescription + "</p>";
+    for (var i in message) {
+        output += "<p style='text-transform: capitalize'><b>" + message[i].header + "</b><br>";
+        output += "<em>Starttid: " + new Date(message[i].startDateTime).toLocaleString("sv-SE") + " | Senast uppdaterat: " + new Date(message[i].updatedDateTime).toLocaleString("sv-SE") + "</em></p>";
+        output += "<p>" + message[i].description + "</p>";
     }
 
     document.getElementById("stationMessages").innerHTML = output;
