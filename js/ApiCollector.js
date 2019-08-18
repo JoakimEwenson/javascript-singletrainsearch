@@ -73,6 +73,7 @@ class StationMessage {
         this.reasonCode = "";
         this.startDateTime = "";
         this.updatedDateTime = "";
+        this.estimatedEndDateTime = "";
         this.description = "";
     }
 }
@@ -376,7 +377,12 @@ function createStationMessageList(obj) {
             }
             sm.reasonCode = obj.RESPONSE.RESULT[0].TrainMessage[i].ReasonCodeText;
             sm.startDateTime = obj.RESPONSE.RESULT[0].TrainMessage[i].StartDateTime;
-            sm.updatedDateTime = obj.RESPONSE.RESULT[0].TrainMessage[i].LastUpdateDateTime;
+            if (obj.RESPONSE.RESULT[0].TrainMessage[i].LastUpdateDateTime) {
+                sm.updatedDateTime = obj.RESPONSE.RESULT[0].TrainMessage[i].LastUpdateDateTime;
+            }
+            if (obj.RESPONSE.RESULT[0].TrainMessage[i].PrognosticatedEndDateTimeTrafficImpact) {
+                sm.estimatedEndDateTime = obj.RESPONSE.RESULT[0].TrainMessage[i].PrognosticatedEndDateTimeTrafficImpact;
+            }
             sm.description = obj.RESPONSE.RESULT[0].TrainMessage[i].ExternalDescription;
 
             messages.push(sm);
@@ -751,7 +757,18 @@ function renderStationMessages(obj) {
     output = "";
     for (var i in message) {
         output += "<p style='text-transform: capitalize'><b>" + message[i].header + "</b><br>";
-        output += "<em>Starttid: " + new Date(message[i].startDateTime).toLocaleString("sv-SE") + " | Senast uppdaterat: " + new Date(message[i].updatedDateTime).toLocaleString("sv-SE") + "</em></p>";
+        if (message[i].startDateTime != "") {
+            output += "<em>";
+            output += "Starttid: " + new Date(message[i].startDateTime).toLocaleString("sv-SE");
+            if (message[i].updatedDateTime != "") {
+                output += " | Senast uppdaterat: " + new Date(message[i].updatedDateTime).toLocaleString("sv-SE");
+    
+            }
+            if (message[i].estimatedEndDateTime != "") {
+                output += " | Beräknat klart: " + new Date(message[i].estimatedEndDateTime).toLocaleString("sv-SE");
+            }
+            output += "</em></p>";
+        }
         output += "<p>" + message[i].description + "</p>";
     }
 
