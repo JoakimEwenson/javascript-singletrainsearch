@@ -60,6 +60,7 @@ class StationBoard {
         this.advertisedTime = "";
         this.estimatedTime = "";
         this.actualTime = "";
+        this.scheduledDate = "";
         this.trackAtLocation = "";
         this.currentPosition = "";
         this.trainInformation = [];
