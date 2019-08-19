@@ -737,7 +737,7 @@ function renderArrivalBoard(obj) {
         output += "<tr>";
         output += "<td><a href='train.html' onclick='saveData(\"train\",\"" + arrivals[i].trainIdent + "\",\"" + new Date(arrivals[i].scheduledDate).toLocaleDateString("sv-SE") + "\");'>" + arrivals[i].trainIdent + "</a></td>";
         output += "<td><a href='station.html' onclick='saveData(\"location\",\"" + arrivals[i].endPointLocation + "\");'>" + arrivals[i].endPointLocation + "</a></td>";
-        output += "<td class='w3-center'><i class='far fa-clock'></i> ";
+        output += "<td class=''><i class='far fa-clock'></i> ";
         output += new Date(arrivals[i].advertisedTime).toLocaleTimeString("sv-SE", localeOptions)
         if (arrivals[i].actualTime) {
             output += "<br><em>Ank. " + new Date(arrivals[i].actualTime).toLocaleTimeString("sv-SE", localeOptions) + "</em>";
