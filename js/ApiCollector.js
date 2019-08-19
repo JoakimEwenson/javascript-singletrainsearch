@@ -252,7 +252,7 @@ function createStationBoardRow(obj,type) {
             var infoAndDeviations = [];
             if (obj.RESPONSE.RESULT[0].TrainAnnouncement[i].Deviation) {
                 for (var j in obj.RESPONSE.RESULT[0].TrainAnnouncement[i].Deviation) {
-                    infoAndDeviations.push(obj.RESPONSE.RESULT[0].TrainAnnouncement[i].Deviation[j].Description);
+                    infoAndDeviations.push("<b><em>" + obj.RESPONSE.RESULT[0].TrainAnnouncement[i].Deviation[j].Description + "</em></b>");
                 }
             }
             if (obj.RESPONSE.RESULT[0].TrainAnnouncement[i].Booking) {
@@ -743,7 +743,7 @@ function renderArrivalBoard(obj) {
             output += "<br><em>Ank. " + new Date(arrivals[i].actualTime).toLocaleTimeString("sv-SE", localeOptions) + "</em>";
         }
         else if (arrivals[i].estimatedTime) {
-            output += "<br><em><b>" + new Date(arrivals[i].estimatedTime).toLocaleTimeString("sv-SE", localeOptions) + "</b></em>";
+            output += "<br><em><b>Ny tid: " + new Date(arrivals[i].estimatedTime).toLocaleTimeString("sv-SE", localeOptions) + "</b></em>";
         }
         output += "</td>";
         output += "<td>" + arrivals[i].trackAtLocation + "</td>";
@@ -786,7 +786,7 @@ function renderDepartureBoard(obj) {
             output += "<br><em>Avg. " + new Date(departures[i].actualTime).toLocaleTimeString("sv-SE", localeOptions) + "</em>";
         }
         else if (departures[i].estimatedTime) {
-            output += "<br><em><b>" + new Date(departures[i].estimatedTime).toLocaleTimeString("sv-SE", localeOptions) + "</b></em>";
+            output += "<br><em><b>Ny tid: " + new Date(departures[i].estimatedTime).toLocaleTimeString("sv-SE", localeOptions) + "</b></em>";
         }
         output += "</td>";
         
