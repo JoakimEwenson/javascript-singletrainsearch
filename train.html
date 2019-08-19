@@ -126,7 +126,7 @@ function getTrainSchedule() {
         ApiCollector(trainAnnouncementData, renderTrainSchedule)
         getTrainState(searchTrainIdent,searchDate);
         getTrainPosition(searchTrainIdent, searchDate);
-    }, 30000);
+    }, 60000);
 
     document.getElementById("schedule").style.display = "block";
     // Set session storage items

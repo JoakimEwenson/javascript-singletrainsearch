@@ -808,7 +808,7 @@ function renderStationMessages(obj) {
     var message = createStationMessageList(obj);
     output = "";
     for (var i in message) {
-        output += "<p style='text-transform: capitalize'><b>" + message[i].header + "</b><br>";
+        output += "<p style='text-transform: none'><b>" + message[i].header + "</b><br>";
         if (message[i].startDateTime != "") {
             output += "<em>";
             output += "<i class='far fa-clock'></i> Starttid: " + new Date(message[i].startDateTime).toLocaleString("sv-SE");
