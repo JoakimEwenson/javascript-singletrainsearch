@@ -14,6 +14,9 @@ class TrainAnnouncementRow {
         this.arrivalEstimatedTimeAtLocation = "";
         this.departureEstimatedTimeAtLocation = "";
 
+        this.arrivalTechnicalTimeAtLocation = "";
+        this.departureTechnicalTimeAtLocation ="";
+
         this.arrivalTimeAtLocation = "";
         this.departureTimeAtLocation = "";
 
@@ -399,11 +402,23 @@ function createSchedule(obj) {
                 }
                 if (obj.RESPONSE.RESULT[0].TrainAnnouncement[i].EstimatedTimeAtLocation) {
                     tar.arrivalEstimatedTimeAtLocation = new Date(obj.RESPONSE.RESULT[0].TrainAnnouncement[i].EstimatedTimeAtLocation).toLocaleTimeString("sv-SE",localeOptions);
-
+                }
+                if (obj.RESPONSE.RESULT[0].TrainAnnouncement[i].TechnicalDateTime) {
+                    tar.arrivalTechnicalTimeAtLocation = new Date(obj.RESPONSE.RESULT[0].TrainAnnouncement[i].TechnicalDateTime);
                 }
                 if (obj.RESPONSE.RESULT[0].TrainAnnouncement[i].TimeAtLocation) {
                     tar.arrivalTimeAtLocation = new Date(obj.RESPONSE.RESULT[0].TrainAnnouncement[i].TimeAtLocation).toLocaleTimeString("sv-SE",localeOptions);
-                    tar.diffArrival = getCurrentTrainState(obj.RESPONSE.RESULT[0].TrainAnnouncement[i].AdvertisedTimeAtLocation, obj.RESPONSE.RESULT[0].TrainAnnouncement[i].TimeAtLocation);
+                    if (obj.RESPONSE.RESULT[0].TrainAnnouncement[i].TechnicalDateTime) {
+                        if (getCurrentTrainState(obj.RESPONSE.RESULT[0].TrainAnnouncement[i].TechnicalDateTime, obj.RESPONSE.RESULT[0].TrainAnnouncement[i].TimeAtLocation) <= 0) {
+                            tar.diffArrival = getCurrentTrainState(obj.RESPONSE.RESULT[0].TrainAnnouncement[i].TechnicalDateTime, obj.RESPONSE.RESULT[0].TrainAnnouncement[i].TimeAtLocation);
+                        }
+                        else {
+                            tar.diffArrival = getCurrentTrainState(obj.RESPONSE.RESULT[0].TrainAnnouncement[i].AdvertisedTimeAtLocation, obj.RESPONSE.RESULT[0].TrainAnnouncement[i].TimeAtLocation);
+                        }
+                    }
+                    else {
+                        tar.diffArrival = getCurrentTrainState(obj.RESPONSE.RESULT[0].TrainAnnouncement[i].AdvertisedTimeAtLocation, obj.RESPONSE.RESULT[0].TrainAnnouncement[i].TimeAtLocation);
+                    }
                 }
                 
                 if (obj.RESPONSE.RESULT[0].TrainAnnouncement[i].Deviation) {
@@ -428,11 +443,23 @@ function createSchedule(obj) {
                 }
                 if (obj.RESPONSE.RESULT[0].TrainAnnouncement[i].EstimatedTimeAtLocation) {
                     tar.departureEstimatedTimeAtLocation = new Date(obj.RESPONSE.RESULT[0].TrainAnnouncement[i].EstimatedTimeAtLocation).toLocaleTimeString("sv-SE",localeOptions);
-
+                }
+                if (obj.RESPONSE.RESULT[0].TrainAnnouncement[i].TechnicalDateTime) {
+                    tar.departureTechnicalTimeAtLocation = new Date(obj.RESPONSE.RESULT[0].TrainAnnouncement[i].TechnicalDateTime);
                 }
                 if (obj.RESPONSE.RESULT[0].TrainAnnouncement[i].TimeAtLocation) {
                     tar.departureTimeAtLocation = new Date(obj.RESPONSE.RESULT[0].TrainAnnouncement[i].TimeAtLocation).toLocaleTimeString("sv-SE",localeOptions);
-                    tar.diffDeparture = getCurrentTrainState(obj.RESPONSE.RESULT[0].TrainAnnouncement[i].AdvertisedTimeAtLocation, obj.RESPONSE.RESULT[0].TrainAnnouncement[i].TimeAtLocation);
+                    if (obj.RESPONSE.RESULT[0].TrainAnnouncement[i].TechnicalDateTime) {
+                        if (getCurrentTrainState(obj.RESPONSE.RESULT[0].TrainAnnouncement[i].TechnicalDateTime, obj.RESPONSE.RESULT[0].TrainAnnouncement[i].TimeAtLocation) <= 0) {
+                            tar.diffDeparture = getCurrentTrainState(obj.RESPONSE.RESULT[0].TrainAnnouncement[i].TechnicalDateTime, obj.RESPONSE.RESULT[0].TrainAnnouncement[i].TimeAtLocation);
+                        }
+                        else {
+                            tar.diffDeparture = getCurrentTrainState(obj.RESPONSE.RESULT[0].TrainAnnouncement[i].AdvertisedTimeAtLocation, obj.RESPONSE.RESULT[0].TrainAnnouncement[i].TimeAtLocation);
+                        }
+                    }
+                    else {
+                        tar.diffDeparture = getCurrentTrainState(obj.RESPONSE.RESULT[0].TrainAnnouncement[i].AdvertisedTimeAtLocation, obj.RESPONSE.RESULT[0].TrainAnnouncement[i].TimeAtLocation);
+                    }
                 }
 
                 if (obj.RESPONSE.RESULT[0].TrainAnnouncement[i].Deviation) {
