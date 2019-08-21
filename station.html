@@ -20,6 +20,7 @@
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
     
     <script src="js/ApiCollector.js"></script>
+    <script>getStationList()</script>
     <script src="https://kit.fontawesome.com/1ae2629c4c.js"></script>
 </head>
 
@@ -111,6 +112,16 @@ function getStationBoards() {
                         "</OR>" +
                     "</AND>" +
                 "</FILTER>" +
+                "<INCLUDE>LocationSignature</INCLUDE>" +
+                "<INCLUDE>AdvertisedTrainIdent</INCLUDE>" + 
+                "<INCLUDE>FromLocation</INCLUDE>" + 
+                "<INCLUDE>AdvertisedTimeAtLocation</INCLUDE>" + 
+                "<INCLUDE>EstimatedTimeAtLocation</INCLUDE>" + 
+                "<INCLUDE>TimeAtLocation</INCLUDE>" + 
+                "<INCLUDE>ScheduledDepartureDateTime</INCLUDE>" + 
+                "<INCLUDE>TrackAtLocation</INCLUDE>" + 
+                "<INCLUDE>Deviation</INCLUDE>" + 
+                "<INCLUDE>Booking</INCLUDE>" + 
             "</QUERY>" +
         "</REQUEST>";
 
@@ -135,6 +146,16 @@ function getStationBoards() {
                         "</OR>" +
                     "</AND>" +
                 "</FILTER>" +
+                "<INCLUDE>LocationSignature</INCLUDE>" +
+                "<INCLUDE>AdvertisedTrainIdent</INCLUDE>" + 
+                "<INCLUDE>ToLocation</INCLUDE>" + 
+                "<INCLUDE>AdvertisedTimeAtLocation</INCLUDE>" + 
+                "<INCLUDE>EstimatedTimeAtLocation</INCLUDE>" + 
+                "<INCLUDE>TimeAtLocation</INCLUDE>" + 
+                "<INCLUDE>ScheduledDepartureDateTime</INCLUDE>" + 
+                "<INCLUDE>TrackAtLocation</INCLUDE>" + 
+                "<INCLUDE>Deviation</INCLUDE>" + 
+                "<INCLUDE>Booking</INCLUDE>" + 
             "</QUERY>" +
         "</REQUEST>";
 

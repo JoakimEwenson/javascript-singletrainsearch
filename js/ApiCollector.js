@@ -64,6 +64,7 @@ class TrainPosition {
         this.location = "";
         this.activityType = "";
         this.advertisedTime = "";
+        this.technicalTime = "";
         this.actualTime = "";
     }
 }
@@ -102,7 +103,7 @@ class TrainStationListRow {
 
 
 // Set up a global list for station names
-var trainStationList = [];
+var stationList = [];
 
 // Set up API key
 var apiKey = "dfc3b8374d774d5e94655bcd32d7c5c3";
@@ -141,22 +142,21 @@ function getStationList() {
     var stationListData = "<REQUEST>" +
             "<LOGIN authenticationkey='" + apiKey + "' />" +
             "<QUERY objecttype='TrainStation' schemaversion='1'>" +
-                "<FILTER>" +
-                "</FILTER>" +
+                "<FILTER />" +
                 "<INCLUDE>AdvertisedLocationName</INCLUDE>" + 
                 "<INCLUDE>LocationSignature</INCLUDE>" +
             "</QUERY>" +
         "</REQUEST>";
-
     ApiCollector(stationListData,createStationList);
 }
 
 function findStationName(loc) {
-    var location = trainStationList.filter(l => l.locationSignature == loc);
+    var location = stationList.filter(function(list) {
+        return list.locationSignature == "G";
+    });
 
     console.log(location);
-
-    return location.locationName;
+    return location;
 }
 
 function getCurrentTrainState(advertisedTimeAtLocation, timeAtLocation) {
@@ -178,8 +178,10 @@ function ApiCollector(data, cbFunction) {
         }
         else {
             // Add error handling
-            document.getElementById("errorMsg").innerHTML = "Fel vid hämtning av data.";
-            document.getElementById("errorBox").style.display = "block";
+            if (document.readyState === "complete") {
+                document.getElementById("errorMsg").innerHTML = "Fel vid hämtning av data.";
+                document.getElementById("errorBox").style.display = "block";
+            }
         }
     };
 
@@ -221,9 +223,10 @@ function createStationList(obj) {
             tslr.locationName = obj.RESPONSE.RESULT[0].TrainStation[i].AdvertisedLocationName;
             tslr.locationSignature = obj.RESPONSE.RESULT[0].TrainStation[i].LocationSignature;
 
-            trainStationList.push(tslr);
+            stationList.push(tslr);
         }
     }
+    //console.log(stationList);
 }
 
 function createStationBoardRow(obj,type) {
@@ -372,6 +375,9 @@ function createTrainPosition(obj) {
             tp.location = obj.RESPONSE.RESULT[0].TrainAnnouncement[0].LocationSignature;
             tp.activityType = obj.RESPONSE.RESULT[0].TrainAnnouncement[0].ActivityType;
             tp.advertisedTime = obj.RESPONSE.RESULT[0].TrainAnnouncement[0].AdvertisedTimeAtLocation;
+            if (obj.RESPONSE.RESULT[0].TrainAnnouncement[0].TechnicalDateTime) {
+                tp.technicalTime = obj.RESPONSE.RESULT[0].TrainAnnouncement[0].TechnicalDateTime;
+            }
             tp.actualTime = obj.RESPONSE.RESULT[0].TrainAnnouncement[0].TimeAtLocation;
         }
     }
@@ -599,6 +605,8 @@ function renderSingleTrainState(obj) {
             }
         
             document.getElementById("trainInfo").innerHTML = trainInfoOutput;    
+        } else {
+            document.getElementById("trainInfo").innerHTML = "";
         }
 
         if (trainState.deviations != 0) {
@@ -608,6 +616,8 @@ function renderSingleTrainState(obj) {
             }
 
             document.getElementById("trainDeviations").innerHTML = deviationOutput;
+        } else {
+            document.getElementById("trainDeviations").innerHTML = "";
         }
 
         document.getElementById("trainState").style.display = "block";
@@ -622,7 +632,12 @@ function renderSingleTrainPosition(obj) {
         //console.log("Render single train position, fail!");
     }
     else {
-        currentState = getCurrentTrainState(trainPosition.advertisedTime, trainPosition.actualTime);
+        if (trainPosition.technicalTime != "") {
+            currentState = getCurrentTrainState(trainPosition.technicalTime, trainPosition.actualTime);
+        }
+        else {
+            currentState = getCurrentTrainState(trainPosition.advertisedTime, trainPosition.actualTime);
+        }
 
         if (currentState < 0) {
             if (currentState == -1) {

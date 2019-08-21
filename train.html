@@ -110,10 +110,19 @@ function getTrainSchedule() {
         "<LOGIN authenticationkey='" + apiKey + "' />" +
             "<QUERY objecttype='TrainAnnouncement' schemaversion='1.5' orderby='AdvertisedTimeAtLocation asc, ActivityType asc'>" +
                 "<FILTER>" +
-                    "<EQ name='Advertised' value='true' />" +
+                    //"<EQ name='Advertised' value='true' />" +
                     "<EQ name='AdvertisedTrainIdent' value='" + searchTrainIdent + "' />" +
                     "<EQ name='ScheduledDepartureDateTime' value='" + searchDate + "' />" +
                 "</FILTER>" +
+                "<INCLUDE>LocationSignature</INCLUDE>" + 
+                "<INCLUDE>ActivityType</INCLUDE>" + 
+                "<INCLUDE>AdvertisedTrainIdent</INCLUDE>" + 
+                "<INCLUDE>TrackAtLocation</INCLUDE>" + 
+                "<INCLUDE>AdvertisedTimeAtLocation</INCLUDE>" + 
+                "<INCLUDE>EstimatedTimeAtLocation</INCLUDE>" + 
+                "<INCLUDE>TechnicalDateTime</INCLUDE>" + 
+                "<INCLUDE>TimeAtLocation</INCLUDE>" + 
+                "<INCLUDE>Deviation</INCLUDE>" + 
             "</QUERY>" +
         "</REQUEST>";
 
@@ -144,6 +153,18 @@ function getTrainState(searchTrainIdent,searchDate) {
                     "<EQ name='ScheduledDepartureDateTime' value='" + searchDate + "' />" +
                     //"<EXISTS name='TimeAtLocation' value='false' />" +
                 "</FILTER>" +
+                "<INCLUDE>AdvertisedTrainIdent</INCLUDE>" + 
+                "<INCLUDE>TechnicalTrainIdent</INCLUDE>" + 
+                "<INCLUDE>ProductInformation</INCLUDE>" + 
+                "<INCLUDE>Operator</INCLUDE>" + 
+                "<INCLUDE>FromLocation</INCLUDE>" + 
+                "<INCLUDE>ToLocation</INCLUDE>" + 
+                "<INCLUDE>ScheduledDepartureDateTime</INCLUDE>" + 
+                "<INCLUDE>Booking</INCLUDE>" + 
+                "<INCLUDE>OtherInformation</INCLUDE>" + 
+                "<INCLUDE>Service</INCLUDE>" + 
+                "<INCLUDE>TrainComposition</INCLUDE>" + 
+                "<INCLUDE>Deviation</INCLUDE>" + 
             "</QUERY>" +
         "</REQUEST>";
     
@@ -160,6 +181,12 @@ function getTrainPosition(searchTrainIdent,searchDate) {
                     "<EQ name='ScheduledDepartureDateTime' value='" + searchDate + "' />" +
                     "<EXISTS name='TimeAtLocation' value='true' />" +
                 "</FILTER>" +
+                "<INCLUDE>AdvertisedTrainIdent</INCLUDE>" + 
+                "<INCLUDE>LocationSignature</INCLUDE>" + 
+                "<INCLUDE>ActivityType</INCLUDE>" + 
+                "<INCLUDE>AdvertisedTimeAtLocation</INCLUDE>" + 
+                "<INCLUDE>TechnicalDateTime</INCLUDE>" + 
+                "<INCLUDE>TimeAtLocation</INCLUDE>" + 
             "</QUERY>" +
         "</REQUEST>";
 
