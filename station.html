@@ -27,28 +27,28 @@
 <body class="w3-small w3-flat-wet-asphalt">
 
 <!-- Error content -->
-<div class="w3-container w3-margin w3-white w3-padding" id="errorBox" style="display: none">
+<div class="w3-container w3-margin-bottom w3-white w3-padding" id="errorBox" style="display: none; max-width: 1000px; margin-left: auto; margin-right: auto;">
     <h4>INFO</h4>
     <p id="errorMsg"></p>
 </div>
 <!-- Schedule in form of a table below -->
-<div class="w3-row-padding w3-section w3-stretch w3-card w3-white w3-margin">
+<div class="w3-row-padding w3-section w3-stretch w3-card w3-white" style="max-width: 1000px; margin-left: auto; margin-right: auto;">
     <div id="arrivalBoardDiv" class="w3-half w3-white w3-responsive" style="display: none;">
         <h4 class="w3-margin"><i class="fa fa-train"></i>&nbsp;&nbsp;Ankomster <span id="arrivalLocation"></span></h4>
         <span class="w3-margin w3-tiny w3-right" style="font-size: 6pt !important" id="arrivalTimestamp"></span>
-        <table class="w3-table w3-bordered w3-striped" id="arrivalBoard">
+        <div id="arrivalBoard">
             <!-- This is where schedule script will output data -->
-        </table>
+        </div>
     </div>
     <div id="departureBoardDiv" class="w3-half w3-white w3-responsive" style="display: none;">
         <h4 class="w3-margin"><i class="fa fa-train"></i>&nbsp;&nbsp;Avgångar <span id="departureLocation"></span></h4>
         <span class="w3-margin w3-tiny w3-right" style="font-size: 6pt !important" id="departureTimestamp"></span>
-        <table class="w3-table w3-bordered w3-striped" id="departureBoard">
+        <div id="departureBoard">
             <!-- This is where schedule script will output data -->
-        </table>
+        </div>
     </div>
 </div>
-<div id="messageBoard" class="w3-row-padding w3-card w3-white w3-margin" style="display: none;">
+<div id="messageBoard" class="w3-row-padding w3-card w3-white w3-margin-top" style="display: none; max-width: 1000px; margin-left: auto; margin-right: auto;">
     <h4 class="w3-margin"><i class="fa fa-exclamation-triangle"></i>&nbsp;&nbsp;Trafikinformation</h4>
     <div class="w3-container" id="stationMessages">
         <!-- This is where station messages are generated-->
@@ -58,7 +58,7 @@
 <!-- End of schedule table -->
 
 <!-- Form content -->
-<form class="w3-container w3-card w3-white w3-margin w3-padding" id="searchForm" style="display: block" onsubmit="event.preventDefault(); getStationBoards()">
+<form class="w3-container w3-card w3-white w3-margin-top w3-padding" id="searchForm" style="display: block; max-width: 1000px; margin-left: auto; margin-right: auto;" onsubmit="event.preventDefault(); getStationBoards()">
     <h4><i class="fa fa-list"></i>&nbsp;&nbsp;Sök driftplats</h4>
     <input id="locationSignature" type="text" class="w3-input" placeholder="Plats" autofocus><br>
     <div class="w3-center">

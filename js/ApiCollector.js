@@ -689,6 +689,7 @@ function renderTrainSchedule(obj) {
     var schedule = createSchedule(obj);
 
     output = "";
+    output += "<table class='w3-table w3-bordered w3-striped'>";
     output += "<thead>";
     output += "<tr>";
     output += "<th>Plats</th>";
@@ -704,14 +705,14 @@ function renderTrainSchedule(obj) {
     
     for (var i in schedule) {
         var trackAtLocation;
-        if (schedule[i].arrivalTrackAtLocation) {
+        if (schedule[i].arrivalTrackAtLocation != "" && schedule[i].arrivalTrackAtLocation != "x") {
             trackAtLocation = schedule[i].arrivalTrackAtLocation;
         }
-        else if (schedule[i].departureTrackAtLocation) {
+        else if (schedule[i].departureTrackAtLocation != "" && schedule[i].departureTrackAtLocation != "x") {
             trackAtLocation = schedule[i].departureTrackAtLocation;
         }
-        else if (schedule[i].arrivalTrackAtLocation && schedule[i].departureTrackAtLocation) {
-            trackAtLocation = "Ank: " + schedule[i].arrivalTrackAtLocation + "/Avg: " + schedule[i].departureTrackAtLocation;
+        else if (schedule[i].arrivalTrackAtLocation != schedule[i].departureTrackAtLocation && schedule[i].arrivalTrackAtLocation != "" && schedule[i].departureTrackAtLocation != "") {
+            trackAtLocation = "Ank: " + schedule[i].arrivalTrackAtLocation + "<br>Avg: " + schedule[i].departureTrackAtLocation;
         }
         else {
             trackAtLocation = "";
@@ -750,10 +751,11 @@ function renderTrainSchedule(obj) {
         output += "</td>";
         output += "</tr>";
     }
+    output += "</table>";
+    output += "<p class='w3-tiny w3-right w3-margin' style='font-size: 6pt !important'><em>Senast uppdaterat: " + new Date().toLocaleTimeString("sv-SE"); + "</em></p>";
 
     document.getElementById("trainSchedule").innerHTML = output;
     document.getElementById("trainIdentResult").textContent = obj.RESPONSE.RESULT[0].TrainAnnouncement[0].AdvertisedTrainIdent;
-    document.getElementById("scheduleTimestamp").textContent = "Senast uppdaterat: " + new Date().toLocaleTimeString("sv-SE");
 }
 
 function renderCurrentState() {
@@ -765,6 +767,7 @@ function renderArrivalBoard(obj) {
     var arrivals = createStationBoardRow(obj,"arr");
 
     output = "";
+    output += "<table class='w3-table w3-bordered w3-striped'>";
     output += "<thead>";
     output += "<tr class='w3-center'>";
     output += "<th>Tåg</th>";
@@ -797,9 +800,10 @@ function renderArrivalBoard(obj) {
         output += "</tr>";
     }
     output += "</tbody>";
+    output += "</table>";
+    output += "<p class='w3-tiny w3-right w3-margin' style='font-size: 6pt !important'><em>Senast uppdaterat: " + new Date().toLocaleTimeString("sv-SE"); + "</em></p>";
 
     document.getElementById("arrivalBoard").innerHTML = output;
-    document.getElementById("arrivalTimestamp").textContent = "Senast uppdaterat: " + new Date().toLocaleTimeString("sv-SE");
     document.title = "Stationsvy " + obj.RESPONSE.RESULT[0].TrainAnnouncement[i].LocationSignature;
 
 }
@@ -808,6 +812,7 @@ function renderDepartureBoard(obj) {
     var departures = createStationBoardRow(obj,"dep");
 
     output = "";
+    output += "<table class='w3-table w3-bordered w3-striped'>";
     output += "<thead>";
     output += "<tr class='w3-center'>"
     output += "<th>Tåg</th>";
@@ -841,9 +846,11 @@ function renderDepartureBoard(obj) {
         output += "</tr>";
     }
     output += "</tbody>";
+    output += "</table>";
+    output += "<p class='w3-tiny w3-right w3-margin' style='font-size: 6pt !important'><em>Senast uppdaterat: " + new Date().toLocaleTimeString("sv-SE"); + "</em></p>";
 
     document.getElementById("departureBoard").innerHTML = output;
-    document.getElementById("departureTimestamp").textContent = "Senast uppdaterat: " + new Date().toLocaleTimeString("sv-SE");
+    document.getElementById("departureTimestamp").textContent = "";
 }
 
 function renderStationMessages(obj) {

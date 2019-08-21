@@ -11,9 +11,9 @@
 
     <title>Tågläge</title>
 
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-colors-flat.css">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/w3.css">
+    <link rel="stylesheet" href="css/w3-colors-flat.css">
+	<link rel="stylesheet" href="css/font-awesome.min.css">
     <link rel="stylesheet" href="css/extra.css">
 
     <link rel="icon" href="favicon.ico" type="image/x-icon">
@@ -25,12 +25,12 @@
 
 <body class="w3-small w3-flat-wet-asphalt">
 <!-- Error content -->
-<div class="w3-container w3-margin-bottom w3-white w3-padding" id="errorBox" style="display: none">
+<div class="w3-container w3-margin-bottom w3-white w3-padding" id="errorBox" style="display: none; max-width: 1000px; margin-left: auto; margin-right: auto;">
     <h4>INFO</h4>
     <p id="errorMsg"></p>
 </div>
 <!-- End of error content -->
-<div class="w3-card w3-margin w3-white w3-responsive" id="trainState" style="display: none;">
+<div class="w3-card w3-margin-top w3-white w3-responsive" id="trainState" style="display: none; max-width: 1000px; margin-left: auto; margin-right: auto;">
         <h4 class="w3-margin"><i class="fa fa-train"></i>&nbsp;&nbsp;Status</h4>
         <div class="w3-container" id="stateContent">
             <p id="trainData">
@@ -51,17 +51,17 @@
         </div>
     </div>
 <!-- Schedule in form of a table below -->
-<div class="w3-card w3-margin w3-white w3-responsive" id="schedule" style="display: none">
+<div class="w3-card w3-margin-top w3-white w3-responsive" id="schedule" style="display: none; max-width: 1000px; margin-left: auto; margin-right: auto;">
     <h4 class="w3-margin"><i class="fa fa-list"></i>&nbsp;&nbsp;Tidtabell <span id="trainIdentResult"></span></h4>
     <span class="w3-margin-right w3-tiny w3-right" style="font-size: 6pt !important" id="scheduleTimestamp"></span>
-    <table class="w3-table w3-bordered w3-striped" id="trainSchedule">
+    <div id="trainSchedule">
         <!-- This is where schedule script will output data -->
-    </table>
+    </div>
 </div>
 <!-- End of schedule table -->
 
 <!-- Form content -->
-<form class="w3-container w3-card w3-margin w3-white w3-padding" id="searchForm" style="display: block" onsubmit="event.preventDefault(); getTrainSchedule()">
+<form class="w3-container w3-card w3-margin-top w3-white w3-padding" id="searchForm" style="display: block; max-width: 1000px; margin-left: auto; margin-right: auto;" onsubmit="event.preventDefault(); getTrainSchedule()">
     <h4>Sök enskilt tåg</h4>
     <input id="trainIdent" type="number" class="w3-input" placeholder="Tågnummer" autofocus><br>
     <input id="searchDate" type="date" class="w3-input" placeholder="Datum (YYYY-MM-DD)"><br>
@@ -110,7 +110,7 @@ function getTrainSchedule() {
         "<LOGIN authenticationkey='" + apiKey + "' />" +
             "<QUERY objecttype='TrainAnnouncement' schemaversion='1.5' orderby='AdvertisedTimeAtLocation asc, ActivityType asc'>" +
                 "<FILTER>" +
-                    //"<EQ name='Advertised' value='true' />" +
+                    "<EQ name='Advertised' value='true' />" +
                     "<EQ name='AdvertisedTrainIdent' value='" + searchTrainIdent + "' />" +
                     "<EQ name='ScheduledDepartureDateTime' value='" + searchDate + "' />" +
                 "</FILTER>" +
@@ -135,7 +135,7 @@ function getTrainSchedule() {
         ApiCollector(trainAnnouncementData, renderTrainSchedule)
         getTrainState(searchTrainIdent,searchDate);
         getTrainPosition(searchTrainIdent, searchDate);
-    }, 60000);
+    }, 30000);
 
     document.getElementById("schedule").style.display = "block";
     // Set session storage items
