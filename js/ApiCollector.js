@@ -191,11 +191,13 @@ function ApiCollector(data, cbFunction) {
             document.getElementById("errorBox").style.display = "none";
         }
         else {
-            // Add error handling
+            // Add proper error handling
+            /*
             if (document.readyState === "complete") {
                 document.getElementById("errorMsg").innerHTML = "Fel vid hämtning av data.";
                 document.getElementById("errorBox").style.display = "block";
             }
+            */
         }
     };
 
@@ -652,7 +654,7 @@ function renderSingleTrainState(obj) {
         } else {
             document.getElementById("trainDeviations").innerHTML = "";
         }
-
+        document.getElementById("trainIdentHeader").innerHTML = trainState.operator + " " + trainState.trainIdent;
         document.getElementById("trainState").style.display = "block";
     }
 }
@@ -815,11 +817,6 @@ function renderTrainSchedule(obj) {
 
     document.getElementById("trainSchedule").innerHTML = output;
     document.getElementById("trainIdentResult").textContent = obj.RESPONSE.RESULT[0].TrainAnnouncement[0].AdvertisedTrainIdent;
-}
-
-function renderCurrentState() {
-    var currentLocation = obj.RESPONSE.RESULT[0].TrainAnnouncement[0].AdvertisedTrainIdent + " " + obj.RESPONSE.RESULT[0].TrainAnnouncement[0].LocationSignature + " " + getCurrentTrainState(obj.RESPONSE.RESULT[0].TrainAnnouncement[i].AdvertisedTimeAtLocation, obj.RESPONSE.RESULT[0].TrainAnnouncement[0].TimeAtLocation);
-    document.title = "Status " + currentLocation;
 }
 
 function renderArrivalBoard(obj) {
