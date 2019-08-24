@@ -706,6 +706,7 @@ function renderSingleTrainPosition(obj) {
         else {
             activity = "Avgick"
         }
+
         output = "<b>Nuvarande position:</b><br>";
         output += activity + " " + findStationName(trainPosition.location) + " kl " + new Date(trainPosition.actualTime).toLocaleTimeString("sv-SE",localeOptions) + ", " + stateOutput;
         
@@ -716,19 +717,29 @@ function renderSingleTrainPosition(obj) {
     
 }
 
+// TODO: Add check against estimated time for correct calculations
 function renderNextStation(obj) {
     var ns = createNextStopInformation(obj);
     var timeUntilEvent = getCurrentTrainState(ns.advertisedTime, new Date())
-    console.log(timeUntilEvent + " min");
-    output = "<b>Nästa uppehåll:</b><br>";
-    if (ns.activity == "Avgang") {
-        output += "Tåg " + ns.trainIdent + " avgår " + findStationName(ns.locationSignature) + " kl. " + new Date(ns.advertisedTime).toLocaleTimeString("sv-SE",localeOptions);
+
+    if (timeUntilEvent < 0) {
+        timeUntilEvent = 0;
+    }
+
+    if (timeUntilEvent == 1) {
+        suffix = " minut";
     }
     else {
-        output += "Tåg " + ns.trainIdent + " ankommer " + findStationName(ns.locationSignature) + " kl. " + new Date(ns.advertisedTime).toLocaleTimeString("sv-SE", localeOptions);
+        suffix = " minuter";
     }
-    // Tåg XXX ankommer Y om Z minuter
-    // Tåg XXX avgår Y om Z minuter
+
+    output = "<b>Nästa uppehåll:</b><br>";
+    if (ns.activity == "Avgang") {
+        output += "Tåg " + ns.trainIdent + " beräknas avgå " + findStationName(ns.locationSignature) + " om " + timeUntilEvent + " " + suffix + ", kl. " + new Date(ns.advertisedTime).toLocaleTimeString("sv-SE",localeOptions);
+    }
+    else {
+        output += "Tåg " + ns.trainIdent + " beräknas ankomma " + findStationName(ns.locationSignature) + " om " + timeUntilEvent + " " + suffix + ", kl. " + new Date(ns.advertisedTime).toLocaleTimeString("sv-SE", localeOptions);
+    }
 
     document.getElementById("nextPosition").innerHTML = output;
 }
