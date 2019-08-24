@@ -637,7 +637,12 @@ function renderSingleTrainPosition(obj) {
     }
     else {
         if (trainPosition.technicalTime != "") {
-            currentState = getCurrentTrainState(trainPosition.technicalTime, trainPosition.actualTime);
+            if (getCurrentTrainState(trainPosition.technicalTime, trainPosition.actualTime) <= 0) {
+                currentState = getCurrentTrainState(trainPosition.technicalTime, trainPosition.actualTime);
+            }
+            else {
+                currentState = getCurrentTrainState(trainPosition.advertisedTime, trainPosition.actualTime);
+            }
         }
         else {
             currentState = getCurrentTrainState(trainPosition.advertisedTime, trainPosition.actualTime);
@@ -685,6 +690,8 @@ function renderSingleTrainPosition(obj) {
 function renderNextStop(obj) {
     output = "<b>Nästa uppehåll:</b><br>";
     output += "<em>Ännu inte implementerat</em>";
+    // Tåg XXX ankommer Y om Z minuter
+    // Tåg XXX avgår Y om Z minuter
 
     document.getElementById("nextPosition").innerHTML = output;
 }
