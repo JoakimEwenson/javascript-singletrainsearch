@@ -675,7 +675,7 @@ function renderSingleTrainPosition(obj) {
         output = "<b>Nuvarande position:</b><br>";
         output += activity + " " + findStationName(trainPosition.location) + " kl " + new Date(trainPosition.actualTime).toLocaleTimeString("sv-SE",localeOptions) + ", " + stateOutput;
         
-        document.title = "Tåg " + trainPosition.trainIdent + " " + activity.toLowerCase() + " " + trainPosition.location + stateOutput;
+        document.title = "Tåg " + trainPosition.trainIdent + " " + activity.toLowerCase() + " " + findStationName(trainPosition.location) + stateOutput;
     }
 
     document.getElementById("currentPosition").innerHTML = output;
@@ -879,5 +879,10 @@ function renderStationMessages(obj) {
         output += "<p>" + message[i].description + "</p>";
     }
 
-    document.getElementById("stationMessages").innerHTML = output;
+    if (message[0].header != null) {
+        document.getElementById("stationMessages").innerHTML = output;
+        document.getElementById("messageBoard").style.display = "block";
+    } else {
+        document.getElementById("messageBoard").style.display = "none";
+    }
 }
