@@ -71,6 +71,7 @@ class TrainPosition {
 
 class StationBoardRow {
     constructor() {
+        this.locationSignature = "";
         this.trainIdent = "";
         this.endPointLocation = "";
         this.advertisedTime = "";
@@ -238,6 +239,7 @@ function createStationBoardRow(obj,type) {
     if (obj.RESPONSE.RESULT[0].TrainAnnouncement) {
         for (var i in obj.RESPONSE.RESULT[0].TrainAnnouncement) {
             sbr = new StationBoardRow();
+            sbr.locationSignature = obj.RESPONSE.RESULT[0].TrainAnnouncement[i].LocationSignature;
             sbr.trainIdent = obj.RESPONSE.RESULT[0].TrainAnnouncement[i].AdvertisedTrainIdent;
             if (type == "dep") {
                 sbr.endPointLocation = obj.RESPONSE.RESULT[0].TrainAnnouncement[i].ToLocation[0].LocationName;
@@ -313,7 +315,7 @@ function createStationMessageList(obj) {
 function createTrainState(obj) {
     ts = new TrainState();
     if (obj.RESPONSE.RESULT[0].TrainAnnouncement) {
-        if (obj.RESPONSE.RESULT[0].TrainAnnouncement[0].AdvertisedTrainIdent) {
+        if (obj.RESPONSE.RESULT[0].TrainAnnouncement[0].AdvertisedTrainIdent != null) {
             ts.trainIdent = obj.RESPONSE.RESULT[0].TrainAnnouncement[0].AdvertisedTrainIdent;
         }
         if (obj.RESPONSE.RESULT[0].TrainAnnouncement[0].TechnicalTrainIdent) {
@@ -805,8 +807,9 @@ function renderArrivalBoard(obj) {
     output += "</table>";
     output += "<p class='w3-tiny w3-right w3-margin' style='font-size: 6pt !important'><em>Senast uppdaterat: " + new Date().toLocaleTimeString("sv-SE"); + "</em></p>";
 
+    document.getElementById("arrivalLocation").innerHTML = findStationName(arrivals[0].locationSignature);
     document.getElementById("arrivalBoard").innerHTML = output;
-    document.title = "Stationsvy " + obj.RESPONSE.RESULT[0].TrainAnnouncement[i].LocationSignature;
+    document.title = "Stationsvy " + findStationName(arrivals[0].locationSignature);
 
 }
 
@@ -851,6 +854,7 @@ function renderDepartureBoard(obj) {
     output += "</table>";
     output += "<p class='w3-tiny w3-right w3-margin' style='font-size: 6pt !important'><em>Senast uppdaterat: " + new Date().toLocaleTimeString("sv-SE"); + "</em></p>";
 
+    document.getElementById("departureLocation").innerHTML = findStationName(departures[0].locationSignature);
     document.getElementById("departureBoard").innerHTML = output;
     document.getElementById("departureTimestamp").textContent = "";
 }
