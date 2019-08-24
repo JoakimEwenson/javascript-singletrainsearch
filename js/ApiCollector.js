@@ -151,11 +151,13 @@ function getStationList() {
 }
 
 function findStationName(loc) {
-    var location = stationList.filter(function(list) {
-        return list.locationSignature == "G";
-    });
+    var location = loc;
+    for (var i = 0; i < trainStationList.RESPONSE.RESULT[0].TrainStation.length; i++) {
+        if (trainStationList.RESPONSE.RESULT[0].TrainStation[i].LocationSignature == loc) {
+            location = trainStationList.RESPONSE.RESULT[0].TrainStation[i].AdvertisedLocationName;
+        }
+    }
 
-    console.log(location);
     return location;
 }
 
@@ -593,7 +595,7 @@ function renderSingleTrainState(obj) {
             trainDataOutput += " <em>(tekniskt tågnummer: " + trainState.technicalTrainIdent + ")</em>";
         }
         trainDataOutput += "<br>";
-        trainDataOutput += "<b>Sträcka:</b> " + trainState.fromLocation + " - " + trainState.toLocation + "<br>";
+        trainDataOutput += "<b>Sträcka:</b> " + findStationName(trainState.fromLocation) + " - " + findStationName(trainState.toLocation) + "<br>";
         trainDataOutput += "<b>Datum:</b> " + new Date(trainState.scheduledDate).toLocaleDateString("sv-SE");
     
         document.getElementById("trainData").innerHTML = trainDataOutput;
@@ -669,7 +671,7 @@ function renderSingleTrainPosition(obj) {
             activity = "Avgick"
         }
         output = "<b>Nuvarande position:</b><br>";
-        output += activity + " " + trainPosition.location + " kl " + new Date(trainPosition.actualTime).toLocaleTimeString("sv-SE",localeOptions) + ", " + stateOutput;
+        output += activity + " " + findStationName(trainPosition.location) + " kl " + new Date(trainPosition.actualTime).toLocaleTimeString("sv-SE",localeOptions) + ", " + stateOutput;
         
         document.title = "Tåg " + trainPosition.trainIdent + " " + activity.toLowerCase() + " " + trainPosition.location + stateOutput;
     }
@@ -718,7 +720,7 @@ function renderTrainSchedule(obj) {
             trackAtLocation = "";
         }
         output += "<tr>";
-        output += "<td><a href='station.html' onclick='saveData(\"location\",\"" + schedule[i].locationSignature + "\");'>" + schedule[i].locationSignature + "</a></td>";
+        output += "<td><a href='station.html' onclick='saveData(\"location\",\"" + schedule[i].locationSignature + "\");'>" + findStationName(schedule[i].locationSignature) + "</a></td>";
         output += "<td>" + trackAtLocation + "</td>";
         output += "<td>";
         output += schedule[i].advertisedArrivalTime + "<br>";
@@ -781,7 +783,7 @@ function renderArrivalBoard(obj) {
     for (var i in arrivals) {
         output += "<tr>";
         output += "<td><a href='train.html' onclick='saveData(\"train\",\"" + arrivals[i].trainIdent + "\",\"" + new Date(arrivals[i].scheduledDate).toLocaleDateString("sv-SE") + "\");'>" + arrivals[i].trainIdent + "</a></td>";
-        output += "<td><a href='station.html' onclick='saveData(\"location\",\"" + arrivals[i].endPointLocation + "\");'>" + arrivals[i].endPointLocation + "</a></td>";
+        output += "<td><a href='station.html' onclick='saveData(\"location\",\"" + arrivals[i].endPointLocation + "\");'>" + findStationName(arrivals[i].endPointLocation) + "</a></td>";
         output += "<td class=''><i class='far fa-clock'></i> ";
         output += new Date(arrivals[i].advertisedTime).toLocaleTimeString("sv-SE", localeOptions)
         if (arrivals[i].actualTime) {
@@ -826,7 +828,7 @@ function renderDepartureBoard(obj) {
     for (var i in departures) {
         output += "<tr>";
         output += "<td><a href='train.html' onclick='saveData(\"train\",\"" + departures[i].trainIdent + "\",\"" + new Date(departures[i].scheduledDate).toLocaleDateString("sv-SE") + "\");'>" + departures[i].trainIdent + "</a></td>";
-        output += "<td><a href='station.html' onclick='saveData(\"location\",\"" + departures[i].endPointLocation + "\");'>" + departures[i].endPointLocation + "</a></td>";
+        output += "<td><a href='station.html' onclick='saveData(\"location\",\"" + departures[i].endPointLocation + "\");'>" + findStationName(departures[i].endPointLocation) + "</a></td>";
         output += "<td><i class='far fa-clock'></i> ";
         output += new Date(departures[i].advertisedTime).toLocaleTimeString("sv-SE", localeOptions);
         if (departures[i].actualTime) {
