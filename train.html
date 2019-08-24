@@ -129,11 +129,13 @@ function getTrainSchedule() {
     ApiCollector(trainAnnouncementData, renderTrainSchedule);
     getTrainState(searchTrainIdent,searchDate);
     getTrainPosition(searchTrainIdent, searchDate);
+    getNextStation(searchTrainIdent, searchDate);
 
     myTimer = setInterval(function() {
         ApiCollector(trainAnnouncementData, renderTrainSchedule)
         getTrainState(searchTrainIdent,searchDate);
         getTrainPosition(searchTrainIdent, searchDate);
+        getNextStation(searchTrainIdent, searchDate);
     }, 30000);
 
     document.getElementById("schedule").style.display = "block";
@@ -189,7 +191,30 @@ function getTrainPosition(searchTrainIdent,searchDate) {
         "</REQUEST>";
 
     ApiCollector(trainPositionData,renderSingleTrainPosition);
+}
 
+// TODO: Add check for non marked events with later events available
+function getNextStation(searchTrainIdent, searchDate) {
+    var nextStationData = "<REQUEST>" +
+            "<LOGIN authenticationkey='" + apiKey + "' />" +
+            "<QUERY objecttype='TrainAnnouncement' schemaversion='1.5' orderby='AdvertisedTimeAtLocation asc, ActivityType asc' limit='1'>" +
+                    "<FILTER>" +
+                        "<EQ name='AdvertisedTrainIdent' value='" + searchTrainIdent + "' />" +
+                        "<EQ name='ScheduledDepartureDateTime' value='" + searchDate + "' />" +
+                        "<EXISTS name='TimeAtLocation' value='false' />" +
+                        "<EXISTS name='TrackAtLocation' value='true' />" +
+                    "</FILTER>" +
+                    "<INCLUDE>ActivityType</INCLUDE>" +
+                    "<INCLUDE>AdvertisedTimeAtLocation</INCLUDE>" +
+                    "<INCLUDE>AdvertisedTrainIdent</INCLUDE>" +
+                    "<INCLUDE>EstimatedTimeAtLocation</INCLUDE>" +
+                    "<INCLUDE>LocationSignature</INCLUDE>" + 
+                    "<INCLUDE>TechnicalDateTime</INCLUDE>" +
+                    "<INCLUDE>TimeAtLocation</INCLUDE>" +
+            "</QUERY>" +
+        "</REQUEST>";
+
+        ApiCollector(nextStationData, renderNextStation);
 }
 
 // Set today in searchDate field

@@ -58,6 +58,17 @@ class TrainState {
     }
 }
 
+class NextStop {
+    constructor() {
+        this.activity = "";
+        this.advertisedTime = "";
+        this.estimatedTime = "";
+        this.locationSignature = "";
+        this.technicalTime = "";
+        this.trainIdent = "";
+    }
+}
+
 class TrainPosition {
     constructor() {
         this.trainIdent = "";
@@ -388,6 +399,24 @@ function createTrainPosition(obj) {
     return tp;
 }
 
+function createNextStopInformation(obj) {
+    ns = new NextStop();
+    if (obj.RESPONSE.RESULT[0].TrainAnnouncement != null) {
+        ns.activity = obj.RESPONSE.RESULT[0].TrainAnnouncement[0].ActivityType;
+        ns.advertisedTime = obj.RESPONSE.RESULT[0].TrainAnnouncement[0].AdvertisedTimeAtLocation;
+        if (obj.RESPONSE.RESULT[0].TrainAnnouncement[0].EstimatedTimeAtLocation != null) {
+            ns.estimatedTime = obj.RESPONSE.RESULT[0].TrainAnnouncement[0].EstimatedTimeAtLocation;
+        }
+        ns.locationSignature = obj.RESPONSE.RESULT[0].TrainAnnouncement[0].LocationSignature;
+        if (obj.RESPONSE.RESULT[0].TrainAnnouncement[0].TechnicalDateTime != null) {
+            ns.technicalTime = obj.RESPONSE.RESULT[0].TrainAnnouncement[0].TechnicalDateTime;
+        }
+        ns.trainIdent = obj.RESPONSE.RESULT[0].TrainAnnouncement[0].AdvertisedTrainIdent;
+    }
+
+    return ns;
+}
+
 // Function for creating a list of schedule objects for drawing a correct schedule later
 function createSchedule(obj) {
     if (obj.RESPONSE.RESULT[0].TrainAnnouncement) {
@@ -687,9 +716,17 @@ function renderSingleTrainPosition(obj) {
     
 }
 
-function renderNextStop(obj) {
+function renderNextStation(obj) {
+    var ns = createNextStopInformation(obj);
+    var timeUntilEvent = getCurrentTrainState(ns.advertisedTime, new Date())
+    console.log(timeUntilEvent + " min");
     output = "<b>Nästa uppehåll:</b><br>";
-    output += "<em>Ännu inte implementerat</em>";
+    if (ns.activity == "Avgang") {
+        output += "Tåg " + ns.trainIdent + " avgår " + findStationName(ns.locationSignature) + " kl. " + new Date(ns.advertisedTime).toLocaleTimeString("sv-SE",localeOptions);
+    }
+    else {
+        output += "Tåg " + ns.trainIdent + " ankommer " + findStationName(ns.locationSignature) + " kl. " + new Date(ns.advertisedTime).toLocaleTimeString("sv-SE", localeOptions);
+    }
     // Tåg XXX ankommer Y om Z minuter
     // Tåg XXX avgår Y om Z minuter
 
