@@ -52,6 +52,7 @@ class TrainState {
         this.operator = "";
         this.fromLocation = "";
         this.toLocation = "";
+        this.viaLocations = [];
         this.scheduledDate = "";
         this.trainInformation = [];
         this.deviations = [];
@@ -322,6 +323,15 @@ function createTrainState(obj) {
         }
         ts.fromLocation = obj.RESPONSE.RESULT[0].TrainAnnouncement[0].FromLocation[0].LocationName;
         ts.toLocation = obj.RESPONSE.RESULT[0].TrainAnnouncement[0].ToLocation[0].LocationName;
+
+        var viaLocations = [];
+        if (obj.RESPONSE.RESULT[0].TrainAnnouncement[0].ViaToLocation) {
+            for (var j in obj.RESPONSE.RESULT[0].TrainAnnouncement[0].ViaToLocation) {
+                viaLocations.push(obj.RESPONSE.RESULT[0].TrainAnnouncement[0].ViaToLocation[j].LocationName);
+            }
+        }
+        ts.viaLocations = viaLocations;
+
         ts.scheduledDate = obj.RESPONSE.RESULT[0].TrainAnnouncement[0].ScheduledDepartureDateTime;
 
         var trainInfo = [];
@@ -591,6 +601,18 @@ function renderSingleTrainState(obj) {
         }
         trainDataOutput += "<br>";
         trainDataOutput += "<b>Sträcka:</b> " + findStationName(trainState.fromLocation) + " - " + findStationName(trainState.toLocation) + "<br>";
+        if (trainState.viaLocations != null) {
+            trainDataOutput += "<b>Via:</b> ";
+            for (var j in trainState.viaLocations) {
+                if (j >= 1) {
+                    prefix = ", ";
+                } else {
+                    prefix = "";
+                }
+                trainDataOutput += prefix + findStationName(trainState.viaLocations[j]);
+            }
+            trainDataOutput += "<br>";
+        }
         trainDataOutput += "<b>Datum:</b> " + new Date(trainState.scheduledDate).toLocaleDateString("sv-SE");
     
         document.getElementById("trainData").innerHTML = trainDataOutput;
