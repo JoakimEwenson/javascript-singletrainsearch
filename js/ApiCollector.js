@@ -393,10 +393,8 @@ function createTrainPosition(obj) {
 
 function createNextStopInformation(obj) {
     ns = new NextStop();
-    if (!obj.RESPONSE.RESULT[0].TrainAnnouncement === undefined) {
-        if (obj.RESPONSE.RESULT[0].TrainAnnouncement[0].ActivityType != null) {
-            ns.activity = obj.RESPONSE.RESULT[0].TrainAnnouncement[0].ActivityType;
-        }
+    if (obj.RESPONSE.RESULT[0].TrainAnnouncement.length > 0) {
+        ns.activity = obj.RESPONSE.RESULT[0].TrainAnnouncement[0].ActivityType;
         ns.advertisedTime = obj.RESPONSE.RESULT[0].TrainAnnouncement[0].AdvertisedTimeAtLocation;
         if (obj.RESPONSE.RESULT[0].TrainAnnouncement[0].EstimatedTimeAtLocation != null) {
             ns.estimatedTime = obj.RESPONSE.RESULT[0].TrainAnnouncement[0].EstimatedTimeAtLocation;
