@@ -393,8 +393,10 @@ function createTrainPosition(obj) {
 
 function createNextStopInformation(obj) {
     ns = new NextStop();
-    if (obj.RESPONSE.RESULT[0].TrainAnnouncement != null) {
-        ns.activity = obj.RESPONSE.RESULT[0].TrainAnnouncement[0].ActivityType;
+    if (!obj.RESPONSE.RESULT[0].TrainAnnouncement === undefined) {
+        if (obj.RESPONSE.RESULT[0].TrainAnnouncement[0].ActivityType != null) {
+            ns.activity = obj.RESPONSE.RESULT[0].TrainAnnouncement[0].ActivityType;
+        }
         ns.advertisedTime = obj.RESPONSE.RESULT[0].TrainAnnouncement[0].AdvertisedTimeAtLocation;
         if (obj.RESPONSE.RESULT[0].TrainAnnouncement[0].EstimatedTimeAtLocation != null) {
             ns.estimatedTime = obj.RESPONSE.RESULT[0].TrainAnnouncement[0].EstimatedTimeAtLocation;
@@ -706,28 +708,30 @@ function renderSingleTrainPosition(obj) {
 // TODO: Add check against estimated time for correct calculations
 function renderNextStation(obj) {
     var ns = createNextStopInformation(obj);
-    var timeUntilEvent = getCurrentTrainState(ns.advertisedTime, new Date())
+    if (ns.locationSignature != "") {
+        var timeUntilEvent = getCurrentTrainState(ns.advertisedTime, new Date())
 
-    if (timeUntilEvent < 0) {
-        timeUntilEvent = 0;
+        if (timeUntilEvent < 0) {
+            timeUntilEvent = 0;
+        }
+    
+        if (timeUntilEvent == 1) {
+            suffix = " minut";
+        }
+        else {
+            suffix = " minuter";
+        }
+    
+        output = "<b>Nästa uppehåll:</b><br>";
+        if (ns.activity == "Avgang") {
+            output += "Tåg " + ns.trainIdent + " beräknas avgå " + findStationName(ns.locationSignature) + " om " + timeUntilEvent + " " + suffix + ", kl. " + new Date(ns.advertisedTime).toLocaleTimeString("sv-SE",localeOptions);
+        }
+        else {
+            output += "Tåg " + ns.trainIdent + " beräknas ankomma " + findStationName(ns.locationSignature) + " om " + timeUntilEvent + " " + suffix + ", kl. " + new Date(ns.advertisedTime).toLocaleTimeString("sv-SE", localeOptions);
+        }
+    
+        document.getElementById("nextPosition").innerHTML = output;    
     }
-
-    if (timeUntilEvent == 1) {
-        suffix = " minut";
-    }
-    else {
-        suffix = " minuter";
-    }
-
-    output = "<b>Nästa uppehåll:</b><br>";
-    if (ns.activity == "Avgang") {
-        output += "Tåg " + ns.trainIdent + " beräknas avgå " + findStationName(ns.locationSignature) + " om " + timeUntilEvent + " " + suffix + ", kl. " + new Date(ns.advertisedTime).toLocaleTimeString("sv-SE",localeOptions);
-    }
-    else {
-        output += "Tåg " + ns.trainIdent + " beräknas ankomma " + findStationName(ns.locationSignature) + " om " + timeUntilEvent + " " + suffix + ", kl. " + new Date(ns.advertisedTime).toLocaleTimeString("sv-SE", localeOptions);
-    }
-
-    document.getElementById("nextPosition").innerHTML = output;
 }
 
 function renderTrainSchedule(obj) {
