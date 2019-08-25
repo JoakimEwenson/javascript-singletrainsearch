@@ -276,7 +276,7 @@ function createStationMessageList(obj) {
     // Create empty array to hold data later
     var messages = [];
     // Check if result is not empty
-    if (!obj.RESPONSE.RESULT[0].TrainMessage === undefined) {
+    if (obj.RESPONSE.RESULT[0].TrainMessage) {
         for (var i in obj.RESPONSE.RESULT[0].TrainMessage) {
             sm = new StationMessage();
 
