@@ -602,8 +602,8 @@ function renderStationList(obj) {
     output = "<table class='w3-table w3-bordered w3-striped'>";
     output += "<thead>";
     output += "<tr>";
-    output += "<th>LocationName</th>";
-    output += "<th>LocationSignature</th>"
+    output += "<th>Plats</th>";
+    output += "<th>Signatur</th>"
     output += "</tr>";
     output += "</thead>";
     output += "<tbody>";
