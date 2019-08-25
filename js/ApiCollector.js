@@ -276,7 +276,7 @@ function createStationMessageList(obj) {
     // Create empty array to hold data later
     var messages = [];
     // Check if result is not empty
-    if (obj.RESPONSE.RESULT[0].TrainMessage) {
+    if (!obj.RESPONSE.RESULT[0].TrainMessage === undefined) {
         for (var i in obj.RESPONSE.RESULT[0].TrainMessage) {
             sm = new StationMessage();
 
@@ -919,7 +919,7 @@ function renderStationMessages(obj) {
         output += "<p>" + message[i].description + "</p>";
     }
 
-    if (message[0].header != null) {
+    if (message.length > 0) {
         document.getElementById("stationMessages").innerHTML = output;
         document.getElementById("messageBoard").style.display = "block";
     } else {
