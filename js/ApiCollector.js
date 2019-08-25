@@ -211,26 +211,6 @@ function ApiCollector(data, cbFunction) {
     xhr.send(data);
 }
 
-function AnotherApiCollector(data) {
-    var xhr = new XMLHttpRequest();
-    xhr.withCredentials = false;
-
-    return new Promise((resolve, reject) => {
-
-        xhr.onreadystatechange = function() {
-            if (this.readyState == 4 && this.status == 200) {
-                resolve(JSON.parse(this.responseText));
-            }
-        };
-
-        xhr.open("POST", "https://api.trafikinfo.trafikverket.se/v2/data.json");
-        xhr.setRequestHeader("Content-Type", "text/xml");
-        xhr.setRequestHeader("Cache-Control", "no-cache");
-
-        xhr.send(data);
-    });
-}
-
 function createStationList(obj) {
     if (obj.RESPONSE.RESULT[0].TrainStation) {
         for (var i in obj.RESPONSE.RESULT[0].TrainStation) {
@@ -571,29 +551,6 @@ function getTrainState(obj) {
     output = obj.RESPONSE.RESULT[0].TrainAnnouncement[0].LocationSignature + " at " + new Date(obj.RESPONSE.RESULT[0].TrainAnnouncement[0].TimeAtLocation).toLocaleTimeString("sv-SE",localeOptions);
     console.log(output);
     return output;
-}
-
-async function getLocation(searchLocationSignature) {
-    // Set up TrainStationName request
-    var trainStationData = "<REQUEST>" +
-            "<LOGIN authenticationkey='" + apiKey + "' />" +
-            "<QUERY objecttype='TrainStation' schemaversion='1'>" +
-                "<FILTER>" +
-                    "<EQ name='LocationSignature' value='" + searchLocationSignature + "' />" +
-                "</FILTER>" +
-                "<INCLUDE>AdvertisedLocationName</INCLUDE>" +
-            "</QUERY>" +
-        "</REQUEST>";
-
-    var output;
-    await AnotherApiCollector(trainStationData).then(res => console.log(res.RESPONSE.RESULT[0].TrainAnnouncement[0].LocationSignature + res.RESPONSE.RESULT[0].TrainAnnouncement[0].TimeAtLocation));
-
-    return await output;
-}
-
-function getLocationName(obj) {
-    document.getElementById("arrivalLocation").textContent = obj.RESPONSE.RESULT[0].TrainStation[0].AdvertisedLocationName;
-    document.getElementById("departureLocation").textContent = obj.RESPONSE.RESULT[0].TrainStation[0].AdvertisedLocationName;
 }
 
 function renderStationList(obj) {

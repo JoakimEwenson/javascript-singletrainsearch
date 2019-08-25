@@ -4,12 +4,72 @@ const trainStationList = {
             {
                 "TrainStation": [
                     {
+                        "AdvertisedLocationName": "Alingsås",
+                        "LocationSignature": "A"
+                    },
+                    {
+                        "AdvertisedLocationName": "Annedal",
+                        "LocationSignature": "Aal"
+                    },
+                    {
+                        "AdvertisedLocationName": "Arbrå",
+                        "LocationSignature": "Ab"
+                    },
+                    {
                         "AdvertisedLocationName": "Abborrträsk",
                         "LocationSignature": "Abb"
                     },
                     {
-                        "AdvertisedLocationName": "Almedal",
-                        "LocationSignature": "Am"
+                        "AdvertisedLocationName": "Avesta centrum",
+                        "LocationSignature": "Acm"
+                    },
+                    {
+                        "AdvertisedLocationName": "Alfta",
+                        "LocationSignature": "Aft"
+                    },
+                    {
+                        "AdvertisedLocationName": "Anneberg",
+                        "LocationSignature": "Ag"
+                    },
+                    {
+                        "AdvertisedLocationName": "Agnesberg",
+                        "LocationSignature": "Agb"
+                    },
+                    {
+                        "AdvertisedLocationName": "Algutsgården",
+                        "LocationSignature": "Agg"
+                    },
+                    {
+                        "AdvertisedLocationName": "Aleholm",
+                        "LocationSignature": "Ahm"
+                    },
+                    {
+                        "AdvertisedLocationName": "Aitik",
+                        "LocationSignature": "Aik"
+                    },
+                    {
+                        "AdvertisedLocationName": "Arvidsjaur",
+                        "LocationSignature": "Ajr"
+                    },
+                    {
+                        "AdvertisedLocationName": "Abisko Östra",
+                        "LocationSignature": "Ak"
+                    },
+                    {
+                        "AdvertisedLocationName": "Abisko turiststation",
+                        "LocationSignature": "Akt"
+                    },
+                    {
+                        "AdvertisedLocationName": "Arlöv",
+                        "LocationSignature": "Al"
+                    },
+                    {
+                        "AdvertisedLocationName": "Alvhem",
+                        "LocationSignature": "Alh"
+                    },
+                    {
+                        "AdvertisedLocationName": "Arlövs industrispår",
+                        "LocationSignature": "Ali"
                     },
                     {
                         "AdvertisedLocationName": "Astrid Lindgrens värld",
@@ -20,32 +80,40 @@ const trainStationList = {
                         "LocationSignature": "Alä"
                     },
                     {
-                        "AdvertisedLocationName": "Arnemark",
-                        "LocationSignature": "Amk"
+                        "AdvertisedLocationName": "Almedal",
+                        "LocationSignature": "Am"
                     },
                     {
-                        "AdvertisedLocationName": "Aneby",
-                        "LocationSignature": "Any"
+                        "AdvertisedLocationName": "Arnemark",
+                        "LocationSignature": "Amk"
                     },
                     {
                         "AdvertisedLocationName": "Arvån",
                         "LocationSignature": "An"
                     },
                     {
-                        "AdvertisedLocationName": "Anundsjö",
-                        "LocationSignature": "Anö"
+                        "AdvertisedLocationName": "Aneby",
+                        "LocationSignature": "Any"
                     },
                     {
-                        "AdvertisedLocationName": "Aplared",
-                        "LocationSignature": "Apd"
+                        "AdvertisedLocationName": "Anundsjö",
+                        "LocationSignature": "Anö"
                     },
                     {
                         "AdvertisedLocationName": "Aspeå",
                         "LocationSignature": "Ap"
                     },
                     {
+                        "AdvertisedLocationName": "Aplared",
+                        "LocationSignature": "Apd"
+                    },
+                    {
                         "AdvertisedLocationName": "Aspen",
                         "LocationSignature": "Apn"
+                    },
+                    {
+                        "AdvertisedLocationName": "Aptas",
+                        "LocationSignature": "Apt"
                     },
                     {
                         "AdvertisedLocationName": "Arvika",
@@ -56,16 +124,12 @@ const trainStationList = {
                         "LocationSignature": "Ara"
                     },
                     {
-                        "AdvertisedLocationName": "Arlanda C",
-                        "LocationSignature": "Arnc"
-                    },
-                    {
-                        "AdvertisedLocationName": "Aptas",
-                        "LocationSignature": "Apt"
-                    },
-                    {
                         "AdvertisedLocationName": "Arboga",
                         "LocationSignature": "Arb"
+                    },
+                    {
+                        "AdvertisedLocationName": "Arlanda C",
+                        "LocationSignature": "Arnc"
                     },
                     {
                         "AdvertisedLocationName": "Arlanda nedre",
@@ -80,16 +144,16 @@ const trainStationList = {
                         "LocationSignature": "Arns"
                     },
                     {
+                        "AdvertisedLocationName": "Assberg",
+                        "LocationSignature": "Asb"
+                    },
+                    {
                         "AdvertisedLocationName": "Aspedalen",
                         "LocationSignature": "Asd"
                     },
                     {
                         "AdvertisedLocationName": "Attarp",
                         "LocationSignature": "Atp"
-                    },
-                    {
-                        "AdvertisedLocationName": "Assberg",
-                        "LocationSignature": "Asb"
                     },
                     {
                         "AdvertisedLocationName": "Alvesta",
@@ -110,6 +174,10 @@ const trainStationList = {
                     {
                         "AdvertisedLocationName": "Axmarby",
                         "LocationSignature": "Ax"
+                    },
+                    {
+                        "AdvertisedLocationName": "Axmar Bruk",
+                        "LocationSignature": "Ax.br"
                     },
                     {
                         "AdvertisedLocationName": "Alby",
@@ -156,6 +224,10 @@ const trainStationList = {
                         "LocationSignature": "Bdl"
                     },
                     {
+                        "AdvertisedLocationName": "Boden C",
+                        "LocationSignature": "Bdn"
+                    },
+                    {
                         "AdvertisedLocationName": "Broddbo",
                         "LocationSignature": "Bdo"
                     },
@@ -166,10 +238,6 @@ const trainStationList = {
                     {
                         "AdvertisedLocationName": "Bredaryd",
                         "LocationSignature": "Bdy"
-                    },
-                    {
-                        "AdvertisedLocationName": "Boden C",
-                        "LocationSignature": "Bdn"
                     },
                     {
                         "AdvertisedLocationName": "Backe",
@@ -220,24 +288,24 @@ const trainStationList = {
                         "LocationSignature": "Bgv"
                     },
                     {
-                        "AdvertisedLocationName": "Bohus",
-                        "LocationSignature": "Bhs"
-                    },
-                    {
                         "AdvertisedLocationName": "Bräkne-Hoby",
                         "LocationSignature": "Bhb"
+                    },
+                    {
+                        "AdvertisedLocationName": "Bohus",
+                        "LocationSignature": "Bhs"
                     },
                     {
                         "AdvertisedLocationName": "Birsta",
                         "LocationSignature": "Bia"
                     },
                     {
-                        "AdvertisedLocationName": "Björnidet",
-                        "LocationSignature": "Bid"
-                    },
-                    {
                         "AdvertisedLocationName": "Billeberga",
                         "LocationSignature": "Bib"
+                    },
+                    {
+                        "AdvertisedLocationName": "Björnidet",
+                        "LocationSignature": "Bid"
                     },
                     {
                         "AdvertisedLocationName": "Billesholm",
@@ -276,12 +344,12 @@ const trainStationList = {
                         "LocationSignature": "Bjuv"
                     },
                     {
-                        "AdvertisedLocationName": "Björnsjö",
-                        "LocationSignature": "Bjö"
-                    },
-                    {
                         "AdvertisedLocationName": "Björköby",
                         "LocationSignature": "Bjy"
+                    },
+                    {
+                        "AdvertisedLocationName": "Björnsjö",
+                        "LocationSignature": "Bjö"
                     },
                     {
                         "AdvertisedLocationName": "Barkarby",
@@ -312,16 +380,16 @@ const trainStationList = {
                         "LocationSignature": "Bma"
                     },
                     {
-                        "AdvertisedLocationName": "Båramo",
-                        "LocationSignature": "Bmo"
+                        "AdvertisedLocationName": "Blomberg",
+                        "LocationSignature": "Bmb"
                     },
                     {
                         "AdvertisedLocationName": "Bromölla",
                         "LocationSignature": "Bml"
                     },
                     {
-                        "AdvertisedLocationName": "Blomberg",
-                        "LocationSignature": "Bmb"
+                        "AdvertisedLocationName": "Båramo",
+                        "LocationSignature": "Bmo"
                     },
                     {
                         "AdvertisedLocationName": "Bollnäs",
@@ -364,24 +432,24 @@ const trainStationList = {
                         "LocationSignature": "Bor"
                     },
                     {
-                        "AdvertisedLocationName": "Bollebygd",
-                        "LocationSignature": "Boy"
-                    },
-                    {
                         "AdvertisedLocationName": "Born",
                         "LocationSignature": "Born"
+                    },
+                    {
+                        "AdvertisedLocationName": "Bollebygd",
+                        "LocationSignature": "Boy"
                     },
                     {
                         "AdvertisedLocationName": "Brännarp",
                         "LocationSignature": "Bp"
                     },
                     {
-                        "AdvertisedLocationName": "Brännland",
-                        "LocationSignature": "Brd"
-                    },
-                    {
                         "AdvertisedLocationName": "Brista",
                         "LocationSignature": "Bra"
+                    },
+                    {
+                        "AdvertisedLocationName": "Brännland",
+                        "LocationSignature": "Brd"
                     },
                     {
                         "AdvertisedLocationName": "Bränninge",
@@ -390,10 +458,6 @@ const trainStationList = {
                     {
                         "AdvertisedLocationName": "Brännberg",
                         "LocationSignature": "Brg"
-                    },
-                    {
-                        "AdvertisedLocationName": "Agnesberg",
-                        "LocationSignature": "Agb"
                     },
                     {
                         "AdvertisedLocationName": "Brattheden",
@@ -412,20 +476,16 @@ const trainStationList = {
                         "LocationSignature": "Brl"
                     },
                     {
-                        "AdvertisedLocationName": "Bro Nygård",
-                        "LocationSignature": "Brny"
-                    },
-                    {
                         "AdvertisedLocationName": "Brånan",
                         "LocationSignature": "Brn"
                     },
                     {
-                        "AdvertisedLocationName": "Bro",
-                        "LocationSignature": "Bro"
+                        "AdvertisedLocationName": "Bro Nygård",
+                        "LocationSignature": "Brny"
                     },
                     {
-                        "AdvertisedLocationName": "Baggetorp",
-                        "LocationSignature": "Bt"
+                        "AdvertisedLocationName": "Bro",
+                        "LocationSignature": "Bro"
                     },
                     {
                         "AdvertisedLocationName": "Brattsbacka",
@@ -436,12 +496,52 @@ const trainStationList = {
                         "LocationSignature": "Bry"
                     },
                     {
-                        "AdvertisedLocationName": "Brattby",
-                        "LocationSignature": "Btb"
-                    },
-                    {
                         "AdvertisedLocationName": "Bjurå",
                         "LocationSignature": "Brå"
+                    },
+                    {
+                        "AdvertisedLocationName": "Bredsjö",
+                        "LocationSignature": "Brö"
+                    },
+                    {
+                        "AdvertisedLocationName": "Borås C",
+                        "LocationSignature": "Bs"
+                    },
+                    {
+                        "AdvertisedLocationName": "Brastad",
+                        "LocationSignature": "Bsa"
+                    },
+                    {
+                        "AdvertisedLocationName": "Bensjöbacken",
+                        "LocationSignature": "Bsb"
+                    },
+                    {
+                        "AdvertisedLocationName": "Brunnsgård",
+                        "LocationSignature": "Bsd"
+                    },
+                    {
+                        "AdvertisedLocationName": "Bispgården",
+                        "LocationSignature": "Bsg"
+                    },
+                    {
+                        "AdvertisedLocationName": "Bestorp",
+                        "LocationSignature": "Bsp"
+                    },
+                    {
+                        "AdvertisedLocationName": "Bastuträsk",
+                        "LocationSignature": "Bst"
+                    },
+                    {
+                        "AdvertisedLocationName": "Bjärka-Säby",
+                        "LocationSignature": "Bsä"
+                    },
+                    {
+                        "AdvertisedLocationName": "Baggetorp",
+                        "LocationSignature": "Bt"
+                    },
+                    {
+                        "AdvertisedLocationName": "Brattby",
+                        "LocationSignature": "Btb"
                     },
                     {
                         "AdvertisedLocationName": "Bratteborg",
@@ -452,48 +552,20 @@ const trainStationList = {
                         "LocationSignature": "Bth"
                     },
                     {
-                        "AdvertisedLocationName": "Bredsjö",
-                        "LocationSignature": "Brö"
-                    },
-                    {
                         "AdvertisedLocationName": "Biskopstorp",
                         "LocationSignature": "Btp"
-                    },
-                    {
-                        "AdvertisedLocationName": "Borås C",
-                        "LocationSignature": "Bs"
                     },
                     {
                         "AdvertisedLocationName": "Betåsen",
                         "LocationSignature": "Btå"
                     },
                     {
-                        "AdvertisedLocationName": "Buddbyn",
-                        "LocationSignature": "Bud"
-                    },
-                    {
-                        "AdvertisedLocationName": "Bensjöbacken",
-                        "LocationSignature": "Bsb"
-                    },
-                    {
-                        "AdvertisedLocationName": "Brastad",
-                        "LocationSignature": "Bsa"
-                    },
-                    {
                         "AdvertisedLocationName": "Brunsbergstunneln",
                         "LocationSignature": "Bu"
                     },
                     {
-                        "AdvertisedLocationName": "Algutsgården",
-                        "LocationSignature": "Agg"
-                    },
-                    {
-                        "AdvertisedLocationName": "Bispgården",
-                        "LocationSignature": "Bsg"
-                    },
-                    {
-                        "AdvertisedLocationName": "Brunnsgård",
-                        "LocationSignature": "Bsd"
+                        "AdvertisedLocationName": "Buddbyn",
+                        "LocationSignature": "Bud"
                     },
                     {
                         "AdvertisedLocationName": "Brunsberg",
@@ -512,20 +584,16 @@ const trainStationList = {
                         "LocationSignature": "Bva"
                     },
                     {
-                        "AdvertisedLocationName": "Bestorp",
-                        "LocationSignature": "Bsp"
-                    },
-                    {
-                        "AdvertisedLocationName": "Bastuträsk",
-                        "LocationSignature": "Bst"
-                    },
-                    {
                         "AdvertisedLocationName": "Blackvreten",
                         "LocationSignature": "Bvr"
                     },
                     {
-                        "AdvertisedLocationName": "Bjärka-Säby",
-                        "LocationSignature": "Bsä"
+                        "AdvertisedLocationName": "Boxholm",
+                        "LocationSignature": "Bx"
+                    },
+                    {
+                        "AdvertisedLocationName": "Byvalla",
+                        "LocationSignature": "By"
                     },
                     {
                         "AdvertisedLocationName": "Byarum",
@@ -536,60 +604,16 @@ const trainStationList = {
                         "LocationSignature": "Byä"
                     },
                     {
-                        "AdvertisedLocationName": "Dala-Floda",
-                        "LocationSignature": "Dfl"
-                    },
-                    {
-                        "AdvertisedLocationName": "Boxholm",
-                        "LocationSignature": "Bx"
+                        "AdvertisedLocationName": "Bruzaholm",
+                        "LocationSignature": "Bz"
                     },
                     {
                         "AdvertisedLocationName": "Bergåsa",
                         "LocationSignature": "Båa"
                     },
                     {
-                        "AdvertisedLocationName": "Bruzaholm",
-                        "LocationSignature": "Bz"
-                    },
-                    {
-                        "AdvertisedLocationName": "Degermyr",
-                        "LocationSignature": "Dgm"
-                    },
-                    {
-                        "AdvertisedLocationName": "Degerfors",
-                        "LocationSignature": "Dg"
-                    },
-                    {
-                        "AdvertisedLocationName": "Byvalla",
-                        "LocationSignature": "By"
-                    },
-                    {
-                        "AdvertisedLocationName": "Diö Norra",
-                        "LocationSignature": "Diö"
-                    },
-                    {
-                        "AdvertisedLocationName": "Daglösen",
-                        "LocationSignature": "Dgö"
-                    },
-                    {
-                        "AdvertisedLocationName": "Dalgränsen",
-                        "LocationSignature": "Dgn"
-                    },
-                    {
-                        "AdvertisedLocationName": "Dala-Järna",
-                        "LocationSignature": "Dj"
-                    },
-                    {
                         "AdvertisedLocationName": "Bålsta",
                         "LocationSignature": "Bål"
-                    },
-                    {
-                        "AdvertisedLocationName": "Aitik",
-                        "LocationSignature": "Aik"
-                    },
-                    {
-                        "AdvertisedLocationName": "Diö",
-                        "LocationSignature": "Dis"
                     },
                     {
                         "AdvertisedLocationName": "Båstad",
@@ -600,52 +624,8 @@ const trainStationList = {
                         "LocationSignature": "Båp"
                     },
                     {
-                        "AdvertisedLocationName": "Helsingör",
-                        "LocationSignature": "Dk.hg"
-                    },
-                    {
-                        "AdvertisedLocationName": "Dockmyr",
-                        "LocationSignature": "Dk"
-                    },
-                    {
-                        "AdvertisedLocationName": "Österport",
-                        "LocationSignature": "Dk.kk"
-                    },
-                    {
-                        "AdvertisedLocationName": "Dagarn",
-                        "LocationSignature": "Dn"
-                    },
-                    {
-                        "AdvertisedLocationName": "Copenhagen Airport",
-                        "LocationSignature": "Dk.cph"
-                    },
-                    {
-                        "AdvertisedLocationName": "Tårnby",
-                        "LocationSignature": "Dk.tåt"
-                    },
-                    {
-                        "AdvertisedLocationName": "Örestad",
-                        "LocationSignature": "Dk.øre"
-                    },
-                    {
-                        "AdvertisedLocationName": "Köpenhamn H",
-                        "LocationSignature": "Dk.kh"
-                    },
-                    {
-                        "AdvertisedLocationName": "Dynäs",
-                        "LocationSignature": "Dns"
-                    },
-                    {
                         "AdvertisedLocationName": "Bräcke",
                         "LocationSignature": "Bä"
-                    },
-                    {
-                        "AdvertisedLocationName": "Dingle",
-                        "LocationSignature": "Dl"
-                    },
-                    {
-                        "AdvertisedLocationName": "Derome",
-                        "LocationSignature": "Dre"
                     },
                     {
                         "AdvertisedLocationName": "Bäckebron",
@@ -656,40 +636,12 @@ const trainStationList = {
                         "LocationSignature": "Bäf"
                     },
                     {
-                        "AdvertisedLocationName": "Dals Långed",
-                        "LocationSignature": "Dld"
-                    },
-                    {
-                        "AdvertisedLocationName": "Dingtuna",
-                        "LocationSignature": "Dt"
-                    },
-                    {
                         "AdvertisedLocationName": "Bällsta",
                         "LocationSignature": "Bäl"
                     },
                     {
-                        "AdvertisedLocationName": "Dorotea",
-                        "LocationSignature": "Dta"
-                    },
-                    {
-                        "AdvertisedLocationName": "Dannemora",
-                        "LocationSignature": "Dma"
-                    },
-                    {
-                        "AdvertisedLocationName": "Duved",
-                        "LocationSignature": "Du"
-                    },
-                    {
                         "AdvertisedLocationName": "Brännögård",
                         "LocationSignature": "Bög"
-                    },
-                    {
-                        "AdvertisedLocationName": "Dorotea camping",
-                        "LocationSignature": "Dtc"
-                    },
-                    {
-                        "AdvertisedLocationName": "Duvbo",
-                        "LocationSignature": "Duo"
                     },
                     {
                         "AdvertisedLocationName": "Björkhult",
@@ -700,8 +652,184 @@ const trainStationList = {
                         "LocationSignature": "Bön"
                     },
                     {
+                        "AdvertisedLocationName": "Björbo",
+                        "LocationSignature": "Böo"
+                    },
+                    {
+                        "AdvertisedLocationName": "Callans såg",
+                        "LocationSignature": "Cas"
+                    },
+                    {
+                        "AdvertisedLocationName": "Charlottenberg",
+                        "LocationSignature": "Cg"
+                    },
+                    {
+                        "AdvertisedLocationName": "Karlskrona C",
+                        "LocationSignature": "Ck"
+                    },
+                    {
+                        "AdvertisedLocationName": "Kristianstad C",
+                        "LocationSignature": "Cr"
+                    },
+                    {
+                        "AdvertisedLocationName": "Kristianstad GBG",
+                        "LocationSignature": "Crgb"
+                    },
+                    {
+                        "AdvertisedLocationName": "Kristianstads södra",
+                        "LocationSignature": "Crs"
+                    },
+                    {
+                        "AdvertisedLocationName": "Stockholm Central",
+                        "LocationSignature": "Cst"
+                    },
+                    {
+                        "AdvertisedLocationName": "Degerön",
+                        "LocationSignature": "D"
+                    },
+                    {
+                        "AdvertisedLocationName": "Dammstorp",
+                        "LocationSignature": "Dat"
+                    },
+                    {
+                        "AdvertisedLocationName": "Degerbäcken",
+                        "LocationSignature": "Dbn"
+                    },
+                    {
+                        "AdvertisedLocationName": "Berlin",
+                        "LocationSignature": "De.ber"
+                    },
+                    {
+                        "AdvertisedLocationName": "Dala-Floda",
+                        "LocationSignature": "Dfl"
+                    },
+                    {
+                        "AdvertisedLocationName": "Degerfors",
+                        "LocationSignature": "Dg"
+                    },
+                    {
+                        "AdvertisedLocationName": "Degermyr",
+                        "LocationSignature": "Dgm"
+                    },
+                    {
+                        "AdvertisedLocationName": "Dalgränsen",
+                        "LocationSignature": "Dgn"
+                    },
+                    {
+                        "AdvertisedLocationName": "Daglösen",
+                        "LocationSignature": "Dgö"
+                    },
+                    {
+                        "AdvertisedLocationName": "Diö",
+                        "LocationSignature": "Dis"
+                    },
+                    {
+                        "AdvertisedLocationName": "Diö Norra",
+                        "LocationSignature": "Diö"
+                    },
+                    {
+                        "AdvertisedLocationName": "Dala-Järna",
+                        "LocationSignature": "Dj"
+                    },
+                    {
+                        "AdvertisedLocationName": "Dockmyr",
+                        "LocationSignature": "Dk"
+                    },
+                    {
+                        "AdvertisedLocationName": "Copenhagen Airport",
+                        "LocationSignature": "Dk.cph"
+                    },
+                    {
+                        "AdvertisedLocationName": "Helsingör",
+                        "LocationSignature": "Dk.hg"
+                    },
+                    {
+                        "AdvertisedLocationName": "Köpenhamn H",
+                        "LocationSignature": "Dk.kh"
+                    },
+                    {
+                        "AdvertisedLocationName": "Österport",
+                        "LocationSignature": "Dk.kk"
+                    },
+                    {
+                        "AdvertisedLocationName": "Tårnby",
+                        "LocationSignature": "Dk.tåt"
+                    },
+                    {
+                        "AdvertisedLocationName": "Örestad",
+                        "LocationSignature": "Dk.øre"
+                    },
+                    {
+                        "AdvertisedLocationName": "Dingle",
+                        "LocationSignature": "Dl"
+                    },
+                    {
+                        "AdvertisedLocationName": "Dals Långed",
+                        "LocationSignature": "Dld"
+                    },
+                    {
+                        "AdvertisedLocationName": "Dannemora",
+                        "LocationSignature": "Dma"
+                    },
+                    {
+                        "AdvertisedLocationName": "Dagarn",
+                        "LocationSignature": "Dn"
+                    },
+                    {
+                        "AdvertisedLocationName": "Dynäs",
+                        "LocationSignature": "Dns"
+                    },
+                    {
+                        "AdvertisedLocationName": "Derome",
+                        "LocationSignature": "Dre"
+                    },
+                    {
+                        "AdvertisedLocationName": "Dals Rostock",
+                        "LocationSignature": "Drt"
+                    },
+                    {
+                        "AdvertisedLocationName": "Dingtuna",
+                        "LocationSignature": "Dt"
+                    },
+                    {
+                        "AdvertisedLocationName": "Dorotea",
+                        "LocationSignature": "Dta"
+                    },
+                    {
+                        "AdvertisedLocationName": "Dorotea camping",
+                        "LocationSignature": "Dtc"
+                    },
+                    {
+                        "AdvertisedLocationName": "Duved",
+                        "LocationSignature": "Du"
+                    },
+                    {
+                        "AdvertisedLocationName": "Duvbo",
+                        "LocationSignature": "Duo"
+                    },
+                    {
                         "AdvertisedLocationName": "Dysjön",
                         "LocationSignature": "Dy"
+                    },
+                    {
+                        "AdvertisedLocationName": "Djurås",
+                        "LocationSignature": "Då"
+                    },
+                    {
+                        "AdvertisedLocationName": "Dånviken",
+                        "LocationSignature": "Dån"
+                    },
+                    {
+                        "AdvertisedLocationName": "Drömme",
+                        "LocationSignature": "Döe"
+                    },
+                    {
+                        "AdvertisedLocationName": "Döljebro",
+                        "LocationSignature": "Döl"
+                    },
+                    {
+                        "AdvertisedLocationName": "Dösjebro",
+                        "LocationSignature": "Dös"
                     },
                     {
                         "AdvertisedLocationName": "Eslöv",
@@ -716,60 +844,44 @@ const trainStationList = {
                         "LocationSignature": "Ebg"
                     },
                     {
-                        "AdvertisedLocationName": "Djurås",
-                        "LocationSignature": "Då"
-                    },
-                    {
-                        "AdvertisedLocationName": "Dånviken",
-                        "LocationSignature": "Dån"
-                    },
-                    {
-                        "AdvertisedLocationName": "Callans såg",
-                        "LocationSignature": "Cas"
-                    },
-                    {
-                        "AdvertisedLocationName": "Björbo",
-                        "LocationSignature": "Böo"
-                    },
-                    {
-                        "AdvertisedLocationName": "Edsbyverken",
-                        "LocationSignature": "Edv"
-                    },
-                    {
                         "AdvertisedLocationName": "Edsbjörke",
                         "LocationSignature": "Ebk"
-                    },
-                    {
-                        "AdvertisedLocationName": "Ed",
-                        "LocationSignature": "Ed"
                     },
                     {
                         "AdvertisedLocationName": "Ekeby",
                         "LocationSignature": "Eby"
                     },
                     {
-                        "AdvertisedLocationName": "Drömme",
-                        "LocationSignature": "Döe"
-                    },
-                    {
-                        "AdvertisedLocationName": "Döljebro",
-                        "LocationSignature": "Döl"
-                    },
-                    {
-                        "AdvertisedLocationName": "Charlottenberg",
-                        "LocationSignature": "Cg"
-                    },
-                    {
-                        "AdvertisedLocationName": "Dals Rostock",
-                        "LocationSignature": "Drt"
-                    },
-                    {
-                        "AdvertisedLocationName": "Dösjebro",
-                        "LocationSignature": "Dös"
+                        "AdvertisedLocationName": "Ed",
+                        "LocationSignature": "Ed"
                     },
                     {
                         "AdvertisedLocationName": "Edsbyn",
                         "LocationSignature": "Edn"
+                    },
+                    {
+                        "AdvertisedLocationName": "Edsbyns södra",
+                        "LocationSignature": "Eds"
+                    },
+                    {
+                        "AdvertisedLocationName": "Edsbyverken",
+                        "LocationSignature": "Edv"
+                    },
+                    {
+                        "AdvertisedLocationName": "Erikslund",
+                        "LocationSignature": "Ei"
+                    },
+                    {
+                        "AdvertisedLocationName": "Eksjö",
+                        "LocationSignature": "Ek"
+                    },
+                    {
+                        "AdvertisedLocationName": "Ekolsund",
+                        "LocationSignature": "Eko"
+                    },
+                    {
+                        "AdvertisedLocationName": "Ekeryd",
+                        "LocationSignature": "Eky"
                     },
                     {
                         "AdvertisedLocationName": "Edsvalla",
@@ -780,36 +892,24 @@ const trainStationList = {
                         "LocationSignature": "Em"
                     },
                     {
-                        "AdvertisedLocationName": "Erikslund",
-                        "LocationSignature": "Ei"
+                        "AdvertisedLocationName": "Edane",
+                        "LocationSignature": "En"
                     },
                     {
-                        "AdvertisedLocationName": "Ekeryd",
-                        "LocationSignature": "Eky"
+                        "AdvertisedLocationName": "Enafors",
+                        "LocationSignature": "Ens"
+                    },
+                    {
+                        "AdvertisedLocationName": "Enköping",
+                        "LocationSignature": "Ep"
+                    },
+                    {
+                        "AdvertisedLocationName": "Ervalla",
+                        "LocationSignature": "Er"
                     },
                     {
                         "AdvertisedLocationName": "Eneryda",
                         "LocationSignature": "Era"
-                    },
-                    {
-                        "AdvertisedLocationName": "Ekolsund",
-                        "LocationSignature": "Eko"
-                    },
-                    {
-                        "AdvertisedLocationName": "Edsbyns södra",
-                        "LocationSignature": "Eds"
-                    },
-                    {
-                        "AdvertisedLocationName": "Eskilstuna C",
-                        "LocationSignature": "Et"
-                    },
-                    {
-                        "AdvertisedLocationName": "Eksjö",
-                        "LocationSignature": "Ek"
-                    },
-                    {
-                        "AdvertisedLocationName": "Edane",
-                        "LocationSignature": "En"
                     },
                     {
                         "AdvertisedLocationName": "Erikstad",
@@ -820,40 +920,28 @@ const trainStationList = {
                         "LocationSignature": "Esn"
                     },
                     {
+                        "AdvertisedLocationName": "Eskilstuna C",
+                        "LocationSignature": "Et"
+                    },
+                    {
                         "AdvertisedLocationName": "Ekträsk",
                         "LocationSignature": "Etk"
-                    },
-                    {
-                        "AdvertisedLocationName": "Enafors",
-                        "LocationSignature": "Ens"
-                    },
-                    {
-                        "AdvertisedLocationName": "Finnerödja",
-                        "LocationSignature": "Fa"
-                    },
-                    {
-                        "AdvertisedLocationName": "Enköping",
-                        "LocationSignature": "Ep"
                     },
                     {
                         "AdvertisedLocationName": "Falköping C",
                         "LocationSignature": "F"
                     },
                     {
+                        "AdvertisedLocationName": "Finnerödja",
+                        "LocationSignature": "Fa"
+                    },
+                    {
                         "AdvertisedLocationName": "Flodala",
                         "LocationSignature": "Faa"
                     },
                     {
-                        "AdvertisedLocationName": "Framnäs city",
-                        "LocationSignature": "Fc"
-                    },
-                    {
                         "AdvertisedLocationName": "Falkenbergs godsstation",
                         "LocationSignature": "Fabg"
-                    },
-                    {
-                        "AdvertisedLocationName": "Arvidsjaur",
-                        "LocationSignature": "Ajr"
                     },
                     {
                         "AdvertisedLocationName": "Falkenberg",
@@ -864,44 +952,8 @@ const trainStationList = {
                         "LocationSignature": "Fad"
                     },
                     {
-                        "AdvertisedLocationName": "Fellingsbro",
-                        "LocationSignature": "Feb"
-                    },
-                    {
-                        "AdvertisedLocationName": "Fredriksdal",
-                        "LocationSignature": "Fdl"
-                    },
-                    {
-                        "AdvertisedLocationName": "Furudal",
-                        "LocationSignature": "Fda"
-                    },
-                    {
-                        "AdvertisedLocationName": "Annedal",
-                        "LocationSignature": "Aal"
-                    },
-                    {
-                        "AdvertisedLocationName": "Fågelsjö",
-                        "LocationSignature": "Feö"
-                    },
-                    {
-                        "AdvertisedLocationName": "Floda",
-                        "LocationSignature": "Fd"
-                    },
-                    {
-                        "AdvertisedLocationName": "Ervalla",
-                        "LocationSignature": "Er"
-                    },
-                    {
                         "AdvertisedLocationName": "Falerum",
                         "LocationSignature": "Fal"
-                    },
-                    {
-                        "AdvertisedLocationName": "Finspång",
-                        "LocationSignature": "Fg"
-                    },
-                    {
-                        "AdvertisedLocationName": "Fagersta C",
-                        "LocationSignature": "Fgc"
                     },
                     {
                         "AdvertisedLocationName": "Farsta strand",
@@ -912,20 +964,36 @@ const trainStationList = {
                         "LocationSignature": "Fb"
                     },
                     {
-                        "AdvertisedLocationName": "Fågelsta",
-                        "LocationSignature": "Fgl"
+                        "AdvertisedLocationName": "Floby",
+                        "LocationSignature": "Fby"
+                    },
+                    {
+                        "AdvertisedLocationName": "Framnäs city",
+                        "LocationSignature": "Fc"
+                    },
+                    {
+                        "AdvertisedLocationName": "Floda",
+                        "LocationSignature": "Fd"
+                    },
+                    {
+                        "AdvertisedLocationName": "Furudal",
+                        "LocationSignature": "Fda"
                     },
                     {
                         "AdvertisedLocationName": "Frändefors",
                         "LocationSignature": "Fdf"
                     },
                     {
-                        "AdvertisedLocationName": "Flemingsberg",
-                        "LocationSignature": "Flb"
+                        "AdvertisedLocationName": "Fredriksdal",
+                        "LocationSignature": "Fdl"
                     },
                     {
-                        "AdvertisedLocationName": "Fagersta Norra",
-                        "LocationSignature": "Fgn"
+                        "AdvertisedLocationName": "Fellingsbro",
+                        "LocationSignature": "Feb"
+                    },
+                    {
+                        "AdvertisedLocationName": "Fågelsjö",
+                        "LocationSignature": "Feö"
                     },
                     {
                         "AdvertisedLocationName": "Frufällan",
@@ -936,36 +1004,24 @@ const trainStationList = {
                         "LocationSignature": "Ffs"
                     },
                     {
-                        "AdvertisedLocationName": "Frinnaryd",
-                        "LocationSignature": "Frd"
+                        "AdvertisedLocationName": "Finspång",
+                        "LocationSignature": "Fg"
                     },
                     {
-                        "AdvertisedLocationName": "Floby",
-                        "LocationSignature": "Fby"
+                        "AdvertisedLocationName": "Fagersta C",
+                        "LocationSignature": "Fgc"
                     },
                     {
-                        "AdvertisedLocationName": "Flen",
-                        "LocationSignature": "Fle"
+                        "AdvertisedLocationName": "Fågelsta",
+                        "LocationSignature": "Fgl"
                     },
                     {
-                        "AdvertisedLocationName": "Frånö",
-                        "LocationSignature": "Fnö"
-                    },
-                    {
-                        "AdvertisedLocationName": "Friluftsgården",
-                        "LocationSignature": "Flgd"
+                        "AdvertisedLocationName": "Fagersta Norra",
+                        "LocationSignature": "Fgn"
                     },
                     {
                         "AdvertisedLocationName": "Fagersanna",
                         "LocationSignature": "Fgs"
-                    },
-                    {
-                        "AdvertisedLocationName": "Forsheda",
-                        "LocationSignature": "Fod"
-                    },
-                    {
-                        "AdvertisedLocationName": "Folkesta",
-                        "LocationSignature": "Fok"
                     },
                     {
                         "AdvertisedLocationName": "Fagerås",
@@ -976,384 +1032,296 @@ const trainStationList = {
                         "LocationSignature": "Fgö"
                     },
                     {
-                        "AdvertisedLocationName": "Falun C",
-                        "LocationSignature": "Fln"
-                    },
-                    {
-                        "AdvertisedLocationName": "Fredrikslund",
-                        "LocationSignature": "Fre"
-                    },
-                    {
-                        "AdvertisedLocationName": "Flens övre",
-                        "LocationSignature": "Fsö"
-                    },
-                    {
-                        "AdvertisedLocationName": "Fritsla",
-                        "LocationSignature": "Frl"
+                        "AdvertisedLocationName": "Forshem",
+                        "LocationSignature": "Fhm"
                     },
                     {
                         "AdvertisedLocationName": "Fiskeby",
                         "LocationSignature": "Fi"
                     },
                     {
-                        "AdvertisedLocationName": "Forshem",
-                        "LocationSignature": "Fhm"
-                    },
-                    {
-                        "AdvertisedLocationName": "Flackarp",
-                        "LocationSignature": "Flp"
-                    },
-                    {
-                        "AdvertisedLocationName": "Furet",
-                        "LocationSignature": "Fur"
-                    },
-                    {
-                        "AdvertisedLocationName": "Flisby",
-                        "LocationSignature": "Fls"
-                    },
-                    {
-                        "AdvertisedLocationName": "Frykåsen",
-                        "LocationSignature": "Frå"
-                    },
-                    {
-                        "AdvertisedLocationName": "Foodia",
-                        "LocationSignature": "Foo"
-                    },
-                    {
-                        "AdvertisedLocationName": "Fränsta",
-                        "LocationSignature": "Ft"
-                    },
-                    {
-                        "AdvertisedLocationName": "Fristad",
-                        "LocationSignature": "Fra"
-                    },
-                    {
-                        "AdvertisedLocationName": "Avesta centrum",
-                        "LocationSignature": "Acm"
-                    },
-                    {
-                        "AdvertisedLocationName": "Frillesås",
-                        "LocationSignature": "Få"
-                    },
-                    {
-                        "AdvertisedLocationName": "Frövi",
-                        "LocationSignature": "Fv"
-                    },
-                    {
-                        "AdvertisedLocationName": "Fors",
-                        "LocationSignature": "Fs"
-                    },
-                    {
-                        "AdvertisedLocationName": "Forserum",
-                        "LocationSignature": "Fm"
-                    },
-                    {
-                        "AdvertisedLocationName": "Fosieby",
-                        "LocationSignature": "Fsb"
-                    },
-                    {
-                        "AdvertisedLocationName": "Fliskär",
-                        "LocationSignature": "Fär"
-                    },
-                    {
-                        "AdvertisedLocationName": "Garnudden",
-                        "LocationSignature": "Gau"
-                    },
-                    {
-                        "AdvertisedLocationName": "Forsmo",
-                        "LocationSignature": "Fsm"
-                    },
-                    {
                         "AdvertisedLocationName": "Filipstad",
                         "LocationSignature": "Fid"
-                    },
-                    {
-                        "AdvertisedLocationName": "Förslöv",
-                        "LocationSignature": "För"
-                    },
-                    {
-                        "AdvertisedLocationName": "Furuvik",
-                        "LocationSignature": "Fvk"
-                    },
-                    {
-                        "AdvertisedLocationName": "Abisko turiststation",
-                        "LocationSignature": "Akt"
-                    },
-                    {
-                        "AdvertisedLocationName": "Göteborgs norra",
-                        "LocationSignature": "Gb"
-                    },
-                    {
-                        "AdvertisedLocationName": "Grillby",
-                        "LocationSignature": "Gib"
-                    },
-                    {
-                        "AdvertisedLocationName": "Geijersdal",
-                        "LocationSignature": "Gdl"
-                    },
-                    {
-                        "AdvertisedLocationName": "Graninge",
-                        "LocationSignature": "Ga"
-                    },
-                    {
-                        "AdvertisedLocationName": "Grängesberg",
-                        "LocationSignature": "Gg"
-                    },
-                    {
-                        "AdvertisedLocationName": "Finja",
-                        "LocationSignature": "Fin"
-                    },
-                    {
-                        "AdvertisedLocationName": "Gårdsjö",
-                        "LocationSignature": "Gdö"
-                    },
-                    {
-                        "AdvertisedLocationName": "Göteborg C",
-                        "LocationSignature": "G"
                     },
                     {
                         "AdvertisedLocationName": "Fillan",
                         "LocationSignature": "Fil"
                     },
                     {
-                        "AdvertisedLocationName": "Gröndalsviken",
-                        "LocationSignature": "Gdv"
-                    },
-                    {
-                        "AdvertisedLocationName": "Grängesbergs malmbangård",
-                        "LocationSignature": "Ggm"
-                    },
-                    {
-                        "AdvertisedLocationName": "Göteborg Combiterminal",
-                        "LocationSignature": "Gbco"
-                    },
-                    {
-                        "AdvertisedLocationName": "Gåsträsken",
-                        "LocationSignature": "Gen"
-                    },
-                    {
-                        "AdvertisedLocationName": "Gimonäs",
-                        "LocationSignature": "Gim"
-                    },
-                    {
-                        "AdvertisedLocationName": "Göteborg Marieholm",
-                        "LocationSignature": "Gbm"
-                    },
-                    {
-                        "AdvertisedLocationName": "Gottne",
-                        "LocationSignature": "Ge"
-                    },
-                    {
-                        "AdvertisedLocationName": "Granstanda",
-                        "LocationSignature": "Gad"
-                    },
-                    {
-                        "AdvertisedLocationName": "Gula huset",
-                        "LocationSignature": "Ghu"
-                    },
-                    {
-                        "AdvertisedLocationName": "Arlövs industrispår",
-                        "LocationSignature": "Ali"
-                    },
-                    {
-                        "AdvertisedLocationName": "Gimo",
-                        "LocationSignature": "Gmo"
-                    },
-                    {
-                        "AdvertisedLocationName": "Aleholm",
-                        "LocationSignature": "Ahm"
-                    },
-                    {
-                        "AdvertisedLocationName": "Glumslöv",
-                        "LocationSignature": "Glv"
-                    },
-                    {
-                        "AdvertisedLocationName": "Gamleby",
-                        "LocationSignature": "Gal"
-                    },
-                    {
-                        "AdvertisedLocationName": "Gnarp",
-                        "LocationSignature": "Gnp"
-                    },
-                    {
-                        "AdvertisedLocationName": "Grythyttan",
-                        "LocationSignature": "Ghy"
-                    },
-                    {
-                        "AdvertisedLocationName": "Gnosjö",
-                        "LocationSignature": "Gnö"
-                    },
-                    {
-                        "AdvertisedLocationName": "Gemla",
-                        "LocationSignature": "Gm"
-                    },
-                    {
-                        "AdvertisedLocationName": "Grythyttans norra",
-                        "LocationSignature": "Ghyn"
-                    },
-                    {
-                        "AdvertisedLocationName": "Gamlarp",
-                        "LocationSignature": "Gmp"
-                    },
-                    {
-                        "AdvertisedLocationName": "Göteborg Kville",
-                        "LocationSignature": "Gk"
-                    },
-                    {
-                        "AdvertisedLocationName": "Gantofta",
-                        "LocationSignature": "Gan"
-                    },
-                    {
-                        "AdvertisedLocationName": "Alfta",
-                        "LocationSignature": "Aft"
-                    },
-                    {
-                        "AdvertisedLocationName": "Grönåsen",
-                        "LocationSignature": "Gnå"
-                    },
-                    {
-                        "AdvertisedLocationName": "Gistad",
-                        "LocationSignature": "Gi"
+                        "AdvertisedLocationName": "Finja",
+                        "LocationSignature": "Fin"
                     },
                     {
                         "AdvertisedLocationName": "Filsbäck",
                         "LocationSignature": "Fiä"
                     },
                     {
-                        "AdvertisedLocationName": "Godegård",
-                        "LocationSignature": "Go"
+                        "AdvertisedLocationName": "Fjällåsen",
+                        "LocationSignature": "Fjå"
                     },
                     {
-                        "AdvertisedLocationName": "Gunsen",
-                        "LocationSignature": "Gse"
+                        "AdvertisedLocationName": "Fjälkinge",
+                        "LocationSignature": "Fki"
+                    },
+                    {
+                        "AdvertisedLocationName": "Fåker",
+                        "LocationSignature": "Fkr"
+                    },
+                    {
+                        "AdvertisedLocationName": "Flädie",
+                        "LocationSignature": "Fl"
+                    },
+                    {
+                        "AdvertisedLocationName": "Flemingsberg",
+                        "LocationSignature": "Flb"
+                    },
+                    {
+                        "AdvertisedLocationName": "Flen",
+                        "LocationSignature": "Fle"
+                    },
+                    {
+                        "AdvertisedLocationName": "Friluftsgården",
+                        "LocationSignature": "Flgd"
+                    },
+                    {
+                        "AdvertisedLocationName": "Falun C",
+                        "LocationSignature": "Fln"
+                    },
+                    {
+                        "AdvertisedLocationName": "Flackarp",
+                        "LocationSignature": "Flp"
+                    },
+                    {
+                        "AdvertisedLocationName": "Flisby",
+                        "LocationSignature": "Fls"
+                    },
+                    {
+                        "AdvertisedLocationName": "Forserum",
+                        "LocationSignature": "Fm"
+                    },
+                    {
+                        "AdvertisedLocationName": "Falköpings norra",
+                        "LocationSignature": "Fn"
+                    },
+                    {
+                        "AdvertisedLocationName": "Frånö",
+                        "LocationSignature": "Fnö"
+                    },
+                    {
+                        "AdvertisedLocationName": "Forsheda",
+                        "LocationSignature": "Fod"
+                    },
+                    {
+                        "AdvertisedLocationName": "Folkesta",
+                        "LocationSignature": "Fok"
+                    },
+                    {
+                        "AdvertisedLocationName": "Foodia",
+                        "LocationSignature": "Foo"
+                    },
+                    {
+                        "AdvertisedLocationName": "Fristad",
+                        "LocationSignature": "Fra"
+                    },
+                    {
+                        "AdvertisedLocationName": "Frinnaryd",
+                        "LocationSignature": "Frd"
+                    },
+                    {
+                        "AdvertisedLocationName": "Fredrikslund",
+                        "LocationSignature": "Fre"
+                    },
+                    {
+                        "AdvertisedLocationName": "Fritsla",
+                        "LocationSignature": "Frl"
+                    },
+                    {
+                        "AdvertisedLocationName": "Frykåsen",
+                        "LocationSignature": "Frå"
+                    },
+                    {
+                        "AdvertisedLocationName": "Fors",
+                        "LocationSignature": "Fs"
+                    },
+                    {
+                        "AdvertisedLocationName": "Fosieby",
+                        "LocationSignature": "Fsb"
+                    },
+                    {
+                        "AdvertisedLocationName": "Forsmo",
+                        "LocationSignature": "Fsm"
+                    },
+                    {
+                        "AdvertisedLocationName": "Flens övre",
+                        "LocationSignature": "Fsö"
+                    },
+                    {
+                        "AdvertisedLocationName": "Fränsta",
+                        "LocationSignature": "Ft"
+                    },
+                    {
+                        "AdvertisedLocationName": "Furet",
+                        "LocationSignature": "Fur"
+                    },
+                    {
+                        "AdvertisedLocationName": "Frövi",
+                        "LocationSignature": "Fv"
+                    },
+                    {
+                        "AdvertisedLocationName": "Furuvik",
+                        "LocationSignature": "Fvk"
+                    },
+                    {
+                        "AdvertisedLocationName": "Frillesås",
+                        "LocationSignature": "Få"
+                    },
+                    {
+                        "AdvertisedLocationName": "Fliskär",
+                        "LocationSignature": "Fär"
+                    },
+                    {
+                        "AdvertisedLocationName": "Förslöv",
+                        "LocationSignature": "För"
+                    },
+                    {
+                        "AdvertisedLocationName": "Göteborg C",
+                        "LocationSignature": "G"
+                    },
+                    {
+                        "AdvertisedLocationName": "Lejonspåret",
+                        "LocationSignature": "G.ls"
+                    },
+                    {
+                        "AdvertisedLocationName": "Graninge",
+                        "LocationSignature": "Ga"
+                    },
+                    {
+                        "AdvertisedLocationName": "Granstanda",
+                        "LocationSignature": "Gad"
+                    },
+                    {
+                        "AdvertisedLocationName": "Gamleby",
+                        "LocationSignature": "Gal"
+                    },
+                    {
+                        "AdvertisedLocationName": "Gantofta",
+                        "LocationSignature": "Gan"
                     },
                     {
                         "AdvertisedLocationName": "Gamlestaden",
                         "LocationSignature": "Gas"
                     },
                     {
+                        "AdvertisedLocationName": "Garnudden",
+                        "LocationSignature": "Gau"
+                    },
+                    {
+                        "AdvertisedLocationName": "Göteborgs norra",
+                        "LocationSignature": "Gb"
+                    },
+                    {
+                        "AdvertisedLocationName": "Göteborg Combiterminal",
+                        "LocationSignature": "Gbco"
+                    },
+                    {
+                        "AdvertisedLocationName": "Göteborg Marieholm",
+                        "LocationSignature": "Gbm"
+                    },
+                    {
+                        "AdvertisedLocationName": "Geijersdal",
+                        "LocationSignature": "Gdl"
+                    },
+                    {
+                        "AdvertisedLocationName": "Gröndalsviken",
+                        "LocationSignature": "Gdv"
+                    },
+                    {
+                        "AdvertisedLocationName": "Gårdsjö",
+                        "LocationSignature": "Gdö"
+                    },
+                    {
+                        "AdvertisedLocationName": "Gottne",
+                        "LocationSignature": "Ge"
+                    },
+                    {
+                        "AdvertisedLocationName": "Gåsträsken",
+                        "LocationSignature": "Gen"
+                    },
+                    {
+                        "AdvertisedLocationName": "Grängesberg",
+                        "LocationSignature": "Gg"
+                    },
+                    {
+                        "AdvertisedLocationName": "Grängesbergs malmbangård",
+                        "LocationSignature": "Ggm"
+                    },
+                    {
+                        "AdvertisedLocationName": "Gula huset",
+                        "LocationSignature": "Ghu"
+                    },
+                    {
+                        "AdvertisedLocationName": "Grythyttan",
+                        "LocationSignature": "Ghy"
+                    },
+                    {
+                        "AdvertisedLocationName": "Grythyttans norra",
+                        "LocationSignature": "Ghyn"
+                    },
+                    {
+                        "AdvertisedLocationName": "Gistad",
+                        "LocationSignature": "Gi"
+                    },
+                    {
                         "AdvertisedLocationName": "Gideåbacka",
                         "LocationSignature": "Gia"
                     },
                     {
-                        "AdvertisedLocationName": "Geogr. Polcirkeln",
-                        "LocationSignature": "Gpc"
+                        "AdvertisedLocationName": "Grillby",
+                        "LocationSignature": "Gib"
                     },
                     {
-                        "AdvertisedLocationName": "Grums",
-                        "LocationSignature": "Gms"
+                        "AdvertisedLocationName": "Gimonäs",
+                        "LocationSignature": "Gim"
                     },
                     {
-                        "AdvertisedLocationName": "Gripenberg",
-                        "LocationSignature": "Gp"
-                    },
-                    {
-                        "AdvertisedLocationName": "Arlöv",
-                        "LocationSignature": "Al"
+                        "AdvertisedLocationName": "Göteborg Kville",
+                        "LocationSignature": "Gk"
                     },
                     {
                         "AdvertisedLocationName": "Glommersträsk",
                         "LocationSignature": "Glk"
                     },
                     {
-                        "AdvertisedLocationName": "Grästorp",
-                        "LocationSignature": "Gop"
+                        "AdvertisedLocationName": "Gullträsk",
+                        "LocationSignature": "Glt"
                     },
                     {
-                        "AdvertisedLocationName": "Grevaryd",
-                        "LocationSignature": "Grd"
+                        "AdvertisedLocationName": "Glumslöv",
+                        "LocationSignature": "Glv"
                     },
                     {
-                        "AdvertisedLocationName": "Göteborg Volvo",
-                        "LocationSignature": "Gvo"
+                        "AdvertisedLocationName": "Gemla",
+                        "LocationSignature": "Gm"
+                    },
+                    {
+                        "AdvertisedLocationName": "Gimo",
+                        "LocationSignature": "Gmo"
+                    },
+                    {
+                        "AdvertisedLocationName": "Gamlarp",
+                        "LocationSignature": "Gmp"
+                    },
+                    {
+                        "AdvertisedLocationName": "Grums",
+                        "LocationSignature": "Gms"
                     },
                     {
                         "AdvertisedLocationName": "Gnesta",
                         "LocationSignature": "Gn"
                     },
                     {
-                        "AdvertisedLocationName": "Göteborg Skandiahamnen",
-                        "LocationSignature": "Gsh"
-                    },
-                    {
-                        "AdvertisedLocationName": "Gastsjön",
-                        "LocationSignature": "Gsn"
-                    },
-                    {
-                        "AdvertisedLocationName": "Gullträsk",
-                        "LocationSignature": "Glt"
-                    },
-                    {
                         "AdvertisedLocationName": "Gunnesbo",
                         "LocationSignature": "Gnb"
-                    },
-                    {
-                        "AdvertisedLocationName": "Grimsås",
-                        "LocationSignature": "Grm"
-                    },
-                    {
-                        "AdvertisedLocationName": "Gålnäs",
-                        "LocationSignature": "Gån"
-                    },
-                    {
-                        "AdvertisedLocationName": "Gäddmyr",
-                        "LocationSignature": "Gy"
-                    },
-                    {
-                        "AdvertisedLocationName": "Gyttorp",
-                        "LocationSignature": "Gyt"
-                    },
-                    {
-                        "AdvertisedLocationName": "Gävle C",
-                        "LocationSignature": "Gä"
-                    },
-                    {
-                        "AdvertisedLocationName": "Gärsnäs",
-                        "LocationSignature": "Gss"
-                    },
-                    {
-                        "AdvertisedLocationName": "Anneberg",
-                        "LocationSignature": "Ag"
-                    },
-                    {
-                        "AdvertisedLocationName": "Grycksbo",
-                        "LocationSignature": "Gyo"
-                    },
-                    {
-                        "AdvertisedLocationName": "Gräsberg",
-                        "LocationSignature": "Gäg"
-                    },
-                    {
-                        "AdvertisedLocationName": "Granbergsdal",
-                        "LocationSignature": "Gr"
-                    },
-                    {
-                        "AdvertisedLocationName": "Gällö",
-                        "LocationSignature": "Gö"
-                    },
-                    {
-                        "AdvertisedLocationName": "Göringen",
-                        "LocationSignature": "Grn"
-                    },
-                    {
-                        "AdvertisedLocationName": "Harrå",
-                        "LocationSignature": "Har"
-                    },
-                    {
-                        "AdvertisedLocationName": "Gåvetorp",
-                        "LocationSignature": "Gåp"
-                    },
-                    {
-                        "AdvertisedLocationName": "Gärdala",
-                        "LocationSignature": "Gäd"
-                    },
-                    {
-                        "AdvertisedLocationName": "Alvhem",
-                        "LocationSignature": "Alh"
-                    },
-                    {
-                        "AdvertisedLocationName": "Hallinden",
-                        "LocationSignature": "Hal"
                     },
                     {
                         "AdvertisedLocationName": "Genevad",
@@ -1364,36 +1332,92 @@ const trainStationList = {
                         "LocationSignature": "Gnf"
                     },
                     {
-                        "AdvertisedLocationName": "Helsingborg C",
-                        "LocationSignature": "Hb"
-                    },
-                    {
-                        "AdvertisedLocationName": "Harasjön",
-                        "LocationSignature": "Han"
-                    },
-                    {
-                        "AdvertisedLocationName": "Gårdsjön",
-                        "LocationSignature": "Gön"
-                    },
-                    {
-                        "AdvertisedLocationName": "Gammelstad",
-                        "LocationSignature": "Gst"
-                    },
-                    {
                         "AdvertisedLocationName": "Gullringen",
                         "LocationSignature": "Gng"
+                    },
+                    {
+                        "AdvertisedLocationName": "Gnarp",
+                        "LocationSignature": "Gnp"
+                    },
+                    {
+                        "AdvertisedLocationName": "Grönåsen",
+                        "LocationSignature": "Gnå"
+                    },
+                    {
+                        "AdvertisedLocationName": "Gnosjö",
+                        "LocationSignature": "Gnö"
+                    },
+                    {
+                        "AdvertisedLocationName": "Godegård",
+                        "LocationSignature": "Go"
+                    },
+                    {
+                        "AdvertisedLocationName": "Grästorp",
+                        "LocationSignature": "Gop"
+                    },
+                    {
+                        "AdvertisedLocationName": "Gripenberg",
+                        "LocationSignature": "Gp"
+                    },
+                    {
+                        "AdvertisedLocationName": "Geogr. Polcirkeln",
+                        "LocationSignature": "Gpc"
+                    },
+                    {
+                        "AdvertisedLocationName": "Granbergsdal",
+                        "LocationSignature": "Gr"
+                    },
+                    {
+                        "AdvertisedLocationName": "Grevaryd",
+                        "LocationSignature": "Grd"
+                    },
+                    {
+                        "AdvertisedLocationName": "Grimsås",
+                        "LocationSignature": "Grm"
+                    },
+                    {
+                        "AdvertisedLocationName": "Göringen",
+                        "LocationSignature": "Grn"
                     },
                     {
                         "AdvertisedLocationName": "Gubbero",
                         "LocationSignature": "Gro"
                     },
                     {
-                        "AdvertisedLocationName": "Tåghallen",
-                        "LocationSignature": "Gä.f"
+                        "AdvertisedLocationName": "Gransjö",
+                        "LocationSignature": "Grs"
                     },
                     {
-                        "AdvertisedLocationName": "Högboda",
-                        "LocationSignature": "Hbd"
+                        "AdvertisedLocationName": "Grundbro",
+                        "LocationSignature": "Gru"
+                    },
+                    {
+                        "AdvertisedLocationName": "Gryttje",
+                        "LocationSignature": "Gry"
+                    },
+                    {
+                        "AdvertisedLocationName": "Grötingen",
+                        "LocationSignature": "Grö"
+                    },
+                    {
+                        "AdvertisedLocationName": "Gunsen",
+                        "LocationSignature": "Gse"
+                    },
+                    {
+                        "AdvertisedLocationName": "Göteborg Skandiahamnen",
+                        "LocationSignature": "Gsh"
+                    },
+                    {
+                        "AdvertisedLocationName": "Gastsjön",
+                        "LocationSignature": "Gsn"
+                    },
+                    {
+                        "AdvertisedLocationName": "Gärsnäs",
+                        "LocationSignature": "Gss"
+                    },
+                    {
+                        "AdvertisedLocationName": "Gammelstad",
+                        "LocationSignature": "Gst"
                     },
                     {
                         "AdvertisedLocationName": "Göteborg Sävenäs",
@@ -1404,144 +1428,188 @@ const trainStationList = {
                         "LocationSignature": "Gså"
                     },
                     {
-                        "AdvertisedLocationName": "Gävle hamn",
-                        "LocationSignature": "Gä.h"
-                    },
-                    {
-                        "AdvertisedLocationName": "Hamra",
-                        "LocationSignature": "Haa"
-                    },
-                    {
-                        "AdvertisedLocationName": "Hedemora",
-                        "LocationSignature": "Hdm"
-                    },
-                    {
-                        "AdvertisedLocationName": "Gasklockorna",
-                        "LocationSignature": "Gä.g"
-                    },
-                    {
-                        "AdvertisedLocationName": "Hoting camping",
-                        "LocationSignature": "Hcp"
-                    },
-                    {
-                        "AdvertisedLocationName": "Gransjö",
-                        "LocationSignature": "Grs"
-                    },
-                    {
-                        "AdvertisedLocationName": "Holmsveden",
-                        "LocationSignature": "Hdn"
-                    },
-                    {
-                        "AdvertisedLocationName": "Halmstad C",
-                        "LocationSignature": "Hd"
-                    },
-                    {
-                        "AdvertisedLocationName": "Holsbybrunn",
-                        "LocationSignature": "Hbr"
-                    },
-                    {
-                        "AdvertisedLocationName": "Hagge",
-                        "LocationSignature": "Hge"
-                    },
-                    {
-                        "AdvertisedLocationName": "Högbränna",
-                        "LocationSignature": "Hbä"
-                    },
-                    {
-                        "AdvertisedLocationName": "Hamrångefjärden",
-                        "LocationSignature": "Hfj"
-                    },
-                    {
-                        "AdvertisedLocationName": "Järnvägsmuseum",
-                        "LocationSignature": "Gä.j"
-                    },
-                    {
-                        "AdvertisedLocationName": "Grundbro",
-                        "LocationSignature": "Gru"
-                    },
-                    {
-                        "AdvertisedLocationName": "Gävle godsbangård",
-                        "LocationSignature": "Gäb"
-                    },
-                    {
-                        "AdvertisedLocationName": "Hallstavik",
-                        "LocationSignature": "Hak"
-                    },
-                    {
-                        "AdvertisedLocationName": "Hagaström",
-                        "LocationSignature": "Hg"
-                    },
-                    {
-                        "AdvertisedLocationName": "Häggvik",
-                        "LocationSignature": "Hgv"
-                    },
-                    {
-                        "AdvertisedLocationName": "Abisko Östra",
-                        "LocationSignature": "Ak"
-                    },
-                    {
-                        "AdvertisedLocationName": "Hemfosa",
-                        "LocationSignature": "Hfa"
-                    },
-                    {
                         "AdvertisedLocationName": "Grimstorp",
                         "LocationSignature": "Gt"
-                    },
-                    {
-                        "AdvertisedLocationName": "Gamla Tortuna",
-                        "LocationSignature": "Gttu"
-                    },
-                    {
-                        "AdvertisedLocationName": "Ramlösa",
-                        "LocationSignature": "Hbgb"
-                    },
-                    {
-                        "AdvertisedLocationName": "Halmstads rangerbangård",
-                        "LocationSignature": "Hdr"
                     },
                     {
                         "AdvertisedLocationName": "Gustafs",
                         "LocationSignature": "Gtf"
                     },
                     {
-                        "AdvertisedLocationName": "Hagalund",
-                        "LocationSignature": "Hgl"
+                        "AdvertisedLocationName": "Gamla Tortuna",
+                        "LocationSignature": "Gttu"
                     },
                     {
-                        "AdvertisedLocationName": "Horndal",
-                        "LocationSignature": "Hl"
+                        "AdvertisedLocationName": "Getå",
+                        "LocationSignature": "Gtå"
                     },
                     {
-                        "AdvertisedLocationName": "Gryttje",
-                        "LocationSignature": "Gry"
+                        "AdvertisedLocationName": "Gullberna",
+                        "LocationSignature": "Gua"
+                    },
+                    {
+                        "AdvertisedLocationName": "Gussi",
+                        "LocationSignature": "Gui"
+                    },
+                    {
+                        "AdvertisedLocationName": "Gunnarn",
+                        "LocationSignature": "Gun"
+                    },
+                    {
+                        "AdvertisedLocationName": "Gällivare",
+                        "LocationSignature": "Gv"
+                    },
+                    {
+                        "AdvertisedLocationName": "Göteborg Volvo",
+                        "LocationSignature": "Gvo"
+                    },
+                    {
+                        "AdvertisedLocationName": "Gäddmyr",
+                        "LocationSignature": "Gy"
+                    },
+                    {
+                        "AdvertisedLocationName": "Grycksbo",
+                        "LocationSignature": "Gyo"
+                    },
+                    {
+                        "AdvertisedLocationName": "Gyttorp",
+                        "LocationSignature": "Gyt"
+                    },
+                    {
+                        "AdvertisedLocationName": "Gålnäs",
+                        "LocationSignature": "Gån"
+                    },
+                    {
+                        "AdvertisedLocationName": "Gåvetorp",
+                        "LocationSignature": "Gåp"
+                    },
+                    {
+                        "AdvertisedLocationName": "Gävle C",
+                        "LocationSignature": "Gä"
+                    },
+                    {
+                        "AdvertisedLocationName": "Tåghallen",
+                        "LocationSignature": "Gä.f"
+                    },
+                    {
+                        "AdvertisedLocationName": "Gasklockorna",
+                        "LocationSignature": "Gä.g"
+                    },
+                    {
+                        "AdvertisedLocationName": "Gävle hamn",
+                        "LocationSignature": "Gä.h"
+                    },
+                    {
+                        "AdvertisedLocationName": "Järnvägsmuseum",
+                        "LocationSignature": "Gä.j"
+                    },
+                    {
+                        "AdvertisedLocationName": "Gävle godsbangård",
+                        "LocationSignature": "Gäb"
+                    },
+                    {
+                        "AdvertisedLocationName": "Gärdala",
+                        "LocationSignature": "Gäd"
+                    },
+                    {
+                        "AdvertisedLocationName": "Gräsberg",
+                        "LocationSignature": "Gäg"
+                    },
+                    {
+                        "AdvertisedLocationName": "Gällö",
+                        "LocationSignature": "Gö"
+                    },
+                    {
+                        "AdvertisedLocationName": "Gårdsjön",
+                        "LocationSignature": "Gön"
+                    },
+                    {
+                        "AdvertisedLocationName": "Hamra",
+                        "LocationSignature": "Haa"
+                    },
+                    {
+                        "AdvertisedLocationName": "Hallstavik",
+                        "LocationSignature": "Hak"
+                    },
+                    {
+                        "AdvertisedLocationName": "Hallinden",
+                        "LocationSignature": "Hal"
+                    },
+                    {
+                        "AdvertisedLocationName": "Harasjön",
+                        "LocationSignature": "Han"
+                    },
+                    {
+                        "AdvertisedLocationName": "Harrå",
+                        "LocationSignature": "Har"
+                    },
+                    {
+                        "AdvertisedLocationName": "Helsingborg C",
+                        "LocationSignature": "Hb"
+                    },
+                    {
+                        "AdvertisedLocationName": "Högboda",
+                        "LocationSignature": "Hbd"
+                    },
+                    {
+                        "AdvertisedLocationName": "Ramlösa",
+                        "LocationSignature": "Hbgb"
+                    },
+                    {
+                        "AdvertisedLocationName": "Holsbybrunn",
+                        "LocationSignature": "Hbr"
+                    },
+                    {
+                        "AdvertisedLocationName": "Högbränna",
+                        "LocationSignature": "Hbä"
+                    },
+                    {
+                        "AdvertisedLocationName": "Hoting camping",
+                        "LocationSignature": "Hcp"
+                    },
+                    {
+                        "AdvertisedLocationName": "Halmstad C",
+                        "LocationSignature": "Hd"
+                    },
+                    {
+                        "AdvertisedLocationName": "Hedemora",
+                        "LocationSignature": "Hdm"
+                    },
+                    {
+                        "AdvertisedLocationName": "Holmsveden",
+                        "LocationSignature": "Hdn"
+                    },
+                    {
+                        "AdvertisedLocationName": "Halmstads rangerbangård",
+                        "LocationSignature": "Hdr"
                     },
                     {
                         "AdvertisedLocationName": "Heberg",
                         "LocationSignature": "He"
                     },
                     {
-                        "AdvertisedLocationName": "Helgum",
-                        "LocationSignature": "Hlm"
+                        "AdvertisedLocationName": "Helenelund",
+                        "LocationSignature": "Hel"
                     },
                     {
-                        "AdvertisedLocationName": "Högsjö",
-                        "LocationSignature": "Hgö"
+                        "AdvertisedLocationName": "Helmershus",
+                        "LocationSignature": "Hes"
                     },
                     {
-                        "AdvertisedLocationName": "Hillared",
-                        "LocationSignature": "Hil"
+                        "AdvertisedLocationName": "Hestra",
+                        "LocationSignature": "Het"
                     },
                     {
-                        "AdvertisedLocationName": "Hjulsbro",
-                        "LocationSignature": "Hj"
+                        "AdvertisedLocationName": "Hultsfred",
+                        "LocationSignature": "Hf"
                     },
                     {
-                        "AdvertisedLocationName": "Hasslarp",
-                        "LocationSignature": "Hlp"
+                        "AdvertisedLocationName": "Hemfosa",
+                        "LocationSignature": "Hfa"
                     },
                     {
-                        "AdvertisedLocationName": "Hallstahammar",
-                        "LocationSignature": "Hh"
+                        "AdvertisedLocationName": "Hamrångefjärden",
+                        "LocationSignature": "Hfj"
                     },
                     {
                         "AdvertisedLocationName": "Hofors",
@@ -1552,656 +1620,200 @@ const trainStationList = {
                         "LocationSignature": "Hfs"
                     },
                     {
+                        "AdvertisedLocationName": "Hagaström",
+                        "LocationSignature": "Hg"
+                    },
+                    {
+                        "AdvertisedLocationName": "Hagge",
+                        "LocationSignature": "Hge"
+                    },
+                    {
+                        "AdvertisedLocationName": "Hagalund",
+                        "LocationSignature": "Hgl"
+                    },
+                    {
                         "AdvertisedLocationName": "Häggenås",
                         "LocationSignature": "Hgs"
                     },
                     {
-                        "AdvertisedLocationName": "Gullberna",
-                        "LocationSignature": "Gua"
+                        "AdvertisedLocationName": "Häggvik",
+                        "LocationSignature": "Hgv"
                     },
                     {
-                        "AdvertisedLocationName": "Getå",
-                        "LocationSignature": "Gtå"
+                        "AdvertisedLocationName": "Högsjö",
+                        "LocationSignature": "Hgö"
                     },
                     {
-                        "AdvertisedLocationName": "Hällefors",
-                        "LocationSignature": "Hlf"
-                    },
-                    {
-                        "AdvertisedLocationName": "Herrhult",
-                        "LocationSignature": "Hlt"
-                    },
-                    {
-                        "AdvertisedLocationName": "Hällnäs",
-                        "LocationSignature": "Hls"
-                    },
-                    {
-                        "AdvertisedLocationName": "Helenelund",
-                        "LocationSignature": "Hel"
-                    },
-                    {
-                        "AdvertisedLocationName": "Hässleholm",
-                        "LocationSignature": "Hm"
-                    },
-                    {
-                        "AdvertisedLocationName": "Hällevadsholm",
-                        "LocationSignature": "Hlv"
-                    },
-                    {
-                        "AdvertisedLocationName": "Grötingen",
-                        "LocationSignature": "Grö"
-                    },
-                    {
-                        "AdvertisedLocationName": "Gussi",
-                        "LocationSignature": "Gui"
-                    },
-                    {
-                        "AdvertisedLocationName": "Hjärup",
-                        "LocationSignature": "Hjp"
-                    },
-                    {
-                        "AdvertisedLocationName": "Hällekis",
-                        "LocationSignature": "Hlk"
-                    },
-                    {
-                        "AdvertisedLocationName": "Hilleby",
-                        "LocationSignature": "Hly"
-                    },
-                    {
-                        "AdvertisedLocationName": "Helmershus",
-                        "LocationSignature": "Hes"
-                    },
-                    {
-                        "AdvertisedLocationName": "Huskvarna",
-                        "LocationSignature": "Hka"
-                    },
-                    {
-                        "AdvertisedLocationName": "Hissmofors",
-                        "LocationSignature": "Hmfs"
+                        "AdvertisedLocationName": "Hallstahammar",
+                        "LocationSignature": "Hh"
                     },
                     {
                         "AdvertisedLocationName": "Hyllie",
                         "LocationSignature": "Hie"
                     },
                     {
-                        "AdvertisedLocationName": "Hökmora",
-                        "LocationSignature": "Hma"
+                        "AdvertisedLocationName": "Hillared",
+                        "LocationSignature": "Hil"
                     },
                     {
-                        "AdvertisedLocationName": "Horndals Bruk",
-                        "LocationSignature": "Hlr"
+                        "AdvertisedLocationName": "Hjulsbro",
+                        "LocationSignature": "Hj"
                     },
                     {
-                        "AdvertisedLocationName": "Hammar",
-                        "LocationSignature": "Hmr"
+                        "AdvertisedLocationName": "Hjärup",
+                        "LocationSignature": "Hjp"
                     },
                     {
-                        "AdvertisedLocationName": "Hälleforsnäs",
-                        "LocationSignature": "Hnä"
+                        "AdvertisedLocationName": "Huskvarna",
+                        "LocationSignature": "Hka"
                     },
                     {
                         "AdvertisedLocationName": "Hudiksvall",
                         "LocationSignature": "Hkl"
                     },
                     {
-                        "AdvertisedLocationName": "Hasselfors",
-                        "LocationSignature": "Hs"
-                    },
-                    {
-                        "AdvertisedLocationName": "Hölö",
-                        "LocationSignature": "Hlö"
-                    },
-                    {
-                        "AdvertisedLocationName": "Hillerstorp",
-                        "LocationSignature": "Hto"
-                    },
-                    {
-                        "AdvertisedLocationName": "Hednoret",
-                        "LocationSignature": "Ht"
-                    },
-                    {
-                        "AdvertisedLocationName": "Hovsta",
-                        "LocationSignature": "Hsa"
-                    },
-                    {
-                        "AdvertisedLocationName": "Hanaskog",
-                        "LocationSignature": "Hsk"
-                    },
-                    {
-                        "AdvertisedLocationName": "Hestra",
-                        "LocationSignature": "Het"
-                    },
-                    {
-                        "AdvertisedLocationName": "Holmsjö",
-                        "LocationSignature": "Hmö"
-                    },
-                    {
-                        "AdvertisedLocationName": "Habo",
-                        "LocationSignature": "Ho"
-                    },
-                    {
-                        "AdvertisedLocationName": "Hoting",
-                        "LocationSignature": "Htg"
-                    },
-                    {
-                        "AdvertisedLocationName": "Hälsingenybo",
-                        "LocationSignature": "Hnb"
-                    },
-                    {
-                        "AdvertisedLocationName": "Hulingsryd",
-                        "LocationSignature": "Hud"
-                    },
-                    {
-                        "AdvertisedLocationName": "Hasslerör",
-                        "LocationSignature": "Hsr"
-                    },
-                    {
-                        "AdvertisedLocationName": "Hussjöby",
-                        "LocationSignature": "Hsy"
-                    },
-                    {
-                        "AdvertisedLocationName": "Huddinge",
-                        "LocationSignature": "Hu"
-                    },
-                    {
-                        "AdvertisedLocationName": "Huvudsta",
-                        "LocationSignature": "Huv"
-                    },
-                    {
-                        "AdvertisedLocationName": "Hultsfred",
-                        "LocationSignature": "Hf"
-                    },
-                    {
-                        "AdvertisedLocationName": "Holmsund",
-                        "LocationSignature": "Hod"
-                    },
-                    {
-                        "AdvertisedLocationName": "Hedensbyn",
-                        "LocationSignature": "Hsb"
-                    },
-                    {
                         "AdvertisedLocationName": "Hackås",
                         "LocationSignature": "Hks"
-                    },
-                    {
-                        "AdvertisedLocationName": "Härnösand C",
-                        "LocationSignature": "Hsd"
-                    },
-                    {
-                        "AdvertisedLocationName": "Handen",
-                        "LocationSignature": "Hnd"
-                    },
-                    {
-                        "AdvertisedLocationName": "Hästveda",
-                        "LocationSignature": "Hv"
-                    },
-                    {
-                        "AdvertisedLocationName": "Hörnsjö",
-                        "LocationSignature": "Hsö"
-                    },
-                    {
-                        "AdvertisedLocationName": "Hok",
-                        "LocationSignature": "Hok"
-                    },
-                    {
-                        "AdvertisedLocationName": "Alingsås",
-                        "LocationSignature": "A"
                     },
                     {
                         "AdvertisedLocationName": "Hökön",
                         "LocationSignature": "Hkö"
                     },
                     {
-                        "AdvertisedLocationName": "Hundsjön",
-                        "LocationSignature": "Huö"
+                        "AdvertisedLocationName": "Horndal",
+                        "LocationSignature": "Hl"
                     },
                     {
-                        "AdvertisedLocationName": "Hult",
-                        "LocationSignature": "Hul"
+                        "AdvertisedLocationName": "Hällefors",
+                        "LocationSignature": "Hlf"
+                    },
+                    {
+                        "AdvertisedLocationName": "Hällekis",
+                        "LocationSignature": "Hlk"
+                    },
+                    {
+                        "AdvertisedLocationName": "Helgum",
+                        "LocationSignature": "Hlm"
+                    },
+                    {
+                        "AdvertisedLocationName": "Hasslarp",
+                        "LocationSignature": "Hlp"
+                    },
+                    {
+                        "AdvertisedLocationName": "Horndals Bruk",
+                        "LocationSignature": "Hlr"
+                    },
+                    {
+                        "AdvertisedLocationName": "Hällnäs",
+                        "LocationSignature": "Hls"
+                    },
+                    {
+                        "AdvertisedLocationName": "Herrhult",
+                        "LocationSignature": "Hlt"
+                    },
+                    {
+                        "AdvertisedLocationName": "Hällevadsholm",
+                        "LocationSignature": "Hlv"
+                    },
+                    {
+                        "AdvertisedLocationName": "Hilleby",
+                        "LocationSignature": "Hly"
+                    },
+                    {
+                        "AdvertisedLocationName": "Hölö",
+                        "LocationSignature": "Hlö"
+                    },
+                    {
+                        "AdvertisedLocationName": "Hässleholm",
+                        "LocationSignature": "Hm"
+                    },
+                    {
+                        "AdvertisedLocationName": "Hökmora",
+                        "LocationSignature": "Hma"
+                    },
+                    {
+                        "AdvertisedLocationName": "Hissmofors",
+                        "LocationSignature": "Hmfs"
+                    },
+                    {
+                        "AdvertisedLocationName": "Hammar",
+                        "LocationSignature": "Hmr"
+                    },
+                    {
+                        "AdvertisedLocationName": "Holmsjö",
+                        "LocationSignature": "Hmö"
+                    },
+                    {
+                        "AdvertisedLocationName": "Hälsingenybo",
+                        "LocationSignature": "Hnb"
+                    },
+                    {
+                        "AdvertisedLocationName": "Handen",
+                        "LocationSignature": "Hnd"
                     },
                     {
                         "AdvertisedLocationName": "Hällenyland",
                         "LocationSignature": "Hnl"
                     },
                     {
-                        "AdvertisedLocationName": "Hästbo",
-                        "LocationSignature": "Hä"
-                    },
-                    {
-                        "AdvertisedLocationName": "Husum",
-                        "LocationSignature": "Hum"
-                    },
-                    {
-                        "AdvertisedLocationName": "Häljarp",
-                        "LocationSignature": "Häp"
-                    },
-                    {
                         "AdvertisedLocationName": "Hennan",
                         "LocationSignature": "Hnn"
-                    },
-                    {
-                        "AdvertisedLocationName": "Höja",
-                        "LocationSignature": "Höja"
-                    },
-                    {
-                        "AdvertisedLocationName": "Hämrasviken",
-                        "LocationSignature": "Häb"
-                    },
-                    {
-                        "AdvertisedLocationName": "Hjältevad",
-                        "LocationSignature": "Hvd"
-                    },
-                    {
-                        "AdvertisedLocationName": "Hyllstofta",
-                        "LocationSignature": "Hyl"
-                    },
-                    {
-                        "AdvertisedLocationName": "Härryda",
-                        "LocationSignature": "Häy"
-                    },
-                    {
-                        "AdvertisedLocationName": "Ingatorp",
-                        "LocationSignature": "Igt"
-                    },
-                    {
-                        "AdvertisedLocationName": "Håsjö",
-                        "LocationSignature": "Hå"
-                    },
-                    {
-                        "AdvertisedLocationName": "Husums norra",
-                        "LocationSignature": "Humn"
-                    },
-                    {
-                        "AdvertisedLocationName": "Höör",
-                        "LocationSignature": "Hö"
-                    },
-                    {
-                        "AdvertisedLocationName": "Hallviken",
-                        "LocationSignature": "Hvn"
-                    },
-                    {
-                        "AdvertisedLocationName": "Ingmår",
-                        "LocationSignature": "Imr"
-                    },
-                    {
-                        "AdvertisedLocationName": "Högdalen",
-                        "LocationSignature": "Hön"
-                    },
-                    {
-                        "AdvertisedLocationName": "Härad",
-                        "LocationSignature": "Häd"
-                    },
-                    {
-                        "AdvertisedLocationName": "Hova",
-                        "LocationSignature": "Hova"
-                    },
-                    {
-                        "AdvertisedLocationName": "Harmånger",
-                        "LocationSignature": "Håg"
-                    },
-                    {
-                        "AdvertisedLocationName": "Järbo",
-                        "LocationSignature": "Jb"
-                    },
-                    {
-                        "AdvertisedLocationName": "Jokkmokk",
-                        "LocationSignature": "Jk"
-                    },
-                    {
-                        "AdvertisedLocationName": "Insjön",
-                        "LocationSignature": "In"
-                    },
-                    {
-                        "AdvertisedLocationName": "Hovmantorp",
-                        "LocationSignature": "Hvp"
                     },
                     {
                         "AdvertisedLocationName": "Hinsnoret",
                         "LocationSignature": "Hno"
                     },
                     {
-                        "AdvertisedLocationName": "Isätra",
-                        "LocationSignature": "Ist"
+                        "AdvertisedLocationName": "Hälleforsnäs",
+                        "LocationSignature": "Hnä"
                     },
                     {
-                        "AdvertisedLocationName": "Häggsjön",
-                        "LocationSignature": "Hän"
+                        "AdvertisedLocationName": "Habo",
+                        "LocationSignature": "Ho"
                     },
                     {
-                        "AdvertisedLocationName": "Hörnefors",
-                        "LocationSignature": "Höf"
+                        "AdvertisedLocationName": "Holmsund",
+                        "LocationSignature": "Hod"
+                    },
+                    {
+                        "AdvertisedLocationName": "Hok",
+                        "LocationSignature": "Hok"
+                    },
+                    {
+                        "AdvertisedLocationName": "Hova",
+                        "LocationSignature": "Hova"
                     },
                     {
                         "AdvertisedLocationName": "Holmån",
                         "LocationSignature": "Hoå"
                     },
                     {
-                        "AdvertisedLocationName": "Håverud",
-                        "LocationSignature": "Hvr"
-                    },
-                    {
-                        "AdvertisedLocationName": "Johannisberg",
-                        "LocationSignature": "Jbg"
-                    },
-                    {
-                        "AdvertisedLocationName": "Högbysjön",
-                        "LocationSignature": "Hög"
-                    },
-                    {
-                        "AdvertisedLocationName": "Jonsered östra",
-                        "LocationSignature": "J"
-                    },
-                    {
-                        "AdvertisedLocationName": "Hössjön",
-                        "LocationSignature": "Hös"
-                    },
-                    {
-                        "AdvertisedLocationName": "Järpen",
-                        "LocationSignature": "Jpn"
-                    },
-                    {
-                        "AdvertisedLocationName": "Jämtlands Sikås",
-                        "LocationSignature": "Js"
-                    },
-                    {
-                        "AdvertisedLocationName": "Håmojåkk",
-                        "LocationSignature": "Håk"
-                    },
-                    {
-                        "AdvertisedLocationName": "Hållsta",
-                        "LocationSignature": "Hål"
-                    },
-                    {
-                        "AdvertisedLocationName": "Järpås",
-                        "LocationSignature": "Jps"
-                    },
-                    {
                         "AdvertisedLocationName": "Haparanda",
                         "LocationSignature": "Hp"
-                    },
-                    {
-                        "AdvertisedLocationName": "Högsby",
-                        "LocationSignature": "Höy"
-                    },
-                    {
-                        "AdvertisedLocationName": "Igelstorp",
-                        "LocationSignature": "Ip"
-                    },
-                    {
-                        "AdvertisedLocationName": "Jakobsberg",
-                        "LocationSignature": "Jkb"
-                    },
-                    {
-                        "AdvertisedLocationName": "Jädersbruk",
-                        "LocationSignature": "Jbk"
-                    },
-                    {
-                        "AdvertisedLocationName": "Järvsö",
-                        "LocationSignature": "Jr"
-                    },
-                    {
-                        "AdvertisedLocationName": "Jonsered",
-                        "LocationSignature": "Jv"
-                    },
-                    {
-                        "AdvertisedLocationName": "Jularbo",
-                        "LocationSignature": "Ju"
-                    },
-                    {
-                        "AdvertisedLocationName": "Jenny",
-                        "LocationSignature": "Jy"
-                    },
-                    {
-                        "AdvertisedLocationName": "Hovslätt",
-                        "LocationSignature": "Hvs"
-                    },
-                    {
-                        "AdvertisedLocationName": "Ivarsbjörke",
-                        "LocationSignature": "Ibe"
-                    },
-                    {
-                        "AdvertisedLocationName": "Jörn",
-                        "LocationSignature": "Jrn"
-                    },
-                    {
-                        "AdvertisedLocationName": "Jordbro",
-                        "LocationSignature": "Jbo"
                     },
                     {
                         "AdvertisedLocationName": "Hallsberg",
                         "LocationSignature": "Hpbg"
                     },
                     {
-                        "AdvertisedLocationName": "Järlåsa",
-                        "LocationSignature": "Jla"
-                    },
-                    {
-                        "AdvertisedLocationName": "Kattisträsk",
-                        "LocationSignature": "Kaä"
-                    },
-                    {
-                        "AdvertisedLocationName": "Hindås",
-                        "LocationSignature": "Hås"
-                    },
-                    {
-                        "AdvertisedLocationName": "Jamtli",
-                        "LocationSignature": "Jli"
-                    },
-                    {
-                        "AdvertisedLocationName": "Jönåker",
-                        "LocationSignature": "Jår"
-                    },
-                    {
-                        "AdvertisedLocationName": "Kalmar C",
-                        "LocationSignature": "Kac"
-                    },
-                    {
-                        "AdvertisedLocationName": "Kattarp",
-                        "LocationSignature": "Ka"
-                    },
-                    {
-                        "AdvertisedLocationName": "Kattisavan",
-                        "LocationSignature": "Kat"
-                    },
-                    {
-                        "AdvertisedLocationName": "Järna",
-                        "LocationSignature": "Jn"
-                    },
-                    {
-                        "AdvertisedLocationName": "Kirunavaara",
-                        "LocationSignature": "Kia"
-                    },
-                    {
-                        "AdvertisedLocationName": "Hallsbergs rangerbangård",
-                        "LocationSignature": "Hrbg"
-                    },
-                    {
                         "AdvertisedLocationName": "Hallsberg Posten",
                         "LocationSignature": "Hpn"
-                    },
-                    {
-                        "AdvertisedLocationName": "Iggesund",
-                        "LocationSignature": "Id"
-                    },
-                    {
-                        "AdvertisedLocationName": "Heby",
-                        "LocationSignature": "Hy"
-                    },
-                    {
-                        "AdvertisedLocationName": "Katrineholm C",
-                        "LocationSignature": "K"
                     },
                     {
                         "AdvertisedLocationName": "Herrljunga",
                         "LocationSignature": "Hr"
                     },
                     {
-                        "AdvertisedLocationName": "Jönköpings godsbangård",
-                        "LocationSignature": "Jögb"
-                    },
-                    {
-                        "AdvertisedLocationName": "Håkantorp",
-                        "LocationSignature": "Håp"
-                    },
-                    {
-                        "AdvertisedLocationName": "Juån",
-                        "LocationSignature": "Jå"
-                    },
-                    {
-                        "AdvertisedLocationName": "Kalmar södra",
-                        "LocationSignature": "Kas"
-                    },
-                    {
-                        "AdvertisedLocationName": "Järlebo",
-                        "LocationSignature": "Jlo"
-                    },
-                    {
-                        "AdvertisedLocationName": "Karpalund",
-                        "LocationSignature": "Kap"
-                    },
-                    {
-                        "AdvertisedLocationName": "Johannedal",
-                        "LocationSignature": "Jhl"
-                    },
-                    {
-                        "AdvertisedLocationName": "Kungsbacka",
-                        "LocationSignature": "Kb"
-                    },
-                    {
-                        "AdvertisedLocationName": "Karlskoga Dalbacksgatan",
-                        "LocationSignature": "Kasd"
-                    },
-                    {
-                        "AdvertisedLocationName": "Järneträsk",
-                        "LocationSignature": "Jnt"
-                    },
-                    {
-                        "AdvertisedLocationName": "Järnforsen",
-                        "LocationSignature": "Jäf"
-                    },
-                    {
-                        "AdvertisedLocationName": "Jakobshyttan",
-                        "LocationSignature": "Jho"
-                    },
-                    {
-                        "AdvertisedLocationName": "Koijuvaara",
-                        "LocationSignature": "Kaa"
-                    },
-                    {
-                        "AdvertisedLocationName": "Hyltebruk",
-                        "LocationSignature": "Hyb"
-                    },
-                    {
-                        "AdvertisedLocationName": "Knalleland",
-                        "LocationSignature": "Knl"
-                    },
-                    {
-                        "AdvertisedLocationName": "Kode",
-                        "LocationSignature": "Kde"
-                    },
-                    {
-                        "AdvertisedLocationName": "Kinnared",
-                        "LocationSignature": "Kid"
-                    },
-                    {
-                        "AdvertisedLocationName": "Korsberga",
-                        "LocationSignature": "Kba"
+                        "AdvertisedLocationName": "Hallsbergs rangerbangård",
+                        "LocationSignature": "Hrbg"
                     },
                     {
                         "AdvertisedLocationName": "Horred",
                         "LocationSignature": "Hre"
                     },
                     {
-                        "AdvertisedLocationName": "Kalix",
-                        "LocationSignature": "Klx"
-                    },
-                    {
-                        "AdvertisedLocationName": "Koskullskulle",
-                        "LocationSignature": "Kos"
-                    },
-                    {
-                        "AdvertisedLocationName": "Kinna",
-                        "LocationSignature": "Kin"
-                    },
-                    {
-                        "AdvertisedLocationName": "Karlberg",
-                        "LocationSignature": "Ke"
-                    },
-                    {
-                        "AdvertisedLocationName": "Kejsarbäcken",
-                        "LocationSignature": "Keb"
-                    },
-                    {
-                        "AdvertisedLocationName": "Kisa",
-                        "LocationSignature": "Kisa"
-                    },
-                    {
-                        "AdvertisedLocationName": "Kil",
-                        "LocationSignature": "Kil"
-                    },
-                    {
                         "AdvertisedLocationName": "Hörle",
                         "LocationSignature": "Hrl"
-                    },
-                    {
-                        "AdvertisedLocationName": "Karlsborg",
-                        "LocationSignature": "Kbg"
-                    },
-                    {
-                        "AdvertisedLocationName": "Kopparberg",
-                        "LocationSignature": "Kpg"
-                    },
-                    {
-                        "AdvertisedLocationName": "Korsnäs",
-                        "LocationSignature": "Koä"
-                    },
-                    {
-                        "AdvertisedLocationName": "Knapptorp",
-                        "LocationSignature": "Knp"
-                    },
-                    {
-                        "AdvertisedLocationName": "Köpmannebro",
-                        "LocationSignature": "Kpm"
-                    },
-                    {
-                        "AdvertisedLocationName": "Kållered",
-                        "LocationSignature": "Krd"
-                    },
-                    {
-                        "AdvertisedLocationName": "Keräsjoki",
-                        "LocationSignature": "Kei"
-                    },
-                    {
-                        "AdvertisedLocationName": "Karbenning",
-                        "LocationSignature": "Kbn"
-                    },
-                    {
-                        "AdvertisedLocationName": "Korpklev",
-                        "LocationSignature": "Kpkv"
-                    },
-                    {
-                        "AdvertisedLocationName": "Kortfors",
-                        "LocationSignature": "Kf"
-                    },
-                    {
-                        "AdvertisedLocationName": "Jönköping C",
-                        "LocationSignature": "Jö"
-                    },
-                    {
-                        "AdvertisedLocationName": "Kilsmo",
-                        "LocationSignature": "Km"
-                    },
-                    {
-                        "AdvertisedLocationName": "Järlövsby",
-                        "LocationSignature": "Jäy"
-                    },
-                    {
-                        "AdvertisedLocationName": "Köping",
-                        "LocationSignature": "Kp"
-                    },
-                    {
-                        "AdvertisedLocationName": "Knäred",
-                        "LocationSignature": "Knä"
                     },
                     {
                         "AdvertisedLocationName": "Hargshamn",
@@ -2212,476 +1824,688 @@ const trainStationList = {
                         "LocationSignature": "Hrt"
                     },
                     {
-                        "AdvertisedLocationName": "Kolsnäs",
-                        "LocationSignature": "Kns"
+                        "AdvertisedLocationName": "Hasselfors",
+                        "LocationSignature": "Hs"
                     },
                     {
-                        "AdvertisedLocationName": "Kitajaur",
-                        "LocationSignature": "Kit"
+                        "AdvertisedLocationName": "Hovsta",
+                        "LocationSignature": "Hsa"
                     },
                     {
-                        "AdvertisedLocationName": "Kramfors",
-                        "LocationSignature": "Krf"
+                        "AdvertisedLocationName": "Hedensbyn",
+                        "LocationSignature": "Hsb"
                     },
                     {
-                        "AdvertisedLocationName": "Killeberg",
-                        "LocationSignature": "Kr"
+                        "AdvertisedLocationName": "Härnösand C",
+                        "LocationSignature": "Hsd"
                     },
                     {
-                        "AdvertisedLocationName": "Krokvik",
-                        "LocationSignature": "Kv"
+                        "AdvertisedLocationName": "Hanaskog",
+                        "LocationSignature": "Hsk"
+                    },
+                    {
+                        "AdvertisedLocationName": "Hasslerör",
+                        "LocationSignature": "Hsr"
+                    },
+                    {
+                        "AdvertisedLocationName": "Hussjöby",
+                        "LocationSignature": "Hsy"
+                    },
+                    {
+                        "AdvertisedLocationName": "Hörnsjö",
+                        "LocationSignature": "Hsö"
+                    },
+                    {
+                        "AdvertisedLocationName": "Hednoret",
+                        "LocationSignature": "Ht"
+                    },
+                    {
+                        "AdvertisedLocationName": "Hoting",
+                        "LocationSignature": "Htg"
+                    },
+                    {
+                        "AdvertisedLocationName": "Hillerstorp",
+                        "LocationSignature": "Hto"
+                    },
+                    {
+                        "AdvertisedLocationName": "Huddinge",
+                        "LocationSignature": "Hu"
+                    },
+                    {
+                        "AdvertisedLocationName": "Hulingsryd",
+                        "LocationSignature": "Hud"
+                    },
+                    {
+                        "AdvertisedLocationName": "Hult",
+                        "LocationSignature": "Hul"
+                    },
+                    {
+                        "AdvertisedLocationName": "Husum",
+                        "LocationSignature": "Hum"
+                    },
+                    {
+                        "AdvertisedLocationName": "Husums norra",
+                        "LocationSignature": "Humn"
+                    },
+                    {
+                        "AdvertisedLocationName": "Huvudsta",
+                        "LocationSignature": "Huv"
+                    },
+                    {
+                        "AdvertisedLocationName": "Hundsjön",
+                        "LocationSignature": "Huö"
+                    },
+                    {
+                        "AdvertisedLocationName": "Hästveda",
+                        "LocationSignature": "Hv"
+                    },
+                    {
+                        "AdvertisedLocationName": "Hjältevad",
+                        "LocationSignature": "Hvd"
+                    },
+                    {
+                        "AdvertisedLocationName": "Hallviken",
+                        "LocationSignature": "Hvn"
+                    },
+                    {
+                        "AdvertisedLocationName": "Hovmantorp",
+                        "LocationSignature": "Hvp"
+                    },
+                    {
+                        "AdvertisedLocationName": "Håverud",
+                        "LocationSignature": "Hvr"
+                    },
+                    {
+                        "AdvertisedLocationName": "Hovslätt",
+                        "LocationSignature": "Hvs"
+                    },
+                    {
+                        "AdvertisedLocationName": "Heby",
+                        "LocationSignature": "Hy"
+                    },
+                    {
+                        "AdvertisedLocationName": "Hyltebruk",
+                        "LocationSignature": "Hyb"
+                    },
+                    {
+                        "AdvertisedLocationName": "Hyllstofta",
+                        "LocationSignature": "Hyl"
+                    },
+                    {
+                        "AdvertisedLocationName": "Håsjö",
+                        "LocationSignature": "Hå"
+                    },
+                    {
+                        "AdvertisedLocationName": "Harmånger",
+                        "LocationSignature": "Håg"
+                    },
+                    {
+                        "AdvertisedLocationName": "Håmojåkk",
+                        "LocationSignature": "Håk"
+                    },
+                    {
+                        "AdvertisedLocationName": "Hållsta",
+                        "LocationSignature": "Hål"
+                    },
+                    {
+                        "AdvertisedLocationName": "Håkantorp",
+                        "LocationSignature": "Håp"
+                    },
+                    {
+                        "AdvertisedLocationName": "Hindås",
+                        "LocationSignature": "Hås"
+                    },
+                    {
+                        "AdvertisedLocationName": "Hästbo",
+                        "LocationSignature": "Hä"
+                    },
+                    {
+                        "AdvertisedLocationName": "Hämrasviken",
+                        "LocationSignature": "Häb"
+                    },
+                    {
+                        "AdvertisedLocationName": "Härad",
+                        "LocationSignature": "Häd"
+                    },
+                    {
+                        "AdvertisedLocationName": "Häggsjön",
+                        "LocationSignature": "Hän"
+                    },
+                    {
+                        "AdvertisedLocationName": "Häljarp",
+                        "LocationSignature": "Häp"
+                    },
+                    {
+                        "AdvertisedLocationName": "Härryda",
+                        "LocationSignature": "Häy"
+                    },
+                    {
+                        "AdvertisedLocationName": "Höör",
+                        "LocationSignature": "Hö"
+                    },
+                    {
+                        "AdvertisedLocationName": "Hörnefors",
+                        "LocationSignature": "Höf"
+                    },
+                    {
+                        "AdvertisedLocationName": "Högbysjön",
+                        "LocationSignature": "Hög"
+                    },
+                    {
+                        "AdvertisedLocationName": "Höja",
+                        "LocationSignature": "Höja"
+                    },
+                    {
+                        "AdvertisedLocationName": "Högdalen",
+                        "LocationSignature": "Hön"
+                    },
+                    {
+                        "AdvertisedLocationName": "Hössjön",
+                        "LocationSignature": "Hös"
+                    },
+                    {
+                        "AdvertisedLocationName": "Högsby",
+                        "LocationSignature": "Höy"
+                    },
+                    {
+                        "AdvertisedLocationName": "Ivarsbjörke",
+                        "LocationSignature": "Ibe"
+                    },
+                    {
+                        "AdvertisedLocationName": "Iggesund",
+                        "LocationSignature": "Id"
+                    },
+                    {
+                        "AdvertisedLocationName": "Ingatorp",
+                        "LocationSignature": "Igt"
+                    },
+                    {
+                        "AdvertisedLocationName": "Ingmår",
+                        "LocationSignature": "Imr"
+                    },
+                    {
+                        "AdvertisedLocationName": "Insjön",
+                        "LocationSignature": "In"
+                    },
+                    {
+                        "AdvertisedLocationName": "Igelstorp",
+                        "LocationSignature": "Ip"
+                    },
+                    {
+                        "AdvertisedLocationName": "Isätra",
+                        "LocationSignature": "Ist"
+                    },
+                    {
+                        "AdvertisedLocationName": "Bolzano",
+                        "LocationSignature": "It.bol"
+                    },
+                    {
+                        "AdvertisedLocationName": "Venedig",
+                        "LocationSignature": "It.ven"
+                    },
+                    {
+                        "AdvertisedLocationName": "Jonsered östra",
+                        "LocationSignature": "J"
+                    },
+                    {
+                        "AdvertisedLocationName": "Järbo",
+                        "LocationSignature": "Jb"
+                    },
+                    {
+                        "AdvertisedLocationName": "Johannisberg",
+                        "LocationSignature": "Jbg"
+                    },
+                    {
+                        "AdvertisedLocationName": "Jädersbruk",
+                        "LocationSignature": "Jbk"
+                    },
+                    {
+                        "AdvertisedLocationName": "Jordbro",
+                        "LocationSignature": "Jbo"
+                    },
+                    {
+                        "AdvertisedLocationName": "Johannedal",
+                        "LocationSignature": "Jhl"
+                    },
+                    {
+                        "AdvertisedLocationName": "Jakobshyttan",
+                        "LocationSignature": "Jho"
+                    },
+                    {
+                        "AdvertisedLocationName": "Jokkmokk",
+                        "LocationSignature": "Jk"
+                    },
+                    {
+                        "AdvertisedLocationName": "Jakobsberg",
+                        "LocationSignature": "Jkb"
+                    },
+                    {
+                        "AdvertisedLocationName": "Järlåsa",
+                        "LocationSignature": "Jla"
+                    },
+                    {
+                        "AdvertisedLocationName": "Jamtli",
+                        "LocationSignature": "Jli"
+                    },
+                    {
+                        "AdvertisedLocationName": "Järlebo",
+                        "LocationSignature": "Jlo"
+                    },
+                    {
+                        "AdvertisedLocationName": "Järna",
+                        "LocationSignature": "Jn"
+                    },
+                    {
+                        "AdvertisedLocationName": "Järneträsk",
+                        "LocationSignature": "Jnt"
+                    },
+                    {
+                        "AdvertisedLocationName": "Järpen",
+                        "LocationSignature": "Jpn"
+                    },
+                    {
+                        "AdvertisedLocationName": "Järpås",
+                        "LocationSignature": "Jps"
+                    },
+                    {
+                        "AdvertisedLocationName": "Järvsö",
+                        "LocationSignature": "Jr"
+                    },
+                    {
+                        "AdvertisedLocationName": "Jörn",
+                        "LocationSignature": "Jrn"
+                    },
+                    {
+                        "AdvertisedLocationName": "Jämtlands Sikås",
+                        "LocationSignature": "Js"
+                    },
+                    {
+                        "AdvertisedLocationName": "Jularbo",
+                        "LocationSignature": "Ju"
+                    },
+                    {
+                        "AdvertisedLocationName": "Jonsered",
+                        "LocationSignature": "Jv"
+                    },
+                    {
+                        "AdvertisedLocationName": "Jenny",
+                        "LocationSignature": "Jy"
+                    },
+                    {
+                        "AdvertisedLocationName": "Juån",
+                        "LocationSignature": "Jå"
+                    },
+                    {
+                        "AdvertisedLocationName": "Jönåker",
+                        "LocationSignature": "Jår"
+                    },
+                    {
+                        "AdvertisedLocationName": "Järnforsen",
+                        "LocationSignature": "Jäf"
+                    },
+                    {
+                        "AdvertisedLocationName": "Järlövsby",
+                        "LocationSignature": "Jäy"
+                    },
+                    {
+                        "AdvertisedLocationName": "Jönköping C",
+                        "LocationSignature": "Jö"
+                    },
+                    {
+                        "AdvertisedLocationName": "Jönköpings godsbangård",
+                        "LocationSignature": "Jögb"
+                    },
+                    {
+                        "AdvertisedLocationName": "Katrineholm C",
+                        "LocationSignature": "K"
+                    },
+                    {
+                        "AdvertisedLocationName": "Kattarp",
+                        "LocationSignature": "Ka"
+                    },
+                    {
+                        "AdvertisedLocationName": "Koijuvaara",
+                        "LocationSignature": "Kaa"
+                    },
+                    {
+                        "AdvertisedLocationName": "Kalmar C",
+                        "LocationSignature": "Kac"
+                    },
+                    {
+                        "AdvertisedLocationName": "Karpalund",
+                        "LocationSignature": "Kap"
+                    },
+                    {
+                        "AdvertisedLocationName": "Kalmar södra",
+                        "LocationSignature": "Kas"
+                    },
+                    {
+                        "AdvertisedLocationName": "Karlskoga Dalbacksgatan",
+                        "LocationSignature": "Kasd"
+                    },
+                    {
+                        "AdvertisedLocationName": "Kattisavan",
+                        "LocationSignature": "Kat"
+                    },
+                    {
+                        "AdvertisedLocationName": "Kattisträsk",
+                        "LocationSignature": "Kaä"
+                    },
+                    {
+                        "AdvertisedLocationName": "Kungsbacka",
+                        "LocationSignature": "Kb"
+                    },
+                    {
+                        "AdvertisedLocationName": "Korsberga",
+                        "LocationSignature": "Kba"
+                    },
+                    {
+                        "AdvertisedLocationName": "Karlsborg",
+                        "LocationSignature": "Kbg"
+                    },
+                    {
+                        "AdvertisedLocationName": "Karbenning",
+                        "LocationSignature": "Kbn"
                     },
                     {
                         "AdvertisedLocationName": "Kolbäck",
                         "LocationSignature": "Kbä"
                     },
                     {
-                        "AdvertisedLocationName": "Kaisepakte",
-                        "LocationSignature": "Kpe"
-                    },
-                    {
-                        "AdvertisedLocationName": "Kjula",
-                        "LocationSignature": "Kju"
-                    },
-                    {
-                        "AdvertisedLocationName": "Kimstad",
-                        "LocationSignature": "Kms"
-                    },
-                    {
-                        "AdvertisedLocationName": "Kolforsen",
-                        "LocationSignature": "Kfn"
-                    },
-                    {
-                        "AdvertisedLocationName": "Kiruna",
-                        "LocationSignature": "Kmb"
-                    },
-                    {
-                        "AdvertisedLocationName": "Karungi",
-                        "LocationSignature": "Kri"
-                    },
-                    {
                         "AdvertisedLocationName": "Kågeröd",
                         "LocationSignature": "Kd"
-                    },
-                    {
-                        "AdvertisedLocationName": "Krokom",
-                        "LocationSignature": "Krm"
-                    },
-                    {
-                        "AdvertisedLocationName": "Kolke",
-                        "LocationSignature": "Koe"
-                    },
-                    {
-                        "AdvertisedLocationName": "Katterjåkk",
-                        "LocationSignature": "Kjå"
-                    },
-                    {
-                        "AdvertisedLocationName": "Kosjärv",
-                        "LocationSignature": "Koj"
-                    },
-                    {
-                        "AdvertisedLocationName": "Kävlinge",
-                        "LocationSignature": "Kg"
                     },
                     {
                         "AdvertisedLocationName": "Krigslida",
                         "LocationSignature": "Kda"
                     },
                     {
-                        "AdvertisedLocationName": "Kopparåsen",
-                        "LocationSignature": "Kå"
+                        "AdvertisedLocationName": "Kode",
+                        "LocationSignature": "Kde"
                     },
                     {
-                        "AdvertisedLocationName": "Koskivaara",
-                        "LocationSignature": "Kva"
+                        "AdvertisedLocationName": "Karlberg",
+                        "LocationSignature": "Ke"
                     },
                     {
-                        "AdvertisedLocationName": "Kummelby",
-                        "LocationSignature": "Kmy"
+                        "AdvertisedLocationName": "Kejsarbäcken",
+                        "LocationSignature": "Keb"
                     },
                     {
-                        "AdvertisedLocationName": "Krampen",
-                        "LocationSignature": "Krn"
+                        "AdvertisedLocationName": "Keräsjoki",
+                        "LocationSignature": "Kei"
                     },
                     {
-                        "AdvertisedLocationName": "Kringlan",
-                        "LocationSignature": "Krl"
+                        "AdvertisedLocationName": "Kortfors",
+                        "LocationSignature": "Kf"
                     },
                     {
-                        "AdvertisedLocationName": "Kåbdalis",
-                        "LocationSignature": "Kåb"
+                        "AdvertisedLocationName": "Kolforsen",
+                        "LocationSignature": "Kfn"
+                    },
+                    {
+                        "AdvertisedLocationName": "Kävlinge",
+                        "LocationSignature": "Kg"
                     },
                     {
                         "AdvertisedLocationName": "Kungsgården",
                         "LocationSignature": "Kgd"
                     },
                     {
-                        "AdvertisedLocationName": "Käppsta",
-                        "LocationSignature": "Käp"
-                    },
-                    {
-                        "AdvertisedLocationName": "Kvillsfors",
-                        "LocationSignature": "Kvf"
-                    },
-                    {
-                        "AdvertisedLocationName": "Krokom OJ",
-                        "LocationSignature": "Kroj"
-                    },
-                    {
-                        "AdvertisedLocationName": "Kärrgruvan",
-                        "LocationSignature": "Kär"
-                    },
-                    {
-                        "AdvertisedLocationName": "Kumla",
-                        "LocationSignature": "Kla"
-                    },
-                    {
-                        "AdvertisedLocationName": "Klippan",
-                        "LocationSignature": "Kl"
-                    },
-                    {
-                        "AdvertisedLocationName": "Köpingebro",
-                        "LocationSignature": "Köp"
-                    },
-                    {
-                        "AdvertisedLocationName": "Knivsta",
-                        "LocationSignature": "Kn"
-                    },
-                    {
-                        "AdvertisedLocationName": "Klevshult",
-                        "LocationSignature": "Kvh"
-                    },
-                    {
-                        "AdvertisedLocationName": "Kolmården",
-                        "LocationSignature": "Kon"
-                    },
-                    {
-                        "AdvertisedLocationName": "Luleå C",
-                        "LocationSignature": "Le"
-                    },
-                    {
-                        "AdvertisedLocationName": "Lingbo",
-                        "LocationSignature": "Lb"
-                    },
-                    {
-                        "AdvertisedLocationName": "Krökesbo",
-                        "LocationSignature": "Kröb"
-                    },
-                    {
-                        "AdvertisedLocationName": "Karsbäcken",
-                        "LocationSignature": "Krb"
-                    },
-                    {
-                        "AdvertisedLocationName": "Leksboda",
-                        "LocationSignature": "Lea"
-                    },
-                    {
-                        "AdvertisedLocationName": "Kungsör",
-                        "LocationSignature": "Kör"
-                    },
-                    {
                         "AdvertisedLocationName": "Kragenäs",
                         "LocationSignature": "Kgs"
-                    },
-                    {
-                        "AdvertisedLocationName": "Kälvattnet",
-                        "LocationSignature": "Käv"
-                    },
-                    {
-                        "AdvertisedLocationName": "Könsa",
-                        "LocationSignature": "Köa"
-                    },
-                    {
-                        "AdvertisedLocationName": "Källeryd",
-                        "LocationSignature": "Kä"
-                    },
-                    {
-                        "AdvertisedLocationName": "Kvidinge",
-                        "LocationSignature": "Kvi"
-                    },
-                    {
-                        "AdvertisedLocationName": "Klockarbäcken",
-                        "LocationSignature": "Klbn"
-                    },
-                    {
-                        "AdvertisedLocationName": "Lekarekulle",
-                        "LocationSignature": "Lek"
-                    },
-                    {
-                        "AdvertisedLocationName": "Lindesberg",
-                        "LocationSignature": "Ld"
-                    },
-                    {
-                        "AdvertisedLocationName": "Karlskoga centrum",
-                        "LocationSignature": "Ksac"
-                    },
-                    {
-                        "AdvertisedLocationName": "Långbron",
-                        "LocationSignature": "Lgb"
-                    },
-                    {
-                        "AdvertisedLocationName": "Välsviken",
-                        "LocationSignature": "Kvä"
-                    },
-                    {
-                        "AdvertisedLocationName": "Ljungskile",
-                        "LocationSignature": "Lj"
                     },
                     {
                         "AdvertisedLocationName": "Karlshamn",
                         "LocationSignature": "Kh"
                     },
                     {
-                        "AdvertisedLocationName": "Kärreberga",
-                        "LocationSignature": "Käb"
+                        "AdvertisedLocationName": "Hede",
+                        "LocationSignature": "Khe"
                     },
                     {
-                        "AdvertisedLocationName": "Lene",
-                        "LocationSignature": "Len"
+                        "AdvertisedLocationName": "Kristinehamn",
+                        "LocationSignature": "Khn"
+                    },
+                    {
+                        "AdvertisedLocationName": "Klenshyttan",
+                        "LocationSignature": "Khy"
+                    },
+                    {
+                        "AdvertisedLocationName": "Kallhäll",
+                        "LocationSignature": "Khä"
+                    },
+                    {
+                        "AdvertisedLocationName": "Kirunavaara",
+                        "LocationSignature": "Kia"
+                    },
+                    {
+                        "AdvertisedLocationName": "Kinnared",
+                        "LocationSignature": "Kid"
+                    },
+                    {
+                        "AdvertisedLocationName": "Kil",
+                        "LocationSignature": "Kil"
+                    },
+                    {
+                        "AdvertisedLocationName": "Kinna",
+                        "LocationSignature": "Kin"
+                    },
+                    {
+                        "AdvertisedLocationName": "Kisa",
+                        "LocationSignature": "Kisa"
+                    },
+                    {
+                        "AdvertisedLocationName": "Kitajaur",
+                        "LocationSignature": "Kit"
+                    },
+                    {
+                        "AdvertisedLocationName": "Kjula",
+                        "LocationSignature": "Kju"
+                    },
+                    {
+                        "AdvertisedLocationName": "Katterjåkk",
+                        "LocationSignature": "Kjå"
+                    },
+                    {
+                        "AdvertisedLocationName": "Klippan",
+                        "LocationSignature": "Kl"
+                    },
+                    {
+                        "AdvertisedLocationName": "Kumla",
+                        "LocationSignature": "Kla"
+                    },
+                    {
+                        "AdvertisedLocationName": "Klockarbäcken",
+                        "LocationSignature": "Klbn"
                     },
                     {
                         "AdvertisedLocationName": "Kallholsfors",
                         "LocationSignature": "Klh"
                     },
                     {
-                        "AdvertisedLocationName": "Karlstad C",
-                        "LocationSignature": "Ks"
-                    },
-                    {
-                        "AdvertisedLocationName": "Ljung",
-                        "LocationSignature": "Lju"
-                    },
-                    {
-                        "AdvertisedLocationName": "Lidlund",
-                        "LocationSignature": "Ldl"
-                    },
-                    {
-                        "AdvertisedLocationName": "Källene",
-                        "LocationSignature": "Käe"
-                    },
-                    {
-                        "AdvertisedLocationName": "Karlsberg",
-                        "LocationSignature": "Ksg"
-                    },
-                    {
-                        "AdvertisedLocationName": "Kvarnsjö",
-                        "LocationSignature": "Kvö"
-                    },
-                    {
                         "AdvertisedLocationName": "Källby",
                         "LocationSignature": "Kll"
-                    },
-                    {
-                        "AdvertisedLocationName": "Lödöse Södra",
-                        "LocationSignature": "Les"
-                    },
-                    {
-                        "AdvertisedLocationName": "Lilla Edet",
-                        "LocationSignature": "Let"
-                    },
-                    {
-                        "AdvertisedLocationName": "Linghem",
-                        "LocationSignature": "Lgm"
-                    },
-                    {
-                        "AdvertisedLocationName": "Ludvika",
-                        "LocationSignature": "La"
-                    },
-                    {
-                        "AdvertisedLocationName": "Kalixfors",
-                        "LocationSignature": "Kx"
-                    },
-                    {
-                        "AdvertisedLocationName": "Kistinge",
-                        "LocationSignature": "Kst"
-                    },
-                    {
-                        "AdvertisedLocationName": "Lappberg",
-                        "LocationSignature": "Lab"
-                    },
-                    {
-                        "AdvertisedLocationName": "Ledsgård",
-                        "LocationSignature": "Lgd"
-                    },
-                    {
-                        "AdvertisedLocationName": "Läggesta",
-                        "LocationSignature": "Lg"
-                    },
-                    {
-                        "AdvertisedLocationName": "Kungsängen",
-                        "LocationSignature": "Kän"
-                    },
-                    {
-                        "AdvertisedLocationName": "Ljungaverks lastplats",
-                        "LocationSignature": "Ljun"
-                    },
-                    {
-                        "AdvertisedLocationName": "Lidköping",
-                        "LocationSignature": "Lkp"
-                    },
-                    {
-                        "AdvertisedLocationName": "Lindome",
-                        "LocationSignature": "Ldo"
-                    },
-                    {
-                        "AdvertisedLocationName": "Löcknamon",
-                        "LocationSignature": "Lmo"
-                    },
-                    {
-                        "AdvertisedLocationName": "Ljungaverk",
-                        "LocationSignature": "Ljv"
-                    },
-                    {
-                        "AdvertisedLocationName": "Kvicksund",
-                        "LocationSignature": "Ksus"
-                    },
-                    {
-                        "AdvertisedLocationName": "Kvicksund",
-                        "LocationSignature": "Ksu"
-                    },
-                    {
-                        "AdvertisedLocationName": "Arbrå",
-                        "LocationSignature": "Ab"
-                    },
-                    {
-                        "AdvertisedLocationName": "Lästringe",
-                        "LocationSignature": "Lre"
-                    },
-                    {
-                        "AdvertisedLocationName": "Lomselenäs",
-                        "LocationSignature": "Lms"
-                    },
-                    {
-                        "AdvertisedLocationName": "Laholm",
-                        "LocationSignature": "Laov"
-                    },
-                    {
-                        "AdvertisedLocationName": "Lakaträsk",
-                        "LocationSignature": "Lkä"
-                    },
-                    {
-                        "AdvertisedLocationName": "Loka",
-                        "LocationSignature": "Loka"
                     },
                     {
                         "AdvertisedLocationName": "Kälarne",
                         "LocationSignature": "Kln"
                     },
                     {
-                        "AdvertisedLocationName": "Lammhult",
-                        "LocationSignature": "Lh"
-                    },
-                    {
-                        "AdvertisedLocationName": "Karsjö",
-                        "LocationSignature": "Ksö"
-                    },
-                    {
-                        "AdvertisedLocationName": "Laduberg",
-                        "LocationSignature": "Lrg"
-                    },
-                    {
-                        "AdvertisedLocationName": "Lomsmyren",
-                        "LocationSignature": "Lom"
-                    },
-                    {
-                        "AdvertisedLocationName": "Landskrona",
-                        "LocationSignature": "Lkö"
-                    },
-                    {
-                        "AdvertisedLocationName": "Lockarp",
-                        "LocationSignature": "Lrp"
-                    },
-                    {
-                        "AdvertisedLocationName": "Loster",
-                        "LocationSignature": "Ltr"
-                    },
-                    {
-                        "AdvertisedLocationName": "Kapellet",
-                        "LocationSignature": "Kt"
-                    },
-                    {
-                        "AdvertisedLocationName": "Lund C",
-                        "LocationSignature": "Lu"
-                    },
-                    {
-                        "AdvertisedLocationName": "Lerot",
-                        "LocationSignature": "Lrt"
-                    },
-                    {
                         "AdvertisedLocationName": "Koler",
                         "LocationSignature": "Klr"
-                    },
-                    {
-                        "AdvertisedLocationName": "Lillhamra",
-                        "LocationSignature": "Lhr"
-                    },
-                    {
-                        "AdvertisedLocationName": "Kaitum",
-                        "LocationSignature": "Ktm"
-                    },
-                    {
-                        "AdvertisedLocationName": "Lernacken",
-                        "LocationSignature": "Lnk"
-                    },
-                    {
-                        "AdvertisedLocationName": "Linddalen",
-                        "LocationSignature": "Lln"
-                    },
-                    {
-                        "AdvertisedLocationName": "Lökom",
-                        "LocationSignature": "Lkm"
-                    },
-                    {
-                        "AdvertisedLocationName": "Lillaryd",
-                        "LocationSignature": "Lia"
-                    },
-                    {
-                        "AdvertisedLocationName": "Lottefors",
-                        "LocationSignature": "Lot"
-                    },
-                    {
-                        "AdvertisedLocationName": "Lindekullen",
-                        "LocationSignature": "Lkn"
-                    },
-                    {
-                        "AdvertisedLocationName": "Lundby",
-                        "LocationSignature": "Lub"
                     },
                     {
                         "AdvertisedLocationName": "Kilafors",
                         "LocationSignature": "Kls"
                     },
                     {
-                        "AdvertisedLocationName": "Linköping C",
-                        "LocationSignature": "Lp"
+                        "AdvertisedLocationName": "Kilvo",
+                        "LocationSignature": "Klv"
                     },
                     {
-                        "AdvertisedLocationName": "Ljusdal",
-                        "LocationSignature": "Ls"
+                        "AdvertisedLocationName": "Kalix",
+                        "LocationSignature": "Klx"
                     },
                     {
-                        "AdvertisedLocationName": "Lerum",
-                        "LocationSignature": "Lr"
+                        "AdvertisedLocationName": "Kilsmo",
+                        "LocationSignature": "Km"
                     },
                     {
-                        "AdvertisedLocationName": "Låktatjåkka",
-                        "LocationSignature": "Låk"
+                        "AdvertisedLocationName": "Kiruna",
+                        "LocationSignature": "Kmb"
                     },
                     {
-                        "AdvertisedLocationName": "Lappträsk",
-                        "LocationSignature": "Lpk"
+                        "AdvertisedLocationName": "Kimstad",
+                        "LocationSignature": "Kms"
                     },
                     {
-                        "AdvertisedLocationName": "Liljeholmen",
-                        "LocationSignature": "Lm"
+                        "AdvertisedLocationName": "Kummelby",
+                        "LocationSignature": "Kmy"
                     },
                     {
-                        "AdvertisedLocationName": "Leksand",
-                        "LocationSignature": "Lsd"
+                        "AdvertisedLocationName": "Knivsta",
+                        "LocationSignature": "Kn"
                     },
                     {
-                        "AdvertisedLocationName": "Långvattnet",
-                        "LocationSignature": "Lnv"
+                        "AdvertisedLocationName": "Kvarnängen",
+                        "LocationSignature": "Kng"
+                    },
+                    {
+                        "AdvertisedLocationName": "Knalleland",
+                        "LocationSignature": "Knl"
+                    },
+                    {
+                        "AdvertisedLocationName": "Knapptorp",
+                        "LocationSignature": "Knp"
+                    },
+                    {
+                        "AdvertisedLocationName": "Kolsnäs",
+                        "LocationSignature": "Kns"
+                    },
+                    {
+                        "AdvertisedLocationName": "Knäred",
+                        "LocationSignature": "Knä"
+                    },
+                    {
+                        "AdvertisedLocationName": "Kolke",
+                        "LocationSignature": "Koe"
+                    },
+                    {
+                        "AdvertisedLocationName": "Kosjärv",
+                        "LocationSignature": "Koj"
+                    },
+                    {
+                        "AdvertisedLocationName": "Kolmården",
+                        "LocationSignature": "Kon"
+                    },
+                    {
+                        "AdvertisedLocationName": "Kronetorp",
+                        "LocationSignature": "Kop"
+                    },
+                    {
+                        "AdvertisedLocationName": "Koskullskulle",
+                        "LocationSignature": "Kos"
+                    },
+                    {
+                        "AdvertisedLocationName": "Korsnäs",
+                        "LocationSignature": "Koä"
+                    },
+                    {
+                        "AdvertisedLocationName": "Köping",
+                        "LocationSignature": "Kp"
+                    },
+                    {
+                        "AdvertisedLocationName": "Kaisepakte",
+                        "LocationSignature": "Kpe"
+                    },
+                    {
+                        "AdvertisedLocationName": "Kopparberg",
+                        "LocationSignature": "Kpg"
+                    },
+                    {
+                        "AdvertisedLocationName": "Korpklev",
+                        "LocationSignature": "Kpkv"
+                    },
+                    {
+                        "AdvertisedLocationName": "Köpmannebro",
+                        "LocationSignature": "Kpm"
+                    },
+                    {
+                        "AdvertisedLocationName": "Killeberg",
+                        "LocationSignature": "Kr"
+                    },
+                    {
+                        "AdvertisedLocationName": "Karsbäcken",
+                        "LocationSignature": "Krb"
+                    },
+                    {
+                        "AdvertisedLocationName": "Kållered",
+                        "LocationSignature": "Krd"
+                    },
+                    {
+                        "AdvertisedLocationName": "Kramfors",
+                        "LocationSignature": "Krf"
+                    },
+                    {
+                        "AdvertisedLocationName": "Karungi",
+                        "LocationSignature": "Kri"
+                    },
+                    {
+                        "AdvertisedLocationName": "Kringlan",
+                        "LocationSignature": "Krl"
+                    },
+                    {
+                        "AdvertisedLocationName": "Krokom",
+                        "LocationSignature": "Krm"
+                    },
+                    {
+                        "AdvertisedLocationName": "Krampen",
+                        "LocationSignature": "Krn"
+                    },
+                    {
+                        "AdvertisedLocationName": "Krokom OJ",
+                        "LocationSignature": "Kroj"
+                    },
+                    {
+                        "AdvertisedLocationName": "Krökesbo",
+                        "LocationSignature": "Kröb"
+                    },
+                    {
+                        "AdvertisedLocationName": "Karlstad C",
+                        "LocationSignature": "Ks"
+                    },
+                    {
+                        "AdvertisedLocationName": "Karlskoga centrum",
+                        "LocationSignature": "Ksac"
+                    },
+                    {
+                        "AdvertisedLocationName": "Karlsberg",
+                        "LocationSignature": "Ksg"
+                    },
+                    {
+                        "AdvertisedLocationName": "Kistinge",
+                        "LocationSignature": "Kst"
+                    },
+                    {
+                        "AdvertisedLocationName": "Kvicksund",
+                        "LocationSignature": "Ksu"
+                    },
+                    {
+                        "AdvertisedLocationName": "Kvicksund",
+                        "LocationSignature": "Ksus"
+                    },
+                    {
+                        "AdvertisedLocationName": "Karsjö",
+                        "LocationSignature": "Ksö"
+                    },
+                    {
+                        "AdvertisedLocationName": "Kapellet",
+                        "LocationSignature": "Kt"
+                    },
+                    {
+                        "AdvertisedLocationName": "Kaitum",
+                        "LocationSignature": "Ktm"
                     },
                     {
                         "AdvertisedLocationName": "Korsträsk",
@@ -2692,272 +2516,392 @@ const trainStationList = {
                         "LocationSignature": "Kud"
                     },
                     {
-                        "AdvertisedLocationName": "Limmared",
-                        "LocationSignature": "Lme"
+                        "AdvertisedLocationName": "Krokvik",
+                        "LocationSignature": "Kv"
                     },
                     {
-                        "AdvertisedLocationName": "Ljusne bruk",
-                        "LocationSignature": "Lsb"
+                        "AdvertisedLocationName": "Koskivaara",
+                        "LocationSignature": "Kva"
                     },
                     {
-                        "AdvertisedLocationName": "Lidnäs",
-                        "LocationSignature": "Lns"
+                        "AdvertisedLocationName": "Kvillsfors",
+                        "LocationSignature": "Kvf"
                     },
                     {
-                        "AdvertisedLocationName": "Lunnarp",
-                        "LocationSignature": "Lup"
+                        "AdvertisedLocationName": "Klevshult",
+                        "LocationSignature": "Kvh"
                     },
                     {
-                        "AdvertisedLocationName": "Lörstrand",
-                        "LocationSignature": "Lö"
+                        "AdvertisedLocationName": "Kvidinge",
+                        "LocationSignature": "Kvi"
                     },
                     {
-                        "AdvertisedLocationName": "Kilvo",
-                        "LocationSignature": "Klv"
+                        "AdvertisedLocationName": "Välsviken",
+                        "LocationSignature": "Kvä"
+                    },
+                    {
+                        "AdvertisedLocationName": "Kvarnsjö",
+                        "LocationSignature": "Kvö"
+                    },
+                    {
+                        "AdvertisedLocationName": "Kalixfors",
+                        "LocationSignature": "Kx"
+                    },
+                    {
+                        "AdvertisedLocationName": "Kopparåsen",
+                        "LocationSignature": "Kå"
+                    },
+                    {
+                        "AdvertisedLocationName": "Kåbdalis",
+                        "LocationSignature": "Kåb"
+                    },
+                    {
+                        "AdvertisedLocationName": "Källeryd",
+                        "LocationSignature": "Kä"
+                    },
+                    {
+                        "AdvertisedLocationName": "Kärreberga",
+                        "LocationSignature": "Käb"
+                    },
+                    {
+                        "AdvertisedLocationName": "Källene",
+                        "LocationSignature": "Käe"
+                    },
+                    {
+                        "AdvertisedLocationName": "Kungsängen",
+                        "LocationSignature": "Kän"
+                    },
+                    {
+                        "AdvertisedLocationName": "Käppsta",
+                        "LocationSignature": "Käp"
+                    },
+                    {
+                        "AdvertisedLocationName": "Kärrgruvan",
+                        "LocationSignature": "Kär"
+                    },
+                    {
+                        "AdvertisedLocationName": "Kälvattnet",
+                        "LocationSignature": "Käv"
+                    },
+                    {
+                        "AdvertisedLocationName": "Könsa",
+                        "LocationSignature": "Köa"
+                    },
+                    {
+                        "AdvertisedLocationName": "Köpingebro",
+                        "LocationSignature": "Köp"
+                    },
+                    {
+                        "AdvertisedLocationName": "Kungsör",
+                        "LocationSignature": "Kör"
+                    },
+                    {
+                        "AdvertisedLocationName": "Ludvika",
+                        "LocationSignature": "La"
+                    },
+                    {
+                        "AdvertisedLocationName": "Lappberg",
+                        "LocationSignature": "Lab"
+                    },
+                    {
+                        "AdvertisedLocationName": "Laholm",
+                        "LocationSignature": "Laov"
+                    },
+                    {
+                        "AdvertisedLocationName": "Lingbo",
+                        "LocationSignature": "Lb"
+                    },
+                    {
+                        "AdvertisedLocationName": "Lindesberg",
+                        "LocationSignature": "Ld"
+                    },
+                    {
+                        "AdvertisedLocationName": "Lidlund",
+                        "LocationSignature": "Ldl"
+                    },
+                    {
+                        "AdvertisedLocationName": "Lindome",
+                        "LocationSignature": "Ldo"
+                    },
+                    {
+                        "AdvertisedLocationName": "Luleå C",
+                        "LocationSignature": "Le"
+                    },
+                    {
+                        "AdvertisedLocationName": "Karlsvik",
+                        "LocationSignature": "Le.k"
+                    },
+                    {
+                        "AdvertisedLocationName": "Leksboda",
+                        "LocationSignature": "Lea"
+                    },
+                    {
+                        "AdvertisedLocationName": "Lekarekulle",
+                        "LocationSignature": "Lek"
+                    },
+                    {
+                        "AdvertisedLocationName": "Lene",
+                        "LocationSignature": "Len"
+                    },
+                    {
+                        "AdvertisedLocationName": "Lödöse Södra",
+                        "LocationSignature": "Les"
+                    },
+                    {
+                        "AdvertisedLocationName": "Lilla Edet",
+                        "LocationSignature": "Let"
+                    },
+                    {
+                        "AdvertisedLocationName": "Läggesta",
+                        "LocationSignature": "Lg"
+                    },
+                    {
+                        "AdvertisedLocationName": "Långbron",
+                        "LocationSignature": "Lgb"
+                    },
+                    {
+                        "AdvertisedLocationName": "Ledsgård",
+                        "LocationSignature": "Lgd"
+                    },
+                    {
+                        "AdvertisedLocationName": "Linghem",
+                        "LocationSignature": "Lgm"
+                    },
+                    {
+                        "AdvertisedLocationName": "Lammhult",
+                        "LocationSignature": "Lh"
+                    },
+                    {
+                        "AdvertisedLocationName": "Lillhamra",
+                        "LocationSignature": "Lhr"
+                    },
+                    {
+                        "AdvertisedLocationName": "Lillaryd",
+                        "LocationSignature": "Lia"
                     },
                     {
                         "AdvertisedLocationName": "Linaälv",
                         "LocationSignature": "Lin"
                     },
                     {
-                        "AdvertisedLocationName": "Landeryd",
-                        "LocationSignature": "Lrd"
-                    },
-                    {
-                        "AdvertisedLocationName": "Lemmeströ",
-                        "LocationSignature": "Lmm"
-                    },
-                    {
-                        "AdvertisedLocationName": "Malmö C",
-                        "LocationSignature": "M"
-                    },
-                    {
                         "AdvertisedLocationName": "Liseberg",
                         "LocationSignature": "Lis"
-                    },
-                    {
-                        "AdvertisedLocationName": "Lövberga",
-                        "LocationSignature": "Löb"
-                    },
-                    {
-                        "AdvertisedLocationName": "Ljusne",
-                        "LocationSignature": "Lse"
-                    },
-                    {
-                        "AdvertisedLocationName": "Långviksmon",
-                        "LocationSignature": "Lmn"
-                    },
-                    {
-                        "AdvertisedLocationName": "Lovene",
-                        "LocationSignature": "Lve"
-                    },
-                    {
-                        "AdvertisedLocationName": "Munkedals nedre",
-                        "LocationSignature": "Mkln"
-                    },
-                    {
-                        "AdvertisedLocationName": "Mellerud",
-                        "LocationSignature": "Ml"
-                    },
-                    {
-                        "AdvertisedLocationName": "Lessebo",
-                        "LocationSignature": "Lo"
-                    },
-                    {
-                        "AdvertisedLocationName": "Hede",
-                        "LocationSignature": "Khe"
-                    },
-                    {
-                        "AdvertisedLocationName": "Lövliden",
-                        "LocationSignature": "Lvd"
-                    },
-                    {
-                        "AdvertisedLocationName": "Mattmar",
-                        "LocationSignature": "Ma"
-                    },
-                    {
-                        "AdvertisedLocationName": "Klenshyttan",
-                        "LocationSignature": "Khy"
                     },
                     {
                         "AdvertisedLocationName": "Lit",
                         "LocationSignature": "Lit"
                     },
                     {
-                        "AdvertisedLocationName": "Mockfjärd",
-                        "LocationSignature": "Mfj"
+                        "AdvertisedLocationName": "Ljungskile",
+                        "LocationSignature": "Lj"
                     },
                     {
-                        "AdvertisedLocationName": "Munkflohögen",
-                        "LocationSignature": "Mfn"
+                        "AdvertisedLocationName": "Ljung",
+                        "LocationSignature": "Lju"
                     },
                     {
-                        "AdvertisedLocationName": "Mörrum",
-                        "LocationSignature": "Mru"
+                        "AdvertisedLocationName": "Ljungaverks lastplats",
+                        "LocationSignature": "Ljun"
                     },
                     {
-                        "AdvertisedLocationName": "Kristinehamn",
-                        "LocationSignature": "Khn"
+                        "AdvertisedLocationName": "Ljungaverk",
+                        "LocationSignature": "Ljv"
                     },
                     {
-                        "AdvertisedLocationName": "Marma",
-                        "LocationSignature": "Maa"
+                        "AdvertisedLocationName": "Lökom",
+                        "LocationSignature": "Lkm"
                     },
                     {
-                        "AdvertisedLocationName": "Losesjön",
-                        "LocationSignature": "Lsn"
+                        "AdvertisedLocationName": "Lindekullen",
+                        "LocationSignature": "Lkn"
                     },
                     {
-                        "AdvertisedLocationName": "Långsjön",
-                        "LocationSignature": "Lsj"
+                        "AdvertisedLocationName": "Lidköping",
+                        "LocationSignature": "Lkp"
+                    },
+                    {
+                        "AdvertisedLocationName": "Lakaträsk",
+                        "LocationSignature": "Lkä"
+                    },
+                    {
+                        "AdvertisedLocationName": "Landskrona",
+                        "LocationSignature": "Lkö"
+                    },
+                    {
+                        "AdvertisedLocationName": "Linddalen",
+                        "LocationSignature": "Lln"
+                    },
+                    {
+                        "AdvertisedLocationName": "Liljeholmen",
+                        "LocationSignature": "Lm"
+                    },
+                    {
+                        "AdvertisedLocationName": "Limmared",
+                        "LocationSignature": "Lme"
+                    },
+                    {
+                        "AdvertisedLocationName": "Lemmeströ",
+                        "LocationSignature": "Lmm"
+                    },
+                    {
+                        "AdvertisedLocationName": "Långviksmon",
+                        "LocationSignature": "Lmn"
+                    },
+                    {
+                        "AdvertisedLocationName": "Löcknamon",
+                        "LocationSignature": "Lmo"
+                    },
+                    {
+                        "AdvertisedLocationName": "Lomselenäs",
+                        "LocationSignature": "Lms"
+                    },
+                    {
+                        "AdvertisedLocationName": "Lernacken",
+                        "LocationSignature": "Lnk"
+                    },
+                    {
+                        "AdvertisedLocationName": "Lidnäs",
+                        "LocationSignature": "Lns"
+                    },
+                    {
+                        "AdvertisedLocationName": "Långvattnet",
+                        "LocationSignature": "Lnv"
                     },
                     {
                         "AdvertisedLocationName": "Lugnås",
                         "LocationSignature": "Lnå"
                     },
                     {
-                        "AdvertisedLocationName": "Lubboträsk",
-                        "LocationSignature": "Luä"
+                        "AdvertisedLocationName": "Lessebo",
+                        "LocationSignature": "Lo"
+                    },
+                    {
+                        "AdvertisedLocationName": "Loka",
+                        "LocationSignature": "Loka"
+                    },
+                    {
+                        "AdvertisedLocationName": "Lomsmyren",
+                        "LocationSignature": "Lom"
+                    },
+                    {
+                        "AdvertisedLocationName": "Lottefors",
+                        "LocationSignature": "Lot"
+                    },
+                    {
+                        "AdvertisedLocationName": "Linköping C",
+                        "LocationSignature": "Lp"
+                    },
+                    {
+                        "AdvertisedLocationName": "Lappträsk",
+                        "LocationSignature": "Lpk"
+                    },
+                    {
+                        "AdvertisedLocationName": "Lerum",
+                        "LocationSignature": "Lr"
+                    },
+                    {
+                        "AdvertisedLocationName": "Landeryd",
+                        "LocationSignature": "Lrd"
+                    },
+                    {
+                        "AdvertisedLocationName": "Lästringe",
+                        "LocationSignature": "Lre"
+                    },
+                    {
+                        "AdvertisedLocationName": "Laduberg",
+                        "LocationSignature": "Lrg"
+                    },
+                    {
+                        "AdvertisedLocationName": "Lockarp",
+                        "LocationSignature": "Lrp"
+                    },
+                    {
+                        "AdvertisedLocationName": "Lerot",
+                        "LocationSignature": "Lrt"
+                    },
+                    {
+                        "AdvertisedLocationName": "Ljusdal",
+                        "LocationSignature": "Ls"
+                    },
+                    {
+                        "AdvertisedLocationName": "Ljusne bruk",
+                        "LocationSignature": "Lsb"
+                    },
+                    {
+                        "AdvertisedLocationName": "Leksand",
+                        "LocationSignature": "Lsd"
+                    },
+                    {
+                        "AdvertisedLocationName": "Ljusne",
+                        "LocationSignature": "Lse"
+                    },
+                    {
+                        "AdvertisedLocationName": "Långsjön",
+                        "LocationSignature": "Lsj"
                     },
                     {
                         "AdvertisedLocationName": "Långsele",
                         "LocationSignature": "Lsl"
                     },
                     {
-                        "AdvertisedLocationName": "Lönneberga",
-                        "LocationSignature": "Lön"
-                    },
-                    {
-                        "AdvertisedLocationName": "Mon",
-                        "LocationSignature": "Mon"
-                    },
-                    {
-                        "AdvertisedLocationName": "Maj",
-                        "LocationSignature": "Maj"
-                    },
-                    {
-                        "AdvertisedLocationName": "Mellby",
-                        "LocationSignature": "Mlb"
-                    },
-                    {
-                        "AdvertisedLocationName": "Mosås",
-                        "LocationSignature": "Ms"
-                    },
-                    {
-                        "AdvertisedLocationName": "Meselefors",
-                        "LocationSignature": "Mlf"
-                    },
-                    {
-                        "AdvertisedLocationName": "Ljuså",
-                        "LocationSignature": "Lså"
-                    },
-                    {
-                        "AdvertisedLocationName": "Munktorp",
-                        "LocationSignature": "Morp"
-                    },
-                    {
-                        "AdvertisedLocationName": "Lödöse",
-                        "LocationSignature": "Löö"
+                        "AdvertisedLocationName": "Losesjön",
+                        "LocationSignature": "Lsn"
                     },
                     {
                         "AdvertisedLocationName": "Lycksele industrispår",
                         "LocationSignature": "Lsp"
                     },
                     {
-                        "AdvertisedLocationName": "Mönsterås bruk",
-                        "LocationSignature": "Msb"
-                    },
-                    {
-                        "AdvertisedLocationName": "Moskosel",
-                        "LocationSignature": "Mos"
-                    },
-                    {
-                        "AdvertisedLocationName": "Kallhäll",
-                        "LocationSignature": "Khä"
-                    },
-                    {
-                        "AdvertisedLocationName": "Lycksele",
-                        "LocationSignature": "Ly"
-                    },
-                    {
-                        "AdvertisedLocationName": "Malungsfors",
-                        "LocationSignature": "Mfs"
-                    },
-                    {
-                        "AdvertisedLocationName": "Marieholm",
-                        "LocationSignature": "Mar"
-                    },
-                    {
-                        "AdvertisedLocationName": "Mörlunda",
-                        "LocationSignature": "Möa"
-                    },
-                    {
-                        "AdvertisedLocationName": "Mellansjö",
-                        "LocationSignature": "Msö"
-                    },
-                    {
-                        "AdvertisedLocationName": "Mobodarne",
-                        "LocationSignature": "Mb"
-                    },
-                    {
-                        "AdvertisedLocationName": "Lyrestad",
-                        "LocationSignature": "Lyd"
-                    },
-                    {
-                        "AdvertisedLocationName": "Malmö godsbangård",
-                        "LocationSignature": "Mgb"
-                    },
-                    {
-                        "AdvertisedLocationName": "Mariestad",
-                        "LocationSignature": "Mst"
-                    },
-                    {
-                        "AdvertisedLocationName": "Malmsjö",
-                        "LocationSignature": "Msj"
+                        "AdvertisedLocationName": "Ljuså",
+                        "LocationSignature": "Lså"
                     },
                     {
                         "AdvertisedLocationName": "Lilltjära",
                         "LocationSignature": "Ltj"
                     },
                     {
-                        "AdvertisedLocationName": "Lyse",
-                        "LocationSignature": "Lye"
-                    },
-                    {
-                        "AdvertisedLocationName": "Malung",
-                        "LocationSignature": "Mlg"
-                    },
-                    {
-                        "AdvertisedLocationName": "Motala C",
-                        "LocationSignature": "Mot"
-                    },
-                    {
-                        "AdvertisedLocationName": "Malung Folkhögskola",
-                        "LocationSignature": "Mlgf"
-                    },
-                    {
-                        "AdvertisedLocationName": "Murbergsviken",
-                        "LocationSignature": "Mbv"
-                    },
-                    {
-                        "AdvertisedLocationName": "Mantorp",
-                        "LocationSignature": "Mt"
-                    },
-                    {
                         "AdvertisedLocationName": "Långträsk",
                         "LocationSignature": "Ltk"
                     },
                     {
-                        "AdvertisedLocationName": "Malung Gymnasium",
-                        "LocationSignature": "Mlgg"
+                        "AdvertisedLocationName": "Loster",
+                        "LocationSignature": "Ltr"
                     },
                     {
-                        "AdvertisedLocationName": "Mörtsal",
-                        "LocationSignature": "Möl"
+                        "AdvertisedLocationName": "Lund C",
+                        "LocationSignature": "Lu"
                     },
                     {
-                        "AdvertisedLocationName": "Medskogsheden",
-                        "LocationSignature": "Msn"
+                        "AdvertisedLocationName": "Lundby",
+                        "LocationSignature": "Lub"
+                    },
+                    {
+                        "AdvertisedLocationName": "Lunnarp",
+                        "LocationSignature": "Lup"
+                    },
+                    {
+                        "AdvertisedLocationName": "Lubboträsk",
+                        "LocationSignature": "Luä"
+                    },
+                    {
+                        "AdvertisedLocationName": "Lövliden",
+                        "LocationSignature": "Lvd"
+                    },
+                    {
+                        "AdvertisedLocationName": "Lovene",
+                        "LocationSignature": "Lve"
+                    },
+                    {
+                        "AdvertisedLocationName": "Lycksele",
+                        "LocationSignature": "Ly"
+                    },
+                    {
+                        "AdvertisedLocationName": "Lyrestad",
+                        "LocationSignature": "Lyd"
+                    },
+                    {
+                        "AdvertisedLocationName": "Lyse",
+                        "LocationSignature": "Lye"
                     },
                     {
                         "AdvertisedLocationName": "Lyckselesågen",
@@ -2968,56 +2912,72 @@ const trainStationList = {
                         "LocationSignature": "Lys"
                     },
                     {
+                        "AdvertisedLocationName": "Lycksele timmer",
+                        "LocationSignature": "Lyt"
+                    },
+                    {
+                        "AdvertisedLocationName": "Lysvik",
+                        "LocationSignature": "Lyv"
+                    },
+                    {
+                        "AdvertisedLocationName": "Laxå",
+                        "LocationSignature": "Lå"
+                    },
+                    {
+                        "AdvertisedLocationName": "Låktatjåkka",
+                        "LocationSignature": "Låk"
+                    },
+                    {
+                        "AdvertisedLocationName": "Lörstrand",
+                        "LocationSignature": "Lö"
+                    },
+                    {
+                        "AdvertisedLocationName": "Lövberga",
+                        "LocationSignature": "Löb"
+                    },
+                    {
+                        "AdvertisedLocationName": "Lönneberga",
+                        "LocationSignature": "Lön"
+                    },
+                    {
+                        "AdvertisedLocationName": "Lödöse",
+                        "LocationSignature": "Löö"
+                    },
+                    {
+                        "AdvertisedLocationName": "Malmö C",
+                        "LocationSignature": "M"
+                    },
+                    {
+                        "AdvertisedLocationName": "Mattmar",
+                        "LocationSignature": "Ma"
+                    },
+                    {
+                        "AdvertisedLocationName": "Marma",
+                        "LocationSignature": "Maa"
+                    },
+                    {
+                        "AdvertisedLocationName": "Maj",
+                        "LocationSignature": "Maj"
+                    },
+                    {
+                        "AdvertisedLocationName": "Marieholm",
+                        "LocationSignature": "Mar"
+                    },
+                    {
+                        "AdvertisedLocationName": "Mobodarne",
+                        "LocationSignature": "Mb"
+                    },
+                    {
+                        "AdvertisedLocationName": "Murbergsviken",
+                        "LocationSignature": "Mbv"
+                    },
+                    {
                         "AdvertisedLocationName": "Malmby",
                         "LocationSignature": "Mby"
                     },
                     {
-                        "AdvertisedLocationName": "Mertainen",
-                        "LocationSignature": "Mtn"
-                    },
-                    {
-                        "AdvertisedLocationName": "Mellansel",
-                        "LocationSignature": "Msl"
-                    },
-                    {
-                        "AdvertisedLocationName": "Maitum",
-                        "LocationSignature": "Mtm"
-                    },
-                    {
-                        "AdvertisedLocationName": "Moholm",
-                        "LocationSignature": "Mh"
-                    },
-                    {
-                        "AdvertisedLocationName": "Mölltorp",
-                        "LocationSignature": "Mp"
-                    },
-                    {
-                        "AdvertisedLocationName": "Myrheden",
-                        "LocationSignature": "Mhn"
-                    },
-                    {
-                        "AdvertisedLocationName": "Mellösa",
-                        "LocationSignature": "Mlö"
-                    },
-                    {
-                        "AdvertisedLocationName": "Mollaryd",
-                        "LocationSignature": "Moy"
-                    },
-                    {
-                        "AdvertisedLocationName": "Norberg",
-                        "LocationSignature": "Nbg"
-                    },
-                    {
                         "AdvertisedLocationName": "Malmbäck",
                         "LocationSignature": "Mbä"
-                    },
-                    {
-                        "AdvertisedLocationName": "Mörarp",
-                        "LocationSignature": "Mör"
-                    },
-                    {
-                        "AdvertisedLocationName": "Mullsjö",
-                        "LocationSignature": "Mu"
                     },
                     {
                         "AdvertisedLocationName": "Meselefors camping",
@@ -3028,264 +2988,500 @@ const trainStationList = {
                         "LocationSignature": "Mdl"
                     },
                     {
-                        "AdvertisedLocationName": "Märsta",
-                        "LocationSignature": "Mr"
-                    },
-                    {
-                        "AdvertisedLocationName": "Persborg",
-                        "LocationSignature": "Mpb"
-                    },
-                    {
-                        "AdvertisedLocationName": "Mosselund",
-                        "LocationSignature": "Mud"
-                    },
-                    {
-                        "AdvertisedLocationName": "Närkes Kvarntorp",
-                        "LocationSignature": "Nkp"
-                    },
-                    {
-                        "AdvertisedLocationName": "Mariannelund",
-                        "LocationSignature": "Mnd"
-                    },
-                    {
-                        "AdvertisedLocationName": "Mörsil",
-                        "LocationSignature": "Mi"
-                    },
-                    {
-                        "AdvertisedLocationName": "Mora",
-                        "LocationSignature": "Mra"
-                    },
-                    {
-                        "AdvertisedLocationName": "Mönsterås",
-                        "LocationSignature": "Mss"
-                    },
-                    {
-                        "AdvertisedLocationName": "Maria",
-                        "LocationSignature": "Mia"
-                    },
-                    {
-                        "AdvertisedLocationName": "Näsberg",
-                        "LocationSignature": "Nb"
-                    },
-                    {
-                        "AdvertisedLocationName": "Norra bantorget",
-                        "LocationSignature": "Nbt"
-                    },
-                    {
-                        "AdvertisedLocationName": "Lycksele timmer",
-                        "LocationSignature": "Lyt"
-                    },
-                    {
-                        "AdvertisedLocationName": "Nässjö C",
-                        "LocationSignature": "N"
-                    },
-                    {
-                        "AdvertisedLocationName": "Nybybruk",
-                        "LocationSignature": "Nbr"
-                    },
-                    {
-                        "AdvertisedLocationName": "Lysvik",
-                        "LocationSignature": "Lyv"
-                    },
-                    {
-                        "AdvertisedLocationName": "Moheda",
-                        "LocationSignature": "Mo"
-                    },
-                    {
-                        "AdvertisedLocationName": "Mjölby",
-                        "LocationSignature": "My"
-                    },
-                    {
-                        "AdvertisedLocationName": "Norra Kikkejaur",
-                        "LocationSignature": "Nkr"
-                    },
-                    {
                         "AdvertisedLocationName": "Mariedamm",
                         "LocationSignature": "Mdm"
-                    },
-                    {
-                        "AdvertisedLocationName": "Mimer",
-                        "LocationSignature": "Mim"
-                    },
-                    {
-                        "AdvertisedLocationName": "Nyboda",
-                        "LocationSignature": "Nba"
-                    },
-                    {
-                        "AdvertisedLocationName": "Mora kommuns industrispår",
-                        "LocationSignature": "Mrai"
-                    },
-                    {
-                        "AdvertisedLocationName": "Sarpsborg",
-                        "LocationSignature": "No.sbo"
-                    },
-                    {
-                        "AdvertisedLocationName": "Laxå",
-                        "LocationSignature": "Lå"
-                    },
-                    {
-                        "AdvertisedLocationName": "Mo grindar",
-                        "LocationSignature": "Mog"
-                    },
-                    {
-                        "AdvertisedLocationName": "Morastrand",
-                        "LocationSignature": "Mras"
-                    },
-                    {
-                        "AdvertisedLocationName": "Norrsundet",
-                        "LocationSignature": "Ndt"
-                    },
-                    {
-                        "AdvertisedLocationName": "Nedansjö",
-                        "LocationSignature": "Nsö"
-                    },
-                    {
-                        "AdvertisedLocationName": "Mölnlycke",
-                        "LocationSignature": "Myk"
-                    },
-                    {
-                        "AdvertisedLocationName": "Morjärv",
-                        "LocationSignature": "Mjv"
-                    },
-                    {
-                        "AdvertisedLocationName": "Myrbacken",
-                        "LocationSignature": "Myn"
-                    },
-                    {
-                        "AdvertisedLocationName": "Näverkärret",
-                        "LocationSignature": "Nkt"
-                    },
-                    {
-                        "AdvertisedLocationName": "Milletorp",
-                        "LocationSignature": "Mip"
-                    },
-                    {
-                        "AdvertisedLocationName": "Nässundet",
-                        "LocationSignature": "Nd"
-                    },
-                    {
-                        "AdvertisedLocationName": "Nyköping södra",
-                        "LocationSignature": "Nks"
                     },
                     {
                         "AdvertisedLocationName": "Mölndal",
                         "LocationSignature": "Mdn"
                     },
                     {
-                        "AdvertisedLocationName": "Straumsnes",
-                        "LocationSignature": "No.sms"
-                    },
-                    {
                         "AdvertisedLocationName": "Mölndals övre",
                         "LocationSignature": "Mdö"
-                    },
-                    {
-                        "AdvertisedLocationName": "Norsesund västra",
-                        "LocationSignature": "Ndv"
-                    },
-                    {
-                        "AdvertisedLocationName": "Myra",
-                        "LocationSignature": "Myra"
-                    },
-                    {
-                        "AdvertisedLocationName": "Karlskrona C",
-                        "LocationSignature": "Ck"
-                    },
-                    {
-                        "AdvertisedLocationName": "Murjek",
-                        "LocationSignature": "Mk"
-                    },
-                    {
-                        "AdvertisedLocationName": "Nuorttagievlle",
-                        "LocationSignature": "Nte"
-                    },
-                    {
-                        "AdvertisedLocationName": "Sösterbekk",
-                        "LocationSignature": "No.sös"
-                    },
-                    {
-                        "AdvertisedLocationName": "Munkedal",
-                        "LocationSignature": "Mkl"
                     },
                     {
                         "AdvertisedLocationName": "Marmaverken",
                         "LocationSignature": "Me"
                     },
                     {
-                        "AdvertisedLocationName": "Nattavaara",
-                        "LocationSignature": "Ntv"
+                        "AdvertisedLocationName": "Mehedeby",
+                        "LocationSignature": "Meh"
                     },
                     {
-                        "AdvertisedLocationName": "Nynäsgård",
-                        "LocationSignature": "Ngd"
+                        "AdvertisedLocationName": "Mockfjärd",
+                        "LocationSignature": "Mfj"
+                    },
+                    {
+                        "AdvertisedLocationName": "Munkflohögen",
+                        "LocationSignature": "Mfn"
+                    },
+                    {
+                        "AdvertisedLocationName": "Malungsfors",
+                        "LocationSignature": "Mfs"
+                    },
+                    {
+                        "AdvertisedLocationName": "Malmö godsbangård",
+                        "LocationSignature": "Mgb"
+                    },
+                    {
+                        "AdvertisedLocationName": "Moholm",
+                        "LocationSignature": "Mh"
+                    },
+                    {
+                        "AdvertisedLocationName": "Myrheden",
+                        "LocationSignature": "Mhn"
+                    },
+                    {
+                        "AdvertisedLocationName": "Mörsil",
+                        "LocationSignature": "Mi"
+                    },
+                    {
+                        "AdvertisedLocationName": "Maria",
+                        "LocationSignature": "Mia"
+                    },
+                    {
+                        "AdvertisedLocationName": "Mimer",
+                        "LocationSignature": "Mim"
+                    },
+                    {
+                        "AdvertisedLocationName": "Milletorp",
+                        "LocationSignature": "Mip"
+                    },
+                    {
+                        "AdvertisedLocationName": "Morjärv",
+                        "LocationSignature": "Mjv"
+                    },
+                    {
+                        "AdvertisedLocationName": "Murjek",
+                        "LocationSignature": "Mk"
+                    },
+                    {
+                        "AdvertisedLocationName": "Munkedal",
+                        "LocationSignature": "Mkl"
                     },
                     {
                         "AdvertisedLocationName": "Munkedals hamn",
                         "LocationSignature": "Mklh"
                     },
                     {
-                        "AdvertisedLocationName": "Trondheim",
-                        "LocationSignature": "No.tnd"
+                        "AdvertisedLocationName": "Munkedals nedre",
+                        "LocationSignature": "Mkln"
                     },
                     {
-                        "AdvertisedLocationName": "Mehedeby",
-                        "LocationSignature": "Meh"
+                        "AdvertisedLocationName": "Mellerud",
+                        "LocationSignature": "Ml"
+                    },
+                    {
+                        "AdvertisedLocationName": "Mellby",
+                        "LocationSignature": "Mlb"
+                    },
+                    {
+                        "AdvertisedLocationName": "Meselefors",
+                        "LocationSignature": "Mlf"
+                    },
+                    {
+                        "AdvertisedLocationName": "Malung",
+                        "LocationSignature": "Mlg"
+                    },
+                    {
+                        "AdvertisedLocationName": "Malung Folkhögskola",
+                        "LocationSignature": "Mlgf"
+                    },
+                    {
+                        "AdvertisedLocationName": "Malung Gymnasium",
+                        "LocationSignature": "Mlgg"
+                    },
+                    {
+                        "AdvertisedLocationName": "Mellösa",
+                        "LocationSignature": "Mlö"
+                    },
+                    {
+                        "AdvertisedLocationName": "Mariannelund",
+                        "LocationSignature": "Mnd"
+                    },
+                    {
+                        "AdvertisedLocationName": "Moheda",
+                        "LocationSignature": "Mo"
+                    },
+                    {
+                        "AdvertisedLocationName": "Mo grindar",
+                        "LocationSignature": "Mog"
+                    },
+                    {
+                        "AdvertisedLocationName": "Mon",
+                        "LocationSignature": "Mon"
+                    },
+                    {
+                        "AdvertisedLocationName": "Munktorp",
+                        "LocationSignature": "Morp"
+                    },
+                    {
+                        "AdvertisedLocationName": "Moskosel",
+                        "LocationSignature": "Mos"
+                    },
+                    {
+                        "AdvertisedLocationName": "Motala C",
+                        "LocationSignature": "Mot"
+                    },
+                    {
+                        "AdvertisedLocationName": "Mollaryd",
+                        "LocationSignature": "Moy"
+                    },
+                    {
+                        "AdvertisedLocationName": "Mölltorp",
+                        "LocationSignature": "Mp"
+                    },
+                    {
+                        "AdvertisedLocationName": "Persborg",
+                        "LocationSignature": "Mpb"
+                    },
+                    {
+                        "AdvertisedLocationName": "Märsta",
+                        "LocationSignature": "Mr"
+                    },
+                    {
+                        "AdvertisedLocationName": "Mora",
+                        "LocationSignature": "Mra"
+                    },
+                    {
+                        "AdvertisedLocationName": "Mora kommuns industrispår",
+                        "LocationSignature": "Mrai"
+                    },
+                    {
+                        "AdvertisedLocationName": "Morastrand",
+                        "LocationSignature": "Mras"
+                    },
+                    {
+                        "AdvertisedLocationName": "Markaryd",
+                        "LocationSignature": "Mrd"
+                    },
+                    {
+                        "AdvertisedLocationName": "Axhult",
+                        "LocationSignature": "Mrd.ax"
+                    },
+                    {
+                        "AdvertisedLocationName": "Marsvinsholm",
+                        "LocationSignature": "Mrh"
+                    },
+                    {
+                        "AdvertisedLocationName": "Marma",
+                        "LocationSignature": "Mrm"
+                    },
+                    {
+                        "AdvertisedLocationName": "Morshyttan",
+                        "LocationSignature": "Mrs"
+                    },
+                    {
+                        "AdvertisedLocationName": "Mörrum",
+                        "LocationSignature": "Mru"
+                    },
+                    {
+                        "AdvertisedLocationName": "Mosås",
+                        "LocationSignature": "Ms"
+                    },
+                    {
+                        "AdvertisedLocationName": "Mönsterås bruk",
+                        "LocationSignature": "Msb"
+                    },
+                    {
+                        "AdvertisedLocationName": "Malmsjö",
+                        "LocationSignature": "Msj"
+                    },
+                    {
+                        "AdvertisedLocationName": "Mellansel",
+                        "LocationSignature": "Msl"
+                    },
+                    {
+                        "AdvertisedLocationName": "Medskogsheden",
+                        "LocationSignature": "Msn"
+                    },
+                    {
+                        "AdvertisedLocationName": "Mönsterås",
+                        "LocationSignature": "Mss"
+                    },
+                    {
+                        "AdvertisedLocationName": "Mariestad",
+                        "LocationSignature": "Mst"
+                    },
+                    {
+                        "AdvertisedLocationName": "Mellansjö",
+                        "LocationSignature": "Msö"
+                    },
+                    {
+                        "AdvertisedLocationName": "Mantorp",
+                        "LocationSignature": "Mt"
+                    },
+                    {
+                        "AdvertisedLocationName": "Maitum",
+                        "LocationSignature": "Mtm"
+                    },
+                    {
+                        "AdvertisedLocationName": "Mertainen",
+                        "LocationSignature": "Mtn"
+                    },
+                    {
+                        "AdvertisedLocationName": "Mullsjö",
+                        "LocationSignature": "Mu"
+                    },
+                    {
+                        "AdvertisedLocationName": "Mosselund",
+                        "LocationSignature": "Mud"
+                    },
+                    {
+                        "AdvertisedLocationName": "Mjölby",
+                        "LocationSignature": "My"
+                    },
+                    {
+                        "AdvertisedLocationName": "Mölnlycke",
+                        "LocationSignature": "Myk"
+                    },
+                    {
+                        "AdvertisedLocationName": "Myrbacken",
+                        "LocationSignature": "Myn"
+                    },
+                    {
+                        "AdvertisedLocationName": "Myra",
+                        "LocationSignature": "Myra"
                     },
                     {
                         "AdvertisedLocationName": "Morgongåva",
                         "LocationSignature": "Må"
                     },
                     {
-                        "AdvertisedLocationName": "Norrviken",
-                        "LocationSignature": "Nvk"
-                    },
-                    {
-                        "AdvertisedLocationName": "Osby",
-                        "LocationSignature": "O"
-                    },
-                    {
                         "AdvertisedLocationName": "Målilla",
                         "LocationSignature": "Måa"
-                    },
-                    {
-                        "AdvertisedLocationName": "Kristianstad C",
-                        "LocationSignature": "Cr"
-                    },
-                    {
-                        "AdvertisedLocationName": "Norrmjöle",
-                        "LocationSignature": "Noe"
-                    },
-                    {
-                        "AdvertisedLocationName": "Norrhög",
-                        "LocationSignature": "Ng"
-                    },
-                    {
-                        "AdvertisedLocationName": "Kristianstad GBG",
-                        "LocationSignature": "Crgb"
-                    },
-                    {
-                        "AdvertisedLocationName": "Orrskog",
-                        "LocationSignature": "Os"
-                    },
-                    {
-                        "AdvertisedLocationName": "Ockelbo",
-                        "LocationSignature": "Ob"
-                    },
-                    {
-                        "AdvertisedLocationName": "Nordmaling",
-                        "LocationSignature": "Nog"
                     },
                     {
                         "AdvertisedLocationName": "Månsarp",
                         "LocationSignature": "Måp"
                     },
                     {
+                        "AdvertisedLocationName": "Märbäck",
+                        "LocationSignature": "Mäk"
+                    },
+                    {
+                        "AdvertisedLocationName": "Mölnbo",
+                        "LocationSignature": "Mö"
+                    },
+                    {
+                        "AdvertisedLocationName": "Mörlunda",
+                        "LocationSignature": "Möa"
+                    },
+                    {
+                        "AdvertisedLocationName": "Mörtsal",
+                        "LocationSignature": "Möl"
+                    },
+                    {
+                        "AdvertisedLocationName": "Mörarp",
+                        "LocationSignature": "Mör"
+                    },
+                    {
+                        "AdvertisedLocationName": "Nässjö C",
+                        "LocationSignature": "N"
+                    },
+                    {
+                        "AdvertisedLocationName": "Näsberg",
+                        "LocationSignature": "Nb"
+                    },
+                    {
+                        "AdvertisedLocationName": "Nyboda",
+                        "LocationSignature": "Nba"
+                    },
+                    {
+                        "AdvertisedLocationName": "Norberg",
+                        "LocationSignature": "Nbg"
+                    },
+                    {
+                        "AdvertisedLocationName": "Nybybruk",
+                        "LocationSignature": "Nbr"
+                    },
+                    {
+                        "AdvertisedLocationName": "Norra bantorget",
+                        "LocationSignature": "Nbt"
+                    },
+                    {
+                        "AdvertisedLocationName": "Nässundet",
+                        "LocationSignature": "Nd"
+                    },
+                    {
+                        "AdvertisedLocationName": "Norrsundet",
+                        "LocationSignature": "Ndt"
+                    },
+                    {
+                        "AdvertisedLocationName": "Norsesund västra",
+                        "LocationSignature": "Ndv"
+                    },
+                    {
+                        "AdvertisedLocationName": "Norrhög",
+                        "LocationSignature": "Ng"
+                    },
+                    {
+                        "AdvertisedLocationName": "Nynäsgård",
+                        "LocationSignature": "Ngd"
+                    },
+                    {
                         "AdvertisedLocationName": "Norsholm",
                         "LocationSignature": "Nh"
                     },
                     {
-                        "AdvertisedLocationName": "Kristianstads södra",
-                        "LocationSignature": "Crs"
+                        "AdvertisedLocationName": "Nederhögen",
+                        "LocationSignature": "Nhg"
+                    },
+                    {
+                        "AdvertisedLocationName": "Norrahammar",
+                        "LocationSignature": "Nhr"
+                    },
+                    {
+                        "AdvertisedLocationName": "Nyköping C",
+                        "LocationSignature": "Nk"
+                    },
+                    {
+                        "AdvertisedLocationName": "Nykroppa",
+                        "LocationSignature": "Nka"
+                    },
+                    {
+                        "AdvertisedLocationName": "Närkes Kvarntorp",
+                        "LocationSignature": "Nkp"
+                    },
+                    {
+                        "AdvertisedLocationName": "Norra Kikkejaur",
+                        "LocationSignature": "Nkr"
+                    },
+                    {
+                        "AdvertisedLocationName": "Nyköping södra",
+                        "LocationSignature": "Nks"
+                    },
+                    {
+                        "AdvertisedLocationName": "Näverkärret",
+                        "LocationSignature": "Nkt"
+                    },
+                    {
+                        "AdvertisedLocationName": "Nykvarn",
+                        "LocationSignature": "Nkv"
+                    },
+                    {
+                        "AdvertisedLocationName": "Nelhammar",
+                        "LocationSignature": "Nl"
+                    },
+                    {
+                        "AdvertisedLocationName": "Nyland",
+                        "LocationSignature": "Nld"
+                    },
+                    {
+                        "AdvertisedLocationName": "Niemisel",
+                        "LocationSignature": "Nml"
+                    },
+                    {
+                        "AdvertisedLocationName": "Halden",
+                        "LocationSignature": "No.hld"
+                    },
+                    {
+                        "AdvertisedLocationName": "Katterat",
+                        "LocationSignature": "No.kat"
+                    },
+                    {
+                        "AdvertisedLocationName": "Kongsvinger",
+                        "LocationSignature": "No.kvg"
+                    },
+                    {
+                        "AdvertisedLocationName": "Lilleström",
+                        "LocationSignature": "No.lil"
+                    },
+                    {
+                        "AdvertisedLocationName": "Lilleström",
+                        "LocationSignature": "No.lls"
+                    },
+                    {
+                        "AdvertisedLocationName": "Narvik",
+                        "LocationSignature": "No.nk"
+                    },
+                    {
+                        "AdvertisedLocationName": "Oslo",
+                        "LocationSignature": "No.osl"
+                    },
+                    {
+                        "AdvertisedLocationName": "Rombak",
+                        "LocationSignature": "No.rom"
+                    },
+                    {
+                        "AdvertisedLocationName": "Sarpsborg",
+                        "LocationSignature": "No.sbo"
+                    },
+                    {
+                        "AdvertisedLocationName": "Straumsnes",
+                        "LocationSignature": "No.sms"
+                    },
+                    {
+                        "AdvertisedLocationName": "Sösterbekk",
+                        "LocationSignature": "No.sös"
+                    },
+                    {
+                        "AdvertisedLocationName": "Trondheim",
+                        "LocationSignature": "No.tnd"
+                    },
+                    {
+                        "AdvertisedLocationName": "Norrmjöle",
+                        "LocationSignature": "Noe"
+                    },
+                    {
+                        "AdvertisedLocationName": "Nordmaling",
+                        "LocationSignature": "Nog"
+                    },
+                    {
+                        "AdvertisedLocationName": "Nol",
+                        "LocationSignature": "Nol"
+                    },
+                    {
+                        "AdvertisedLocationName": "Norrsjön",
+                        "LocationSignature": "Non"
+                    },
+                    {
+                        "AdvertisedLocationName": "Nordlunda",
+                        "LocationSignature": "Norl"
+                    },
+                    {
+                        "AdvertisedLocationName": "Nordskogen",
+                        "LocationSignature": "Nosk"
+                    },
+                    {
+                        "AdvertisedLocationName": "Norrköping C",
+                        "LocationSignature": "Nr"
+                    },
+                    {
+                        "AdvertisedLocationName": "Norrfors",
+                        "LocationSignature": "Nrs"
+                    },
+                    {
+                        "AdvertisedLocationName": "Nuortikon",
+                        "LocationSignature": "Nrt"
+                    },
+                    {
+                        "AdvertisedLocationName": "Norsesund",
+                        "LocationSignature": "Ns"
+                    },
+                    {
+                        "AdvertisedLocationName": "Nyckelsjön",
+                        "LocationSignature": "Nsj"
+                    },
+                    {
+                        "AdvertisedLocationName": "Stockholms norra",
+                        "LocationSignature": "Nst"
+                    },
+                    {
+                        "AdvertisedLocationName": "Nedansjö",
+                        "LocationSignature": "Nsö"
+                    },
+                    {
+                        "AdvertisedLocationName": "Nuorttagievlle",
+                        "LocationSignature": "Nte"
+                    },
+                    {
+                        "AdvertisedLocationName": "Nattavaara",
+                        "LocationSignature": "Ntv"
+                    },
+                    {
+                        "AdvertisedLocationName": "Norrviken",
+                        "LocationSignature": "Nvk"
                     },
                     {
                         "AdvertisedLocationName": "Norra Valbo",
@@ -3296,112 +3492,308 @@ const trainStationList = {
                         "LocationSignature": "Nvn"
                     },
                     {
-                        "AdvertisedLocationName": "Märbäck",
-                        "LocationSignature": "Mäk"
-                    },
-                    {
-                        "AdvertisedLocationName": "Nederhögen",
-                        "LocationSignature": "Nhg"
-                    },
-                    {
-                        "AdvertisedLocationName": "Nol",
-                        "LocationSignature": "Nol"
-                    },
-                    {
-                        "AdvertisedLocationName": "Norrahammar",
-                        "LocationSignature": "Nhr"
-                    },
-                    {
-                        "AdvertisedLocationName": "Mölnbo",
-                        "LocationSignature": "Mö"
+                        "AdvertisedLocationName": "Nyhem",
+                        "LocationSignature": "Ny"
                     },
                     {
                         "AdvertisedLocationName": "Nybro",
                         "LocationSignature": "Nyb"
                     },
                     {
-                        "AdvertisedLocationName": "Nyhem",
-                        "LocationSignature": "Ny"
-                    },
-                    {
-                        "AdvertisedLocationName": "Olofström",
-                        "LocationSignature": "Of"
-                    },
-                    {
-                        "AdvertisedLocationName": "Stockholm Central",
-                        "LocationSignature": "Cst"
-                    },
-                    {
-                        "AdvertisedLocationName": "Norrsjön",
-                        "LocationSignature": "Non"
+                        "AdvertisedLocationName": "Nyfors",
+                        "LocationSignature": "Nyf"
                     },
                     {
                         "AdvertisedLocationName": "Nynäshamn",
                         "LocationSignature": "Nyh"
                     },
                     {
-                        "AdvertisedLocationName": "Degerön",
-                        "LocationSignature": "D"
-                    },
-                    {
-                        "AdvertisedLocationName": "Ralingsås",
-                        "LocationSignature": "Ras"
-                    },
-                    {
-                        "AdvertisedLocationName": "Nyfors",
-                        "LocationSignature": "Nyf"
-                    },
-                    {
-                        "AdvertisedLocationName": "Dammstorp",
-                        "LocationSignature": "Dat"
-                    },
-                    {
-                        "AdvertisedLocationName": "Rian",
-                        "LocationSignature": "Ran"
-                    },
-                    {
-                        "AdvertisedLocationName": "Riksgränsen",
-                        "LocationSignature": "Rgn"
-                    },
-                    {
-                        "AdvertisedLocationName": "Degerbäcken",
-                        "LocationSignature": "Dbn"
-                    },
-                    {
                         "AdvertisedLocationName": "Nyåker",
                         "LocationSignature": "Nyå"
+                    },
+                    {
+                        "AdvertisedLocationName": "Nås",
+                        "LocationSignature": "Nås"
+                    },
+                    {
+                        "AdvertisedLocationName": "Nälden",
+                        "LocationSignature": "Nä"
+                    },
+                    {
+                        "AdvertisedLocationName": "Nättraby",
+                        "LocationSignature": "Nät"
+                    },
+                    {
+                        "AdvertisedLocationName": "Nödinge",
+                        "LocationSignature": "Nöe"
+                    },
+                    {
+                        "AdvertisedLocationName": "Osby",
+                        "LocationSignature": "O"
+                    },
+                    {
+                        "AdvertisedLocationName": "Ockelbo",
+                        "LocationSignature": "Ob"
+                    },
+                    {
+                        "AdvertisedLocationName": "Olofström",
+                        "LocationSignature": "Of"
                     },
                     {
                         "AdvertisedLocationName": "Oskarshamn",
                         "LocationSignature": "Oh"
                     },
                     {
-                        "AdvertisedLocationName": "Nyköping C",
-                        "LocationSignature": "Nk"
+                        "AdvertisedLocationName": "Oleby",
+                        "LocationSignature": "Ol"
+                    },
+                    {
+                        "AdvertisedLocationName": "Oskarström",
+                        "LocationSignature": "Om"
+                    },
+                    {
+                        "AdvertisedLocationName": "Ope",
+                        "LocationSignature": "Ope"
+                    },
+                    {
+                        "AdvertisedLocationName": "Opphem",
+                        "LocationSignature": "Oph"
+                    },
+                    {
+                        "AdvertisedLocationName": "Olskroken",
+                        "LocationSignature": "Or"
+                    },
+                    {
+                        "AdvertisedLocationName": "Ornäs",
+                        "LocationSignature": "Orn"
+                    },
+                    {
+                        "AdvertisedLocationName": "Orsa",
+                        "LocationSignature": "Ors"
+                    },
+                    {
+                        "AdvertisedLocationName": "Ormaryd",
+                        "LocationSignature": "Ory"
+                    },
+                    {
+                        "AdvertisedLocationName": "Orrskog",
+                        "LocationSignature": "Os"
+                    },
+                    {
+                        "AdvertisedLocationName": "Oslättfors",
+                        "LocationSignature": "Osl"
+                    },
+                    {
+                        "AdvertisedLocationName": "Ovansjö",
+                        "LocationSignature": "Osö"
+                    },
+                    {
+                        "AdvertisedLocationName": "Ottebol",
+                        "LocationSignature": "Ot"
+                    },
+                    {
+                        "AdvertisedLocationName": "Oxie",
+                        "LocationSignature": "Ox"
+                    },
+                    {
+                        "AdvertisedLocationName": "Oxelösund",
+                        "LocationSignature": "Oxd"
+                    },
+                    {
+                        "AdvertisedLocationName": "Oxmyran",
+                        "LocationSignature": "Oxm"
+                    },
+                    {
+                        "AdvertisedLocationName": "Partille",
+                        "LocationSignature": "P"
+                    },
+                    {
+                        "AdvertisedLocationName": "Prässebo",
+                        "LocationSignature": "Pb"
+                    },
+                    {
+                        "AdvertisedLocationName": "Persberg",
+                        "LocationSignature": "Pbg"
+                    },
+                    {
+                        "AdvertisedLocationName": "Polcirkeln",
+                        "LocationSignature": "Pc"
+                    },
+                    {
+                        "AdvertisedLocationName": "Peuravaara",
+                        "LocationSignature": "Pea"
+                    },
+                    {
+                        "AdvertisedLocationName": "Peberholm",
+                        "LocationSignature": "Phm"
+                    },
+                    {
+                        "AdvertisedLocationName": "Pitkäjärvi",
+                        "LocationSignature": "Pii"
+                    },
+                    {
+                        "AdvertisedLocationName": "Porjus",
+                        "LocationSignature": "Pj"
+                    },
+                    {
+                        "AdvertisedLocationName": "Porjusfallen",
+                        "LocationSignature": "Pjf"
+                    },
+                    {
+                        "AdvertisedLocationName": "Pilgrimstad",
+                        "LocationSignature": "Pl"
+                    },
+                    {
+                        "AdvertisedLocationName": "Pauliström",
+                        "LocationSignature": "Plm"
+                    },
+                    {
+                        "AdvertisedLocationName": "Prästmon",
+                        "LocationSignature": "Pm"
+                    },
+                    {
+                        "AdvertisedLocationName": "Perstorp",
+                        "LocationSignature": "Pt"
+                    },
+                    {
+                        "AdvertisedLocationName": "Piteå",
+                        "LocationSignature": "Ptå"
+                    },
+                    {
+                        "AdvertisedLocationName": "Pålsboda",
+                        "LocationSignature": "På"
+                    },
+                    {
+                        "AdvertisedLocationName": "Påarp",
+                        "LocationSignature": "Påa"
+                    },
+                    {
+                        "AdvertisedLocationName": "Piteälvsbron",
+                        "LocationSignature": "Päb"
+                    },
+                    {
+                        "AdvertisedLocationName": "Pölsebo",
+                        "LocationSignature": "Pöb"
+                    },
+                    {
+                        "AdvertisedLocationName": "Rotebro",
+                        "LocationSignature": "R"
                     },
                     {
                         "AdvertisedLocationName": "Ramlösa",
                         "LocationSignature": "Ram"
                     },
                     {
-                        "AdvertisedLocationName": "Nykvarn",
-                        "LocationSignature": "Nkv"
+                        "AdvertisedLocationName": "Rian",
+                        "LocationSignature": "Ran"
                     },
                     {
-                        "AdvertisedLocationName": "Nykroppa",
-                        "LocationSignature": "Nka"
+                        "AdvertisedLocationName": "Ralingsås",
+                        "LocationSignature": "Ras"
                     },
                     {
-                        "AdvertisedLocationName": "Norrköping C",
-                        "LocationSignature": "Nr"
+                        "AdvertisedLocationName": "Ronneby",
+                        "LocationSignature": "Rb"
                     },
                     {
-                        "AdvertisedLocationName": "Nordskogen",
-                        "LocationSignature": "Nosk"
+                        "AdvertisedLocationName": "Rabbalshede",
+                        "LocationSignature": "Rbh"
                     },
                     {
-                        "AdvertisedLocationName": "Nordlunda",
-                        "LocationSignature": "Norl"
+                        "AdvertisedLocationName": "Råbäck",
+                        "LocationSignature": "Rbk"
+                    },
+                    {
+                        "AdvertisedLocationName": "Röstbo",
+                        "LocationSignature": "Rbo"
+                    },
+                    {
+                        "AdvertisedLocationName": "Rockneby",
+                        "LocationSignature": "Rby"
+                    },
+                    {
+                        "AdvertisedLocationName": "Repbäcken",
+                        "LocationSignature": "Rbä"
+                    },
+                    {
+                        "AdvertisedLocationName": "Rävlanda",
+                        "LocationSignature": "Rd"
+                    },
+                    {
+                        "AdvertisedLocationName": "Rydsgård",
+                        "LocationSignature": "Rdg"
+                    },
+                    {
+                        "AdvertisedLocationName": "Renviken",
+                        "LocationSignature": "Ren"
+                    },
+                    {
+                        "AdvertisedLocationName": "Rimforsa",
+                        "LocationSignature": "Rf"
+                    },
+                    {
+                        "AdvertisedLocationName": "Rimforsa brygga",
+                        "LocationSignature": "Rfb"
+                    },
+                    {
+                        "AdvertisedLocationName": "Reftele",
+                        "LocationSignature": "Rft"
+                    },
+                    {
+                        "AdvertisedLocationName": "Riksgränsen",
+                        "LocationSignature": "Rgn"
+                    },
+                    {
+                        "AdvertisedLocationName": "Riksgräns Swe-Dk.",
+                        "LocationSignature": "Riks"
+                    },
+                    {
+                        "AdvertisedLocationName": "Röjan",
+                        "LocationSignature": "Rjn"
+                    },
+                    {
+                        "AdvertisedLocationName": "Vemdalen",
+                        "LocationSignature": "Rjn.vd"
+                    },
+                    {
+                        "AdvertisedLocationName": "Rörvik",
+                        "LocationSignature": "Rk"
+                    },
+                    {
+                        "AdvertisedLocationName": "Rinkaby",
+                        "LocationSignature": "Rka"
+                    },
+                    {
+                        "AdvertisedLocationName": "Rekarne",
+                        "LocationSignature": "Rke"
+                    },
+                    {
+                        "AdvertisedLocationName": "Rocksjön",
+                        "LocationSignature": "Rkö"
+                    },
+                    {
+                        "AdvertisedLocationName": "Rällså",
+                        "LocationSignature": "Rlå"
+                    },
+                    {
+                        "AdvertisedLocationName": "Rämshyttan",
+                        "LocationSignature": "Rmh"
+                    },
+                    {
+                        "AdvertisedLocationName": "Ramnäs",
+                        "LocationSignature": "Rmn"
+                    },
+                    {
+                        "AdvertisedLocationName": "Regumatorp",
+                        "LocationSignature": "Rmtp"
+                    },
+                    {
+                        "AdvertisedLocationName": "Roback",
+                        "LocationSignature": "Rob"
+                    },
+                    {
+                        "AdvertisedLocationName": "Rosengård",
+                        "LocationSignature": "Rog"
                     },
                     {
                         "AdvertisedLocationName": "Rossön",
@@ -3412,48 +3804,8 @@ const trainStationList = {
                         "LocationSignature": "Rps"
                     },
                     {
-                        "AdvertisedLocationName": "Ronneby",
-                        "LocationSignature": "Rb"
-                    },
-                    {
-                        "AdvertisedLocationName": "Riksgräns Swe-Dk.",
-                        "LocationSignature": "Riks"
-                    },
-                    {
-                        "AdvertisedLocationName": "Oleby",
-                        "LocationSignature": "Ol"
-                    },
-                    {
-                        "AdvertisedLocationName": "Nås",
-                        "LocationSignature": "Nås"
-                    },
-                    {
                         "AdvertisedLocationName": "Rosersberg",
                         "LocationSignature": "Rs"
-                    },
-                    {
-                        "AdvertisedLocationName": "Rabbalshede",
-                        "LocationSignature": "Rbh"
-                    },
-                    {
-                        "AdvertisedLocationName": "Norrfors",
-                        "LocationSignature": "Nrs"
-                    },
-                    {
-                        "AdvertisedLocationName": "Röjan",
-                        "LocationSignature": "Rjn"
-                    },
-                    {
-                        "AdvertisedLocationName": "Berlin",
-                        "LocationSignature": "De.ber"
-                    },
-                    {
-                        "AdvertisedLocationName": "Nuortikon",
-                        "LocationSignature": "Nrt"
-                    },
-                    {
-                        "AdvertisedLocationName": "Råbäck",
-                        "LocationSignature": "Rbk"
                     },
                     {
                         "AdvertisedLocationName": "Råtsi",
@@ -3464,80 +3816,48 @@ const trainStationList = {
                         "LocationSignature": "Rsn"
                     },
                     {
-                        "AdvertisedLocationName": "Norsesund",
-                        "LocationSignature": "Ns"
-                    },
-                    {
-                        "AdvertisedLocationName": "Rockneby",
-                        "LocationSignature": "Rby"
-                    },
-                    {
-                        "AdvertisedLocationName": "Röstbo",
-                        "LocationSignature": "Rbo"
-                    },
-                    {
-                        "AdvertisedLocationName": "Rättvik",
-                        "LocationSignature": "Rv"
-                    },
-                    {
-                        "AdvertisedLocationName": "Oskarström",
-                        "LocationSignature": "Om"
-                    },
-                    {
-                        "AdvertisedLocationName": "Vemdalen",
-                        "LocationSignature": "Rjn.vd"
-                    },
-                    {
-                        "AdvertisedLocationName": "Nyckelsjön",
-                        "LocationSignature": "Nsj"
-                    },
-                    {
                         "AdvertisedLocationName": "Ramsjö",
                         "LocationSignature": "Rsö"
-                    },
-                    {
-                        "AdvertisedLocationName": "Repbäcken",
-                        "LocationSignature": "Rbä"
-                    },
-                    {
-                        "AdvertisedLocationName": "Skärblacka",
-                        "LocationSignature": "Sbl"
-                    },
-                    {
-                        "AdvertisedLocationName": "Ope",
-                        "LocationSignature": "Ope"
                     },
                     {
                         "AdvertisedLocationName": "Ransta",
                         "LocationSignature": "Rt"
                     },
                     {
-                        "AdvertisedLocationName": "Nelhammar",
-                        "LocationSignature": "Nl"
+                        "AdvertisedLocationName": "Röste",
+                        "LocationSignature": "Rte"
                     },
                     {
-                        "AdvertisedLocationName": "Niemisel",
-                        "LocationSignature": "Nml"
+                        "AdvertisedLocationName": "Rottneros",
+                        "LocationSignature": "Rts"
                     },
                     {
-                        "AdvertisedLocationName": "Rörvik",
-                        "LocationSignature": "Rk"
+                        "AdvertisedLocationName": "Ragunda",
+                        "LocationSignature": "Ru"
                     },
                     {
-                        "AdvertisedLocationName": "Stockholms norra",
-                        "LocationSignature": "Nst"
+                        "AdvertisedLocationName": "Ruda",
+                        "LocationSignature": "Rud"
                     },
                     {
-                        "AdvertisedLocationName": "Rinkaby",
-                        "LocationSignature": "Rka"
+                        "AdvertisedLocationName": "Rundvik",
+                        "LocationSignature": "Ruk"
                     },
                     {
-                        "AdvertisedLocationName": "Rynge",
-                        "LocationSignature": "Rye"
+                        "AdvertisedLocationName": "Runemo",
+                        "LocationSignature": "Rum"
                     },
                     {
-                        "AdvertisedLocationName": "Olskroken",
-                        "LocationSignature": "Or"
+                        "AdvertisedLocationName": "Runsala",
+                        "LocationSignature": "Rus"
+                    },
+                    {
+                        "AdvertisedLocationName": "Rautas",
+                        "LocationSignature": "Rut"
+                    },
+                    {
+                        "AdvertisedLocationName": "Rättvik",
+                        "LocationSignature": "Rv"
                     },
                     {
                         "AdvertisedLocationName": "Rosshyttan",
@@ -3548,296 +3868,52 @@ const trainStationList = {
                         "LocationSignature": "Ryb"
                     },
                     {
-                        "AdvertisedLocationName": "Rävlanda",
-                        "LocationSignature": "Rd"
-                    },
-                    {
-                        "AdvertisedLocationName": "Röste",
-                        "LocationSignature": "Rte"
-                    },
-                    {
-                        "AdvertisedLocationName": "Rydsgård",
-                        "LocationSignature": "Rdg"
-                    },
-                    {
-                        "AdvertisedLocationName": "Nyland",
-                        "LocationSignature": "Nld"
+                        "AdvertisedLocationName": "Rynge",
+                        "LocationSignature": "Rye"
                     },
                     {
                         "AdvertisedLocationName": "Ryggen",
                         "LocationSignature": "Ryg"
                     },
                     {
-                        "AdvertisedLocationName": "Opphem",
-                        "LocationSignature": "Oph"
-                    },
-                    {
-                        "AdvertisedLocationName": "Rottneros",
-                        "LocationSignature": "Rts"
-                    },
-                    {
-                        "AdvertisedLocationName": "Rekarne",
-                        "LocationSignature": "Rke"
-                    },
-                    {
-                        "AdvertisedLocationName": "Renviken",
-                        "LocationSignature": "Ren"
-                    },
-                    {
                         "AdvertisedLocationName": "Rydöbruk",
                         "LocationSignature": "Ryk"
-                    },
-                    {
-                        "AdvertisedLocationName": "Rimforsa",
-                        "LocationSignature": "Rf"
                     },
                     {
                         "AdvertisedLocationName": "Rydaholm",
                         "LocationSignature": "Rym"
                     },
                     {
-                        "AdvertisedLocationName": "Norra Sunderbyn",
-                        "LocationSignature": "Sby"
-                    },
-                    {
-                        "AdvertisedLocationName": "Rocksjön",
-                        "LocationSignature": "Rkö"
-                    },
-                    {
-                        "AdvertisedLocationName": "Strömsnäsbruk",
-                        "LocationSignature": "Sbu"
-                    },
-                    {
-                        "AdvertisedLocationName": "Rällså",
-                        "LocationSignature": "Rlå"
-                    },
-                    {
                         "AdvertisedLocationName": "Ryr",
                         "LocationSignature": "Ryr"
-                    },
-                    {
-                        "AdvertisedLocationName": "Rämshyttan",
-                        "LocationSignature": "Rmh"
-                    },
-                    {
-                        "AdvertisedLocationName": "Rimforsa brygga",
-                        "LocationSignature": "Rfb"
-                    },
-                    {
-                        "AdvertisedLocationName": "Sågbäcken",
-                        "LocationSignature": "Sbä"
-                    },
-                    {
-                        "AdvertisedLocationName": "Reftele",
-                        "LocationSignature": "Rft"
                     },
                     {
                         "AdvertisedLocationName": "Rydebäck",
                         "LocationSignature": "Ryä"
                     },
                     {
-                        "AdvertisedLocationName": "Ramnäs",
-                        "LocationSignature": "Rmn"
-                    },
-                    {
-                        "AdvertisedLocationName": "Ragunda",
-                        "LocationSignature": "Ru"
-                    },
-                    {
-                        "AdvertisedLocationName": "Stavreviken",
-                        "LocationSignature": "Sen"
-                    },
-                    {
-                        "AdvertisedLocationName": "Stensundberget",
-                        "LocationSignature": "Set"
-                    },
-                    {
-                        "AdvertisedLocationName": "Halden",
-                        "LocationSignature": "No.hld"
-                    },
-                    {
-                        "AdvertisedLocationName": "Sandmon",
-                        "LocationSignature": "Sdm"
-                    },
-                    {
-                        "AdvertisedLocationName": "Runemo",
-                        "LocationSignature": "Rum"
-                    },
-                    {
-                        "AdvertisedLocationName": "Stockholm City",
-                        "LocationSignature": "Sci"
-                    },
-                    {
-                        "AdvertisedLocationName": "Ruda",
-                        "LocationSignature": "Rud"
-                    },
-                    {
-                        "AdvertisedLocationName": "Regumatorp",
-                        "LocationSignature": "Rmtp"
-                    },
-                    {
-                        "AdvertisedLocationName": "Ornäs",
-                        "LocationSignature": "Orn"
+                        "AdvertisedLocationName": "Rågsveden",
+                        "LocationSignature": "Råg"
                     },
                     {
                         "AdvertisedLocationName": "Råsjön",
                         "LocationSignature": "Rån"
                     },
                     {
-                        "AdvertisedLocationName": "Rundvik",
-                        "LocationSignature": "Ruk"
-                    },
-                    {
-                        "AdvertisedLocationName": "Roback",
-                        "LocationSignature": "Rob"
-                    },
-                    {
-                        "AdvertisedLocationName": "Storfors",
-                        "LocationSignature": "Sf"
-                    },
-                    {
-                        "AdvertisedLocationName": "Orsa",
-                        "LocationSignature": "Ors"
-                    },
-                    {
-                        "AdvertisedLocationName": "Sköldinge",
-                        "LocationSignature": "Sde"
-                    },
-                    {
-                        "AdvertisedLocationName": "Rågsveden",
-                        "LocationSignature": "Råg"
-                    },
-                    {
-                        "AdvertisedLocationName": "Katterat",
-                        "LocationSignature": "No.kat"
-                    },
-                    {
-                        "AdvertisedLocationName": "Säffle",
-                        "LocationSignature": "Sfl"
-                    },
-                    {
-                        "AdvertisedLocationName": "Kongsvinger",
-                        "LocationSignature": "No.kvg"
-                    },
-                    {
                         "AdvertisedLocationName": "Råskogen",
                         "LocationSignature": "Rås"
-                    },
-                    {
-                        "AdvertisedLocationName": "Skellefteå",
-                        "LocationSignature": "Skl"
-                    },
-                    {
-                        "AdvertisedLocationName": "Runsala",
-                        "LocationSignature": "Rus"
-                    },
-                    {
-                        "AdvertisedLocationName": "Storflon",
-                        "LocationSignature": "Sfn"
-                    },
-                    {
-                        "AdvertisedLocationName": "Stehag",
-                        "LocationSignature": "Sg"
-                    },
-                    {
-                        "AdvertisedLocationName": "Sandsjönäs",
-                        "LocationSignature": "Sdnä"
-                    },
-                    {
-                        "AdvertisedLocationName": "Ormaryd",
-                        "LocationSignature": "Ory"
-                    },
-                    {
-                        "AdvertisedLocationName": "Räppe",
-                        "LocationSignature": "Räp"
                     },
                     {
                         "AdvertisedLocationName": "Rågön",
                         "LocationSignature": "Råö"
                     },
                     {
-                        "AdvertisedLocationName": "Rautas",
-                        "LocationSignature": "Rut"
-                    },
-                    {
-                        "AdvertisedLocationName": "Lilleström",
-                        "LocationSignature": "No.lil"
-                    },
-                    {
-                        "AdvertisedLocationName": "Smålandsstenar",
-                        "LocationSignature": "Sdr"
-                    },
-                    {
-                        "AdvertisedLocationName": "Stenkumla",
-                        "LocationSignature": "Skm"
-                    },
-                    {
-                        "AdvertisedLocationName": "Selsjön",
-                        "LocationSignature": "Slj"
-                    },
-                    {
-                        "AdvertisedLocationName": "Skorped",
-                        "LocationSignature": "Sop"
-                    },
-                    {
-                        "AdvertisedLocationName": "Lilleström",
-                        "LocationSignature": "No.lls"
-                    },
-                    {
-                        "AdvertisedLocationName": "Skymossen",
-                        "LocationSignature": "Skms"
-                    },
-                    {
-                        "AdvertisedLocationName": "Narvik",
-                        "LocationSignature": "No.nk"
-                    },
-                    {
-                        "AdvertisedLocationName": "Segmon",
-                        "LocationSignature": "Sgm"
-                    },
-                    {
-                        "AdvertisedLocationName": "Skänninge",
-                        "LocationSignature": "Skn"
+                        "AdvertisedLocationName": "Räppe",
+                        "LocationSignature": "Räp"
                     },
                     {
                         "AdvertisedLocationName": "Rödberg",
                         "LocationSignature": "Rö"
-                    },
-                    {
-                        "AdvertisedLocationName": "Smedby",
-                        "LocationSignature": "Sdy"
-                    },
-                    {
-                        "AdvertisedLocationName": "Solum",
-                        "LocationSignature": "Slm"
-                    },
-                    {
-                        "AdvertisedLocationName": "Svedala",
-                        "LocationSignature": "Sea"
-                    },
-                    {
-                        "AdvertisedLocationName": "Strängnäs",
-                        "LocationSignature": "Sgs"
-                    },
-                    {
-                        "AdvertisedLocationName": "Skoghall",
-                        "LocationSignature": "Skog"
-                    },
-                    {
-                        "AdvertisedLocationName": "Oslo",
-                        "LocationSignature": "No.osl"
-                    },
-                    {
-                        "AdvertisedLocationName": "Sparreholm",
-                        "LocationSignature": "Sp"
-                    },
-                    {
-                        "AdvertisedLocationName": "Skene",
-                        "LocationSignature": "See"
-                    },
-                    {
-                        "AdvertisedLocationName": "Storsjö",
-                        "LocationSignature": "Soö"
                     },
                     {
                         "AdvertisedLocationName": "Rönninge",
@@ -3848,144 +3924,20 @@ const trainStationList = {
                         "LocationSignature": "Röp"
                     },
                     {
-                        "AdvertisedLocationName": "Sellnäs",
-                        "LocationSignature": "Slnä"
-                    },
-                    {
-                        "AdvertisedLocationName": "Sege",
-                        "LocationSignature": "Sege"
-                    },
-                    {
-                        "AdvertisedLocationName": "Skeppshult",
-                        "LocationSignature": "Sph"
-                    },
-                    {
                         "AdvertisedLocationName": "Sveg",
                         "LocationSignature": "S"
-                    },
-                    {
-                        "AdvertisedLocationName": "Rombak",
-                        "LocationSignature": "No.rom"
-                    },
-                    {
-                        "AdvertisedLocationName": "Skåre",
-                        "LocationSignature": "Skr"
-                    },
-                    {
-                        "AdvertisedLocationName": "Slagnäs",
-                        "LocationSignature": "Sgä"
                     },
                     {
                         "AdvertisedLocationName": "Sandared",
                         "LocationSignature": "Sae"
                     },
                     {
-                        "AdvertisedLocationName": "Stöde",
-                        "LocationSignature": "Std"
-                    },
-                    {
-                        "AdvertisedLocationName": "Sävedalen",
-                        "LocationSignature": "Sel"
-                    },
-                    {
-                        "AdvertisedLocationName": "Stjärnhov",
-                        "LocationSignature": "Sh"
-                    },
-                    {
-                        "AdvertisedLocationName": "Skogstorp",
-                        "LocationSignature": "Skrp"
-                    },
-                    {
-                        "AdvertisedLocationName": "Spjutsbygd",
-                        "LocationSignature": "Spj"
-                    },
-                    {
-                        "AdvertisedLocationName": "Skäret",
-                        "LocationSignature": "Skrt"
-                    },
-                    {
-                        "AdvertisedLocationName": "Söderhamn",
-                        "LocationSignature": "Shm"
-                    },
-                    {
-                        "AdvertisedLocationName": "Svarte",
-                        "LocationSignature": "Ste"
-                    },
-                    {
-                        "AdvertisedLocationName": "Stugsund",
-                        "LocationSignature": "Stu"
-                    },
-                    {
-                        "AdvertisedLocationName": "Surahammar",
-                        "LocationSignature": "Shr"
-                    },
-                    {
-                        "AdvertisedLocationName": "Stegsskogen",
-                        "LocationSignature": "Sten"
-                    },
-                    {
-                        "AdvertisedLocationName": "Skållerud",
-                        "LocationSignature": "Skru"
-                    },
-                    {
                         "AdvertisedLocationName": "Staffanstorp",
                         "LocationSignature": "Saf"
                     },
                     {
-                        "AdvertisedLocationName": "Skebokvarn",
-                        "LocationSignature": "Skv"
-                    },
-                    {
-                        "AdvertisedLocationName": "Stavre",
-                        "LocationSignature": "Stv"
-                    },
-                    {
-                        "AdvertisedLocationName": "Spjutbäcken",
-                        "LocationSignature": "Spjb"
-                    },
-                    {
-                        "AdvertisedLocationName": "Sandträsk",
-                        "LocationSignature": "Stä"
-                    },
-                    {
                         "AdvertisedLocationName": "Sandbäck",
                         "LocationSignature": "Sak"
-                    },
-                    {
-                        "AdvertisedLocationName": "Söderhamn",
-                        "LocationSignature": "Shv"
-                    },
-                    {
-                        "AdvertisedLocationName": "Strömstad",
-                        "LocationSignature": "Smd"
-                    },
-                    {
-                        "AdvertisedLocationName": "Sandhem",
-                        "LocationSignature": "Sm"
-                    },
-                    {
-                        "AdvertisedLocationName": "Skästra",
-                        "LocationSignature": "Skä"
-                    },
-                    {
-                        "AdvertisedLocationName": "Stora Höga",
-                        "LocationSignature": "Sth"
-                    },
-                    {
-                        "AdvertisedLocationName": "Sollefteå",
-                        "LocationSignature": "Stå"
-                    },
-                    {
-                        "AdvertisedLocationName": "Storbergets industrispår",
-                        "LocationSignature": "Sti"
-                    },
-                    {
-                        "AdvertisedLocationName": "Sprängsviken",
-                        "LocationSignature": "Spk"
-                    },
-                    {
-                        "AdvertisedLocationName": "Simrishamn",
-                        "LocationSignature": "Si"
                     },
                     {
                         "AdvertisedLocationName": "Samnan",
@@ -3996,504 +3948,472 @@ const trainStationList = {
                         "LocationSignature": "Sarp"
                     },
                     {
-                        "AdvertisedLocationName": "Sala",
-                        "LocationSignature": "Sl"
-                    },
-                    {
-                        "AdvertisedLocationName": "Silverdalen",
-                        "LocationSignature": "Sic"
-                    },
-                    {
                         "AdvertisedLocationName": "Salsta",
                         "LocationSignature": "Sas"
-                    },
-                    {
-                        "AdvertisedLocationName": "Strångsjö",
-                        "LocationSignature": "Stö"
-                    },
-                    {
-                        "AdvertisedLocationName": "Stjerneskolan",
-                        "LocationSignature": "Stje"
-                    },
-                    {
-                        "AdvertisedLocationName": "Silverdalens bruk",
-                        "LocationSignature": "Sid"
-                    },
-                    {
-                        "AdvertisedLocationName": "Sundsvall C",
-                        "LocationSignature": "Suc"
-                    },
-                    {
-                        "AdvertisedLocationName": "Sundbyberg",
-                        "LocationSignature": "Sub"
-                    },
-                    {
-                        "AdvertisedLocationName": "Sikträsk",
-                        "LocationSignature": "Stk"
-                    },
-                    {
-                        "AdvertisedLocationName": "Stolpstugan",
-                        "LocationSignature": "Spn"
-                    },
-                    {
-                        "AdvertisedLocationName": "Sikfors",
-                        "LocationSignature": "Sif"
                     },
                     {
                         "AdvertisedLocationName": "Stora Tuna",
                         "LocationSignature": "Sau"
                     },
                     {
-                        "AdvertisedLocationName": "Solbacka",
-                        "LocationSignature": "Slbk"
-                    },
-                    {
                         "AdvertisedLocationName": "Skabersjö",
                         "LocationSignature": "Saö"
-                    },
-                    {
-                        "AdvertisedLocationName": "Smedjebacken",
-                        "LocationSignature": "Smj"
-                    },
-                    {
-                        "AdvertisedLocationName": "Spännarhyttan",
-                        "LocationSignature": "Spy"
-                    },
-                    {
-                        "AdvertisedLocationName": "Sommen",
-                        "LocationSignature": "Smn"
-                    },
-                    {
-                        "AdvertisedLocationName": "Silinge",
-                        "LocationSignature": "Sii"
-                    },
-                    {
-                        "AdvertisedLocationName": "Slätte",
-                        "LocationSignature": "Sle"
-                    },
-                    {
-                        "AdvertisedLocationName": "Surte",
-                        "LocationSignature": "Sue"
-                    },
-                    {
-                        "AdvertisedLocationName": "Spånga",
-                        "LocationSignature": "Spå"
-                    },
-                    {
-                        "AdvertisedLocationName": "Ställdalen",
-                        "LocationSignature": "Stl"
-                    },
-                    {
-                        "AdvertisedLocationName": "Svartvik",
-                        "LocationSignature": "Sik"
-                    },
-                    {
-                        "AdvertisedLocationName": "Stora Levene",
-                        "LocationSignature": "Stlv"
-                    },
-                    {
-                        "AdvertisedLocationName": "Strömsbro",
-                        "LocationSignature": "Smo"
                     },
                     {
                         "AdvertisedLocationName": "Spannarboda",
                         "LocationSignature": "Sba"
                     },
                     {
-                        "AdvertisedLocationName": "Sällinge",
-                        "LocationSignature": "Slg"
-                    },
-                    {
-                        "AdvertisedLocationName": "Sorsele industrispår",
-                        "LocationSignature": "Sir"
-                    },
-                    {
-                        "AdvertisedLocationName": "Sturefors",
-                        "LocationSignature": "Suf"
-                    },
-                    {
-                        "AdvertisedLocationName": "Storå",
-                        "LocationSignature": "Sr"
-                    },
-                    {
                         "AdvertisedLocationName": "Saluböle",
                         "LocationSignature": "Sbe"
-                    },
-                    {
-                        "AdvertisedLocationName": "Smedstorp",
-                        "LocationSignature": "Smp"
-                    },
-                    {
-                        "AdvertisedLocationName": "Storträsk",
-                        "LocationSignature": "Sto"
-                    },
-                    {
-                        "AdvertisedLocationName": "Skuckuviken",
-                        "LocationSignature": "Sui"
-                    },
-                    {
-                        "AdvertisedLocationName": "Smålands Burseryd",
-                        "LocationSignature": "Smu"
-                    },
-                    {
-                        "AdvertisedLocationName": "Sunderby sjukhus",
-                        "LocationSignature": "Sus"
-                    },
-                    {
-                        "AdvertisedLocationName": "Söderbärke",
-                        "LocationSignature": "Sre"
-                    },
-                    {
-                        "AdvertisedLocationName": "Sjisjka",
-                        "LocationSignature": "Sjka"
-                    },
-                    {
-                        "AdvertisedLocationName": "Sundsvall Västra",
-                        "LocationSignature": "Suv"
-                    },
-                    {
-                        "AdvertisedLocationName": "Simonstorp",
-                        "LocationSignature": "Smt"
-                    },
-                    {
-                        "AdvertisedLocationName": "Stockviksverkens nedre",
-                        "LocationSignature": "Ston"
-                    },
-                    {
-                        "AdvertisedLocationName": "Storuman",
-                        "LocationSignature": "Sum"
-                    },
-                    {
-                        "AdvertisedLocationName": "Simeå",
-                        "LocationSignature": "Små"
                     },
                     {
                         "AdvertisedLocationName": "Storblåliden",
                         "LocationSignature": "Sbi"
                     },
                     {
-                        "AdvertisedLocationName": "Sörtjärn",
-                        "LocationSignature": "Srn"
+                        "AdvertisedLocationName": "Stenbacken",
+                        "LocationSignature": "Sbk"
                     },
                     {
-                        "AdvertisedLocationName": "Svågertorp / Malmö Syd",
-                        "LocationSignature": "Stp"
+                        "AdvertisedLocationName": "Skärblacka",
+                        "LocationSignature": "Sbl"
                     },
                     {
-                        "AdvertisedLocationName": "Stenkullen",
-                        "LocationSignature": "Sn"
+                        "AdvertisedLocationName": "Strömsnäsbruk",
+                        "LocationSignature": "Sbu"
                     },
                     {
-                        "AdvertisedLocationName": "Sunne",
-                        "LocationSignature": "Sun"
+                        "AdvertisedLocationName": "Norra Sunderbyn",
+                        "LocationSignature": "Sby"
                     },
                     {
-                        "AdvertisedLocationName": "Storebro",
-                        "LocationSignature": "Sro"
+                        "AdvertisedLocationName": "Sågbäcken",
+                        "LocationSignature": "Sbä"
                     },
                     {
-                        "AdvertisedLocationName": "Storlien",
-                        "LocationSignature": "Str"
+                        "AdvertisedLocationName": "Stockholm City",
+                        "LocationSignature": "Sci"
                     },
                     {
-                        "AdvertisedLocationName": "Storvik",
-                        "LocationSignature": "Sv"
+                        "AdvertisedLocationName": "Sköldinge",
+                        "LocationSignature": "Sde"
+                    },
+                    {
+                        "AdvertisedLocationName": "Sandmon",
+                        "LocationSignature": "Sdm"
+                    },
+                    {
+                        "AdvertisedLocationName": "Sandsjönäs",
+                        "LocationSignature": "Sdnä"
+                    },
+                    {
+                        "AdvertisedLocationName": "Smålandsstenar",
+                        "LocationSignature": "Sdr"
+                    },
+                    {
+                        "AdvertisedLocationName": "Smedby",
+                        "LocationSignature": "Sdy"
+                    },
+                    {
+                        "AdvertisedLocationName": "Svedala",
+                        "LocationSignature": "Sea"
+                    },
+                    {
+                        "AdvertisedLocationName": "Skene",
+                        "LocationSignature": "See"
+                    },
+                    {
+                        "AdvertisedLocationName": "Sege",
+                        "LocationSignature": "Sege"
+                    },
+                    {
+                        "AdvertisedLocationName": "Sävedalen",
+                        "LocationSignature": "Sel"
+                    },
+                    {
+                        "AdvertisedLocationName": "Stavreviken",
+                        "LocationSignature": "Sen"
+                    },
+                    {
+                        "AdvertisedLocationName": "Stensundberget",
+                        "LocationSignature": "Set"
+                    },
+                    {
+                        "AdvertisedLocationName": "Storfors",
+                        "LocationSignature": "Sf"
+                    },
+                    {
+                        "AdvertisedLocationName": "Säffle",
+                        "LocationSignature": "Sfl"
+                    },
+                    {
+                        "AdvertisedLocationName": "Storflon",
+                        "LocationSignature": "Sfn"
+                    },
+                    {
+                        "AdvertisedLocationName": "Stehag",
+                        "LocationSignature": "Sg"
+                    },
+                    {
+                        "AdvertisedLocationName": "Segmon",
+                        "LocationSignature": "Sgm"
+                    },
+                    {
+                        "AdvertisedLocationName": "Strängnäs",
+                        "LocationSignature": "Sgs"
+                    },
+                    {
+                        "AdvertisedLocationName": "Slagnäs",
+                        "LocationSignature": "Sgä"
+                    },
+                    {
+                        "AdvertisedLocationName": "Stjärnhov",
+                        "LocationSignature": "Sh"
+                    },
+                    {
+                        "AdvertisedLocationName": "Söderhamn",
+                        "LocationSignature": "Shm"
+                    },
+                    {
+                        "AdvertisedLocationName": "Surahammar",
+                        "LocationSignature": "Shr"
+                    },
+                    {
+                        "AdvertisedLocationName": "Söderhamn",
+                        "LocationSignature": "Shv"
+                    },
+                    {
+                        "AdvertisedLocationName": "Simrishamn",
+                        "LocationSignature": "Si"
+                    },
+                    {
+                        "AdvertisedLocationName": "Silverdalen",
+                        "LocationSignature": "Sic"
+                    },
+                    {
+                        "AdvertisedLocationName": "Silverdalens bruk",
+                        "LocationSignature": "Sid"
+                    },
+                    {
+                        "AdvertisedLocationName": "Sikfors",
+                        "LocationSignature": "Sif"
+                    },
+                    {
+                        "AdvertisedLocationName": "Silinge",
+                        "LocationSignature": "Sii"
+                    },
+                    {
+                        "AdvertisedLocationName": "Svartvik",
+                        "LocationSignature": "Sik"
+                    },
+                    {
+                        "AdvertisedLocationName": "Sorsele industrispår",
+                        "LocationSignature": "Sir"
+                    },
+                    {
+                        "AdvertisedLocationName": "Sjisjka",
+                        "LocationSignature": "Sjka"
                     },
                     {
                         "AdvertisedLocationName": "Skövde C",
                         "LocationSignature": "Sk"
                     },
                     {
-                        "AdvertisedLocationName": "Stenbacken",
-                        "LocationSignature": "Sbk"
-                    },
-                    {
-                        "AdvertisedLocationName": "Snickarbo",
-                        "LocationSignature": "Snb"
-                    },
-                    {
                         "AdvertisedLocationName": "Skinnskatteberg",
                         "LocationSignature": "Skb"
-                    },
-                    {
-                        "AdvertisedLocationName": "Söderby",
-                        "LocationSignature": "Södy"
-                    },
-                    {
-                        "AdvertisedLocationName": "Skurup",
-                        "LocationSignature": "Srp"
-                    },
-                    {
-                        "AdvertisedLocationName": "Skutskär",
-                        "LocationSignature": "Sur"
-                    },
-                    {
-                        "AdvertisedLocationName": "Sölvesborg",
-                        "LocationSignature": "Sög"
-                    },
-                    {
-                        "AdvertisedLocationName": "Svenstavik centrum",
-                        "LocationSignature": "Svc"
                     },
                     {
                         "AdvertisedLocationName": "Skälebol",
                         "LocationSignature": "Skbl"
                     },
                     {
-                        "AdvertisedLocationName": "Storsund",
-                        "LocationSignature": "Sts"
-                    },
-                    {
-                        "AdvertisedLocationName": "Skattkärr",
-                        "LocationSignature": "Srr"
-                    },
-                    {
-                        "AdvertisedLocationName": "Sandarne",
-                        "LocationSignature": "Sne"
-                    },
-                    {
                         "AdvertisedLocationName": "Skavstaby",
                         "LocationSignature": "Skby"
-                    },
-                    {
-                        "AdvertisedLocationName": "Säve",
-                        "LocationSignature": "Sve"
                     },
                     {
                         "AdvertisedLocationName": "Skee",
                         "LocationSignature": "Ske"
                     },
                     {
-                        "AdvertisedLocationName": "Södertälje kanal",
-                        "LocationSignature": "Söka"
-                    },
-                    {
-                        "AdvertisedLocationName": "Singsån",
-                        "LocationSignature": "Sngå"
-                    },
-                    {
-                        "AdvertisedLocationName": "Svenshögen",
-                        "LocationSignature": "Svg"
-                    },
-                    {
-                        "AdvertisedLocationName": "Trolmen",
-                        "LocationSignature": "Trm"
-                    },
-                    {
-                        "AdvertisedLocationName": "Strömtorp",
-                        "LocationSignature": "Srt"
-                    },
-                    {
-                        "AdvertisedLocationName": "Sösdala",
-                        "LocationSignature": "Söla"
-                    },
-                    {
-                        "AdvertisedLocationName": "Stöcke",
-                        "LocationSignature": "Sök"
-                    },
-                    {
-                        "AdvertisedLocationName": "Timrå",
-                        "LocationSignature": "Trå"
-                    },
-                    {
-                        "AdvertisedLocationName": "Skutskär norra",
-                        "LocationSignature": "Surn"
-                    },
-                    {
-                        "AdvertisedLocationName": "Sorsele",
-                        "LocationSignature": "Srs"
-                    },
-                    {
-                        "AdvertisedLocationName": "Tyringe",
-                        "LocationSignature": "Ty"
-                    },
-                    {
-                        "AdvertisedLocationName": "Skanlog",
-                        "LocationSignature": "Snl"
-                    },
-                    {
                         "AdvertisedLocationName": "Skogås",
                         "LocationSignature": "Skg"
-                    },
-                    {
-                        "AdvertisedLocationName": "Södra Vi",
-                        "LocationSignature": "Svi"
-                    },
-                    {
-                        "AdvertisedLocationName": "Storvreta",
-                        "LocationSignature": "Srv"
-                    },
-                    {
-                        "AdvertisedLocationName": "Tungelsta",
-                        "LocationSignature": "Ts"
-                    },
-                    {
-                        "AdvertisedLocationName": "Södertälje Syd (SL)",
-                        "LocationSignature": "Söu"
-                    },
-                    {
-                        "AdvertisedLocationName": "Svedje",
-                        "LocationSignature": "Svj"
-                    },
-                    {
-                        "AdvertisedLocationName": "Skelleftehamns övre",
-                        "LocationSignature": "Söv"
-                    },
-                    {
-                        "AdvertisedLocationName": "Stenstorp",
-                        "LocationSignature": "Ss"
-                    },
-                    {
-                        "AdvertisedLocationName": "Tågsjöberg",
-                        "LocationSignature": "Tsg"
                     },
                     {
                         "AdvertisedLocationName": "Skönvik",
                         "LocationSignature": "Skk"
                     },
                     {
-                        "AdvertisedLocationName": "Tyllered",
-                        "LocationSignature": "Tye"
+                        "AdvertisedLocationName": "Skellefteå",
+                        "LocationSignature": "Skl"
                     },
                     {
-                        "AdvertisedLocationName": "Umeå östra",
-                        "LocationSignature": "Uåö"
+                        "AdvertisedLocationName": "Stenkumla",
+                        "LocationSignature": "Skm"
                     },
                     {
-                        "AdvertisedLocationName": "Sjösa",
-                        "LocationSignature": "Ssa"
+                        "AdvertisedLocationName": "Skymossen",
+                        "LocationSignature": "Skms"
                     },
                     {
-                        "AdvertisedLocationName": "Tisselskog",
-                        "LocationSignature": "Tsl"
+                        "AdvertisedLocationName": "Skänninge",
+                        "LocationSignature": "Skn"
                     },
                     {
-                        "AdvertisedLocationName": "Svenstavik",
-                        "LocationSignature": "Svk"
+                        "AdvertisedLocationName": "Skoghall",
+                        "LocationSignature": "Skog"
                     },
                     {
-                        "AdvertisedLocationName": "Torsåker",
-                        "LocationSignature": "Tså"
+                        "AdvertisedLocationName": "Skåre",
+                        "LocationSignature": "Skr"
                     },
                     {
-                        "AdvertisedLocationName": "Trångsund",
-                        "LocationSignature": "Tåd"
+                        "AdvertisedLocationName": "Skogstorp",
+                        "LocationSignature": "Skrp"
+                    },
+                    {
+                        "AdvertisedLocationName": "Skäret",
+                        "LocationSignature": "Skrt"
+                    },
+                    {
+                        "AdvertisedLocationName": "Skållerud",
+                        "LocationSignature": "Skru"
+                    },
+                    {
+                        "AdvertisedLocationName": "Skebokvarn",
+                        "LocationSignature": "Skv"
+                    },
+                    {
+                        "AdvertisedLocationName": "Skästra",
+                        "LocationSignature": "Skä"
+                    },
+                    {
+                        "AdvertisedLocationName": "Sala",
+                        "LocationSignature": "Sl"
+                    },
+                    {
+                        "AdvertisedLocationName": "Solbacka",
+                        "LocationSignature": "Slbk"
+                    },
+                    {
+                        "AdvertisedLocationName": "Slätte",
+                        "LocationSignature": "Sle"
+                    },
+                    {
+                        "AdvertisedLocationName": "Sällinge",
+                        "LocationSignature": "Slg"
+                    },
+                    {
+                        "AdvertisedLocationName": "Selsjön",
+                        "LocationSignature": "Slj"
+                    },
+                    {
+                        "AdvertisedLocationName": "Solum",
+                        "LocationSignature": "Slm"
+                    },
+                    {
+                        "AdvertisedLocationName": "Sellnäs",
+                        "LocationSignature": "Slnä"
+                    },
+                    {
+                        "AdvertisedLocationName": "Sandhem",
+                        "LocationSignature": "Sm"
+                    },
+                    {
+                        "AdvertisedLocationName": "Strömstad",
+                        "LocationSignature": "Smd"
+                    },
+                    {
+                        "AdvertisedLocationName": "Smedjebacken",
+                        "LocationSignature": "Smj"
+                    },
+                    {
+                        "AdvertisedLocationName": "Sommen",
+                        "LocationSignature": "Smn"
+                    },
+                    {
+                        "AdvertisedLocationName": "Strömsbro",
+                        "LocationSignature": "Smo"
+                    },
+                    {
+                        "AdvertisedLocationName": "Smedstorp",
+                        "LocationSignature": "Smp"
+                    },
+                    {
+                        "AdvertisedLocationName": "Simonstorp",
+                        "LocationSignature": "Smt"
+                    },
+                    {
+                        "AdvertisedLocationName": "Smålands Burseryd",
+                        "LocationSignature": "Smu"
+                    },
+                    {
+                        "AdvertisedLocationName": "Simeå",
+                        "LocationSignature": "Små"
+                    },
+                    {
+                        "AdvertisedLocationName": "Stenkullen",
+                        "LocationSignature": "Sn"
+                    },
+                    {
+                        "AdvertisedLocationName": "Snickarbo",
+                        "LocationSignature": "Snb"
+                    },
+                    {
+                        "AdvertisedLocationName": "Sandarne",
+                        "LocationSignature": "Sne"
+                    },
+                    {
+                        "AdvertisedLocationName": "Singsån",
+                        "LocationSignature": "Sngå"
+                    },
+                    {
+                        "AdvertisedLocationName": "Skanlog",
+                        "LocationSignature": "Snl"
                     },
                     {
                         "AdvertisedLocationName": "Snyten",
                         "LocationSignature": "Snt"
                     },
                     {
-                        "AdvertisedLocationName": "Umeå godsbangård",
-                        "LocationSignature": "Uågb"
-                    },
-                    {
-                        "AdvertisedLocationName": "Sävast",
-                        "LocationSignature": "Svt"
-                    },
-                    {
-                        "AdvertisedLocationName": "Södertälje Syd",
-                        "LocationSignature": "Söö"
-                    },
-                    {
                         "AdvertisedLocationName": "Stenungsund",
                         "LocationSignature": "Snu"
-                    },
-                    {
-                        "AdvertisedLocationName": "Tortuna",
-                        "LocationSignature": "Ttu"
-                    },
-                    {
-                        "AdvertisedLocationName": "Strömsholm",
-                        "LocationSignature": "Ssh"
                     },
                     {
                         "AdvertisedLocationName": "Sandviken",
                         "LocationSignature": "Snv"
                     },
                     {
-                        "AdvertisedLocationName": "Uddevalla Östra",
-                        "LocationSignature": "Uö"
+                        "AdvertisedLocationName": "Stensjön",
+                        "LocationSignature": "Snö"
                     },
                     {
-                        "AdvertisedLocationName": "Töreboda",
-                        "LocationSignature": "T"
+                        "AdvertisedLocationName": "Solna",
+                        "LocationSignature": "So"
+                    },
+                    {
+                        "AdvertisedLocationName": "Stordalen",
+                        "LocationSignature": "Soa"
+                    },
+                    {
+                        "AdvertisedLocationName": "Stockholm Odenplan",
+                        "LocationSignature": "Sod"
+                    },
+                    {
+                        "AdvertisedLocationName": "Stolpen",
+                        "LocationSignature": "Soe"
+                    },
+                    {
+                        "AdvertisedLocationName": "Sollentuna",
+                        "LocationSignature": "Sol"
+                    },
+                    {
+                        "AdvertisedLocationName": "Stormyran",
+                        "LocationSignature": "Som"
+                    },
+                    {
+                        "AdvertisedLocationName": "Skorped",
+                        "LocationSignature": "Sop"
+                    },
+                    {
+                        "AdvertisedLocationName": "Storsjö",
+                        "LocationSignature": "Soö"
+                    },
+                    {
+                        "AdvertisedLocationName": "Sparreholm",
+                        "LocationSignature": "Sp"
+                    },
+                    {
+                        "AdvertisedLocationName": "Skeppshult",
+                        "LocationSignature": "Sph"
+                    },
+                    {
+                        "AdvertisedLocationName": "Spjutsbygd",
+                        "LocationSignature": "Spj"
+                    },
+                    {
+                        "AdvertisedLocationName": "Spjutbäcken",
+                        "LocationSignature": "Spjb"
+                    },
+                    {
+                        "AdvertisedLocationName": "Sprängsviken",
+                        "LocationSignature": "Spk"
+                    },
+                    {
+                        "AdvertisedLocationName": "Stolpstugan",
+                        "LocationSignature": "Spn"
+                    },
+                    {
+                        "AdvertisedLocationName": "Spännarhyttan",
+                        "LocationSignature": "Spy"
+                    },
+                    {
+                        "AdvertisedLocationName": "Spånga",
+                        "LocationSignature": "Spå"
+                    },
+                    {
+                        "AdvertisedLocationName": "Storå",
+                        "LocationSignature": "Sr"
+                    },
+                    {
+                        "AdvertisedLocationName": "Söderbärke",
+                        "LocationSignature": "Sre"
+                    },
+                    {
+                        "AdvertisedLocationName": "Sörtjärn",
+                        "LocationSignature": "Srn"
+                    },
+                    {
+                        "AdvertisedLocationName": "Storebro",
+                        "LocationSignature": "Sro"
+                    },
+                    {
+                        "AdvertisedLocationName": "Skurup",
+                        "LocationSignature": "Srp"
+                    },
+                    {
+                        "AdvertisedLocationName": "Skattkärr",
+                        "LocationSignature": "Srr"
+                    },
+                    {
+                        "AdvertisedLocationName": "Sorsele",
+                        "LocationSignature": "Srs"
+                    },
+                    {
+                        "AdvertisedLocationName": "Strömtorp",
+                        "LocationSignature": "Srt"
+                    },
+                    {
+                        "AdvertisedLocationName": "Skruv",
+                        "LocationSignature": "Sru"
+                    },
+                    {
+                        "AdvertisedLocationName": "Storvreta",
+                        "LocationSignature": "Srv"
+                    },
+                    {
+                        "AdvertisedLocationName": "Stenstorp",
+                        "LocationSignature": "Ss"
+                    },
+                    {
+                        "AdvertisedLocationName": "Sjösa",
+                        "LocationSignature": "Ssa"
+                    },
+                    {
+                        "AdvertisedLocationName": "Strömsholm",
+                        "LocationSignature": "Ssh"
                     },
                     {
                         "AdvertisedLocationName": "Stockholms södra",
                         "LocationSignature": "Sst"
                     },
                     {
-                        "AdvertisedLocationName": "Svappavaara",
-                        "LocationSignature": "Svv"
-                    },
-                    {
-                        "AdvertisedLocationName": "Tumba",
-                        "LocationSignature": "Tu"
-                    },
-                    {
-                        "AdvertisedLocationName": "Värnamo",
-                        "LocationSignature": "V"
-                    },
-                    {
-                        "AdvertisedLocationName": "Taberg",
-                        "LocationSignature": "Tag"
-                    },
-                    {
-                        "AdvertisedLocationName": "Vara",
-                        "LocationSignature": "Vaa"
-                    },
-                    {
-                        "AdvertisedLocationName": "Tunadal",
-                        "LocationSignature": "Tud"
-                    },
-                    {
-                        "AdvertisedLocationName": "Trångsviken",
-                        "LocationSignature": "Tåv"
-                    },
-                    {
-                        "AdvertisedLocationName": "Tillberga",
-                        "LocationSignature": "Tb"
-                    },
-                    {
-                        "AdvertisedLocationName": "Vad",
-                        "LocationSignature": "Vad"
-                    },
-                    {
-                        "AdvertisedLocationName": "Skytts Vemmerlöv",
-                        "LocationSignature": "Svö"
-                    },
-                    {
-                        "AdvertisedLocationName": "Svartå",
-                        "LocationSignature": "Svå"
-                    },
-                    {
-                        "AdvertisedLocationName": "Stockaryd",
-                        "LocationSignature": "Sy"
-                    },
-                    {
-                        "AdvertisedLocationName": "Tullinge",
-                        "LocationSignature": "Tul"
-                    },
-                    {
                         "AdvertisedLocationName": "Segersäng",
                         "LocationSignature": "Ssä"
                     },
                     {
-                        "AdvertisedLocationName": "Tystberga",
-                        "LocationSignature": "Tba"
-                    },
-                    {
-                        "AdvertisedLocationName": "Vargön",
-                        "LocationSignature": "Vag"
-                    },
-                    {
-                        "AdvertisedLocationName": "Tunneby",
-                        "LocationSignature": "Tun"
-                    },
-                    {
-                        "AdvertisedLocationName": "Skillingaryd",
-                        "LocationSignature": "Syd"
+                        "AdvertisedLocationName": "Säter",
+                        "LocationSignature": "St"
                     },
                     {
                         "AdvertisedLocationName": "Stuvsta",
@@ -4504,6 +4424,502 @@ const trainStationList = {
                         "LocationSignature": "Stb"
                     },
                     {
+                        "AdvertisedLocationName": "Stöde",
+                        "LocationSignature": "Std"
+                    },
+                    {
+                        "AdvertisedLocationName": "Svarte",
+                        "LocationSignature": "Ste"
+                    },
+                    {
+                        "AdvertisedLocationName": "Stegsskogen",
+                        "LocationSignature": "Sten"
+                    },
+                    {
+                        "AdvertisedLocationName": "Stora Höga",
+                        "LocationSignature": "Sth"
+                    },
+                    {
+                        "AdvertisedLocationName": "Storbergets industrispår",
+                        "LocationSignature": "Sti"
+                    },
+                    {
+                        "AdvertisedLocationName": "Stjerneskolan",
+                        "LocationSignature": "Stje"
+                    },
+                    {
+                        "AdvertisedLocationName": "Sikträsk",
+                        "LocationSignature": "Stk"
+                    },
+                    {
+                        "AdvertisedLocationName": "Ställdalen",
+                        "LocationSignature": "Stl"
+                    },
+                    {
+                        "AdvertisedLocationName": "Stora Levene",
+                        "LocationSignature": "Stlv"
+                    },
+                    {
+                        "AdvertisedLocationName": "Storträsk",
+                        "LocationSignature": "Sto"
+                    },
+                    {
+                        "AdvertisedLocationName": "Stockviksverkens nedre",
+                        "LocationSignature": "Ston"
+                    },
+                    {
+                        "AdvertisedLocationName": "Svågertorp / Malmö Syd",
+                        "LocationSignature": "Stp"
+                    },
+                    {
+                        "AdvertisedLocationName": "Storlien",
+                        "LocationSignature": "Str"
+                    },
+                    {
+                        "AdvertisedLocationName": "Storsund",
+                        "LocationSignature": "Sts"
+                    },
+                    {
+                        "AdvertisedLocationName": "Stugsund",
+                        "LocationSignature": "Stu"
+                    },
+                    {
+                        "AdvertisedLocationName": "Stavre",
+                        "LocationSignature": "Stv"
+                    },
+                    {
+                        "AdvertisedLocationName": "Sollefteå",
+                        "LocationSignature": "Stå"
+                    },
+                    {
+                        "AdvertisedLocationName": "Sandträsk",
+                        "LocationSignature": "Stä"
+                    },
+                    {
+                        "AdvertisedLocationName": "Strångsjö",
+                        "LocationSignature": "Stö"
+                    },
+                    {
+                        "AdvertisedLocationName": "Sundbyberg",
+                        "LocationSignature": "Sub"
+                    },
+                    {
+                        "AdvertisedLocationName": "Sundsvall C",
+                        "LocationSignature": "Suc"
+                    },
+                    {
+                        "AdvertisedLocationName": "Surte",
+                        "LocationSignature": "Sue"
+                    },
+                    {
+                        "AdvertisedLocationName": "Sturefors",
+                        "LocationSignature": "Suf"
+                    },
+                    {
+                        "AdvertisedLocationName": "Skuckuviken",
+                        "LocationSignature": "Sui"
+                    },
+                    {
+                        "AdvertisedLocationName": "Storuman",
+                        "LocationSignature": "Sum"
+                    },
+                    {
+                        "AdvertisedLocationName": "Sunne",
+                        "LocationSignature": "Sun"
+                    },
+                    {
+                        "AdvertisedLocationName": "Skutskär",
+                        "LocationSignature": "Sur"
+                    },
+                    {
+                        "AdvertisedLocationName": "Skutskär norra",
+                        "LocationSignature": "Surn"
+                    },
+                    {
+                        "AdvertisedLocationName": "Sunderby sjukhus",
+                        "LocationSignature": "Sus"
+                    },
+                    {
+                        "AdvertisedLocationName": "Sundsvall Västra",
+                        "LocationSignature": "Suv"
+                    },
+                    {
+                        "AdvertisedLocationName": "Storvik",
+                        "LocationSignature": "Sv"
+                    },
+                    {
+                        "AdvertisedLocationName": "Svenstavik centrum",
+                        "LocationSignature": "Svc"
+                    },
+                    {
+                        "AdvertisedLocationName": "Säve",
+                        "LocationSignature": "Sve"
+                    },
+                    {
+                        "AdvertisedLocationName": "Svenshögen",
+                        "LocationSignature": "Svg"
+                    },
+                    {
+                        "AdvertisedLocationName": "Södra Vi",
+                        "LocationSignature": "Svi"
+                    },
+                    {
+                        "AdvertisedLocationName": "Svedje",
+                        "LocationSignature": "Svj"
+                    },
+                    {
+                        "AdvertisedLocationName": "Svenstavik",
+                        "LocationSignature": "Svk"
+                    },
+                    {
+                        "AdvertisedLocationName": "Sävast",
+                        "LocationSignature": "Svt"
+                    },
+                    {
+                        "AdvertisedLocationName": "Svappavaara",
+                        "LocationSignature": "Svv"
+                    },
+                    {
+                        "AdvertisedLocationName": "Svartå",
+                        "LocationSignature": "Svå"
+                    },
+                    {
+                        "AdvertisedLocationName": "Skytts Vemmerlöv",
+                        "LocationSignature": "Svö"
+                    },
+                    {
+                        "AdvertisedLocationName": "Stockaryd",
+                        "LocationSignature": "Sy"
+                    },
+                    {
+                        "AdvertisedLocationName": "Skillingaryd",
+                        "LocationSignature": "Syd"
+                    },
+                    {
+                        "AdvertisedLocationName": "Skyttorp",
+                        "LocationSignature": "Syt"
+                    },
+                    {
+                        "AdvertisedLocationName": "Stenåsen",
+                        "LocationSignature": "Sån"
+                    },
+                    {
+                        "AdvertisedLocationName": "Söråkers södra",
+                        "LocationSignature": "Sårs"
+                    },
+                    {
+                        "AdvertisedLocationName": "Sävsjö",
+                        "LocationSignature": "Sä"
+                    },
+                    {
+                        "AdvertisedLocationName": "Söräng",
+                        "LocationSignature": "Säg"
+                    },
+                    {
+                        "AdvertisedLocationName": "Sävastklinten",
+                        "LocationSignature": "Sän"
+                    },
+                    {
+                        "AdvertisedLocationName": "Skärpan",
+                        "LocationSignature": "Säp"
+                    },
+                    {
+                        "AdvertisedLocationName": "Sävenäs rangerbangård",
+                        "LocationSignature": "Sär"
+                    },
+                    {
+                        "AdvertisedLocationName": "Sunnäsbruk",
+                        "LocationSignature": "Säu"
+                    },
+                    {
+                        "AdvertisedLocationName": "Sävenäs",
+                        "LocationSignature": "Säv"
+                    },
+                    {
+                        "AdvertisedLocationName": "Sävenäs lokstation",
+                        "LocationSignature": "Sävl"
+                    },
+                    {
+                        "AdvertisedLocationName": "Säby",
+                        "LocationSignature": "Säy"
+                    },
+                    {
+                        "AdvertisedLocationName": "Södertälje centrum",
+                        "LocationSignature": "Söc"
+                    },
+                    {
+                        "AdvertisedLocationName": "Södertälje hamn",
+                        "LocationSignature": "Söd"
+                    },
+                    {
+                        "AdvertisedLocationName": "Söderby",
+                        "LocationSignature": "Södy"
+                    },
+                    {
+                        "AdvertisedLocationName": "Sölvesborg",
+                        "LocationSignature": "Sög"
+                    },
+                    {
+                        "AdvertisedLocationName": "Stöcke",
+                        "LocationSignature": "Sök"
+                    },
+                    {
+                        "AdvertisedLocationName": "Södertälje kanal",
+                        "LocationSignature": "Söka"
+                    },
+                    {
+                        "AdvertisedLocationName": "Sösdala",
+                        "LocationSignature": "Söla"
+                    },
+                    {
+                        "AdvertisedLocationName": "Södertälje Syd (SL)",
+                        "LocationSignature": "Söu"
+                    },
+                    {
+                        "AdvertisedLocationName": "Skelleftehamns övre",
+                        "LocationSignature": "Söv"
+                    },
+                    {
+                        "AdvertisedLocationName": "Södertälje Syd",
+                        "LocationSignature": "Söö"
+                    },
+                    {
+                        "AdvertisedLocationName": "Töreboda",
+                        "LocationSignature": "T"
+                    },
+                    {
+                        "AdvertisedLocationName": "Taberg",
+                        "LocationSignature": "Tag"
+                    },
+                    {
+                        "AdvertisedLocationName": "Tillberga",
+                        "LocationSignature": "Tb"
+                    },
+                    {
+                        "AdvertisedLocationName": "Tystberga",
+                        "LocationSignature": "Tba"
+                    },
+                    {
+                        "AdvertisedLocationName": "Torbacken",
+                        "LocationSignature": "Tbn"
+                    },
+                    {
+                        "AdvertisedLocationName": "Tobo",
+                        "LocationSignature": "Tbo"
+                    },
+                    {
+                        "AdvertisedLocationName": "Tibro",
+                        "LocationSignature": "Tbr"
+                    },
+                    {
+                        "AdvertisedLocationName": "Tandsbyn",
+                        "LocationSignature": "Tby"
+                    },
+                    {
+                        "AdvertisedLocationName": "Trödje",
+                        "LocationSignature": "Tdj"
+                    },
+                    {
+                        "AdvertisedLocationName": "Tandsjöborg",
+                        "LocationSignature": "Tdö"
+                    },
+                    {
+                        "AdvertisedLocationName": "Torebo",
+                        "LocationSignature": "Teo"
+                    },
+                    {
+                        "AdvertisedLocationName": "Tolikberget",
+                        "LocationSignature": "Tet"
+                    },
+                    {
+                        "AdvertisedLocationName": "Tågarp",
+                        "LocationSignature": "Tgp"
+                    },
+                    {
+                        "AdvertisedLocationName": "Trångstad",
+                        "LocationSignature": "Tgs"
+                    },
+                    {
+                        "AdvertisedLocationName": "Tenhult",
+                        "LocationSignature": "Th"
+                    },
+                    {
+                        "AdvertisedLocationName": "Tallhed",
+                        "LocationSignature": "Thd"
+                    },
+                    {
+                        "AdvertisedLocationName": "Tornhill",
+                        "LocationSignature": "Thl"
+                    },
+                    {
+                        "AdvertisedLocationName": "Träskholm",
+                        "LocationSignature": "Thm"
+                    },
+                    {
+                        "AdvertisedLocationName": "Trollhättan C",
+                        "LocationSignature": "Thn"
+                    },
+                    {
+                        "AdvertisedLocationName": "Trehörningsjö",
+                        "LocationSignature": "Thö"
+                    },
+                    {
+                        "AdvertisedLocationName": "Timsfors",
+                        "LocationSignature": "Tim"
+                    },
+                    {
+                        "AdvertisedLocationName": "Tierp",
+                        "LocationSignature": "Tip"
+                    },
+                    {
+                        "AdvertisedLocationName": "Tjunnaryd",
+                        "LocationSignature": "Tj"
+                    },
+                    {
+                        "AdvertisedLocationName": "Tjugonde slussen",
+                        "LocationSignature": "Tjs"
+                    },
+                    {
+                        "AdvertisedLocationName": "Tjustskolan",
+                        "LocationSignature": "Tjsk"
+                    },
+                    {
+                        "AdvertisedLocationName": "Tjärnvik",
+                        "LocationSignature": "Tjä"
+                    },
+                    {
+                        "AdvertisedLocationName": "Tallåsen",
+                        "LocationSignature": "Tl"
+                    },
+                    {
+                        "AdvertisedLocationName": "Tällberg",
+                        "LocationSignature": "Tlg"
+                    },
+                    {
+                        "AdvertisedLocationName": "Tomelilla",
+                        "LocationSignature": "Tli"
+                    },
+                    {
+                        "AdvertisedLocationName": "Tolita",
+                        "LocationSignature": "Tlt"
+                    },
+                    {
+                        "AdvertisedLocationName": "Tomteboda bangård",
+                        "LocationSignature": "Tm"
+                    },
+                    {
+                        "AdvertisedLocationName": "Tomteboda övre",
+                        "LocationSignature": "Tmö"
+                    },
+                    {
+                        "AdvertisedLocationName": "Tannefors",
+                        "LocationSignature": "Tn"
+                    },
+                    {
+                        "AdvertisedLocationName": "Torneträsk",
+                        "LocationSignature": "Tnk"
+                    },
+                    {
+                        "AdvertisedLocationName": "Tranås",
+                        "LocationSignature": "Tns"
+                    },
+                    {
+                        "AdvertisedLocationName": "Tanum",
+                        "LocationSignature": "Tnu"
+                    },
+                    {
+                        "AdvertisedLocationName": "Torpshammar",
+                        "LocationSignature": "To"
+                    },
+                    {
+                        "AdvertisedLocationName": "Tofta",
+                        "LocationSignature": "Tof"
+                    },
+                    {
+                        "AdvertisedLocationName": "Torpåkra",
+                        "LocationSignature": "Top"
+                    },
+                    {
+                        "AdvertisedLocationName": "Toresta",
+                        "LocationSignature": "Tot"
+                    },
+                    {
+                        "AdvertisedLocationName": "Torup",
+                        "LocationSignature": "Tou"
+                    },
+                    {
+                        "AdvertisedLocationName": "Torsby",
+                        "LocationSignature": "Toy"
+                    },
+                    {
+                        "AdvertisedLocationName": "Teckomatorp",
+                        "LocationSignature": "Tp"
+                    },
+                    {
+                        "AdvertisedLocationName": "Tappudden",
+                        "LocationSignature": "Tpu"
+                    },
+                    {
+                        "AdvertisedLocationName": "Traryd",
+                        "LocationSignature": "Trd"
+                    },
+                    {
+                        "AdvertisedLocationName": "Trekanten",
+                        "LocationSignature": "Tre"
+                    },
+                    {
+                        "AdvertisedLocationName": "Trelleborg",
+                        "LocationSignature": "Trg"
+                    },
+                    {
+                        "AdvertisedLocationName": "Triangeln",
+                        "LocationSignature": "Tri"
+                    },
+                    {
+                        "AdvertisedLocationName": "Trolmen",
+                        "LocationSignature": "Trm"
+                    },
+                    {
+                        "AdvertisedLocationName": "Timrå",
+                        "LocationSignature": "Trå"
+                    },
+                    {
+                        "AdvertisedLocationName": "Tungelsta",
+                        "LocationSignature": "Ts"
+                    },
+                    {
+                        "AdvertisedLocationName": "Tågsjöberg",
+                        "LocationSignature": "Tsg"
+                    },
+                    {
+                        "AdvertisedLocationName": "Tisselskog",
+                        "LocationSignature": "Tsl"
+                    },
+                    {
+                        "AdvertisedLocationName": "Torsåker",
+                        "LocationSignature": "Tså"
+                    },
+                    {
+                        "AdvertisedLocationName": "Tortuna",
+                        "LocationSignature": "Ttu"
+                    },
+                    {
+                        "AdvertisedLocationName": "Tumba",
+                        "LocationSignature": "Tu"
+                    },
+                    {
+                        "AdvertisedLocationName": "Tunadal",
+                        "LocationSignature": "Tud"
+                    },
+                    {
+                        "AdvertisedLocationName": "Tullinge",
+                        "LocationSignature": "Tul"
+                    },
+                    {
+                        "AdvertisedLocationName": "Tunneby",
+                        "LocationSignature": "Tun"
+                    },
+                    {
                         "AdvertisedLocationName": "Tväråbäck",
                         "LocationSignature": "Tvb"
                     },
@@ -4512,172 +4928,56 @@ const trainStationList = {
                         "LocationSignature": "Tvd"
                     },
                     {
-                        "AdvertisedLocationName": "Varjisträsk",
-                        "LocationSignature": "Vaj"
+                        "AdvertisedLocationName": "Tvärålund",
+                        "LocationSignature": "Tvä"
                     },
                     {
-                        "AdvertisedLocationName": "Alléparken",
-                        "LocationSignature": "wAll"
+                        "AdvertisedLocationName": "Tyringe",
+                        "LocationSignature": "Ty"
                     },
                     {
-                        "AdvertisedLocationName": "Aga",
-                        "LocationSignature": "wAga"
+                        "AdvertisedLocationName": "Tyllered",
+                        "LocationSignature": "Tye"
                     },
                     {
-                        "AdvertisedLocationName": "Skyttorp",
-                        "LocationSignature": "Syt"
+                        "AdvertisedLocationName": "Trångsund",
+                        "LocationSignature": "Tåd"
+                    },
+                    {
+                        "AdvertisedLocationName": "Trångsviken",
+                        "LocationSignature": "Tåv"
                     },
                     {
                         "AdvertisedLocationName": "Tälle",
                         "LocationSignature": "Täl"
                     },
                     {
-                        "AdvertisedLocationName": "Säter",
-                        "LocationSignature": "St"
-                    },
-                    {
                         "AdvertisedLocationName": "Tjörnarp",
                         "LocationSignature": "Tö"
-                    },
-                    {
-                        "AdvertisedLocationName": "Alvik",
-                        "LocationSignature": "wAlv"
-                    },
-                    {
-                        "AdvertisedLocationName": "Tvärålund",
-                        "LocationSignature": "Tvä"
-                    },
-                    {
-                        "AdvertisedLocationName": "Stenåsen",
-                        "LocationSignature": "Sån"
-                    },
-                    {
-                        "AdvertisedLocationName": "Vissefjärda",
-                        "LocationSignature": "Vfa"
-                    },
-                    {
-                        "AdvertisedLocationName": "Vänersborg C",
-                        "LocationSignature": "Vg"
-                    },
-                    {
-                        "AdvertisedLocationName": "Viskafors",
-                        "LocationSignature": "Vfo"
-                    },
-                    {
-                        "AdvertisedLocationName": "Töva",
-                        "LocationSignature": "Töv"
-                    },
-                    {
-                        "AdvertisedLocationName": "Söråkers södra",
-                        "LocationSignature": "Sårs"
-                    },
-                    {
-                        "AdvertisedLocationName": "Baggeby",
-                        "LocationSignature": "wBag"
-                    },
-                    {
-                        "AdvertisedLocationName": "Varberg",
-                        "LocationSignature": "Vb"
                     },
                     {
                         "AdvertisedLocationName": "Tösse",
                         "LocationSignature": "Töe"
                     },
                     {
-                        "AdvertisedLocationName": "Klövervägen",
-                        "LocationSignature": "wKlv"
-                    },
-                    {
-                        "AdvertisedLocationName": "Vaggeryd",
-                        "LocationSignature": "Vgd"
-                    },
-                    {
-                        "AdvertisedLocationName": "Vega",
-                        "LocationSignature": "Vga"
-                    },
-                    {
-                        "AdvertisedLocationName": "Kottla",
-                        "LocationSignature": "wKoa"
+                        "AdvertisedLocationName": "Töva",
+                        "LocationSignature": "Töv"
                     },
                     {
                         "AdvertisedLocationName": "Uppsala C",
                         "LocationSignature": "U"
                     },
                     {
-                        "AdvertisedLocationName": "Västra Bodarne",
-                        "LocationSignature": "Vbd"
-                    },
-                    {
-                        "AdvertisedLocationName": "Käppala",
-                        "LocationSignature": "wKäp"
-                    },
-                    {
-                        "AdvertisedLocationName": "Vallsta",
-                        "LocationSignature": "Vl"
-                    },
-                    {
-                        "AdvertisedLocationName": "Bodal",
-                        "LocationSignature": "wBod"
-                    },
-                    {
-                        "AdvertisedLocationName": "Vårgårda",
-                        "LocationSignature": "Vgå"
-                    },
-                    {
                         "AdvertisedLocationName": "Ulriksdal",
                         "LocationSignature": "Udl"
-                    },
-                    {
-                        "AdvertisedLocationName": "Larsberg",
-                        "LocationSignature": "wLab"
-                    },
-                    {
-                        "AdvertisedLocationName": "Gåshaga",
-                        "LocationSignature": "wGåh"
-                    },
-                    {
-                        "AdvertisedLocationName": "Brevik",
-                        "LocationSignature": "wBvi"
-                    },
-                    {
-                        "AdvertisedLocationName": "Vinlidsberg",
-                        "LocationSignature": "Vld"
-                    },
-                    {
-                        "AdvertisedLocationName": "Vegeholm",
-                        "LocationSignature": "Vh"
-                    },
-                    {
-                        "AdvertisedLocationName": "Vännäsby",
-                        "LocationSignature": "Vby"
                     },
                     {
                         "AdvertisedLocationName": "Ulriksfors",
                         "LocationSignature": "Uf"
                     },
                     {
-                        "AdvertisedLocationName": "Vilhelmsborg",
-                        "LocationSignature": "Vlb"
-                    },
-                    {
-                        "AdvertisedLocationName": "Gåshaga brygga",
-                        "LocationSignature": "wGåb"
-                    },
-                    {
-                        "AdvertisedLocationName": "Vallnäs",
-                        "LocationSignature": "Vln"
-                    },
-                    {
                         "AdvertisedLocationName": "Ulvshyttan",
                         "LocationSignature": "Uly"
-                    },
-                    {
-                        "AdvertisedLocationName": "Verkebäck",
-                        "LocationSignature": "Vbä"
-                    },
-                    {
-                        "AdvertisedLocationName": "Vattholma",
-                        "LocationSignature": "Vha"
                     },
                     {
                         "AdvertisedLocationName": "Undersåker",
@@ -4688,108 +4988,164 @@ const trainStationList = {
                         "LocationSignature": "Una"
                     },
                     {
-                        "AdvertisedLocationName": "Värmlands Bro",
-                        "LocationSignature": "Vdb"
-                    },
-                    {
-                        "AdvertisedLocationName": "Vagnhärad",
-                        "LocationSignature": "Vhd"
-                    },
-                    {
-                        "AdvertisedLocationName": "Vindeln",
-                        "LocationSignature": "Vdn"
-                    },
-                    {
-                        "AdvertisedLocationName": "Höglandstorget",
-                        "LocationSignature": "wHlt"
-                    },
-                    {
-                        "AdvertisedLocationName": "Västerhaninge",
-                        "LocationSignature": "Vhe"
-                    },
-                    {
-                        "AdvertisedLocationName": "Veddige",
-                        "LocationSignature": "Vdi"
-                    },
-                    {
                         "AdvertisedLocationName": "Upplands Väsby",
                         "LocationSignature": "Upv"
-                    },
-                    {
-                        "AdvertisedLocationName": "Väse",
-                        "LocationSignature": "Ve"
-                    },
-                    {
-                        "AdvertisedLocationName": "Vedevåg",
-                        "LocationSignature": "Vdv"
                     },
                     {
                         "AdvertisedLocationName": "Ulvstorp",
                         "LocationSignature": "Utp"
                     },
                     {
-                        "AdvertisedLocationName": "Vikmanshyttan",
-                        "LocationSignature": "Vhy"
+                        "AdvertisedLocationName": "Utsikten",
+                        "LocationSignature": "Uts"
                     },
                     {
                         "AdvertisedLocationName": "Uddevalla C",
                         "LocationSignature": "Uv"
                     },
                     {
-                        "AdvertisedLocationName": "Utsikten",
-                        "LocationSignature": "Uts"
-                    },
-                    {
-                        "AdvertisedLocationName": "Högberga",
-                        "LocationSignature": "wHöb"
-                    },
-                    {
-                        "AdvertisedLocationName": "Via",
-                        "LocationSignature": "Via"
-                    },
-                    {
-                        "AdvertisedLocationName": "Velanda Södra",
-                        "LocationSignature": "Veas"
-                    },
-                    {
-                        "AdvertisedLocationName": "Wibe",
-                        "LocationSignature": "Wibe"
-                    },
-                    {
-                        "AdvertisedLocationName": "Vimmerby",
-                        "LocationSignature": "Vib"
-                    },
-                    {
-                        "AdvertisedLocationName": "Vedum",
-                        "LocationSignature": "Ved"
+                        "AdvertisedLocationName": "Ursviken",
+                        "LocationSignature": "Uvn"
                     },
                     {
                         "AdvertisedLocationName": "Umeå C",
                         "LocationSignature": "Uå"
                     },
                     {
-                        "AdvertisedLocationName": "Ursviken",
-                        "LocationSignature": "Uvn"
+                        "AdvertisedLocationName": "Umeå godsbangård",
+                        "LocationSignature": "Uågb"
                     },
                     {
-                        "AdvertisedLocationName": "Vislanda",
-                        "LocationSignature": "Vs"
+                        "AdvertisedLocationName": "Umeå östra",
+                        "LocationSignature": "Uåö"
+                    },
+                    {
+                        "AdvertisedLocationName": "Uddevalla Östra",
+                        "LocationSignature": "Uö"
+                    },
+                    {
+                        "AdvertisedLocationName": "Värnamo",
+                        "LocationSignature": "V"
+                    },
+                    {
+                        "AdvertisedLocationName": "Vara",
+                        "LocationSignature": "Vaa"
+                    },
+                    {
+                        "AdvertisedLocationName": "Vad",
+                        "LocationSignature": "Vad"
+                    },
+                    {
+                        "AdvertisedLocationName": "Vargön",
+                        "LocationSignature": "Vag"
+                    },
+                    {
+                        "AdvertisedLocationName": "Varjisträsk",
+                        "LocationSignature": "Vaj"
+                    },
+                    {
+                        "AdvertisedLocationName": "Varberg",
+                        "LocationSignature": "Vb"
+                    },
+                    {
+                        "AdvertisedLocationName": "Västra Bodarne",
+                        "LocationSignature": "Vbd"
+                    },
+                    {
+                        "AdvertisedLocationName": "Vännäsby",
+                        "LocationSignature": "Vby"
+                    },
+                    {
+                        "AdvertisedLocationName": "Verkebäck",
+                        "LocationSignature": "Vbä"
+                    },
+                    {
+                        "AdvertisedLocationName": "Värmlands Bro",
+                        "LocationSignature": "Vdb"
+                    },
+                    {
+                        "AdvertisedLocationName": "Veddige",
+                        "LocationSignature": "Vdi"
+                    },
+                    {
+                        "AdvertisedLocationName": "Vindeln",
+                        "LocationSignature": "Vdn"
+                    },
+                    {
+                        "AdvertisedLocationName": "Vedevåg",
+                        "LocationSignature": "Vdv"
+                    },
+                    {
+                        "AdvertisedLocationName": "Väse",
+                        "LocationSignature": "Ve"
+                    },
+                    {
+                        "AdvertisedLocationName": "Velanda Södra",
+                        "LocationSignature": "Veas"
+                    },
+                    {
+                        "AdvertisedLocationName": "Vedum",
+                        "LocationSignature": "Ved"
+                    },
+                    {
+                        "AdvertisedLocationName": "Vartofta",
+                        "LocationSignature": "Vf"
+                    },
+                    {
+                        "AdvertisedLocationName": "Vissefjärda",
+                        "LocationSignature": "Vfa"
+                    },
+                    {
+                        "AdvertisedLocationName": "Viskafors",
+                        "LocationSignature": "Vfo"
+                    },
+                    {
+                        "AdvertisedLocationName": "Vänersborg C",
+                        "LocationSignature": "Vg"
+                    },
+                    {
+                        "AdvertisedLocationName": "Vega",
+                        "LocationSignature": "Vga"
+                    },
+                    {
+                        "AdvertisedLocationName": "Vaggeryd",
+                        "LocationSignature": "Vgd"
+                    },
+                    {
+                        "AdvertisedLocationName": "Vårgårda",
+                        "LocationSignature": "Vgå"
+                    },
+                    {
+                        "AdvertisedLocationName": "Vegeholm",
+                        "LocationSignature": "Vh"
+                    },
+                    {
+                        "AdvertisedLocationName": "Vattholma",
+                        "LocationSignature": "Vha"
+                    },
+                    {
+                        "AdvertisedLocationName": "Vagnhärad",
+                        "LocationSignature": "Vhd"
+                    },
+                    {
+                        "AdvertisedLocationName": "Västerhaninge",
+                        "LocationSignature": "Vhe"
+                    },
+                    {
+                        "AdvertisedLocationName": "Vikmanshyttan",
+                        "LocationSignature": "Vhy"
+                    },
+                    {
+                        "AdvertisedLocationName": "Via",
+                        "LocationSignature": "Via"
+                    },
+                    {
+                        "AdvertisedLocationName": "Vimmerby",
+                        "LocationSignature": "Vib"
                     },
                     {
                         "AdvertisedLocationName": "Vimmerby Hamra",
                         "LocationSignature": "Vibh"
-                    },
-                    {
-                        "AdvertisedLocationName": "Skara",
-                        "LocationSignature": "wSa"
-                    },
-                    {
-                        "AdvertisedLocationName": "Vikingstad",
-                        "LocationSignature": "Vsd"
-                    },
-                    {
-                        "AdvertisedLocationName": "Valskog",
-                        "LocationSignature": "Vsg"
                     },
                     {
                         "AdvertisedLocationName": "Västra Ingelstad",
@@ -4800,92 +5156,152 @@ const trainStationList = {
                         "LocationSignature": "Vik"
                     },
                     {
-                        "AdvertisedLocationName": "Västra Ämtervik",
-                        "LocationSignature": "Vät"
-                    },
-                    {
-                        "AdvertisedLocationName": "Vartofta",
-                        "LocationSignature": "Vf"
-                    },
-                    {
-                        "AdvertisedLocationName": "Västeraspby",
-                        "LocationSignature": "Väy"
-                    },
-                    {
-                        "AdvertisedLocationName": "Vuonoskogen",
-                        "LocationSignature": "Vsk"
-                    },
-                    {
-                        "AdvertisedLocationName": "Vassjön",
-                        "LocationSignature": "Vön"
+                        "AdvertisedLocationName": "Vimnarp",
+                        "LocationSignature": "Vim"
                     },
                     {
                         "AdvertisedLocationName": "Viarp",
                         "LocationSignature": "Vip"
                     },
                     {
-                        "AdvertisedLocationName": "Växjö",
-                        "LocationSignature": "Vö"
+                        "AdvertisedLocationName": "Viskan",
+                        "LocationSignature": "Visk"
                     },
                     {
-                        "AdvertisedLocationName": "Vimnarp",
-                        "LocationSignature": "Vim"
+                        "AdvertisedLocationName": "Vassijaure",
+                        "LocationSignature": "Vj"
+                    },
+                    {
+                        "AdvertisedLocationName": "Vojmån",
+                        "LocationSignature": "Vjm"
+                    },
+                    {
+                        "AdvertisedLocationName": "Västervik",
+                        "LocationSignature": "Vk"
+                    },
+                    {
+                        "AdvertisedLocationName": "Vika",
+                        "LocationSignature": "Vka"
+                    },
+                    {
+                        "AdvertisedLocationName": "Vaikijaur",
+                        "LocationSignature": "Vkj"
+                    },
+                    {
+                        "AdvertisedLocationName": "Vallsta",
+                        "LocationSignature": "Vl"
+                    },
+                    {
+                        "AdvertisedLocationName": "Vilhelmsborg",
+                        "LocationSignature": "Vlb"
+                    },
+                    {
+                        "AdvertisedLocationName": "Vinlidsberg",
+                        "LocationSignature": "Vld"
+                    },
+                    {
+                        "AdvertisedLocationName": "Vallnäs",
+                        "LocationSignature": "Vln"
+                    },
+                    {
+                        "AdvertisedLocationName": "Vattjom",
+                        "LocationSignature": "Vm"
+                    },
+                    {
+                        "AdvertisedLocationName": "Vilhelmina",
+                        "LocationSignature": "Vma"
+                    },
+                    {
+                        "AdvertisedLocationName": "Vilhelmina norra",
+                        "LocationSignature": "Vman"
+                    },
+                    {
+                        "AdvertisedLocationName": "Vilhelmina timmer",
+                        "LocationSignature": "Vmat"
+                    },
+                    {
+                        "AdvertisedLocationName": "VME",
+                        "LocationSignature": "Vme"
+                    },
+                    {
+                        "AdvertisedLocationName": "Villersmuren",
+                        "LocationSignature": "Vmu"
+                    },
+                    {
+                        "AdvertisedLocationName": "Värtan",
+                        "LocationSignature": "Vn"
+                    },
+                    {
+                        "AdvertisedLocationName": "Voxna",
+                        "LocationSignature": "Vna"
+                    },
+                    {
+                        "AdvertisedLocationName": "Vännäs",
+                        "LocationSignature": "Vns"
+                    },
+                    {
+                        "AdvertisedLocationName": "Vackernäset",
+                        "LocationSignature": "Vnt"
+                    },
+                    {
+                        "AdvertisedLocationName": "Vinnö",
+                        "LocationSignature": "Vnö"
+                    },
+                    {
+                        "AdvertisedLocationName": "Vansbro",
+                        "LocationSignature": "Vo"
+                    },
+                    {
+                        "AdvertisedLocationName": "Varpemossen",
+                        "LocationSignature": "Vpm"
+                    },
+                    {
+                        "AdvertisedLocationName": "Vingåker",
+                        "LocationSignature": "Vr"
+                    },
+                    {
+                        "AdvertisedLocationName": "Vrena",
+                        "LocationSignature": "Vre"
+                    },
+                    {
+                        "AdvertisedLocationName": "Verveln",
+                        "LocationSignature": "Vrn"
+                    },
+                    {
+                        "AdvertisedLocationName": "Vekerum",
+                        "LocationSignature": "Vru"
+                    },
+                    {
+                        "AdvertisedLocationName": "Värö",
+                        "LocationSignature": "Vrö"
+                    },
+                    {
+                        "AdvertisedLocationName": "Vislanda",
+                        "LocationSignature": "Vs"
+                    },
+                    {
+                        "AdvertisedLocationName": "Vikingstad",
+                        "LocationSignature": "Vsd"
+                    },
+                    {
+                        "AdvertisedLocationName": "Valskog",
+                        "LocationSignature": "Vsg"
                     },
                     {
                         "AdvertisedLocationName": "Vittsjö",
                         "LocationSignature": "Vsj"
                     },
                     {
-                        "AdvertisedLocationName": "Skärsätra",
-                        "LocationSignature": "wSkr"
-                    },
-                    {
-                        "AdvertisedLocationName": "Vinslöv",
-                        "LocationSignature": "Vöv"
-                    },
-                    {
-                        "AdvertisedLocationName": "Anten",
-                        "LocationSignature": "xA"
-                    },
-                    {
-                        "AdvertisedLocationName": "Smedslätten",
-                        "LocationSignature": "wSms"
-                    },
-                    {
-                        "AdvertisedLocationName": "Ankarsrum",
-                        "LocationSignature": "xAkm"
-                    },
-                    {
-                        "AdvertisedLocationName": "Altorp",
-                        "LocationSignature": "xAlp"
-                    },
-                    {
-                        "AdvertisedLocationName": "Almunge",
-                        "LocationSignature": "xAlg"
+                        "AdvertisedLocationName": "Vuonoskogen",
+                        "LocationSignature": "Vsk"
                     },
                     {
                         "AdvertisedLocationName": "Virsbo",
                         "LocationSignature": "Vso"
                     },
                     {
-                        "AdvertisedLocationName": "Sissehult",
-                        "LocationSignature": "wSsu"
-                    },
-                    {
-                        "AdvertisedLocationName": "Arelid",
-                        "LocationSignature": "xArl"
-                    },
-                    {
-                        "AdvertisedLocationName": "Aska",
-                        "LocationSignature": "xAsk"
-                    },
-                    {
                         "AdvertisedLocationName": "Viresjö",
                         "LocationSignature": "Vsö"
-                    },
-                    {
-                        "AdvertisedLocationName": "Bärby",
-                        "LocationSignature": "xB"
                     },
                     {
                         "AdvertisedLocationName": "Vretstorp",
@@ -4896,10 +5312,6 @@ const trainStationList = {
                         "LocationSignature": "Vta"
                     },
                     {
-                        "AdvertisedLocationName": "Blägda",
-                        "LocationSignature": "xBlä"
-                    },
-                    {
                         "AdvertisedLocationName": "Vattnäs",
                         "LocationSignature": "Vtn"
                     },
@@ -4908,68 +5320,20 @@ const trainStationList = {
                         "LocationSignature": "Vto"
                     },
                     {
-                        "AdvertisedLocationName": "Brobacka",
-                        "LocationSignature": "xBb"
-                    },
-                    {
-                        "AdvertisedLocationName": "Bråvallavägen",
-                        "LocationSignature": "xBvv"
+                        "AdvertisedLocationName": "Vitvattnet",
+                        "LocationSignature": "Vtv"
                     },
                     {
                         "AdvertisedLocationName": "Vitåfors",
                         "LocationSignature": "Vtå"
                     },
                     {
-                        "AdvertisedLocationName": "Brösarp",
-                        "LocationSignature": "xBöp"
-                    },
-                    {
-                        "AdvertisedLocationName": "Torsvik",
-                        "LocationSignature": "wTov"
-                    },
-                    {
-                        "AdvertisedLocationName": "Bor Norra",
-                        "LocationSignature": "xBn"
-                    },
-                    {
-                        "AdvertisedLocationName": "Bällsta",
-                        "LocationSignature": "xBäl"
-                    },
-                    {
-                        "AdvertisedLocationName": "Vitvattnet",
-                        "LocationSignature": "Vtv"
-                    },
-                    {
-                        "AdvertisedLocationName": "Tallås Grusgropsväxel",
-                        "LocationSignature": "wTås"
-                    },
-                    {
-                        "AdvertisedLocationName": "Brösarp södra",
-                        "LocationSignature": "xBös"
-                    },
-                    {
                         "AdvertisedLocationName": "Vallvik",
                         "LocationSignature": "Vv"
                     },
                     {
-                        "AdvertisedLocationName": "Dirhuvden",
-                        "LocationSignature": "xDir"
-                    },
-                    {
                         "AdvertisedLocationName": "Västerås C",
                         "LocationSignature": "Vå"
-                    },
-                    {
-                        "AdvertisedLocationName": "Ålstens Gård",
-                        "LocationSignature": "wÅlG"
-                    },
-                    {
-                        "AdvertisedLocationName": "Djursholms Ekeby",
-                        "LocationSignature": "xDje"
-                    },
-                    {
-                        "AdvertisedLocationName": "Dala kvarn",
-                        "LocationSignature": "xDkn"
                     },
                     {
                         "AdvertisedLocationName": "Vålberg",
@@ -4980,48 +5344,16 @@ const trainStationList = {
                         "LocationSignature": "Våk"
                     },
                     {
-                        "AdvertisedLocationName": "Djursholms Ösby",
-                        "LocationSignature": "xDjö"
-                    },
-                    {
-                        "AdvertisedLocationName": "Ekskogen",
-                        "LocationSignature": "xEkg"
-                    },
-                    {
-                        "AdvertisedLocationName": "Ålstensgatan",
-                        "LocationSignature": "wÅls"
-                    },
-                    {
-                        "AdvertisedLocationName": "Delsbo",
-                        "LocationSignature": "xDo"
-                    },
-                    {
                         "AdvertisedLocationName": "Västerås norra",
                         "LocationSignature": "Vån"
-                    },
-                    {
-                        "AdvertisedLocationName": "Väring",
-                        "LocationSignature": "Vä"
                     },
                     {
                         "AdvertisedLocationName": "Västerås västra",
                         "LocationSignature": "Våv"
                     },
                     {
-                        "AdvertisedLocationName": "Eken",
-                        "LocationSignature": "xEkn"
-                    },
-                    {
-                        "AdvertisedLocationName": "Ekebohult",
-                        "LocationSignature": "xEkh"
-                    },
-                    {
-                        "AdvertisedLocationName": "Enebyberg",
-                        "LocationSignature": "xEnb"
-                    },
-                    {
-                        "AdvertisedLocationName": "Ervalla NBVJ",
-                        "LocationSignature": "xErn"
+                        "AdvertisedLocationName": "Väring",
+                        "LocationSignature": "Vä"
                     },
                     {
                         "AdvertisedLocationName": "Vätteryd",
@@ -5032,52 +5364,276 @@ const trainStationList = {
                         "LocationSignature": "Vän"
                     },
                     {
-                        "AdvertisedLocationName": "Erstaviksbadet",
-                        "LocationSignature": "xEvb"
+                        "AdvertisedLocationName": "Västra Ämtervik",
+                        "LocationSignature": "Vät"
                     },
                     {
-                        "AdvertisedLocationName": "Faringe",
-                        "LocationSignature": "xF"
+                        "AdvertisedLocationName": "Västeraspby",
+                        "LocationSignature": "Väy"
+                    },
+                    {
+                        "AdvertisedLocationName": "Växjö",
+                        "LocationSignature": "Vö"
+                    },
+                    {
+                        "AdvertisedLocationName": "Vassjön",
+                        "LocationSignature": "Vön"
+                    },
+                    {
+                        "AdvertisedLocationName": "Vinslöv",
+                        "LocationSignature": "Vöv"
+                    },
+                    {
+                        "AdvertisedLocationName": "Aga",
+                        "LocationSignature": "wAga"
+                    },
+                    {
+                        "AdvertisedLocationName": "Alléparken",
+                        "LocationSignature": "wAll"
+                    },
+                    {
+                        "AdvertisedLocationName": "Alvik",
+                        "LocationSignature": "wAlv"
+                    },
+                    {
+                        "AdvertisedLocationName": "Baggeby",
+                        "LocationSignature": "wBag"
+                    },
+                    {
+                        "AdvertisedLocationName": "Bodal",
+                        "LocationSignature": "wBod"
+                    },
+                    {
+                        "AdvertisedLocationName": "Brevik",
+                        "LocationSignature": "wBvi"
+                    },
+                    {
+                        "AdvertisedLocationName": "Gåshaga brygga",
+                        "LocationSignature": "wGåb"
+                    },
+                    {
+                        "AdvertisedLocationName": "Gåshaga",
+                        "LocationSignature": "wGåh"
+                    },
+                    {
+                        "AdvertisedLocationName": "Höglandstorget",
+                        "LocationSignature": "wHlt"
+                    },
+                    {
+                        "AdvertisedLocationName": "Högberga",
+                        "LocationSignature": "wHöb"
+                    },
+                    {
+                        "AdvertisedLocationName": "Wibe",
+                        "LocationSignature": "Wibe"
+                    },
+                    {
+                        "AdvertisedLocationName": "Klövervägen",
+                        "LocationSignature": "wKlv"
+                    },
+                    {
+                        "AdvertisedLocationName": "Kottla",
+                        "LocationSignature": "wKoa"
+                    },
+                    {
+                        "AdvertisedLocationName": "Käppala",
+                        "LocationSignature": "wKäp"
+                    },
+                    {
+                        "AdvertisedLocationName": "Larsberg",
+                        "LocationSignature": "wLab"
+                    },
+                    {
+                        "AdvertisedLocationName": "Lundsbrunn kurort",
+                        "LocationSignature": "wLnb"
+                    },
+                    {
+                        "AdvertisedLocationName": "Nockeby",
+                        "LocationSignature": "wNob"
+                    },
+                    {
+                        "AdvertisedLocationName": "Nockeby torg",
+                        "LocationSignature": "wNot"
+                    },
+                    {
+                        "AdvertisedLocationName": "Olovslund",
+                        "LocationSignature": "wOll"
+                    },
+                    {
+                        "AdvertisedLocationName": "Ropsten",
+                        "LocationSignature": "wRos"
+                    },
+                    {
+                        "AdvertisedLocationName": "Skara",
+                        "LocationSignature": "wSa"
+                    },
+                    {
+                        "AdvertisedLocationName": "Skärsätra",
+                        "LocationSignature": "wSkr"
+                    },
+                    {
+                        "AdvertisedLocationName": "Smedslätten",
+                        "LocationSignature": "wSms"
+                    },
+                    {
+                        "AdvertisedLocationName": "Sissehult",
+                        "LocationSignature": "wSsu"
+                    },
+                    {
+                        "AdvertisedLocationName": "Torsvik",
+                        "LocationSignature": "wTov"
+                    },
+                    {
+                        "AdvertisedLocationName": "Tallås Grusgropsväxel",
+                        "LocationSignature": "wTås"
+                    },
+                    {
+                        "AdvertisedLocationName": "Ålstens Gård",
+                        "LocationSignature": "wÅlG"
+                    },
+                    {
+                        "AdvertisedLocationName": "Ålstensgatan",
+                        "LocationSignature": "wÅls"
+                    },
+                    {
+                        "AdvertisedLocationName": "Anten",
+                        "LocationSignature": "xA"
+                    },
+                    {
+                        "AdvertisedLocationName": "Ankarsrum",
+                        "LocationSignature": "xAkm"
+                    },
+                    {
+                        "AdvertisedLocationName": "Almunge",
+                        "LocationSignature": "xAlg"
+                    },
+                    {
+                        "AdvertisedLocationName": "Altorp",
+                        "LocationSignature": "xAlp"
+                    },
+                    {
+                        "AdvertisedLocationName": "Arelid",
+                        "LocationSignature": "xArl"
+                    },
+                    {
+                        "AdvertisedLocationName": "Aska",
+                        "LocationSignature": "xAsk"
+                    },
+                    {
+                        "AdvertisedLocationName": "Bärby",
+                        "LocationSignature": "xB"
+                    },
+                    {
+                        "AdvertisedLocationName": "Brobacka",
+                        "LocationSignature": "xBb"
+                    },
+                    {
+                        "AdvertisedLocationName": "Bjørnfjell",
+                        "LocationSignature": "XBjf"
+                    },
+                    {
+                        "AdvertisedLocationName": "Blägda",
+                        "LocationSignature": "xBlä"
+                    },
+                    {
+                        "AdvertisedLocationName": "Bor Norra",
+                        "LocationSignature": "xBn"
+                    },
+                    {
+                        "AdvertisedLocationName": "Bråvallavägen",
+                        "LocationSignature": "xBvv"
+                    },
+                    {
+                        "AdvertisedLocationName": "Bällsta",
+                        "LocationSignature": "xBäl"
+                    },
+                    {
+                        "AdvertisedLocationName": "Brösarp",
+                        "LocationSignature": "xBöp"
+                    },
+                    {
+                        "AdvertisedLocationName": "Brösarp södra",
+                        "LocationSignature": "xBös"
+                    },
+                    {
+                        "AdvertisedLocationName": "Copenhagen Airport",
+                        "LocationSignature": "XCph"
+                    },
+                    {
+                        "AdvertisedLocationName": "Dirhuvden",
+                        "LocationSignature": "xDir"
+                    },
+                    {
+                        "AdvertisedLocationName": "Djursholms Ekeby",
+                        "LocationSignature": "xDje"
+                    },
+                    {
+                        "AdvertisedLocationName": "Djursholms Ösby",
+                        "LocationSignature": "xDjö"
+                    },
+                    {
+                        "AdvertisedLocationName": "Dala kvarn",
+                        "LocationSignature": "xDkn"
+                    },
+                    {
+                        "AdvertisedLocationName": "Delsbo",
+                        "LocationSignature": "xDo"
+                    },
+                    {
+                        "AdvertisedLocationName": "Ekskogen",
+                        "LocationSignature": "xEkg"
+                    },
+                    {
+                        "AdvertisedLocationName": "Ekebohult",
+                        "LocationSignature": "xEkh"
+                    },
+                    {
+                        "AdvertisedLocationName": "Eken",
+                        "LocationSignature": "xEkn"
+                    },
+                    {
+                        "AdvertisedLocationName": "Enebyberg",
+                        "LocationSignature": "xEnb"
+                    },
+                    {
+                        "AdvertisedLocationName": "Ervalla NBVJ",
+                        "LocationSignature": "xErn"
                     },
                     {
                         "AdvertisedLocationName": "Ensta",
                         "LocationSignature": "xEsa"
                     },
                     {
-                        "AdvertisedLocationName": "Fagerrör",
-                        "LocationSignature": "xFgr"
-                    },
-                    {
-                        "AdvertisedLocationName": "Funbo",
-                        "LocationSignature": "xFb"
-                    },
-                    {
-                        "AdvertisedLocationName": "Hjorthagen",
-                        "LocationSignature": "xHhn"
+                        "AdvertisedLocationName": "Erstaviksbadet",
+                        "LocationSignature": "xEvb"
                     },
                     {
                         "AdvertisedLocationName": "Elgaryd",
                         "LocationSignature": "xEyd"
                     },
                     {
-                        "AdvertisedLocationName": "Hjortöström",
-                        "LocationSignature": "xHjm"
+                        "AdvertisedLocationName": "Faringe",
+                        "LocationSignature": "xF"
+                    },
+                    {
+                        "AdvertisedLocationName": "Funbo",
+                        "LocationSignature": "xFb"
+                    },
+                    {
+                        "AdvertisedLocationName": "Fagerrör",
+                        "LocationSignature": "xFgr"
                     },
                     {
                         "AdvertisedLocationName": "Finkelboda",
                         "LocationSignature": "xFia"
                     },
                     {
-                        "AdvertisedLocationName": "Fyrislund",
-                        "LocationSignature": "xFl"
-                    },
-                    {
-                        "AdvertisedLocationName": "Hjorted",
-                        "LocationSignature": "xHjt"
-                    },
-                    {
                         "AdvertisedLocationName": "Fiskåsen",
                         "LocationSignature": "xFie"
+                    },
+                    {
+                        "AdvertisedLocationName": "Fyrislund",
+                        "LocationSignature": "xFl"
                     },
                     {
                         "AdvertisedLocationName": "Flaten",
@@ -5088,12 +5644,12 @@ const trainStationList = {
                         "LocationSignature": "xFmö"
                     },
                     {
-                        "AdvertisedLocationName": "Forsa",
-                        "LocationSignature": "xFsa"
-                    },
-                    {
                         "AdvertisedLocationName": "Fredriksfors",
                         "LocationSignature": "xFos"
+                    },
+                    {
+                        "AdvertisedLocationName": "Forsa",
+                        "LocationSignature": "xFsa"
                     },
                     {
                         "AdvertisedLocationName": "Fagersand",
@@ -5104,40 +5660,40 @@ const trainStationList = {
                         "LocationSignature": "xFsu"
                     },
                     {
-                        "AdvertisedLocationName": "Gimarpsby",
-                        "LocationSignature": "xGby"
-                    },
-                    {
-                        "AdvertisedLocationName": "Gunsta",
-                        "LocationSignature": "xGa"
+                        "AdvertisedLocationName": "Fisksätra",
+                        "LocationSignature": "xFsä"
                     },
                     {
                         "AdvertisedLocationName": "Fårhult",
                         "LocationSignature": "xFåt"
                     },
                     {
-                        "AdvertisedLocationName": "Fisksätra",
-                        "LocationSignature": "xFsä"
+                        "AdvertisedLocationName": "Gunsta",
+                        "LocationSignature": "xGa"
+                    },
+                    {
+                        "AdvertisedLocationName": "Gimarpsby",
+                        "LocationSignature": "xGby"
                     },
                     {
                         "AdvertisedLocationName": "Gripsholmsviken",
                         "LocationSignature": "xGhn"
                     },
                     {
-                        "AdvertisedLocationName": "Gnötteln",
-                        "LocationSignature": "xGnl"
-                    },
-                    {
                         "AdvertisedLocationName": "Gimarp",
                         "LocationSignature": "xGim"
                     },
                     {
-                        "AdvertisedLocationName": "Gräfsnäs",
-                        "LocationSignature": "xGr"
+                        "AdvertisedLocationName": "Gnötteln",
+                        "LocationSignature": "xGnl"
                     },
                     {
                         "AdvertisedLocationName": "Galoppfältet",
                         "LocationSignature": "xGpf"
+                    },
+                    {
+                        "AdvertisedLocationName": "Gräfsnäs",
+                        "LocationSignature": "xGr"
                     },
                     {
                         "AdvertisedLocationName": "Gudå",
@@ -5152,10 +5708,6 @@ const trainStationList = {
                         "LocationSignature": "xGyt"
                     },
                     {
-                        "AdvertisedLocationName": "Hedlandet",
-                        "LocationSignature": "xHdt"
-                    },
-                    {
                         "AdvertisedLocationName": "Gårdveda",
                         "LocationSignature": "xGåv"
                     },
@@ -5168,6 +5720,10 @@ const trainStationList = {
                         "LocationSignature": "xHbo"
                     },
                     {
+                        "AdvertisedLocationName": "Hedlandet",
+                        "LocationSignature": "xHdt"
+                    },
+                    {
                         "AdvertisedLocationName": "Henriksdal",
                         "LocationSignature": "xHed"
                     },
@@ -5176,24 +5732,276 @@ const trainStationList = {
                         "LocationSignature": "Xhel"
                     },
                     {
-                        "AdvertisedLocationName": "Hultsfreds Hembygdspark",
-                        "LocationSignature": "xHhf"
-                    },
-                    {
                         "AdvertisedLocationName": "Hägernäs",
                         "LocationSignature": "xHgä"
                     },
                     {
-                        "AdvertisedLocationName": "Ranheim",
-                        "LocationSignature": "Xrhm"
+                        "AdvertisedLocationName": "Hultsfreds Hembygdspark",
+                        "LocationSignature": "xHhf"
                     },
                     {
-                        "AdvertisedLocationName": "Rydbo",
-                        "LocationSignature": "xRdb"
+                        "AdvertisedLocationName": "Hjorthagen",
+                        "LocationSignature": "xHhn"
                     },
                     {
-                        "AdvertisedLocationName": "Roslags Näsby",
-                        "LocationSignature": "xRnb"
+                        "AdvertisedLocationName": "Hjortöström",
+                        "LocationSignature": "xHjm"
+                    },
+                    {
+                        "AdvertisedLocationName": "Hjorted",
+                        "LocationSignature": "xHjt"
+                    },
+                    {
+                        "AdvertisedLocationName": "Hudiksvall (xHkl)",
+                        "LocationSignature": "xHkl"
+                    },
+                    {
+                        "AdvertisedLocationName": "Hultsfred (xHpf)",
+                        "LocationSignature": "xHpf"
+                    },
+                    {
+                        "AdvertisedLocationName": "Hegra",
+                        "LocationSignature": "Xhra"
+                    },
+                    {
+                        "AdvertisedLocationName": "Hesselby",
+                        "LocationSignature": "xHy"
+                    },
+                    {
+                        "AdvertisedLocationName": "Hultanäs",
+                        "LocationSignature": "xHäs"
+                    },
+                    {
+                        "AdvertisedLocationName": "Härnön",
+                        "LocationSignature": "xHön"
+                    },
+                    {
+                        "AdvertisedLocationName": "Hösjömo",
+                        "LocationSignature": "xHöo"
+                    },
+                    {
+                        "AdvertisedLocationName": "Igelboda",
+                        "LocationSignature": "xIgb"
+                    },
+                    {
+                        "AdvertisedLocationName": "Impregneringen",
+                        "LocationSignature": "xIpr"
+                    },
+                    {
+                        "AdvertisedLocationName": "Järle",
+                        "LocationSignature": "xJ"
+                    },
+                    {
+                        "AdvertisedLocationName": "Jagbacken",
+                        "LocationSignature": "xJbn"
+                    },
+                    {
+                        "AdvertisedLocationName": "Jädraås",
+                        "LocationSignature": "xJås"
+                    },
+                    {
+                        "AdvertisedLocationName": "Katterat",
+                        "LocationSignature": "Xkat"
+                    },
+                    {
+                        "AdvertisedLocationName": "Kragstalund",
+                        "LocationSignature": "xKgl"
+                    },
+                    {
+                        "AdvertisedLocationName": "Källarhalsen",
+                        "LocationSignature": "xKh"
+                    },
+                    {
+                        "AdvertisedLocationName": "Kambshagtorp",
+                        "LocationSignature": "xKht"
+                    },
+                    {
+                        "AdvertisedLocationName": "Kornsjø",
+                        "LocationSignature": "XKo"
+                    },
+                    {
+                        "AdvertisedLocationName": "Kopperå",
+                        "LocationSignature": "xKpr"
+                    },
+                    {
+                        "AdvertisedLocationName": "Kårsta",
+                        "LocationSignature": "xKår"
+                    },
+                    {
+                        "AdvertisedLocationName": "Löth",
+                        "LocationSignature": "xL"
+                    },
+                    {
+                        "AdvertisedLocationName": "Långbacka",
+                        "LocationSignature": "xLba"
+                    },
+                    {
+                        "AdvertisedLocationName": "Länna bruk",
+                        "LocationSignature": "xLbr"
+                    },
+                    {
+                        "AdvertisedLocationName": "Lindholmen",
+                        "LocationSignature": "xLdm"
+                    },
+                    {
+                        "AdvertisedLocationName": "Läggesta nedre",
+                        "LocationSignature": "xLgn"
+                    },
+                    {
+                        "AdvertisedLocationName": "Lövstahagen",
+                        "LocationSignature": "xLh"
+                    },
+                    {
+                        "AdvertisedLocationName": "Lahäll",
+                        "LocationSignature": "xLhl"
+                    },
+                    {
+                        "AdvertisedLocationName": "Lillängen",
+                        "LocationSignature": "xLiä"
+                    },
+                    {
+                        "AdvertisedLocationName": "Ljungbyheds grusgrop",
+                        "LocationSignature": "xLjd"
+                    },
+                    {
+                        "AdvertisedLocationName": "Lilla Mon",
+                        "LocationSignature": "xLm"
+                    },
+                    {
+                        "AdvertisedLocationName": "Länna",
+                        "LocationSignature": "xLna"
+                    },
+                    {
+                        "AdvertisedLocationName": "Lundsbrunn",
+                        "LocationSignature": "xLnb"
+                    },
+                    {
+                        "AdvertisedLocationName": "Långsjön",
+                        "LocationSignature": "xLåö"
+                    },
+                    {
+                        "AdvertisedLocationName": "Länninge",
+                        "LocationSignature": "xLäe"
+                    },
+                    {
+                        "AdvertisedLocationName": "Löt",
+                        "LocationSignature": "xLöt"
+                    },
+                    {
+                        "AdvertisedLocationName": "Magnor",
+                        "LocationSignature": "Xmag"
+                    },
+                    {
+                        "AdvertisedLocationName": "Meråker",
+                        "LocationSignature": "Xmer"
+                    },
+                    {
+                        "AdvertisedLocationName": "Mariefred",
+                        "LocationSignature": "xMfd"
+                    },
+                    {
+                        "AdvertisedLocationName": "Mariefreds ångbåtsstation",
+                        "LocationSignature": "xMfå"
+                    },
+                    {
+                        "AdvertisedLocationName": "Moga",
+                        "LocationSignature": "xMg"
+                    },
+                    {
+                        "AdvertisedLocationName": "Marielund",
+                        "LocationSignature": "xMl"
+                    },
+                    {
+                        "AdvertisedLocationName": "Marielund",
+                        "LocationSignature": "xMln"
+                    },
+                    {
+                        "AdvertisedLocationName": "Molnby",
+                        "LocationSignature": "xMnb"
+                    },
+                    {
+                        "AdvertisedLocationName": "Mosstorp",
+                        "LocationSignature": "xMop"
+                    },
+                    {
+                        "AdvertisedLocationName": "Målilla Sanatorium",
+                        "LocationSignature": "xMsa"
+                    },
+                    {
+                        "AdvertisedLocationName": "Munkebos",
+                        "LocationSignature": "xMus"
+                    },
+                    {
+                        "AdvertisedLocationName": "Myråsen",
+                        "LocationSignature": "xMyå"
+                    },
+                    {
+                        "AdvertisedLocationName": "Mörby",
+                        "LocationSignature": "xMöb"
+                    },
+                    {
+                        "AdvertisedLocationName": "Nora stad",
+                        "LocationSignature": "xN"
+                    },
+                    {
+                        "AdvertisedLocationName": "Näsbyallé",
+                        "LocationSignature": "xNbe"
+                    },
+                    {
+                        "AdvertisedLocationName": "Näsbypark",
+                        "LocationSignature": "xNbp"
+                    },
+                    {
+                        "AdvertisedLocationName": "Neglinge",
+                        "LocationSignature": "xNeg"
+                    },
+                    {
+                        "AdvertisedLocationName": "Narvik",
+                        "LocationSignature": "Xnk"
+                    },
+                    {
+                        "AdvertisedLocationName": "Nacka",
+                        "LocationSignature": "xNka"
+                    },
+                    {
+                        "AdvertisedLocationName": "Näsviken",
+                        "LocationSignature": "xNv"
+                    },
+                    {
+                        "AdvertisedLocationName": "Nygårds Stall Dalhem",
+                        "LocationSignature": "xNys"
+                    },
+                    {
+                        "AdvertisedLocationName": "Ohs Bruk",
+                        "LocationSignature": "xOhs"
+                    },
+                    {
+                        "AdvertisedLocationName": "Ormsta",
+                        "LocationSignature": "xOta"
+                    },
+                    {
+                        "AdvertisedLocationName": "Oxberg",
+                        "LocationSignature": "xOxb"
+                    },
+                    {
+                        "AdvertisedLocationName": "Pershyttevägen",
+                        "LocationSignature": "xPgn"
+                    },
+                    {
+                        "AdvertisedLocationName": "Pershyttan",
+                        "LocationSignature": "xPh"
+                    },
+                    {
+                        "AdvertisedLocationName": "Pallanite",
+                        "LocationSignature": "xPte"
+                    },
+                    {
+                        "AdvertisedLocationName": "Kvarnabo",
+                        "LocationSignature": "xQo"
+                    },
+                    {
+                        "AdvertisedLocationName": "Roma",
+                        "LocationSignature": "xRa"
                     },
                     {
                         "AdvertisedLocationName": "Ravlundabro",
@@ -5204,32 +6012,44 @@ const trainStationList = {
                         "LocationSignature": "xRaä"
                     },
                     {
+                        "AdvertisedLocationName": "Rydbo",
+                        "LocationSignature": "xRdb"
+                    },
+                    {
+                        "AdvertisedLocationName": "Ranheim",
+                        "LocationSignature": "Xrhm"
+                    },
+                    {
+                        "AdvertisedLocationName": "Roslags Näsby",
+                        "LocationSignature": "xRnb"
+                    },
+                    {
                         "AdvertisedLocationName": "Roma kungsgård",
                         "LocationSignature": "xRok"
-                    },
-                    {
-                        "AdvertisedLocationName": "Skölsta",
-                        "LocationSignature": "xSa"
-                    },
-                    {
-                        "AdvertisedLocationName": "Ringvägen",
-                        "LocationSignature": "xRvä"
-                    },
-                    {
-                        "AdvertisedLocationName": "Skara camping",
-                        "LocationSignature": "xSac"
                     },
                     {
                         "AdvertisedLocationName": "Rombakk",
                         "LocationSignature": "Xrom"
                     },
                     {
-                        "AdvertisedLocationName": "Scoutstugan",
-                        "LocationSignature": "xScs"
+                        "AdvertisedLocationName": "Ringvägen",
+                        "LocationSignature": "xRvä"
+                    },
+                    {
+                        "AdvertisedLocationName": "Skölsta",
+                        "LocationSignature": "xSa"
+                    },
+                    {
+                        "AdvertisedLocationName": "Skara camping",
+                        "LocationSignature": "xSac"
                     },
                     {
                         "AdvertisedLocationName": "Saltsjöbaden",
                         "LocationSignature": "xSbn"
+                    },
+                    {
+                        "AdvertisedLocationName": "Scoutstugan",
+                        "LocationSignature": "xScs"
                     },
                     {
                         "AdvertisedLocationName": "Saltsjö-Duvnäs",
@@ -5240,12 +6060,12 @@ const trainStationList = {
                         "LocationSignature": "xSdu"
                     },
                     {
-                        "AdvertisedLocationName": "Saltsjö-Järla",
-                        "LocationSignature": "xSjl"
-                    },
-                    {
                         "AdvertisedLocationName": "Sickla",
                         "LocationSignature": "xSik"
+                    },
+                    {
+                        "AdvertisedLocationName": "Saltsjö-Järla",
+                        "LocationSignature": "xSjl"
                     },
                     {
                         "AdvertisedLocationName": "Sjövägen",
@@ -5256,12 +6076,12 @@ const trainStationList = {
                         "LocationSignature": "xSln"
                     },
                     {
-                        "AdvertisedLocationName": "Selknä",
-                        "LocationSignature": "xSlä"
-                    },
-                    {
                         "AdvertisedLocationName": "Slussen",
                         "LocationSignature": "xSlu"
+                    },
+                    {
+                        "AdvertisedLocationName": "Selknä",
+                        "LocationSignature": "xSlä"
                     },
                     {
                         "AdvertisedLocationName": "Stora Mon",
@@ -5272,16 +6092,16 @@ const trainStationList = {
                         "LocationSignature": "xSmk"
                     },
                     {
-                        "AdvertisedLocationName": "Spångenäs",
-                        "LocationSignature": "xSpä"
-                    },
-                    {
                         "AdvertisedLocationName": "Stensjön",
                         "LocationSignature": "xSn"
                     },
                     {
                         "AdvertisedLocationName": "S:t Olof",
                         "LocationSignature": "xSoo"
+                    },
+                    {
+                        "AdvertisedLocationName": "Spångenäs",
+                        "LocationSignature": "xSpä"
                     },
                     {
                         "AdvertisedLocationName": "Stocksund",
@@ -5296,36 +6116,36 @@ const trainStationList = {
                         "LocationSignature": "xSvb"
                     },
                     {
-                        "AdvertisedLocationName": "Tattby",
-                        "LocationSignature": "xTab"
-                    },
-                    {
                         "AdvertisedLocationName": "Sjöbygget",
                         "LocationSignature": "xSöy"
                     },
                     {
-                        "AdvertisedLocationName": "Tule",
-                        "LocationSignature": "xTe"
+                        "AdvertisedLocationName": "Tattby",
+                        "LocationSignature": "xTab"
                     },
                     {
                         "AdvertisedLocationName": "Tibble",
                         "LocationSignature": "xTbl"
                     },
                     {
+                        "AdvertisedLocationName": "Tule",
+                        "LocationSignature": "xTe"
+                    },
+                    {
                         "AdvertisedLocationName": "Tule grusgrop",
                         "LocationSignature": "xTeg"
                     },
                     {
-                        "AdvertisedLocationName": "Tuna",
-                        "LocationSignature": "xTna"
+                        "AdvertisedLocationName": "Triabo",
+                        "LocationSignature": "xTib"
                     },
                     {
                         "AdvertisedLocationName": "Tippen",
                         "LocationSignature": "xTip"
                     },
                     {
-                        "AdvertisedLocationName": "Triabo",
-                        "LocationSignature": "xTib"
+                        "AdvertisedLocationName": "Tuna",
+                        "LocationSignature": "xTna"
                     },
                     {
                         "AdvertisedLocationName": "Trondheim",
@@ -5336,52 +6156,52 @@ const trainStationList = {
                         "LocationSignature": "xTob"
                     },
                     {
-                        "AdvertisedLocationName": "Torpa",
-                        "LocationSignature": "xTp"
-                    },
-                    {
                         "AdvertisedLocationName": "Tomtskog",
                         "LocationSignature": "xTog"
                     },
                     {
-                        "AdvertisedLocationName": "Tunagård",
-                        "LocationSignature": "xTug"
+                        "AdvertisedLocationName": "Torpa",
+                        "LocationSignature": "xTp"
                     },
                     {
                         "AdvertisedLocationName": "Trollskogen",
                         "LocationSignature": "xTsk"
                     },
                     {
-                        "AdvertisedLocationName": "Tveta",
-                        "LocationSignature": "xTve"
+                        "AdvertisedLocationName": "Tunagård",
+                        "LocationSignature": "xTug"
                     },
                     {
-                        "AdvertisedLocationName": "Tallås",
-                        "LocationSignature": "xTås"
+                        "AdvertisedLocationName": "Tveta",
+                        "LocationSignature": "xTve"
                     },
                     {
                         "AdvertisedLocationName": "Taxinge-Näsby",
                         "LocationSignature": "xTx"
                     },
                     {
-                        "AdvertisedLocationName": "Täby kyrkby",
-                        "LocationSignature": "xTäb"
+                        "AdvertisedLocationName": "Tallås",
+                        "LocationSignature": "xTås"
                     },
                     {
-                        "AdvertisedLocationName": "Täljö",
-                        "LocationSignature": "xTäl"
+                        "AdvertisedLocationName": "Täby kyrkby",
+                        "LocationSignature": "xTäb"
                     },
                     {
                         "AdvertisedLocationName": "Täby Centrum",
                         "LocationSignature": "xTäc"
                     },
                     {
-                        "AdvertisedLocationName": "Uppsala Östra",
-                        "LocationSignature": "xUö"
+                        "AdvertisedLocationName": "Täljö",
+                        "LocationSignature": "xTäl"
                     },
                     {
                         "AdvertisedLocationName": "Universitetet",
                         "LocationSignature": "xUnv"
+                    },
+                    {
+                        "AdvertisedLocationName": "Uppsala Östra",
+                        "LocationSignature": "xUö"
                     },
                     {
                         "AdvertisedLocationName": "Valstad",
@@ -5432,12 +6252,20 @@ const trainStationList = {
                         "LocationSignature": "xVtk"
                     },
                     {
+                        "AdvertisedLocationName": "Vitaby",
+                        "LocationSignature": "xVty"
+                    },
+                    {
                         "AdvertisedLocationName": "Väderum",
                         "LocationSignature": "xVäm"
                     },
                     {
-                        "AdvertisedLocationName": "Vitaby",
-                        "LocationSignature": "xVty"
+                        "AdvertisedLocationName": "Åseda (xÅa)",
+                        "LocationSignature": "xÅa"
+                    },
+                    {
+                        "AdvertisedLocationName": "Åkersberga",
+                        "LocationSignature": "xÅbg"
                     },
                     {
                         "AdvertisedLocationName": "Åbo",
@@ -5454,10 +6282,6 @@ const trainStationList = {
                     {
                         "AdvertisedLocationName": "Åtorp",
                         "LocationSignature": "xÅtp"
-                    },
-                    {
-                        "AdvertisedLocationName": "Åkersberga",
-                        "LocationSignature": "xÅbg"
                     },
                     {
                         "AdvertisedLocationName": "Älvstorp",
@@ -5484,14 +6308,6 @@ const trainStationList = {
                         "LocationSignature": "xÖsv"
                     },
                     {
-                        "AdvertisedLocationName": "Ytterby",
-                        "LocationSignature": "Yb"
-                    },
-                    {
-                        "AdvertisedLocationName": "Ytterhogdal",
-                        "LocationSignature": "Yl"
-                    },
-                    {
                         "AdvertisedLocationName": "Östra Vemmerlöv",
                         "LocationSignature": "xÖvl"
                     },
@@ -5500,12 +6316,20 @@ const trainStationList = {
                         "LocationSignature": "Y"
                     },
                     {
-                        "AdvertisedLocationName": "Yttersjön",
-                        "LocationSignature": "Yö"
+                        "AdvertisedLocationName": "Ytterby",
+                        "LocationSignature": "Yb"
+                    },
+                    {
+                        "AdvertisedLocationName": "Ytterhogdal",
+                        "LocationSignature": "Yl"
                     },
                     {
                         "AdvertisedLocationName": "Yttermalung",
                         "LocationSignature": "Ym"
+                    },
+                    {
+                        "AdvertisedLocationName": "Yttersjön",
+                        "LocationSignature": "Yö"
                     },
                     {
                         "AdvertisedLocationName": "Drogden",
@@ -5514,14 +6338,6 @@ const trainStationList = {
                     {
                         "AdvertisedLocationName": "Espergaerde",
                         "LocationSignature": "Zgae"
-                    },
-                    {
-                        "AdvertisedLocationName": "Kalvebod",
-                        "LocationSignature": "Zklv"
-                    },
-                    {
-                        "AdvertisedLocationName": "Klampenborg",
-                        "LocationSignature": "Zkl"
                     },
                     {
                         "AdvertisedLocationName": "Helsingör",
@@ -5540,6 +6356,14 @@ const trainStationList = {
                         "LocationSignature": "Zkk"
                     },
                     {
+                        "AdvertisedLocationName": "Klampenborg",
+                        "LocationSignature": "Zkl"
+                    },
+                    {
+                        "AdvertisedLocationName": "Kalvebod",
+                        "LocationSignature": "Zklv"
+                    },
+                    {
                         "AdvertisedLocationName": "Nörreport",
                         "LocationSignature": "Zkn"
                     },
@@ -5556,20 +6380,20 @@ const trainStationList = {
                         "LocationSignature": "Zru"
                     },
                     {
-                        "AdvertisedLocationName": "Tårnby",
-                        "LocationSignature": "Ztåt"
-                    },
-                    {
-                        "AdvertisedLocationName": "Vedbaek",
-                        "LocationSignature": "Zvb"
-                    },
-                    {
                         "AdvertisedLocationName": "Snekkersten",
                         "LocationSignature": "Zsq"
                     },
                     {
                         "AdvertisedLocationName": "Skodsborg",
                         "LocationSignature": "Zså"
+                    },
+                    {
+                        "AdvertisedLocationName": "Tårnby",
+                        "LocationSignature": "Ztåt"
+                    },
+                    {
+                        "AdvertisedLocationName": "Vedbaek",
+                        "LocationSignature": "Zvb"
                     },
                     {
                         "AdvertisedLocationName": "Örestad",
@@ -5580,12 +6404,12 @@ const trainStationList = {
                         "LocationSignature": "Å"
                     },
                     {
-                        "AdvertisedLocationName": "Åsensbruk",
-                        "LocationSignature": "Åb"
-                    },
-                    {
                         "AdvertisedLocationName": "Åseda",
                         "LocationSignature": "Åa"
+                    },
+                    {
+                        "AdvertisedLocationName": "Åsensbruk",
+                        "LocationSignature": "Åb"
                     },
                     {
                         "AdvertisedLocationName": "Ålberga",
@@ -5620,20 +6444,24 @@ const trainStationList = {
                         "LocationSignature": "Ågy"
                     },
                     {
-                        "AdvertisedLocationName": "Åhus",
-                        "LocationSignature": "Åhus"
+                        "AdvertisedLocationName": "Åshammar",
+                        "LocationSignature": "Åh"
                     },
                     {
-                        "AdvertisedLocationName": "Årskogen",
-                        "LocationSignature": "Åkg"
+                        "AdvertisedLocationName": "Åhus",
+                        "LocationSignature": "Åhus"
                     },
                     {
                         "AdvertisedLocationName": "Åkarp",
                         "LocationSignature": "Åk"
                     },
                     {
-                        "AdvertisedLocationName": "Åshammar",
-                        "LocationSignature": "Åh"
+                        "AdvertisedLocationName": "Årskogen",
+                        "LocationSignature": "Åkg"
+                    },
+                    {
+                        "AdvertisedLocationName": "Åkarps norra",
+                        "LocationSignature": "Åkn"
                     },
                     {
                         "AdvertisedLocationName": "Åkers styckebruk",
@@ -5642,10 +6470,6 @@ const trainStationList = {
                     {
                         "AdvertisedLocationName": "Åskott",
                         "LocationSignature": "Åkt"
-                    },
-                    {
-                        "AdvertisedLocationName": "Åkarps norra",
-                        "LocationSignature": "Åkn"
                     },
                     {
                         "AdvertisedLocationName": "Åmål",
@@ -5672,8 +6496,8 @@ const trainStationList = {
                         "LocationSignature": "Ånm"
                     },
                     {
-                        "AdvertisedLocationName": "Åre",
-                        "LocationSignature": "Åre"
+                        "AdvertisedLocationName": "Ånn",
+                        "LocationSignature": "Ånn"
                     },
                     {
                         "AdvertisedLocationName": "Åstorp",
@@ -5684,8 +6508,8 @@ const trainStationList = {
                         "LocationSignature": "Ård"
                     },
                     {
-                        "AdvertisedLocationName": "Ånn",
-                        "LocationSignature": "Ånn"
+                        "AdvertisedLocationName": "Åre",
+                        "LocationSignature": "Åre"
                     },
                     {
                         "AdvertisedLocationName": "Ås",
@@ -5724,12 +6548,12 @@ const trainStationList = {
                         "LocationSignature": "Äba"
                     },
                     {
-                        "AdvertisedLocationName": "Ängelsbergs bruk",
-                        "LocationSignature": "Äbgb"
-                    },
-                    {
                         "AdvertisedLocationName": "Ängelsberg",
                         "LocationSignature": "Äbg"
+                    },
+                    {
+                        "AdvertisedLocationName": "Ängelsbergs bruk",
+                        "LocationSignature": "Äbgb"
                     },
                     {
                         "AdvertisedLocationName": "Äggfors",
@@ -5740,12 +6564,12 @@ const trainStationList = {
                         "LocationSignature": "Äh"
                     },
                     {
-                        "AdvertisedLocationName": "Älgarås",
-                        "LocationSignature": "Äl"
-                    },
-                    {
                         "AdvertisedLocationName": "Älvkarleby",
                         "LocationSignature": "Äkb"
+                    },
+                    {
+                        "AdvertisedLocationName": "Älgarås",
+                        "LocationSignature": "Äl"
                     },
                     {
                         "AdvertisedLocationName": "Älvho",
@@ -5768,12 +6592,12 @@ const trainStationList = {
                         "LocationSignature": "Änö"
                     },
                     {
-                        "AdvertisedLocationName": "Älvsjö",
-                        "LocationSignature": "Äs"
-                    },
-                    {
                         "AdvertisedLocationName": "Äppelbo",
                         "LocationSignature": "Äp"
+                    },
+                    {
+                        "AdvertisedLocationName": "Älvsjö",
+                        "LocationSignature": "Äs"
                     },
                     {
                         "AdvertisedLocationName": "Älandsbro",
@@ -5788,12 +6612,12 @@ const trainStationList = {
                         "LocationSignature": "Äsr"
                     },
                     {
-                        "AdvertisedLocationName": "Älvsbyn",
-                        "LocationSignature": "Äy"
-                    },
-                    {
                         "AdvertisedLocationName": "Ättekulla",
                         "LocationSignature": "Ätk"
+                    },
+                    {
+                        "AdvertisedLocationName": "Älvsbyn",
+                        "LocationSignature": "Äy"
                     },
                     {
                         "AdvertisedLocationName": "Örtofta",
@@ -5828,48 +6652,44 @@ const trainStationList = {
                         "LocationSignature": "Ög"
                     },
                     {
-                        "AdvertisedLocationName": "Överhogdal",
-                        "LocationSignature": "Öhl"
+                        "AdvertisedLocationName": "Övergård",
+                        "LocationSignature": "Ögd"
                     },
                     {
                         "AdvertisedLocationName": "Örbyhus",
                         "LocationSignature": "Öh"
                     },
                     {
-                        "AdvertisedLocationName": "Övergård",
-                        "LocationSignature": "Ögd"
-                    },
-                    {
-                        "AdvertisedLocationName": "Östansjö",
-                        "LocationSignature": "Öj"
+                        "AdvertisedLocationName": "Överhogdal",
+                        "LocationSignature": "Öhl"
                     },
                     {
                         "AdvertisedLocationName": "Överhogdals grusgrop",
                         "LocationSignature": "Öhlg"
                     },
                     {
-                        "AdvertisedLocationName": "Öjervik",
-                        "LocationSignature": "Öjr"
+                        "AdvertisedLocationName": "Östansjö",
+                        "LocationSignature": "Öj"
                     },
                     {
-                        "AdvertisedLocationName": "Örnsköldsvik norra",
-                        "LocationSignature": "Ökn"
+                        "AdvertisedLocationName": "Öjervik",
+                        "LocationSignature": "Öjr"
                     },
                     {
                         "AdvertisedLocationName": "Örnsköldsvik C",
                         "LocationSignature": "Ök"
                     },
                     {
-                        "AdvertisedLocationName": "Önaskogen",
-                        "LocationSignature": "Öna"
+                        "AdvertisedLocationName": "Örnsköldsvik norra",
+                        "LocationSignature": "Ökn"
                     },
                     {
                         "AdvertisedLocationName": "Ölme",
                         "LocationSignature": "Öl"
                     },
                     {
-                        "AdvertisedLocationName": "Örsjö",
-                        "LocationSignature": "Örs"
+                        "AdvertisedLocationName": "Önaskogen",
+                        "LocationSignature": "Öna"
                     },
                     {
                         "AdvertisedLocationName": "Önnestad",
@@ -5880,16 +6700,20 @@ const trainStationList = {
                         "LocationSignature": "Ör"
                     },
                     {
+                        "AdvertisedLocationName": "Örsjö",
+                        "LocationSignature": "Örs"
+                    },
+                    {
                         "AdvertisedLocationName": "Östersund C",
                         "LocationSignature": "Ös"
                     },
                     {
-                        "AdvertisedLocationName": "Östersund Västra",
-                        "LocationSignature": "Ösv"
-                    },
-                    {
                         "AdvertisedLocationName": "Ösmo",
                         "LocationSignature": "Öso"
+                    },
+                    {
+                        "AdvertisedLocationName": "Östersund Västra",
+                        "LocationSignature": "Ösv"
                     },
                     {
                         "AdvertisedLocationName": "Österås",
@@ -5900,12 +6724,12 @@ const trainStationList = {
                         "LocationSignature": "Öte"
                     },
                     {
-                        "AdvertisedLocationName": "Överby",
-                        "LocationSignature": "Övb"
-                    },
-                    {
                         "AdvertisedLocationName": "Östavall",
                         "LocationSignature": "Öv"
+                    },
+                    {
+                        "AdvertisedLocationName": "Överby",
+                        "LocationSignature": "Övb"
                     },
                     {
                         "AdvertisedLocationName": "Överum",
@@ -5924,828 +6748,16 @@ const trainStationList = {
                         "LocationSignature": "Övö"
                     },
                     {
-                        "AdvertisedLocationName": "Öreälv",
-                        "LocationSignature": "Öä"
-                    },
-                    {
                         "AdvertisedLocationName": "Öxnered",
                         "LocationSignature": "Öx"
                     },
                     {
+                        "AdvertisedLocationName": "Öreälv",
+                        "LocationSignature": "Öä"
+                    },
+                    {
                         "AdvertisedLocationName": "Österäng",
                         "LocationSignature": "Öäg"
-                    },
-                    {
-                        "AdvertisedLocationName": "Stensjön",
-                        "LocationSignature": "Snö"
-                    },
-                    {
-                        "AdvertisedLocationName": "Stordalen",
-                        "LocationSignature": "Soa"
-                    },
-                    {
-                        "AdvertisedLocationName": "Solna",
-                        "LocationSignature": "So"
-                    },
-                    {
-                        "AdvertisedLocationName": "Stockholm Odenplan",
-                        "LocationSignature": "Sod"
-                    },
-                    {
-                        "AdvertisedLocationName": "Stolpen",
-                        "LocationSignature": "Soe"
-                    },
-                    {
-                        "AdvertisedLocationName": "Sollentuna",
-                        "LocationSignature": "Sol"
-                    },
-                    {
-                        "AdvertisedLocationName": "Stormyran",
-                        "LocationSignature": "Som"
-                    },
-                    {
-                        "AdvertisedLocationName": "Viskan",
-                        "LocationSignature": "Visk"
-                    },
-                    {
-                        "AdvertisedLocationName": "Vassijaure",
-                        "LocationSignature": "Vj"
-                    },
-                    {
-                        "AdvertisedLocationName": "Vojmån",
-                        "LocationSignature": "Vjm"
-                    },
-                    {
-                        "AdvertisedLocationName": "Vika",
-                        "LocationSignature": "Vka"
-                    },
-                    {
-                        "AdvertisedLocationName": "Västervik",
-                        "LocationSignature": "Vk"
-                    },
-                    {
-                        "AdvertisedLocationName": "Vaikijaur",
-                        "LocationSignature": "Vkj"
-                    },
-                    {
-                        "AdvertisedLocationName": "Hudiksvall (xHkl)",
-                        "LocationSignature": "xHkl"
-                    },
-                    {
-                        "AdvertisedLocationName": "Hultsfred (xHpf)",
-                        "LocationSignature": "xHpf"
-                    },
-                    {
-                        "AdvertisedLocationName": "Hegra",
-                        "LocationSignature": "Xhra"
-                    },
-                    {
-                        "AdvertisedLocationName": "Hesselby",
-                        "LocationSignature": "xHy"
-                    },
-                    {
-                        "AdvertisedLocationName": "Härnön",
-                        "LocationSignature": "xHön"
-                    },
-                    {
-                        "AdvertisedLocationName": "Hösjömo",
-                        "LocationSignature": "xHöo"
-                    },
-                    {
-                        "AdvertisedLocationName": "Hultanäs",
-                        "LocationSignature": "xHäs"
-                    },
-                    {
-                        "AdvertisedLocationName": "Impregneringen",
-                        "LocationSignature": "xIpr"
-                    },
-                    {
-                        "AdvertisedLocationName": "Igelboda",
-                        "LocationSignature": "xIgb"
-                    },
-                    {
-                        "AdvertisedLocationName": "Järle",
-                        "LocationSignature": "xJ"
-                    },
-                    {
-                        "AdvertisedLocationName": "Jagbacken",
-                        "LocationSignature": "xJbn"
-                    },
-                    {
-                        "AdvertisedLocationName": "Jädraås",
-                        "LocationSignature": "xJås"
-                    },
-                    {
-                        "AdvertisedLocationName": "Kragstalund",
-                        "LocationSignature": "xKgl"
-                    },
-                    {
-                        "AdvertisedLocationName": "Katterat",
-                        "LocationSignature": "Xkat"
-                    },
-                    {
-                        "AdvertisedLocationName": "Kambshagtorp",
-                        "LocationSignature": "xKht"
-                    },
-                    {
-                        "AdvertisedLocationName": "Källarhalsen",
-                        "LocationSignature": "xKh"
-                    },
-                    {
-                        "AdvertisedLocationName": "Kårsta",
-                        "LocationSignature": "xKår"
-                    },
-                    {
-                        "AdvertisedLocationName": "Kopperå",
-                        "LocationSignature": "xKpr"
-                    },
-                    {
-                        "AdvertisedLocationName": "Löth",
-                        "LocationSignature": "xL"
-                    },
-                    {
-                        "AdvertisedLocationName": "Långbacka",
-                        "LocationSignature": "xLba"
-                    },
-                    {
-                        "AdvertisedLocationName": "Lindholmen",
-                        "LocationSignature": "xLdm"
-                    },
-                    {
-                        "AdvertisedLocationName": "Länna bruk",
-                        "LocationSignature": "xLbr"
-                    },
-                    {
-                        "AdvertisedLocationName": "Läggesta nedre",
-                        "LocationSignature": "xLgn"
-                    },
-                    {
-                        "AdvertisedLocationName": "Ljungbyheds grusgrop",
-                        "LocationSignature": "xLjd"
-                    },
-                    {
-                        "AdvertisedLocationName": "Lövstahagen",
-                        "LocationSignature": "xLh"
-                    },
-                    {
-                        "AdvertisedLocationName": "Lillängen",
-                        "LocationSignature": "xLiä"
-                    },
-                    {
-                        "AdvertisedLocationName": "Lahäll",
-                        "LocationSignature": "xLhl"
-                    },
-                    {
-                        "AdvertisedLocationName": "Lilla Mon",
-                        "LocationSignature": "xLm"
-                    },
-                    {
-                        "AdvertisedLocationName": "Lundsbrunn",
-                        "LocationSignature": "xLnb"
-                    },
-                    {
-                        "AdvertisedLocationName": "Länna",
-                        "LocationSignature": "xLna"
-                    },
-                    {
-                        "AdvertisedLocationName": "Långsjön",
-                        "LocationSignature": "xLåö"
-                    },
-                    {
-                        "AdvertisedLocationName": "Länninge",
-                        "LocationSignature": "xLäe"
-                    },
-                    {
-                        "AdvertisedLocationName": "Löt",
-                        "LocationSignature": "xLöt"
-                    },
-                    {
-                        "AdvertisedLocationName": "Magnor",
-                        "LocationSignature": "Xmag"
-                    },
-                    {
-                        "AdvertisedLocationName": "Meråker",
-                        "LocationSignature": "Xmer"
-                    },
-                    {
-                        "AdvertisedLocationName": "Mariefred",
-                        "LocationSignature": "xMfd"
-                    },
-                    {
-                        "AdvertisedLocationName": "Mariefreds ångbåtsstation",
-                        "LocationSignature": "xMfå"
-                    },
-                    {
-                        "AdvertisedLocationName": "Moga",
-                        "LocationSignature": "xMg"
-                    },
-                    {
-                        "AdvertisedLocationName": "Mosstorp",
-                        "LocationSignature": "xMop"
-                    },
-                    {
-                        "AdvertisedLocationName": "Marielund",
-                        "LocationSignature": "xMl"
-                    },
-                    {
-                        "AdvertisedLocationName": "Målilla Sanatorium",
-                        "LocationSignature": "xMsa"
-                    },
-                    {
-                        "AdvertisedLocationName": "Marielund",
-                        "LocationSignature": "xMln"
-                    },
-                    {
-                        "AdvertisedLocationName": "Molnby",
-                        "LocationSignature": "xMnb"
-                    },
-                    {
-                        "AdvertisedLocationName": "Myråsen",
-                        "LocationSignature": "xMyå"
-                    },
-                    {
-                        "AdvertisedLocationName": "Munkebos",
-                        "LocationSignature": "xMus"
-                    },
-                    {
-                        "AdvertisedLocationName": "Mörby",
-                        "LocationSignature": "xMöb"
-                    },
-                    {
-                        "AdvertisedLocationName": "Nora stad",
-                        "LocationSignature": "xN"
-                    },
-                    {
-                        "AdvertisedLocationName": "Näsbyallé",
-                        "LocationSignature": "xNbe"
-                    },
-                    {
-                        "AdvertisedLocationName": "Näsbypark",
-                        "LocationSignature": "xNbp"
-                    },
-                    {
-                        "AdvertisedLocationName": "Neglinge",
-                        "LocationSignature": "xNeg"
-                    },
-                    {
-                        "AdvertisedLocationName": "Narvik",
-                        "LocationSignature": "Xnk"
-                    },
-                    {
-                        "AdvertisedLocationName": "Nacka",
-                        "LocationSignature": "xNka"
-                    },
-                    {
-                        "AdvertisedLocationName": "Näsviken",
-                        "LocationSignature": "xNv"
-                    },
-                    {
-                        "AdvertisedLocationName": "Nygårds Stall Dalhem",
-                        "LocationSignature": "xNys"
-                    },
-                    {
-                        "AdvertisedLocationName": "Ormsta",
-                        "LocationSignature": "xOta"
-                    },
-                    {
-                        "AdvertisedLocationName": "Ohs Bruk",
-                        "LocationSignature": "xOhs"
-                    },
-                    {
-                        "AdvertisedLocationName": "Pershyttevägen",
-                        "LocationSignature": "xPgn"
-                    },
-                    {
-                        "AdvertisedLocationName": "Pershyttan",
-                        "LocationSignature": "xPh"
-                    },
-                    {
-                        "AdvertisedLocationName": "Pallanite",
-                        "LocationSignature": "xPte"
-                    },
-                    {
-                        "AdvertisedLocationName": "Roma",
-                        "LocationSignature": "xRa"
-                    },
-                    {
-                        "AdvertisedLocationName": "Kvarnabo",
-                        "LocationSignature": "xQo"
-                    },
-                    {
-                        "AdvertisedLocationName": "Oslättfors",
-                        "LocationSignature": "Osl"
-                    },
-                    {
-                        "AdvertisedLocationName": "Ovansjö",
-                        "LocationSignature": "Osö"
-                    },
-                    {
-                        "AdvertisedLocationName": "Ottebol",
-                        "LocationSignature": "Ot"
-                    },
-                    {
-                        "AdvertisedLocationName": "Oxie",
-                        "LocationSignature": "Ox"
-                    },
-                    {
-                        "AdvertisedLocationName": "Oxelösund",
-                        "LocationSignature": "Oxd"
-                    },
-                    {
-                        "AdvertisedLocationName": "Partille",
-                        "LocationSignature": "P"
-                    },
-                    {
-                        "AdvertisedLocationName": "Oxmyran",
-                        "LocationSignature": "Oxm"
-                    },
-                    {
-                        "AdvertisedLocationName": "Polcirkeln",
-                        "LocationSignature": "Pc"
-                    },
-                    {
-                        "AdvertisedLocationName": "Prässebo",
-                        "LocationSignature": "Pb"
-                    },
-                    {
-                        "AdvertisedLocationName": "Persberg",
-                        "LocationSignature": "Pbg"
-                    },
-                    {
-                        "AdvertisedLocationName": "Peuravaara",
-                        "LocationSignature": "Pea"
-                    },
-                    {
-                        "AdvertisedLocationName": "Peberholm",
-                        "LocationSignature": "Phm"
-                    },
-                    {
-                        "AdvertisedLocationName": "Porjus",
-                        "LocationSignature": "Pj"
-                    },
-                    {
-                        "AdvertisedLocationName": "Pitkäjärvi",
-                        "LocationSignature": "Pii"
-                    },
-                    {
-                        "AdvertisedLocationName": "Porjusfallen",
-                        "LocationSignature": "Pjf"
-                    },
-                    {
-                        "AdvertisedLocationName": "Pauliström",
-                        "LocationSignature": "Plm"
-                    },
-                    {
-                        "AdvertisedLocationName": "Pilgrimstad",
-                        "LocationSignature": "Pl"
-                    },
-                    {
-                        "AdvertisedLocationName": "Prästmon",
-                        "LocationSignature": "Pm"
-                    },
-                    {
-                        "AdvertisedLocationName": "Perstorp",
-                        "LocationSignature": "Pt"
-                    },
-                    {
-                        "AdvertisedLocationName": "Piteå",
-                        "LocationSignature": "Ptå"
-                    },
-                    {
-                        "AdvertisedLocationName": "Pålsboda",
-                        "LocationSignature": "På"
-                    },
-                    {
-                        "AdvertisedLocationName": "Påarp",
-                        "LocationSignature": "Påa"
-                    },
-                    {
-                        "AdvertisedLocationName": "Piteälvsbron",
-                        "LocationSignature": "Päb"
-                    },
-                    {
-                        "AdvertisedLocationName": "Pölsebo",
-                        "LocationSignature": "Pöb"
-                    },
-                    {
-                        "AdvertisedLocationName": "Rotebro",
-                        "LocationSignature": "R"
-                    },
-                    {
-                        "AdvertisedLocationName": "Söräng",
-                        "LocationSignature": "Säg"
-                    },
-                    {
-                        "AdvertisedLocationName": "Sävsjö",
-                        "LocationSignature": "Sä"
-                    },
-                    {
-                        "AdvertisedLocationName": "Sävastklinten",
-                        "LocationSignature": "Sän"
-                    },
-                    {
-                        "AdvertisedLocationName": "Skärpan",
-                        "LocationSignature": "Säp"
-                    },
-                    {
-                        "AdvertisedLocationName": "Sunnäsbruk",
-                        "LocationSignature": "Säu"
-                    },
-                    {
-                        "AdvertisedLocationName": "Sävenäs rangerbangård",
-                        "LocationSignature": "Sär"
-                    },
-                    {
-                        "AdvertisedLocationName": "Sävenäs lokstation",
-                        "LocationSignature": "Sävl"
-                    },
-                    {
-                        "AdvertisedLocationName": "Sävenäs",
-                        "LocationSignature": "Säv"
-                    },
-                    {
-                        "AdvertisedLocationName": "Säby",
-                        "LocationSignature": "Säy"
-                    },
-                    {
-                        "AdvertisedLocationName": "Södertälje centrum",
-                        "LocationSignature": "Söc"
-                    },
-                    {
-                        "AdvertisedLocationName": "Södertälje hamn",
-                        "LocationSignature": "Söd"
-                    },
-                    {
-                        "AdvertisedLocationName": "Gunnarn",
-                        "LocationSignature": "Gun"
-                    },
-                    {
-                        "AdvertisedLocationName": "Gällivare",
-                        "LocationSignature": "Gv"
-                    },
-                    {
-                        "AdvertisedLocationName": "Lundsbrunn kurort",
-                        "LocationSignature": "wLnb"
-                    },
-                    {
-                        "AdvertisedLocationName": "Vilhelmina",
-                        "LocationSignature": "Vma"
-                    },
-                    {
-                        "AdvertisedLocationName": "Vattjom",
-                        "LocationSignature": "Vm"
-                    },
-                    {
-                        "AdvertisedLocationName": "Vilhelmina norra",
-                        "LocationSignature": "Vman"
-                    },
-                    {
-                        "AdvertisedLocationName": "Vilhelmina timmer",
-                        "LocationSignature": "Vmat"
-                    },
-                    {
-                        "AdvertisedLocationName": "VME",
-                        "LocationSignature": "Vme"
-                    },
-                    {
-                        "AdvertisedLocationName": "Värtan",
-                        "LocationSignature": "Vn"
-                    },
-                    {
-                        "AdvertisedLocationName": "Nockeby",
-                        "LocationSignature": "wNob"
-                    },
-                    {
-                        "AdvertisedLocationName": "Voxna",
-                        "LocationSignature": "Vna"
-                    },
-                    {
-                        "AdvertisedLocationName": "Nockeby torg",
-                        "LocationSignature": "wNot"
-                    },
-                    {
-                        "AdvertisedLocationName": "Vännäs",
-                        "LocationSignature": "Vns"
-                    },
-                    {
-                        "AdvertisedLocationName": "Vackernäset",
-                        "LocationSignature": "Vnt"
-                    },
-                    {
-                        "AdvertisedLocationName": "Vinnö",
-                        "LocationSignature": "Vnö"
-                    },
-                    {
-                        "AdvertisedLocationName": "Olovslund",
-                        "LocationSignature": "wOll"
-                    },
-                    {
-                        "AdvertisedLocationName": "Vansbro",
-                        "LocationSignature": "Vo"
-                    },
-                    {
-                        "AdvertisedLocationName": "Varpemossen",
-                        "LocationSignature": "Vpm"
-                    },
-                    {
-                        "AdvertisedLocationName": "Vingåker",
-                        "LocationSignature": "Vr"
-                    },
-                    {
-                        "AdvertisedLocationName": "Vrena",
-                        "LocationSignature": "Vre"
-                    },
-                    {
-                        "AdvertisedLocationName": "Verveln",
-                        "LocationSignature": "Vrn"
-                    },
-                    {
-                        "AdvertisedLocationName": "Ropsten",
-                        "LocationSignature": "wRos"
-                    },
-                    {
-                        "AdvertisedLocationName": "Vekerum",
-                        "LocationSignature": "Vru"
-                    },
-                    {
-                        "AdvertisedLocationName": "Värö",
-                        "LocationSignature": "Vrö"
-                    },
-                    {
-                        "AdvertisedLocationName": "Torbacken",
-                        "LocationSignature": "Tbn"
-                    },
-                    {
-                        "AdvertisedLocationName": "Tobo",
-                        "LocationSignature": "Tbo"
-                    },
-                    {
-                        "AdvertisedLocationName": "Tibro",
-                        "LocationSignature": "Tbr"
-                    },
-                    {
-                        "AdvertisedLocationName": "Tandsbyn",
-                        "LocationSignature": "Tby"
-                    },
-                    {
-                        "AdvertisedLocationName": "Trödje",
-                        "LocationSignature": "Tdj"
-                    },
-                    {
-                        "AdvertisedLocationName": "Tandsjöborg",
-                        "LocationSignature": "Tdö"
-                    },
-                    {
-                        "AdvertisedLocationName": "Torebo",
-                        "LocationSignature": "Teo"
-                    },
-                    {
-                        "AdvertisedLocationName": "Tågarp",
-                        "LocationSignature": "Tgp"
-                    },
-                    {
-                        "AdvertisedLocationName": "Tolikberget",
-                        "LocationSignature": "Tet"
-                    },
-                    {
-                        "AdvertisedLocationName": "Tenhult",
-                        "LocationSignature": "Th"
-                    },
-                    {
-                        "AdvertisedLocationName": "Trångstad",
-                        "LocationSignature": "Tgs"
-                    },
-                    {
-                        "AdvertisedLocationName": "Tallhed",
-                        "LocationSignature": "Thd"
-                    },
-                    {
-                        "AdvertisedLocationName": "Tornhill",
-                        "LocationSignature": "Thl"
-                    },
-                    {
-                        "AdvertisedLocationName": "Träskholm",
-                        "LocationSignature": "Thm"
-                    },
-                    {
-                        "AdvertisedLocationName": "Trehörningsjö",
-                        "LocationSignature": "Thö"
-                    },
-                    {
-                        "AdvertisedLocationName": "Trollhättan C",
-                        "LocationSignature": "Thn"
-                    },
-                    {
-                        "AdvertisedLocationName": "Tierp",
-                        "LocationSignature": "Tip"
-                    },
-                    {
-                        "AdvertisedLocationName": "Timsfors",
-                        "LocationSignature": "Tim"
-                    },
-                    {
-                        "AdvertisedLocationName": "Tjunnaryd",
-                        "LocationSignature": "Tj"
-                    },
-                    {
-                        "AdvertisedLocationName": "Tjugonde slussen",
-                        "LocationSignature": "Tjs"
-                    },
-                    {
-                        "AdvertisedLocationName": "Tjustskolan",
-                        "LocationSignature": "Tjsk"
-                    },
-                    {
-                        "AdvertisedLocationName": "Tjärnvik",
-                        "LocationSignature": "Tjä"
-                    },
-                    {
-                        "AdvertisedLocationName": "Tallåsen",
-                        "LocationSignature": "Tl"
-                    },
-                    {
-                        "AdvertisedLocationName": "Tällberg",
-                        "LocationSignature": "Tlg"
-                    },
-                    {
-                        "AdvertisedLocationName": "Tolita",
-                        "LocationSignature": "Tlt"
-                    },
-                    {
-                        "AdvertisedLocationName": "Tomelilla",
-                        "LocationSignature": "Tli"
-                    },
-                    {
-                        "AdvertisedLocationName": "Tomteboda bangård",
-                        "LocationSignature": "Tm"
-                    },
-                    {
-                        "AdvertisedLocationName": "Tomteboda övre",
-                        "LocationSignature": "Tmö"
-                    },
-                    {
-                        "AdvertisedLocationName": "Tannefors",
-                        "LocationSignature": "Tn"
-                    },
-                    {
-                        "AdvertisedLocationName": "Tranås",
-                        "LocationSignature": "Tns"
-                    },
-                    {
-                        "AdvertisedLocationName": "Torneträsk",
-                        "LocationSignature": "Tnk"
-                    },
-                    {
-                        "AdvertisedLocationName": "Tanum",
-                        "LocationSignature": "Tnu"
-                    },
-                    {
-                        "AdvertisedLocationName": "Torpshammar",
-                        "LocationSignature": "To"
-                    },
-                    {
-                        "AdvertisedLocationName": "Tofta",
-                        "LocationSignature": "Tof"
-                    },
-                    {
-                        "AdvertisedLocationName": "Torpåkra",
-                        "LocationSignature": "Top"
-                    },
-                    {
-                        "AdvertisedLocationName": "Toresta",
-                        "LocationSignature": "Tot"
-                    },
-                    {
-                        "AdvertisedLocationName": "Torup",
-                        "LocationSignature": "Tou"
-                    },
-                    {
-                        "AdvertisedLocationName": "Torsby",
-                        "LocationSignature": "Toy"
-                    },
-                    {
-                        "AdvertisedLocationName": "Tappudden",
-                        "LocationSignature": "Tpu"
-                    },
-                    {
-                        "AdvertisedLocationName": "Traryd",
-                        "LocationSignature": "Trd"
-                    },
-                    {
-                        "AdvertisedLocationName": "Teckomatorp",
-                        "LocationSignature": "Tp"
-                    },
-                    {
-                        "AdvertisedLocationName": "Trelleborg",
-                        "LocationSignature": "Trg"
-                    },
-                    {
-                        "AdvertisedLocationName": "Trekanten",
-                        "LocationSignature": "Tre"
-                    },
-                    {
-                        "AdvertisedLocationName": "Triangeln",
-                        "LocationSignature": "Tri"
-                    },
-                    {
-                        "AdvertisedLocationName": "Fjällåsen",
-                        "LocationSignature": "Fjå"
-                    },
-                    {
-                        "AdvertisedLocationName": "Fåker",
-                        "LocationSignature": "Fkr"
-                    },
-                    {
-                        "AdvertisedLocationName": "Fjälkinge",
-                        "LocationSignature": "Fki"
-                    },
-                    {
-                        "AdvertisedLocationName": "Nälden",
-                        "LocationSignature": "Nä"
-                    },
-                    {
-                        "AdvertisedLocationName": "Flädie",
-                        "LocationSignature": "Fl"
-                    },
-                    {
-                        "AdvertisedLocationName": "Nödinge",
-                        "LocationSignature": "Nöe"
-                    },
-                    {
-                        "AdvertisedLocationName": "Nättraby",
-                        "LocationSignature": "Nät"
-                    },
-                    {
-                        "AdvertisedLocationName": "Markaryd",
-                        "LocationSignature": "Mrd"
-                    },
-                    {
-                        "AdvertisedLocationName": "Marsvinsholm",
-                        "LocationSignature": "Mrh"
-                    },
-                    {
-                        "AdvertisedLocationName": "Axhult",
-                        "LocationSignature": "Mrd.ax"
-                    },
-                    {
-                        "AdvertisedLocationName": "Marma",
-                        "LocationSignature": "Mrm"
-                    },
-                    {
-                        "AdvertisedLocationName": "Morshyttan",
-                        "LocationSignature": "Mrs"
-                    },
-                    {
-                        "AdvertisedLocationName": "Skruv",
-                        "LocationSignature": "Sru"
-                    },
-                    {
-                        "AdvertisedLocationName": "Axmar Bruk",
-                        "LocationSignature": "Ax.br"
-                    },
-                    {
-                        "AdvertisedLocationName": "Lejonspåret",
-                        "LocationSignature": "G.ls"
-                    },
-                    {
-                        "AdvertisedLocationName": "Karlsvik",
-                        "LocationSignature": "Le.k"
-                    },
-                    {
-                        "AdvertisedLocationName": "Rosengård",
-                        "LocationSignature": "Rog"
-                    },
-                    {
-                        "AdvertisedLocationName": "Copenhagen Airport",
-                        "LocationSignature": "XCph"
-                    },
-                    {
-                        "AdvertisedLocationName": "Kornsjø",
-                        "LocationSignature": "XKo"
-                    },
-                    {
-                        "AdvertisedLocationName": "Bjørnfjell",
-                        "LocationSignature": "XBjf"
-                    },
-                    {
-                        "AdvertisedLocationName": "Kronetorp",
-                        "LocationSignature": "Kop"
-                    },
-                    {
-                        "AdvertisedLocationName": "Kvarnängen",
-                        "LocationSignature": "Kng"
-                    },
-                    {
-                        "AdvertisedLocationName": "Oxberg",
-                        "LocationSignature": "xOxb"
-                    },
-                    {
-                        "AdvertisedLocationName": "Åseda (xÅa)",
-                        "LocationSignature": "xÅa"
-                    },
-                    {
-                        "AdvertisedLocationName": "Villersmuren",
-                        "LocationSignature": "Vmu"
                     }
                 ]
             }
