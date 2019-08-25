@@ -242,7 +242,7 @@ function createStationList(obj) {
             stationList.push(tslr);
         }
     }
-    //console.log(stationList);
+    return stationList;
 }
 
 function createStationBoardRow(obj,type) {
@@ -596,22 +596,27 @@ function getLocationName(obj) {
     document.getElementById("departureLocation").textContent = obj.RESPONSE.RESULT[0].TrainStation[0].AdvertisedLocationName;
 }
 
-function renderStationNameList(obj) {
-    output = "<thead>";
+function renderStationList(obj) {
+    var list = createStationList(obj);
+    console.table(list);
+    output = "<table class='w3-table w3-bordered w3-striped'>";
+    output += "<thead>";
     output += "<tr>";
-    output += "<th>LocationSignature</th>";
-    output += "<th>LocationName</th>"
+    output += "<th>LocationName</th>";
+    output += "<th>LocationSignature</th>"
     output += "</tr>";
     output += "</thead>";
     output += "<tbody>";
-    for (var i in obj.RESPONSE.RESULT[0].TrainStation) {
+    for (var i in list) {
         output += "<tr>";
-        output += "<td>" + obj.RESPONSE.RESULT[0].TrainStation[i].LocationSignature + "</td><td>" + obj.RESPONSE.RESULT[0].TrainStation[i].AdvertisedLocationName + "</td>";
+        output += "<td><a href='station.html' onclick='saveData(\"location\",\"" + list[i].locationSignature + "\");'>" + list[i].locationName + "</a></td>";
+        output += "<td><a href='station.html' onclick='saveData(\"location\",\"" + list[i].locationSignature + "\");'>" + list[i].locationSignature + "</a></td>"
         output += "</tr>";
     }
     output += "</tbody>";
+    output += "</table>";
 
-    return output;
+    document.getElementById("stationListDiv").innerHTML = output;
 }
 
 function renderSingleTrainState(obj) {

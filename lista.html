@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+
+<html lang="SV-se">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+
+    <title>Stationslista</title>
+
+    <link rel="stylesheet" href="css/w3.css">
+    <link rel="stylesheet" href="css/w3-colors-flat.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/extra.css">
+
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    
+    <script src="js/ApiCollector.js"></script>
+    <script src="js/TrainStation.js"></script>
+    <script src="https://kit.fontawesome.com/1ae2629c4c.js"></script>
+</head>
+
+<body class="w3-small w3-flat-wet-asphalt">
+
+<!-- Error content -->
+<div class="w3-container w3-margin-bottom w3-white w3-padding" id="errorBox" style="display: none; max-width: 1000px; margin-left: auto; margin-right: auto;">
+    <h4>INFO</h4>
+    <p id="errorMsg"></p>
+</div>
+<!-- Station list in form of a table below -->
+<div class="w3-stretch w3-card w3-white" style="max-width: 1000px; margin-left: auto; margin-right: auto;">
+    <div id="stationListDiv" class="w3-white w3-responsive" style="display: none;">
+        <h4 class="w3-margin"><i class="fa fa-train"></i>&nbsp;&nbsp;Stationslista</h4>
+        <div id="stationList">
+            <!-- This is where schedule script will output data -->
+        </div>
+    </div>
+</div>
+<!-- End of station list table -->
+
+<!-- Form content -->
+<form class="w3-container w3-card w3-white w3-margin-top w3-padding" id="searchForm" style="display: none; max-width: 1000px; margin-left: auto; margin-right: auto;" onsubmit="event.preventDefault(); getStationBoards()">
+    <h4><i class="fa fa-list"></i>&nbsp;&nbsp;Sök driftplats</h4>
+    <input id="locationSignature" type="text" class="w3-input" placeholder="Plats" autofocus><br>
+    <div class="w3-center">
+        <input type="submit" value="H&auml;mta uppgifter" class="w3-button w3-flat-wet-asphalt w3-margin-bottom">
+    </div>
+</form>
+
+<script>
+// Set up API key
+var apiKey = "dfc3b8374d774d5e94655bcd32d7c5c3";
+
+// Populate page with return
+function getStationList() {
+    // Set up ArrivalBoard request
+    var stationListData = "<REQUEST>" +
+            "<LOGIN authenticationkey='" + apiKey + "' />" +
+            "<QUERY objecttype='TrainStation' schemaversion='1' orderby='AdvertisedLocationName'>" +
+                "<FILTER>" +
+                    "<EQ name='Advertised' value='true' />" +
+                "</FILTER>" +
+                "<INCLUDE>LocationSignature</INCLUDE>" +
+                "<INCLUDE>AdvertisedLocationName</INCLUDE>" + 
+            "</QUERY>" +
+        "</REQUEST>";
+
+    ApiCollector(stationListData,renderStationList);
+
+    document.getElementById("stationListDiv").style.display = "block";
+
+    return true;
+}
+
+getStationList();
+</script>
+</body>
+</html>
