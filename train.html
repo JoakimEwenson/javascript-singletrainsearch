@@ -200,12 +200,16 @@ function getNextStation(searchTrainIdent, searchDate) {
             "<LOGIN authenticationkey='" + apiKey + "' />" +
             "<QUERY objecttype='TrainAnnouncement' schemaversion='1.5' orderby='AdvertisedTimeAtLocation asc, ActivityType asc' limit='1'>" +
                     "<FILTER>" +
-                        "<EQ name='AdvertisedTrainIdent' value='" + searchTrainIdent + "' />" +
-                        "<EQ name='ScheduledDepartureDateTime' value='" + searchDate + "' />" +
-                        "<EXISTS name='TimeAtLocation' value='false' />" +
-                        "<EXISTS name='TrackAtLocation' value='true' />" +
-                        "<NE name='TrackAtLocation' value='-' />" +
-                        "<NE name='TrackAtLocation' value='x' />" +
+                        "<AND>" +
+                            "<EQ name='Advertised' value='true' />" +
+                            "<EQ name='AdvertisedTrainIdent' value='" + searchTrainIdent + "' />" +
+                            "<EQ name='ScheduledDepartureDateTime' value='" + searchDate + "' />" +
+                            "<EQ name='Canceled' value='false' />" +
+                            "<EXISTS name='TimeAtLocation' value='false' />" +
+                            "<EXISTS name='TrackAtLocation' value='true' />" +
+                            "<NE name='TrackAtLocation' value='-' />" +
+                            "<NE name='TrackAtLocation' value='x' />" +
+                        "</AND>" +
                     "</FILTER>" +
                     "<INCLUDE>ActivityType</INCLUDE>" +
                     "<INCLUDE>AdvertisedTimeAtLocation</INCLUDE>" +
