@@ -716,6 +716,12 @@ function renderNextStation(obj) {
     var ns = createNextStopInformation(obj);
     if (ns.locationSignature != "") {
         var timeUntilEvent = getCurrentTrainState(ns.advertisedTime, new Date())
+        if (ns.estimatedTime != "") {
+            timeUntilEvent = getCurrentTrainState(ns.estimatedTime, new Date());
+        }
+        else {
+            timeUntilEvent = getCurrentTrainState(ns.advertisedTime, new Date())
+        }
 
         if (timeUntilEvent < 0) {
             timeUntilEvent = 0;
@@ -730,10 +736,20 @@ function renderNextStation(obj) {
     
         output = "<b>Nästa uppehåll:</b><br>";
         if (ns.activity == "Avgang") {
-            output += "Tåg " + ns.trainIdent + " beräknas avgå " + findStationName(ns.locationSignature) + " om " + timeUntilEvent + " " + suffix + ", kl. " + new Date(ns.advertisedTime).toLocaleTimeString("sv-SE",localeOptions);
+            if (ns.estimatedTime != "") {
+                output += "Tåg " + ns.trainIdent + " beräknas avgå " + findStationName(ns.locationSignature) + " om " + timeUntilEvent + " " + suffix + ", <b>kl. " + new Date(ns.estimatedTime).toLocaleTimeString("sv-SE",localeOptions) + "</b> <em>(ordinarie tid " + new Date(ns.advertisedTime).toLocaleTimeString("sv-SE",localeOptions) + ")</em>";              
+            }
+            else {
+                output += "Tåg " + ns.trainIdent + " beräknas avgå " + findStationName(ns.locationSignature) + " om " + timeUntilEvent + " " + suffix + ", kl. " + new Date(ns.advertisedTime).toLocaleTimeString("sv-SE",localeOptions);
+            }
         }
         else {
-            output += "Tåg " + ns.trainIdent + " beräknas ankomma " + findStationName(ns.locationSignature) + " om " + timeUntilEvent + " " + suffix + ", kl. " + new Date(ns.advertisedTime).toLocaleTimeString("sv-SE", localeOptions);
+            if (ns.estimatedTime != "") {
+            output += "Tåg " + ns.trainIdent + " beräknas ankomma " + findStationName(ns.locationSignature) + " om " + timeUntilEvent + " " + suffix + ", <b>kl. " + new Date(ns.estimatedTime).toLocaleTimeString("sv-SE", localeOptions) + "</b> <em>(ordinarie tid " + new Date(ns.advertisedTime).toLocaleTimeString("sv-SE",localeOptions) + ")</em>";
+            }
+            else {
+                output += "Tåg " + ns.trainIdent + " beräknas ankomma " + findStationName(ns.locationSignature) + " om " + timeUntilEvent + " " + suffix + ", kl. " + new Date(ns.advertisedTime).toLocaleTimeString("sv-SE", localeOptions);
+            }
         }
     
         document.getElementById("nextPosition").innerHTML = output;    
