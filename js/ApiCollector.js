@@ -309,67 +309,75 @@ function createStationMessageList(obj) {
 function createTrainState(obj) {
     ts = new TrainState();
     if (obj.RESPONSE.RESULT[0].TrainAnnouncement) {
-        if (obj.RESPONSE.RESULT[0].TrainAnnouncement[0].AdvertisedTrainIdent != null) {
-            ts.trainIdent = obj.RESPONSE.RESULT[0].TrainAnnouncement[0].AdvertisedTrainIdent;
-        }
-        if (obj.RESPONSE.RESULT[0].TrainAnnouncement[0].TechnicalTrainIdent) {
-            ts.technicalTrainIdent = obj.RESPONSE.RESULT[0].TrainAnnouncement[0].TechnicalTrainIdent
-        }
-        if (obj.RESPONSE.RESULT[0].TrainAnnouncement[0].ProductInformation[0].Description) {
-            ts.operator = obj.RESPONSE.RESULT[0].TrainAnnouncement[0].ProductInformation[0].Description;
-        }
-        else if (obj.RESPONSE.RESULT[0].TrainAnnouncement[0].Operator) {
-            ts.operator = obj.RESPONSE.RESULT[0].TrainAnnouncement[0].Operator;
-        }
-        ts.fromLocation = obj.RESPONSE.RESULT[0].TrainAnnouncement[0].FromLocation[0].LocationName;
-        ts.toLocation = obj.RESPONSE.RESULT[0].TrainAnnouncement[0].ToLocation[0].LocationName;
+        try {
+            if (obj.RESPONSE.RESULT[0].TrainAnnouncement[0].AdvertisedTrainIdent) {
+                ts.trainIdent = obj.RESPONSE.RESULT[0].TrainAnnouncement[0].AdvertisedTrainIdent;
+            }
+            else {
+                ts.trainIdent = "";
+            }
+            if (obj.RESPONSE.RESULT[0].TrainAnnouncement[0].TechnicalTrainIdent) {
+                ts.technicalTrainIdent = obj.RESPONSE.RESULT[0].TrainAnnouncement[0].TechnicalTrainIdent
+            }
+            if (obj.RESPONSE.RESULT[0].TrainAnnouncement[0].ProductInformation[0].Description) {
+                ts.operator = obj.RESPONSE.RESULT[0].TrainAnnouncement[0].ProductInformation[0].Description;
+            }
+            else if (obj.RESPONSE.RESULT[0].TrainAnnouncement[0].Operator) {
+                ts.operator = obj.RESPONSE.RESULT[0].TrainAnnouncement[0].Operator;
+            }
+            ts.fromLocation = obj.RESPONSE.RESULT[0].TrainAnnouncement[0].FromLocation[0].LocationName;
+            ts.toLocation = obj.RESPONSE.RESULT[0].TrainAnnouncement[0].ToLocation[0].LocationName;
 
-        var viaLocations = [];
-        if (obj.RESPONSE.RESULT[0].TrainAnnouncement[0].ViaToLocation) {
-            for (var j in obj.RESPONSE.RESULT[0].TrainAnnouncement[0].ViaToLocation) {
-                viaLocations.push(obj.RESPONSE.RESULT[0].TrainAnnouncement[0].ViaToLocation[j].LocationName);
+            var viaLocations = [];
+            if (obj.RESPONSE.RESULT[0].TrainAnnouncement[0].ViaToLocation) {
+                for (var j in obj.RESPONSE.RESULT[0].TrainAnnouncement[0].ViaToLocation) {
+                    viaLocations.push(obj.RESPONSE.RESULT[0].TrainAnnouncement[0].ViaToLocation[j].LocationName);
+                }
             }
-        }
-        ts.viaLocations = viaLocations;
+            ts.viaLocations = viaLocations;
 
-        ts.scheduledDate = obj.RESPONSE.RESULT[0].TrainAnnouncement[0].ScheduledDepartureDateTime;
+            ts.scheduledDate = obj.RESPONSE.RESULT[0].TrainAnnouncement[0].ScheduledDepartureDateTime;
 
-        var trainInfo = [];
-        // Check if booking field is alive and if so, iterate through it
-        if (obj.RESPONSE.RESULT[0].TrainAnnouncement[0].Booking) {
-            for (var j in obj.RESPONSE.RESULT[0].TrainAnnouncement[0].Booking) {
-                trainInfo.push(obj.RESPONSE.RESULT[0].TrainAnnouncement[0].Booking[j].Description);
+            var trainInfo = [];
+            // Check if booking field is alive and if so, iterate through it
+            if (obj.RESPONSE.RESULT[0].TrainAnnouncement[0].Booking) {
+                for (var j in obj.RESPONSE.RESULT[0].TrainAnnouncement[0].Booking) {
+                    trainInfo.push(obj.RESPONSE.RESULT[0].TrainAnnouncement[0].Booking[j].Description);
+                }
             }
-        }
-        // Check if other information field is alive and if so, iterate through it
-        if (obj.RESPONSE.RESULT[0].TrainAnnouncement[0].OtherInformation) {
-            for (var j in obj.RESPONSE.RESULT[0].TrainAnnouncement[0].OtherInformation) {
-                trainInfo.push(obj.RESPONSE.RESULT[0].TrainAnnouncement[0].OtherInformation[j].Description);
+            // Check if other information field is alive and if so, iterate through it
+            if (obj.RESPONSE.RESULT[0].TrainAnnouncement[0].OtherInformation) {
+                for (var j in obj.RESPONSE.RESULT[0].TrainAnnouncement[0].OtherInformation) {
+                    trainInfo.push(obj.RESPONSE.RESULT[0].TrainAnnouncement[0].OtherInformation[j].Description);
+                }
             }
-        }
-        // Check if service field is alive and if so, iterate through it
-        if (obj.RESPONSE.RESULT[0].TrainAnnouncement[0].Service) {
-            for (var j in obj.RESPONSE.RESULT[0].TrainAnnouncement[0].Service) {
-                trainInfo.push(obj.RESPONSE.RESULT[0].TrainAnnouncement[0].Service[j].Description);
+            // Check if service field is alive and if so, iterate through it
+            if (obj.RESPONSE.RESULT[0].TrainAnnouncement[0].Service) {
+                for (var j in obj.RESPONSE.RESULT[0].TrainAnnouncement[0].Service) {
+                    trainInfo.push(obj.RESPONSE.RESULT[0].TrainAnnouncement[0].Service[j].Description);
+                }
             }
-        }
-        // Check if train composition field is alive and if so, iterate through it
-        if (obj.RESPONSE.RESULT[0].TrainAnnouncement[0].TrainComposition) {
-            for (var j in obj.RESPONSE.RESULT[0].TrainAnnouncement[0].TrainComposition) {
-                trainInfo.push(obj.RESPONSE.RESULT[0].TrainAnnouncement[0].TrainComposition[j].Description);
+            // Check if train composition field is alive and if so, iterate through it
+            if (obj.RESPONSE.RESULT[0].TrainAnnouncement[0].TrainComposition) {
+                for (var j in obj.RESPONSE.RESULT[0].TrainAnnouncement[0].TrainComposition) {
+                    trainInfo.push(obj.RESPONSE.RESULT[0].TrainAnnouncement[0].TrainComposition[j].Description);
+                }
             }
-        }
 
-        ts.trainInformation = trainInfo;
+            ts.trainInformation = trainInfo;
 
-        var deviations = [];
-        // Check if deviation field is alive and if so, iterate through it
-        if (obj.RESPONSE.RESULT[0].TrainAnnouncement[0].Deviation) {
-            for (var j in obj.RESPONSE.RESULT[0].TrainAnnouncement[0].Deviation) {
-                deviations.push(obj.RESPONSE.RESULT[0].TrainAnnouncement[0].Deviation[j].Description);
+            var deviations = [];
+            // Check if deviation field is alive and if so, iterate through it
+            if (obj.RESPONSE.RESULT[0].TrainAnnouncement[0].Deviation) {
+                for (var j in obj.RESPONSE.RESULT[0].TrainAnnouncement[0].Deviation) {
+                    deviations.push(obj.RESPONSE.RESULT[0].TrainAnnouncement[0].Deviation[j].Description);
+                }
             }
+            ts.deviations = deviations;
         }
-        ts.deviations = deviations;
+        catch {
+            // TODO: Add proper error handling
+        }
     }
     return ts;
 }
@@ -589,9 +597,9 @@ function renderStationList(obj) {
 function renderSingleTrainState(obj) {
     trainState = createTrainState(obj);
 
-    if (!trainState) {
-        trainDataOutput = "";
-        console.log("Single train state, fail!");
+    if (trainState.trainIdent == "") {
+        document.getElementById("trainData").innerHTML = "";
+        document.getElementById("trainState").style.display = "none";
     }
     else {
         trainDataOutput = "";
@@ -601,7 +609,7 @@ function renderSingleTrainState(obj) {
         }
         trainDataOutput += "<br>";
         trainDataOutput += "<b>Sträcka:</b> " + findStationName(trainState.fromLocation) + " - " + findStationName(trainState.toLocation) + "<br>";
-        if (trainState.viaLocations != null) {
+        if (trainState.viaLocations != "") {
             trainDataOutput += "<b>Via:</b> ";
             for (var j in trainState.viaLocations) {
                 if (j >= 1) {
@@ -617,7 +625,7 @@ function renderSingleTrainState(obj) {
     
         document.getElementById("trainData").innerHTML = trainDataOutput;
     
-        if (trainState.trainInformation != 0) {
+        if (trainState.trainInformation.length > 0) {
             trainInfoOutput = "<b>Information om avgången:</b><br>";
             for (var i in trainState.trainInformation) {
                 trainInfoOutput += trainState.trainInformation[i] + "<br>";
@@ -729,6 +737,9 @@ function renderNextStation(obj) {
         }
     
         document.getElementById("nextPosition").innerHTML = output;    
+    }
+    else {
+        document.getElementById("nextPosition").innerHTML = "";
     }
 }
 

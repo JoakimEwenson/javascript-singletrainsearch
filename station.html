@@ -26,6 +26,13 @@
 
 <body class="w3-small w3-flat-wet-asphalt">
 
+<!-- Navigation content-->
+<div class="w3-bar w3-xlarge w3-center w3-padding">
+    <a href="lista.html" title="Stationslista"><i class="fa fa-list"></i></a>
+    <a href="train.html" title="Tågsökning" class="w3-margin-left"><i class="fa fa-train"></i></a>
+</div>
+<!-- End of navigation content-->
+
 <!-- Error content -->
 <div class="w3-container w3-margin-bottom w3-white w3-padding" id="errorBox" style="display: none; max-width: 1000px; margin-left: auto; margin-right: auto;">
     <h4>INFO</h4>
@@ -34,14 +41,14 @@
 <!-- Schedule in form of a table below -->
 <div class="w3-row-padding w3-section w3-stretch w3-card w3-white w3-margin-top" style="max-width: 1000px; margin-left: auto; margin-right: auto;">
     <div id="arrivalBoardDiv" class="w3-half w3-white w3-responsive" style="display: none;">
-        <h4 class="w3-margin"><i class="fa fa-train"></i>&nbsp;&nbsp;Ankomster <span id="arrivalLocation"></span></h4>
+        <h4 class="w3-margin"><i class="fa fa-list"></i>&nbsp;&nbsp;Ankomster <span id="arrivalLocation"></span></h4>
         <span class="w3-margin w3-tiny w3-right" style="font-size: 6pt !important" id="arrivalTimestamp"></span>
         <div id="arrivalBoard">
             <!-- This is where schedule script will output data -->
         </div>
     </div>
     <div id="departureBoardDiv" class="w3-half w3-white w3-responsive" style="display: none;">
-        <h4 class="w3-margin"><i class="fa fa-train"></i>&nbsp;&nbsp;Avgångar <span id="departureLocation"></span></h4>
+        <h4 class="w3-margin"><i class="fa fa-list"></i>&nbsp;&nbsp;Avgångar <span id="departureLocation"></span></h4>
         <span class="w3-margin w3-tiny w3-right" style="font-size: 6pt !important" id="departureTimestamp"></span>
         <div id="departureBoard">
             <!-- This is where schedule script will output data -->
@@ -59,7 +66,7 @@
 
 <!-- Form content -->
 <form class="w3-container w3-card w3-white w3-margin-top w3-padding" id="searchForm" style="display: block; max-width: 1000px; margin-left: auto; margin-right: auto;" onsubmit="event.preventDefault(); getStationBoards()">
-    <h4><i class="fa fa-list"></i>&nbsp;&nbsp;Sök driftplats</h4>
+    <h4><i class="fas fa-map-signs"></i>&nbsp;&nbsp;Sök driftplats</h4>
     <input id="locationSignature" type="text" class="w3-input" placeholder="Plats" autofocus><br>
     <div class="w3-center">
         <input type="submit" value="H&auml;mta uppgifter" class="w3-button w3-flat-wet-asphalt w3-margin-bottom">
