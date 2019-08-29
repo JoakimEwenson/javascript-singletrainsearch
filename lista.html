@@ -59,13 +59,10 @@
 </form>
 
 <script>
-// Set up API key
-var apiKey = "dfc3b8374d774d5e94655bcd32d7c5c3";
-
 // Populate page with return
 function getStationList() {
     // Set up ArrivalBoard request
-    var stationListData = "<REQUEST>" +
+    let stationListData = "<REQUEST>" +
             "<LOGIN authenticationkey='" + apiKey + "' />" +
             "<QUERY objecttype='TrainStation' schemaversion='1' orderby='AdvertisedLocationName'>" +
                 "<FILTER>" +

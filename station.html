@@ -80,14 +80,11 @@
 </div>
 
 <script>
-// Set up API key
-var apiKey = "dfc3b8374d774d5e94655bcd32d7c5c3";
-
 // Set up default values
-var searchLocationSignature;
-var searchDate = getToday();
-var searchLimit = "25";
-var myTimer;
+let searchLocationSignature;
+let searchDate = getToday();
+let searchLimit = "25";
+let myTimer;
 
 if (sessionStorage.getItem("locationSignature")) {
     searchLocationSignature = sessionStorage.getItem("locationSignature");
@@ -101,7 +98,7 @@ function getStationBoards() {
     searchLocationSignature = document.getElementById("locationSignature").value;
 
     // Set up ArrivalBoard request
-    var arrivalBoardData = "<REQUEST>" +
+    let arrivalBoardData = "<REQUEST>" +
             "<LOGIN authenticationkey='" + apiKey + "' />" +
             "<QUERY objecttype='TrainAnnouncement' schemaversion='1.5' orderby='AdvertisedTimeAtLocation' limit='" + searchLimit + "'>" +
                 "<FILTER>" +
@@ -135,7 +132,7 @@ function getStationBoards() {
         "</REQUEST>";
 
     // Set up DepartureBoard request
-    var departureBoardData = "<REQUEST>" +
+    let departureBoardData = "<REQUEST>" +
             "<LOGIN authenticationkey='" + apiKey + "' />" +
             "<QUERY objecttype='TrainAnnouncement' schemaversion='1.5' orderby='AdvertisedTimeAtLocation' limit='" + searchLimit + "'>" +
                 "<FILTER>" +
@@ -168,7 +165,7 @@ function getStationBoards() {
             "</QUERY>" +
         "</REQUEST>";
 
-    var stationMessagesData = "<REQUEST>" +
+    let stationMessagesData = "<REQUEST>" +
             "<LOGIN authenticationkey='" + apiKey + "' />" +
             "<QUERY objecttype='TrainMessage' schemaversion='1.4' orderby='LastUpdateDateTime desc'>" +
                 "<FILTER>" +

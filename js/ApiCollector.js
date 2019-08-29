@@ -67,6 +67,7 @@ class NextStop {
         this.locationSignature = "";
         this.technicalTime = "";
         this.trainIdent = "";
+        this.trackAtLocation = "";
     }
 }
 
@@ -116,25 +117,25 @@ class TrainStationListRow {
 
 
 // Set up a global list for station names
-var stationList = [];
+let stationList = [];
 
 // Set up API key
-var apiKey = "dfc3b8374d774d5e94655bcd32d7c5c3";
+let apiKey = "dfc3b8374d774d5e94655bcd32d7c5c3";
 
 // Settings for Javascript datetime
-var localeOptions = { hour: '2-digit', minute: '2-digit' }
+let localeOptions = { hour: '2-digit', minute: '2-digit' }
 
 // Function for getting todays date in appropriate format (YYYY-MM-DD)
 function getToday() {
     // Set up default date...
-    var now = new Date();
-    var month = (now.getMonth() + 1);
-    var day = now.getDate();
+    let now = new Date();
+    let month = (now.getMonth() + 1);
+    let day = now.getDate();
     if (month < 10)
         month = "0" + month;
     if (day < 10)
         day = "0" + day;
-    var today = now.getFullYear() + "-" + month + "-" + day;
+    let today = now.getFullYear() + "-" + month + "-" + day;
 
     return today;
 }
@@ -152,7 +153,7 @@ function saveData(dataType,saveData,saveDate) {
 }
 
 function getStationList() {
-    var stationListData = "<REQUEST>" +
+    let stationListData = "<REQUEST>" +
             "<LOGIN authenticationkey='" + apiKey + "' />" +
             "<QUERY objecttype='TrainStation' schemaversion='1'>" +
                 "<FILTER />" +
@@ -164,8 +165,8 @@ function getStationList() {
 }
 
 function findStationName(loc) {
-    var location = loc;
-    for (var i = 0; i < trainStationList.RESPONSE.RESULT[0].TrainStation.length; i++) {
+    let location = loc;
+    for (let i = 0; i < trainStationList.RESPONSE.RESULT[0].TrainStation.length; i++) {
         if (trainStationList.RESPONSE.RESULT[0].TrainStation[i].LocationSignature == loc) {
             location = trainStationList.RESPONSE.RESULT[0].TrainStation[i].AdvertisedLocationName;
         }
@@ -175,15 +176,15 @@ function findStationName(loc) {
 }
 
 function getCurrentTrainState(advertisedTimeAtLocation, timeAtLocation) {
-    var advertised = new Date(advertisedTimeAtLocation);
-    var actual = new Date(timeAtLocation);
-    var diff = (advertised - actual);
+    let advertised = new Date(advertisedTimeAtLocation);
+    let actual = new Date(timeAtLocation);
+    let diff = (advertised - actual);
 
     return Math.floor((diff / 1000) / 60);
 }
 
 function ApiCollector(data, cbFunction) {
-    var xhr = new XMLHttpRequest();
+    let xhr = new XMLHttpRequest();
     xhr.withCredentials = false;
 
     xhr.onreadystatechange = function() {
@@ -214,7 +215,7 @@ function ApiCollector(data, cbFunction) {
 
 function createStationList(obj) {
     if (obj.RESPONSE.RESULT[0].TrainStation) {
-        for (var i in obj.RESPONSE.RESULT[0].TrainStation) {
+        for (let i in obj.RESPONSE.RESULT[0].TrainStation) {
             tslr = new TrainStationListRow();
 
             tslr.locationName = obj.RESPONSE.RESULT[0].TrainStation[i].AdvertisedLocationName;
@@ -228,10 +229,10 @@ function createStationList(obj) {
 
 function createStationBoardRow(obj,type) {
     // Create empty array for holding rows
-    var stationRows = [];
+    let stationRows = [];
     // Check that result is not empty
     if (obj.RESPONSE.RESULT[0].TrainAnnouncement) {
-        for (var i in obj.RESPONSE.RESULT[0].TrainAnnouncement) {
+        for (let i in obj.RESPONSE.RESULT[0].TrainAnnouncement) {
             sbr = new StationBoardRow();
             sbr.locationSignature = obj.RESPONSE.RESULT[0].TrainAnnouncement[i].LocationSignature;
             sbr.trainIdent = obj.RESPONSE.RESULT[0].TrainAnnouncement[i].AdvertisedTrainIdent;
@@ -253,14 +254,14 @@ function createStationBoardRow(obj,type) {
             sbr.scheduledDate = obj.RESPONSE.RESULT[0].TrainAnnouncement[i].ScheduledDepartureDateTime;
             sbr.trackAtLocation = obj.RESPONSE.RESULT[0].TrainAnnouncement[i].TrackAtLocation;
             sbr.currentPosition = "";
-            var infoAndDeviations = [];
+            let infoAndDeviations = [];
             if (obj.RESPONSE.RESULT[0].TrainAnnouncement[i].Deviation) {
-                for (var j in obj.RESPONSE.RESULT[0].TrainAnnouncement[i].Deviation) {
+                for (let j in obj.RESPONSE.RESULT[0].TrainAnnouncement[i].Deviation) {
                     infoAndDeviations.push("<b><em>" + obj.RESPONSE.RESULT[0].TrainAnnouncement[i].Deviation[j].Description + "</em></b>");
                 }
             }
             if (obj.RESPONSE.RESULT[0].TrainAnnouncement[i].Booking) {
-                for (var j in obj.RESPONSE.RESULT[0].TrainAnnouncement[i].Booking) {
+                for (let j in obj.RESPONSE.RESULT[0].TrainAnnouncement[i].Booking) {
                     infoAndDeviations.push(obj.RESPONSE.RESULT[0].TrainAnnouncement[i].Booking[j].Description);
                 }
             }
@@ -274,10 +275,10 @@ function createStationBoardRow(obj,type) {
 
 function createStationMessageList(obj) {
     // Create empty array to hold data later
-    var messages = [];
+    let messages = [];
     // Check if result is not empty
     if (obj.RESPONSE.RESULT[0].TrainMessage) {
-        for (var i in obj.RESPONSE.RESULT[0].TrainMessage) {
+        for (let i in obj.RESPONSE.RESULT[0].TrainMessage) {
             sm = new StationMessage();
 
             if (obj.RESPONSE.RESULT[0].TrainMessage[i].Header) {
@@ -328,9 +329,9 @@ function createTrainState(obj) {
             ts.fromLocation = obj.RESPONSE.RESULT[0].TrainAnnouncement[0].FromLocation[0].LocationName;
             ts.toLocation = obj.RESPONSE.RESULT[0].TrainAnnouncement[0].ToLocation[0].LocationName;
 
-            var viaLocations = [];
+            let viaLocations = [];
             if (obj.RESPONSE.RESULT[0].TrainAnnouncement[0].ViaToLocation) {
-                for (var j in obj.RESPONSE.RESULT[0].TrainAnnouncement[0].ViaToLocation) {
+                for (let j in obj.RESPONSE.RESULT[0].TrainAnnouncement[0].ViaToLocation) {
                     viaLocations.push(obj.RESPONSE.RESULT[0].TrainAnnouncement[0].ViaToLocation[j].LocationName);
                 }
             }
@@ -338,38 +339,38 @@ function createTrainState(obj) {
 
             ts.scheduledDate = obj.RESPONSE.RESULT[0].TrainAnnouncement[0].ScheduledDepartureDateTime;
 
-            var trainInfo = [];
+            let trainInfo = [];
             // Check if booking field is alive and if so, iterate through it
             if (obj.RESPONSE.RESULT[0].TrainAnnouncement[0].Booking) {
-                for (var j in obj.RESPONSE.RESULT[0].TrainAnnouncement[0].Booking) {
+                for (let j in obj.RESPONSE.RESULT[0].TrainAnnouncement[0].Booking) {
                     trainInfo.push(obj.RESPONSE.RESULT[0].TrainAnnouncement[0].Booking[j].Description);
                 }
             }
             // Check if other information field is alive and if so, iterate through it
             if (obj.RESPONSE.RESULT[0].TrainAnnouncement[0].OtherInformation) {
-                for (var j in obj.RESPONSE.RESULT[0].TrainAnnouncement[0].OtherInformation) {
+                for (let j in obj.RESPONSE.RESULT[0].TrainAnnouncement[0].OtherInformation) {
                     trainInfo.push(obj.RESPONSE.RESULT[0].TrainAnnouncement[0].OtherInformation[j].Description);
                 }
             }
             // Check if service field is alive and if so, iterate through it
             if (obj.RESPONSE.RESULT[0].TrainAnnouncement[0].Service) {
-                for (var j in obj.RESPONSE.RESULT[0].TrainAnnouncement[0].Service) {
+                for (let j in obj.RESPONSE.RESULT[0].TrainAnnouncement[0].Service) {
                     trainInfo.push(obj.RESPONSE.RESULT[0].TrainAnnouncement[0].Service[j].Description);
                 }
             }
             // Check if train composition field is alive and if so, iterate through it
             if (obj.RESPONSE.RESULT[0].TrainAnnouncement[0].TrainComposition) {
-                for (var j in obj.RESPONSE.RESULT[0].TrainAnnouncement[0].TrainComposition) {
+                for (let j in obj.RESPONSE.RESULT[0].TrainAnnouncement[0].TrainComposition) {
                     trainInfo.push(obj.RESPONSE.RESULT[0].TrainAnnouncement[0].TrainComposition[j].Description);
                 }
             }
 
             ts.trainInformation = trainInfo;
 
-            var deviations = [];
+            let deviations = [];
             // Check if deviation field is alive and if so, iterate through it
             if (obj.RESPONSE.RESULT[0].TrainAnnouncement[0].Deviation) {
-                for (var j in obj.RESPONSE.RESULT[0].TrainAnnouncement[0].Deviation) {
+                for (let j in obj.RESPONSE.RESULT[0].TrainAnnouncement[0].Deviation) {
                     deviations.push(obj.RESPONSE.RESULT[0].TrainAnnouncement[0].Deviation[j].Description);
                 }
             }
@@ -412,6 +413,7 @@ function createNextStopInformation(obj) {
             ns.technicalTime = obj.RESPONSE.RESULT[0].TrainAnnouncement[0].TechnicalDateTime;
         }
         ns.trainIdent = obj.RESPONSE.RESULT[0].TrainAnnouncement[0].AdvertisedTrainIdent;
+        ns.trackAtLocation = obj.RESPONSE.RESULT[0].TrainAnnouncement[0].TrackAtLocation;
     }
 
     return ns;
@@ -420,8 +422,8 @@ function createNextStopInformation(obj) {
 // Function for creating a list of schedule objects for drawing a correct schedule later
 function createSchedule(obj) {
     if (obj.RESPONSE.RESULT[0].TrainAnnouncement) {
-        var scheduleBuilder = [];
-        for (var i in obj.RESPONSE.RESULT[0].TrainAnnouncement) {
+        let scheduleBuilder = [];
+        for (let i in obj.RESPONSE.RESULT[0].TrainAnnouncement) {
             tar = new TrainAnnouncementRow();
 
             tar.locationSignature = obj.RESPONSE.RESULT[0].TrainAnnouncement[i].LocationSignature;
@@ -461,8 +463,8 @@ function createSchedule(obj) {
                 }
                 
                 if (obj.RESPONSE.RESULT[0].TrainAnnouncement[i].Deviation) {
-                    var deviations = [];
-                    for (var j in obj.RESPONSE.RESULT[0].TrainAnnouncement[i].Deviation) {
+                    let deviations = [];
+                    for (let j in obj.RESPONSE.RESULT[0].TrainAnnouncement[i].Deviation) {
                          deviations.push(obj.RESPONSE.RESULT[0].TrainAnnouncement[i].Deviation[j].Description);
                     }
                     tar.arrivalDeviation = deviations;
@@ -502,8 +504,8 @@ function createSchedule(obj) {
                 }
 
                 if (obj.RESPONSE.RESULT[0].TrainAnnouncement[i].Deviation) {
-                    var deviations = [];
-                    for (var j in obj.RESPONSE.RESULT[0].TrainAnnouncement[i].Deviation) {
+                    let deviations = [];
+                    for (let j in obj.RESPONSE.RESULT[0].TrainAnnouncement[i].Deviation) {
                          deviations.push(obj.RESPONSE.RESULT[0].TrainAnnouncement[i].Deviation[j].Description);
                     }
                     tar.departureDeviation = deviations;
@@ -513,15 +515,15 @@ function createSchedule(obj) {
             scheduleBuilder.push(tar);
         }
 
-        var location;
-        var schedule = []
-        for (var j in scheduleBuilder) {
-            var deviations = [];
+        let location;
+        let schedule = []
+        for (let j in scheduleBuilder) {
+            let deviations = [];
             ts = new TrainScheduleRow();
             ts.locationSignature = scheduleBuilder[j].locationSignature;
             ts.advertisedTrainIdent = scheduleBuilder[j].advertisedTrainIdent;
             if (scheduleBuilder[j].activityType == "Ankomst") {
-                var departureData = scheduleBuilder.filter(s => s.locationSignature === scheduleBuilder[j].locationSignature);
+                let departureData = scheduleBuilder.filter(s => s.locationSignature === scheduleBuilder[j].locationSignature);
                 
                 ts.advertisedArrivalTime = scheduleBuilder[j].arrivalAdvertisedTimeAtLocation;
                 ts.arrivalTrackAtLocation = scheduleBuilder[j].arrivalTrackAtLocation;
@@ -572,7 +574,7 @@ function getTrainState(obj) {
 }
 
 function renderStationList(obj) {
-    var list = createStationList(obj);
+    let list = createStationList(obj);
     console.table(list);
     output = "<table class='w3-table w3-bordered w3-striped'>";
     output += "<thead>";
@@ -582,7 +584,7 @@ function renderStationList(obj) {
     output += "</tr>";
     output += "</thead>";
     output += "<tbody>";
-    for (var i in list) {
+    for (let i in list) {
         output += "<tr>";
         output += "<td><a href='station.html' onclick='saveData(\"location\",\"" + list[i].locationSignature + "\");'>" + list[i].locationName + "</a></td>";
         output += "<td><a href='station.html' onclick='saveData(\"location\",\"" + list[i].locationSignature + "\");'>" + list[i].locationSignature + "</a></td>"
@@ -611,7 +613,7 @@ function renderSingleTrainState(obj) {
         trainDataOutput += "<b>Sträcka:</b> " + findStationName(trainState.fromLocation) + " - " + findStationName(trainState.toLocation) + "<br>";
         if (trainState.viaLocations != "") {
             trainDataOutput += "<b>Via:</b> ";
-            for (var j in trainState.viaLocations) {
+            for (let j in trainState.viaLocations) {
                 if (j >= 1) {
                     prefix = ", ";
                 } else {
@@ -627,7 +629,7 @@ function renderSingleTrainState(obj) {
     
         if (trainState.trainInformation.length > 0) {
             trainInfoOutput = "<b>Information om avgången:</b><br>";
-            for (var i in trainState.trainInformation) {
+            for (let i in trainState.trainInformation) {
                 trainInfoOutput += trainState.trainInformation[i] + "<br>";
             }
         
@@ -638,7 +640,7 @@ function renderSingleTrainState(obj) {
 
         if (trainState.deviations != 0) {
             deviationOutput = "<b>Avvikelser:</b><br>";
-            for (var i in trainState.deviations) {
+            for (let i in trainState.deviations) {
                 deviationOutput += trainState.deviations[i] + "<br>";
             }
 
@@ -702,7 +704,7 @@ function renderSingleTrainPosition(obj) {
         }
 
         output = "<b>Nuvarande position:</b><br>";
-        output += activity + " " + findStationName(trainPosition.location) + " kl " + new Date(trainPosition.actualTime).toLocaleTimeString("sv-SE",localeOptions) + ", " + stateOutput;
+        output += activity + " " + findStationName(trainPosition.location) + " kl. " + new Date(trainPosition.actualTime).toLocaleTimeString("sv-SE",localeOptions) + ", " + stateOutput;
         
         document.title = "Tåg " + trainPosition.trainIdent + " " + activity.toLowerCase() + " " + findStationName(trainPosition.location) + stateOutput;
     }
@@ -713,9 +715,9 @@ function renderSingleTrainPosition(obj) {
 
 // TODO: Add check against estimated time for correct calculations
 function renderNextStation(obj) {
-    var ns = createNextStopInformation(obj);
+    let ns = createNextStopInformation(obj);
     if (ns.locationSignature != "") {
-        var timeUntilEvent = getCurrentTrainState(ns.advertisedTime, new Date())
+        let timeUntilEvent = getCurrentTrainState(ns.advertisedTime, new Date())
         if (ns.estimatedTime != "") {
             timeUntilEvent = getCurrentTrainState(ns.estimatedTime, new Date());
         }
@@ -737,18 +739,18 @@ function renderNextStation(obj) {
         output = "<b>Nästa uppehåll:</b><br>";
         if (ns.activity == "Avgang") {
             if (ns.estimatedTime != "") {
-                output += "Tåg " + ns.trainIdent + " beräknas avgå " + findStationName(ns.locationSignature) + " om " + timeUntilEvent + " " + suffix + ", <b>kl. " + new Date(ns.estimatedTime).toLocaleTimeString("sv-SE",localeOptions) + "</b> <em>(ordinarie tid " + new Date(ns.advertisedTime).toLocaleTimeString("sv-SE",localeOptions) + ")</em>";              
+                output += "Tåg " + ns.trainIdent + " beräknas avgå " + findStationName(ns.locationSignature) + ", spår " + ns.trackAtLocation + ", om " + timeUntilEvent + " " + suffix + ", <b>kl. " + new Date(ns.estimatedTime).toLocaleTimeString("sv-SE",localeOptions) + "</b> <em>(ordinarie tid " + new Date(ns.advertisedTime).toLocaleTimeString("sv-SE",localeOptions) + ")</em>";              
             }
             else {
-                output += "Tåg " + ns.trainIdent + " beräknas avgå " + findStationName(ns.locationSignature) + " om " + timeUntilEvent + " " + suffix + ", kl. " + new Date(ns.advertisedTime).toLocaleTimeString("sv-SE",localeOptions);
+                output += "Tåg " + ns.trainIdent + " beräknas avgå " + findStationName(ns.locationSignature) + ", spår " + ns.trackAtLocation + ", om " + timeUntilEvent + " " + suffix + ", kl. " + new Date(ns.advertisedTime).toLocaleTimeString("sv-SE",localeOptions);
             }
         }
         else {
             if (ns.estimatedTime != "") {
-            output += "Tåg " + ns.trainIdent + " beräknas ankomma " + findStationName(ns.locationSignature) + " om " + timeUntilEvent + " " + suffix + ", <b>kl. " + new Date(ns.estimatedTime).toLocaleTimeString("sv-SE", localeOptions) + "</b> <em>(ordinarie tid " + new Date(ns.advertisedTime).toLocaleTimeString("sv-SE",localeOptions) + ")</em>";
+            output += "Tåg " + ns.trainIdent + " beräknas ankomma " + findStationName(ns.locationSignature) + ", spår " + ns.trackAtLocation + ", om " + timeUntilEvent + " " + suffix + ", <b>kl. " + new Date(ns.estimatedTime).toLocaleTimeString("sv-SE", localeOptions) + "</b> <em>(ordinarie tid " + new Date(ns.advertisedTime).toLocaleTimeString("sv-SE",localeOptions) + ")</em>";
             }
             else {
-                output += "Tåg " + ns.trainIdent + " beräknas ankomma " + findStationName(ns.locationSignature) + " om " + timeUntilEvent + " " + suffix + ", kl. " + new Date(ns.advertisedTime).toLocaleTimeString("sv-SE", localeOptions);
+                output += "Tåg " + ns.trainIdent + " beräknas ankomma " + findStationName(ns.locationSignature) + ", spår " + ns.trackAtLocation + ", om " + timeUntilEvent + " " + suffix + ", kl. " + new Date(ns.advertisedTime).toLocaleTimeString("sv-SE", localeOptions);
             }
         }
     
@@ -760,7 +762,7 @@ function renderNextStation(obj) {
 }
 
 function renderTrainSchedule(obj) {
-    var schedule = createSchedule(obj);
+    let schedule = createSchedule(obj);
 
     output = "";
     output += "<table class='w3-table w3-bordered w3-striped'>";
@@ -777,8 +779,8 @@ function renderTrainSchedule(obj) {
     output += "</thead>";
     output += "<tbody>";
     
-    for (var i in schedule) {
-        var trackAtLocation;
+    for (let i in schedule) {
+        let trackAtLocation;
         if (schedule[i].arrivalTrackAtLocation != "" && schedule[i].arrivalTrackAtLocation != "x") {
             trackAtLocation = schedule[i].arrivalTrackAtLocation;
         }
@@ -819,7 +821,7 @@ function renderTrainSchedule(obj) {
         output += "<td>" + schedule[i].diffArrival + "</td>";
         output += "<td>" + schedule[i].diffDeparture + "</td>";
         output += "<td>";
-        for (var j in schedule[i].deviations) {
+        for (let j in schedule[i].deviations) {
          output += schedule[i].deviations[j] + "<br>";
         }
         output += "</td>";
@@ -833,7 +835,7 @@ function renderTrainSchedule(obj) {
 }
 
 function renderArrivalBoard(obj) {
-    var arrivals = createStationBoardRow(obj,"arr");
+    let arrivals = createStationBoardRow(obj,"arr");
 
     output = "";
     output += "<table class='w3-table w3-bordered w3-striped'>";
@@ -847,7 +849,7 @@ function renderArrivalBoard(obj) {
     output += "</tr>";
     output += "</thead>";
     output += "<tbody>";
-    for (var i in arrivals) {
+    for (let i in arrivals) {
         output += "<tr>";
         output += "<td><a href='train.html' onclick='saveData(\"train\",\"" + arrivals[i].trainIdent + "\",\"" + new Date(arrivals[i].scheduledDate).toLocaleDateString("sv-SE") + "\");'>" + arrivals[i].trainIdent + "</a></td>";
         output += "<td><a href='station.html' onclick='saveData(\"location\",\"" + arrivals[i].endPointLocation + "\");'>" + findStationName(arrivals[i].endPointLocation) + "</a></td>";
@@ -862,7 +864,7 @@ function renderArrivalBoard(obj) {
         output += "</td>";
         output += "<td>" + arrivals[i].trackAtLocation + "</td>";
         output += "<td>";
-        for (var j in arrivals[i].trainInformation) {
+        for (let j in arrivals[i].trainInformation) {
             output += "" + arrivals[i].trainInformation[j] + "<br>";
         }
         output += "</td>";
@@ -879,7 +881,7 @@ function renderArrivalBoard(obj) {
 }
 
 function renderDepartureBoard(obj) {
-    var departures = createStationBoardRow(obj,"dep");
+    let departures = createStationBoardRow(obj,"dep");
 
     output = "";
     output += "<table class='w3-table w3-bordered w3-striped'>";
@@ -893,7 +895,7 @@ function renderDepartureBoard(obj) {
     output += "</tr>";
     output += "</thead>";
     output += "<tbody>";
-    for (var i in departures) {
+    for (let i in departures) {
         output += "<tr>";
         output += "<td><a href='train.html' onclick='saveData(\"train\",\"" + departures[i].trainIdent + "\",\"" + new Date(departures[i].scheduledDate).toLocaleDateString("sv-SE") + "\");'>" + departures[i].trainIdent + "</a></td>";
         output += "<td><a href='station.html' onclick='saveData(\"location\",\"" + departures[i].endPointLocation + "\");'>" + findStationName(departures[i].endPointLocation) + "</a></td>";
@@ -909,7 +911,7 @@ function renderDepartureBoard(obj) {
         
         output += "<td>" + departures[i].trackAtLocation + "</td>";
         output += "<td>";
-        for (var j in departures[i].trainInformation) {
+        for (let j in departures[i].trainInformation) {
             output += "" + departures[i].trainInformation[j] + "<br>";
         }
         output += "</td>";
@@ -925,9 +927,9 @@ function renderDepartureBoard(obj) {
 }
 
 function renderStationMessages(obj) {
-    var message = createStationMessageList(obj);
+    let message = createStationMessageList(obj);
     output = "";
-    for (var i in message) {
+    for (let i in message) {
         output += "<p style='text-transform: none'><b>" + message[i].header + "</b><br>";
         if (message[i].startDateTime != "") {
             output += "<em>";

@@ -86,13 +86,10 @@
 <p id="lastUpdated" class="w3-right-align w3-margin w3-tiny" style="display: none; font-size:6pt !important;">Senast uppdaterat: <span id="scheduleUpdated"></span></p>
 
 <script>
-// Set up API key
-var apiKey = "dfc3b8374d774d5e94655bcd32d7c5c3";
-
 // Set up variables for later
-var searchTrainIdent;
-var searchDate = getToday();
-var myTimer;
+let searchTrainIdent;
+let searchDate = getToday();
+let myTimer;
 
 if (sessionStorage.getItem("searchTrainIdent")) {
     searchTrainIdent = sessionStorage.getItem("searchTrainIdent");
@@ -113,7 +110,7 @@ function getTrainSchedule() {
     }
 
     // Set up SingleTrain request
-    var trainAnnouncementData = "<REQUEST>" +
+    let trainAnnouncementData = "<REQUEST>" +
         "<LOGIN authenticationkey='" + apiKey + "' />" +
             "<QUERY objecttype='TrainAnnouncement' schemaversion='1.5' orderby='AdvertisedTimeAtLocation asc, ActivityType asc'>" +
                 "<FILTER>" +
@@ -153,7 +150,7 @@ function getTrainSchedule() {
 }
 
 function getTrainState(searchTrainIdent,searchDate) {
-    var trainStateAnnouncementData = "<REQUEST>" +
+    let trainStateAnnouncementData = "<REQUEST>" +
         "<LOGIN authenticationkey='" + apiKey + "' />" +
             "<QUERY objecttype='TrainAnnouncement' schemaversion='1.5' orderby='ActivityType desc' limit='1'>" +
                 "<FILTER>" +
@@ -182,7 +179,7 @@ function getTrainState(searchTrainIdent,searchDate) {
 }
 
 function getTrainPosition(searchTrainIdent,searchDate) {
-    var trainPositionData = "<REQUEST>" +
+    let trainPositionData = "<REQUEST>" +
         "<LOGIN authenticationkey='" + apiKey + "' />" +
             "<QUERY objecttype='TrainAnnouncement' schemaversion='1.5' orderby='TimeAtLocation desc' limit='1'>" +
                 "<FILTER>" +
@@ -204,7 +201,7 @@ function getTrainPosition(searchTrainIdent,searchDate) {
 
 // TODO: Add check for non marked events with later events available
 function getNextStation(searchTrainIdent, searchDate) {
-    var nextStationData = "<REQUEST>" +
+    let nextStationData = "<REQUEST>" +
             "<LOGIN authenticationkey='" + apiKey + "' />" +
             "<QUERY objecttype='TrainAnnouncement' schemaversion='1.5' orderby='AdvertisedTimeAtLocation asc, ActivityType asc' limit='1'>" +
                     "<FILTER>" +
@@ -226,6 +223,7 @@ function getNextStation(searchTrainIdent, searchDate) {
                     "<INCLUDE>LocationSignature</INCLUDE>" + 
                     "<INCLUDE>TechnicalDateTime</INCLUDE>" +
                     "<INCLUDE>TimeAtLocation</INCLUDE>" +
+                    "<INCLUDE>TrackAtLocation</INCLUDE>" +
             "</QUERY>" +
         "</REQUEST>";
 
