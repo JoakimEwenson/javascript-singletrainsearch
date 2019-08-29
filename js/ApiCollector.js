@@ -56,6 +56,7 @@ class TrainState {
         this.scheduledDate = "";
         this.trainInformation = [];
         this.deviations = [];
+        this.webLink = "";
     }
 }
 
@@ -375,6 +376,8 @@ function createTrainState(obj) {
                 }
             }
             ts.deviations = deviations;
+
+            ts.webLink = obj.RESPONSE.RESULT[0].TrainAnnouncement[0].WebLink;
         }
         catch {
             // TODO: Add proper error handling
@@ -605,7 +608,7 @@ function renderSingleTrainState(obj) {
     }
     else {
         trainDataOutput = "";
-        trainDataOutput += "<b>Tåg:</b> " + trainState.operator + " tåg " + trainState.trainIdent;
+        trainDataOutput += "<b>Tåg:</b> <a href='" + trainState.webLink + "'>" + trainState.operator + "</a> tåg " + trainState.trainIdent;
         if (trainState.technicalTrainIdent && trainState.technicalTrainIdent != trainState.trainIdent) {
             trainDataOutput += " <em>(tekniskt tågnummer: " + trainState.technicalTrainIdent + ")</em>";
         }
