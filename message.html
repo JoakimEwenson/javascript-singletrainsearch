@@ -9,7 +9,7 @@
     <meta http-equiv="Pragma" content="no-cache" />
     <meta http-equiv="Expires" content="0" />
 
-    <title>Stationslista</title>
+    <title>Stationsvy</title>
 
     <link rel="stylesheet" href="css/w3.css">
     <link rel="stylesheet" href="css/w3-colors-flat.css">
@@ -24,6 +24,7 @@
 </head>
 
 <body class="w3-small w3-flat-wet-asphalt">
+
 <!-- Navigation content-->
 <div class="w3-bar w3-xlarge w3-center w3-padding">
     <a href="index.html" title="Startsidan"><i class="fa fa-home"></i></a>
@@ -34,54 +35,59 @@
     <a href="about.html" title="Om tjänsten" class="w3-margin-left"><i class="fas fa-info-circle"></i></a>
 </div>
 <!-- End of navigation content-->
+
 <!-- Error content -->
 <div class="w3-container w3-margin-bottom w3-white w3-padding" id="errorBox" style="display: none; max-width: 1000px; margin-left: auto; margin-right: auto;">
     <h4>INFO</h4>
     <p id="errorMsg"></p>
 </div>
-<!-- Station list in form of a table below -->
-<div class="w3-stretch w3-card w3-white w3-margin-top w3-margin-bottom" style="max-width: 1000px; margin-left: auto; margin-right: auto;">
-    <div id="stationListDiv" class="w3-white w3-responsive" style="display: none;">
-        <h4 class="w3-margin"><i class="fa fa-train"></i>&nbsp;&nbsp;Stationslista</h4>
-        <div id="stationList">
-            <!-- This is where schedule script will output data -->
-        </div>
+<div id="messageBoard" class="w3-row-padding w3-card w3-white w3-margin-top" style="display: block; max-width: 1000px; margin-left: auto; margin-right: auto;">
+    <h4 class="w3-margin"><i class="fa fa-exclamation-triangle"></i>&nbsp;&nbsp;Pågående trafikstörningar</h4>
+    <div class="w3-container" id="stationMessages">
+        <!-- This is where station messages are generated-->
     </div>
 </div>
-<!-- End of station list table -->
 
-<!-- Form content -->
-<form class="w3-container w3-card w3-white w3-margin-top w3-padding" id="searchForm" style="display: none; max-width: 1000px; margin-left: auto; margin-right: auto;" onsubmit="event.preventDefault(); getStationBoards()">
-    <h4><i class="fa fa-list"></i>&nbsp;&nbsp;Sök driftplats</h4>
-    <input id="locationSignature" type="text" class="w3-input" placeholder="Plats" autofocus><br>
-    <div class="w3-center">
-        <input type="submit" value="H&auml;mta uppgifter" class="w3-button w3-flat-wet-asphalt w3-margin-bottom">
-    </div>
-</form>
+<div class="w3-container w3-margin w3-center">
+    <a href="train.html">Tågsökning</a> | <a href="lista.html">Stationslista</a>
+</div>
 
 <script>
+// Set up default values
+let searchLocationSignature;
+let searchDate = getToday();
+let searchLimit = "25";
+let myTimer;
+
+
 // Populate page with return
-function getStationList() {
-    // Set up ArrivalBoard request
-    let stationListData = "<REQUEST>" +
+function getStationMessages() {
+    clearInterval(myTimer);
+
+    let stationMessagesData = "<REQUEST>" +
             "<LOGIN authenticationkey='" + apiKey + "' />" +
-            "<QUERY objecttype='TrainStation' schemaversion='1' orderby='AdvertisedLocationName'>" +
-                "<FILTER>" +
-                    "<EQ name='Advertised' value='true' />" +
-                "</FILTER>" +
-                "<INCLUDE>LocationSignature</INCLUDE>" +
-                "<INCLUDE>AdvertisedLocationName</INCLUDE>" + 
+            "<QUERY objecttype='TrainMessage' schemaversion='1.4' orderby='LastUpdateDateTime desc'>" +
+                "<FILTER />" +
+                "<INCLUDE>EventId</INCLUDE>" +
+                "<INCLUDE>StartDateTime</INCLUDE>" + 
+                "<INCLUDE>LastUpdateDateTime</INCLUDE>" +
+                "<INCLUDE>ExternalDescription</INCLUDE>" +
+                "<INCLUDE>Header</INCLUDE>" +
+                "<INCLUDE>PrognosticatedEndDateTimeTrafficImpact</INCLUDE>" +
+                "<INCLUDE>ReasonCodeText</INCLUDE>" +
             "</QUERY>" +
         "</REQUEST>";
 
-    ApiCollector(stationListData,renderStationList);
+    ApiCollector(stationMessagesData,renderStationMessages);
 
-    document.getElementById("stationListDiv").style.display = "block";
+    myTimer = setInterval(function() {
+        ApiCollector(stationMessagesData,renderStationMessages);
+    }, 60000);
 
     return true;
 }
 
-getStationList();
+getStationMessages();
 </script>
 </body>
 </html>
