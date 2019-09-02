@@ -9,7 +9,7 @@
     <meta http-equiv="Pragma" content="no-cache" />
     <meta http-equiv="Expires" content="0" />
 
-    <title>Stationsvy</title>
+    <title>Pågående trafikstörningar</title>
 
     <link rel="stylesheet" href="css/w3.css">
     <link rel="stylesheet" href="css/w3-colors-flat.css">
@@ -54,9 +54,6 @@
 
 <script>
 // Set up default values
-let searchLocationSignature;
-let searchDate = getToday();
-let searchLimit = "25";
 let myTimer;
 
 
@@ -80,9 +77,10 @@ function getStationMessages() {
 
     ApiCollector(stationMessagesData,renderStationMessages);
 
+    // Set refresh interval for 5 min, 300 000 ms
     myTimer = setInterval(function() {
         ApiCollector(stationMessagesData,renderStationMessages);
-    }, 60000);
+    }, 300000);
 
     return true;
 }
