@@ -90,6 +90,7 @@
 // Set up variables for later
 let searchTrainIdent;
 let searchDate = getToday();
+let endOfLine = false;
 let myTimer;
 
 if (sessionStorage.getItem("searchTrainIdent")) {
@@ -115,7 +116,7 @@ function getTrainSchedule() {
         "<LOGIN authenticationkey='" + apiKey + "' />" +
             "<QUERY objecttype='TrainAnnouncement' schemaversion='1.5' orderby='AdvertisedTimeAtLocation asc, ActivityType asc'>" +
                 "<FILTER>" +
-                    "<EQ name='Advertised' value='true' />" +
+                    //"<EQ name='Advertised' value='true' />" +
                     "<EQ name='AdvertisedTrainIdent' value='" + searchTrainIdent + "' />" +
                     "<EQ name='ScheduledDepartureDateTime' value='" + searchDate + "' />" +
                 "</FILTER>" +
@@ -137,12 +138,15 @@ function getTrainSchedule() {
     getTrainPosition(searchTrainIdent, searchDate);
     getNextStation(searchTrainIdent, searchDate);
 
-    myTimer = setInterval(function() {
+    // Check if train has reached end of line
+    if (!endOfLine) {
+        myTimer = setInterval(function() {
         ApiCollector(trainAnnouncementData, renderTrainSchedule)
         getTrainState(searchTrainIdent,searchDate);
         getTrainPosition(searchTrainIdent, searchDate);
         getNextStation(searchTrainIdent, searchDate);
     }, 30000);
+    }
 
     document.getElementById("schedule").style.display = "block";
     // Set session storage items
@@ -195,6 +199,7 @@ function getTrainPosition(searchTrainIdent,searchDate) {
                 "<INCLUDE>AdvertisedTimeAtLocation</INCLUDE>" + 
                 "<INCLUDE>TechnicalDateTime</INCLUDE>" + 
                 "<INCLUDE>TimeAtLocation</INCLUDE>" + 
+                "<INCLUDE>ToLocation.LocationName</INCLUDE>" +
             "</QUERY>" +
         "</REQUEST>";
 

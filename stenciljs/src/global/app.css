@@ -1,0 +1,37 @@
+/*
+  Global App CSS
+  ----------------------
+  Use this file for styles that should be applied to all components.
+  For example, "font-family" within the "body" selector is a CSS property
+  most apps will want applied to all components.
+
+  Any global CSS variables should also be applied here.
+*/
+
+@import url("https://www.w3schools.com/w3css/4/w3.css");
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
+  margin: 0px;
+  padding: 0px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: bolder;
+  text-transform: uppercase;
+}
+
+input[type=submit] {
+  font-weight: bold;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+}
+
+table {
+  width: 100%;
+}
+
+.startlink {
+  text-transform: uppercase;
+  line-height: 500%;
+}

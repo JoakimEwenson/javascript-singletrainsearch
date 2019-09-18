@@ -76,6 +76,7 @@ class TrainPosition {
     constructor() {
         this.trainIdent = "";
         this.location = "";
+        this.toLocation = "";
         this.activityType = "";
         this.advertisedTime = "";
         this.technicalTime = "";
@@ -392,6 +393,7 @@ function createTrainPosition(obj) {
         if (obj.RESPONSE.RESULT[0].TrainAnnouncement[0]) {
             tp.trainIdent = obj.RESPONSE.RESULT[0].TrainAnnouncement[0].AdvertisedTrainIdent;
             tp.location = obj.RESPONSE.RESULT[0].TrainAnnouncement[0].LocationSignature;
+            tp.toLocation = obj.RESPONSE.RESULT[0].TrainAnnouncement[0].ToLocation ? obj.RESPONSE.RESULT[0].TrainAnnouncement[0].ToLocation[0].LocationName : "" ;
             tp.activityType = obj.RESPONSE.RESULT[0].TrainAnnouncement[0].ActivityType;
             tp.advertisedTime = obj.RESPONSE.RESULT[0].TrainAnnouncement[0].AdvertisedTimeAtLocation;
             if (obj.RESPONSE.RESULT[0].TrainAnnouncement[0].TechnicalDateTime) {
@@ -710,6 +712,11 @@ function renderSingleTrainPosition(obj) {
         output += activity + " " + findStationName(trainPosition.location) + " kl. " + new Date(trainPosition.actualTime).toLocaleTimeString("sv-SE",localeOptions) + ", " + stateOutput;
         
         document.title = "Tåg " + trainPosition.trainIdent + " " + activity.toLowerCase() + " " + findStationName(trainPosition.location) + stateOutput;
+
+        // Check if current position is train destination and if so, remove refresh function
+        if (trainPosition.location == trainPosition.toLocation) {
+            clearInterval(myTimer);
+        }
     }
 
     document.getElementById("currentPosition").innerHTML = output;

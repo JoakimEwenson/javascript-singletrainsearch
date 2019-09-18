@@ -1,0 +1,10 @@
+.train-info {
+    padding: 10px;
+  }
+  
+.last-updated {
+  font-size: 0.6em;
+  font-style: italic;
+  text-align: right;
+  padding: 10px;
+}
