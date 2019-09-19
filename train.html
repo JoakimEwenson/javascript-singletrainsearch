@@ -23,9 +23,9 @@
     <script src="https://kit.fontawesome.com/1ae2629c4c.js"></script>
 </head>
 
-<body class="w3-small w3-flat-wet-asphalt">
+<body>
 <!-- Navigation content-->
-<div class="w3-bar w3-xlarge w3-center w3-padding">
+<div class="w3-bar w3-xlarge w3-center w3-padding w3-flat-wet-asphalt">
     <a href="index.html" title="Startsidan"><i class="fa fa-home"></i></a>
     <a href="station.html" title="Stationssökning" class="w3-margin-left"><i class="fas fa-map-signs"></i></a>
     <a href="lista.html" title="Stationslista" class="w3-margin-left"><i class="fa fa-list"></i></a>
@@ -35,12 +35,12 @@
 </div>
 <!-- End of navigation content-->
 <!-- Error content -->
-<div class="w3-container w3-margin-bottom w3-white w3-padding" id="errorBox" style="display: none; max-width: 1000px; margin-left: auto; margin-right: auto;">
+<div class="w3-container w3-margin-bottom w3-white w3-padding" id="errorBox" style="display: none; max-width: 1500px; margin-left: auto; margin-right: auto;">
     <h4>INFO</h4>
     <p id="errorMsg"></p>
 </div>
 <!-- End of error content -->
-<div class="w3-card w3-margin-top w3-white w3-responsive" id="trainState" style="display: none; max-width: 1000px; margin-left: auto; margin-right: auto;">
+<div class="w3-margin-top w3-white w3-responsive" id="trainState" style="display: none; max-width: 1500px; margin-left: auto; margin-right: auto;">
         <h4 class="w3-margin"><i class="fa fa-train"></i>&nbsp;&nbsp;Status <span id="trainIdentHeader"></span></h4>
         <div class="w3-container" id="stateContent">
             <p id="trainData">
@@ -61,7 +61,7 @@
         </div>
     </div>
 <!-- Schedule in form of a table below -->
-<div class="w3-card w3-margin-top w3-white w3-responsive" id="schedule" style="display: none; max-width: 1000px; margin-left: auto; margin-right: auto;">
+<div class="w3-margin-top w3-white w3-responsive" id="schedule" style="display: none; max-width: 1500px; margin-left: auto; margin-right: auto;">
     <h4 class="w3-margin"><i class="fa fa-list"></i>&nbsp;&nbsp;Tidtabell <span id="trainIdentResult"></span></h4>
     <span class="w3-margin-right w3-tiny w3-right" style="font-size: 6pt !important" id="scheduleTimestamp"></span>
     <div id="trainSchedule">
@@ -71,20 +71,14 @@
 <!-- End of schedule table -->
 
 <!-- Form content -->
-<form class="w3-container w3-card w3-margin-top w3-white w3-padding" id="searchForm" style="display: block; max-width: 1000px; margin-left: auto; margin-right: auto;" onsubmit="event.preventDefault(); getTrainSchedule()">
+<form class="w3-container w3-margin-top w3-white w3-padding" id="searchForm" style="display: block; max-width: 1500px; margin-left: auto; margin-right: auto;" onsubmit="event.preventDefault(); getTrainSchedule()">
     <h4><i class="fa fa-train"></i>&nbsp;&nbsp;Sök enskilt tåg</h4>
-    <input id="trainIdent" type="number" class="w3-input" placeholder="Tågnummer" autofocus><br>
+    <input id="trainIdent" type="number" class="w3-input" placeholder="Tågnummer"><br>
     <input id="searchDate" type="date" class="w3-input" placeholder="Datum (YYYY-MM-DD)"><br>
     <div class="w3-center">
         <input type="submit" value="H&auml;mta uppgifter" class="w3-button w3-flat-wet-asphalt w3-margin-bottom" id="searchTrain">
     </div>
 </form>
-
-<div class="w3-container w3-margin w3-center">
-    <a href="station.html">Stationssökning</a>
-</div>
-
-<p id="lastUpdated" class="w3-right-align w3-margin w3-tiny" style="display: none; font-size:6pt !important;">Senast uppdaterat: <span id="scheduleUpdated"></span></p>
 
 <script>
 // Set up variables for later

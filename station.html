@@ -23,10 +23,10 @@
     <script src="https://kit.fontawesome.com/1ae2629c4c.js"></script>
 </head>
 
-<body class="w3-small w3-flat-wet-asphalt">
+<body>
 
 <!-- Navigation content-->
-<div class="w3-bar w3-xlarge w3-center w3-padding">
+<div class="w3-bar w3-xlarge w3-center w3-padding w3-flat-wet-asphalt">
     <a href="index.html" title="Startsidan"><i class="fa fa-home"></i></a>
     <a href="station.html" title="Stationssökning" class="w3-margin-left"><i class="fas fa-map-signs"></i></a>
     <a href="lista.html" title="Stationslista" class="w3-margin-left"><i class="fa fa-list"></i></a>
@@ -42,7 +42,7 @@
     <p id="errorMsg"></p>
 </div>
 <!-- Schedule in form of a table below -->
-<div class="w3-row-padding w3-section w3-stretch w3-card w3-white w3-margin-top" style="max-width: 1000px; margin-left: auto; margin-right: auto;">
+<div class="w3-row-padding w3-section w3-stretch w3-white w3-margin-top" style="max-width: 1500px; margin-left: auto; margin-right: auto;">
     <div id="departureBoardDiv" class="w3-half w3-white w3-responsive" style="display: none;">
         <h4 class="w3-margin"><i class="fa fa-list"></i>&nbsp;&nbsp;Avgångar <span id="departureLocation"></span></h4>
         <span class="w3-margin w3-tiny w3-right" style="font-size: 6pt !important" id="departureTimestamp"></span>
@@ -58,7 +58,7 @@
         </div>
     </div>
 </div>
-<div id="messageBoard" class="w3-row-padding w3-card w3-white w3-margin-top" style="display: none; max-width: 1000px; margin-left: auto; margin-right: auto;">
+<div id="messageBoard" class="w3-row-padding w3-white w3-margin-top" style="display: none; max-width: 1500px; margin-left: auto; margin-right: auto;">
     <h4 class="w3-margin"><i class="fa fa-exclamation-triangle"></i>&nbsp;&nbsp;Trafikinformation</h4>
     <div class="w3-container" id="stationMessages">
         <!-- This is where station messages are generated-->
@@ -68,17 +68,13 @@
 <!-- End of schedule table -->
 
 <!-- Form content -->
-<form class="w3-container w3-card w3-white w3-margin-top w3-padding" id="searchForm" style="display: block; max-width: 1000px; margin-left: auto; margin-right: auto;" onsubmit="event.preventDefault(); getStationBoards()">
+<form class="w3-container w3-white w3-margin-top w3-padding" id="searchForm" style="display: block; max-width: 1000px; margin-left: auto; margin-right: auto;" onsubmit="event.preventDefault(); getStationBoards()">
     <h4><i class="fas fa-map-signs"></i>&nbsp;&nbsp;Sök driftplats</h4>
-    <input id="locationSignature" type="text" class="w3-input" placeholder="Plats" autofocus><br>
+    <input id="locationSignature" type="text" class="w3-input" placeholder="Plats"><br>
     <div class="w3-center">
         <input type="submit" value="H&auml;mta uppgifter" class="w3-button w3-flat-wet-asphalt w3-margin-bottom">
     </div>
 </form>
-
-<div class="w3-container w3-margin w3-center">
-    <a href="train.html">Tågsökning</a> | <a href="lista.html">Stationslista</a>
-</div>
 
 <script>
 // Set up default values

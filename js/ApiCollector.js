@@ -844,6 +844,66 @@ function renderTrainSchedule(obj) {
     document.getElementById("trainIdentResult").textContent = obj.RESPONSE.RESULT[0].TrainAnnouncement[0].AdvertisedTrainIdent;
 }
 
+function renderTrainScheduleForPrint(obj) {
+    let schedule = createSchedule(obj);
+    console.log(schedule);
+
+    output = "";
+    output += "<table class='w3-table w3-bordered w3-striped'>";
+    output += "<thead>";
+    output += "<tr>";
+    output += "<th>Plats</th>";
+    output += "<th>Planerat spår</th>";
+    output += "<th>Ankomsttid</th>";
+    output += "<th>Avg&aring;ngstid</th>";
+    output += "<th>Info</th>";
+    output += "</tr>";
+    output += "</thead>";
+    output += "<tbody>";
+    
+    for (let i in schedule) {
+        let trackAtLocation;
+        if (schedule[i].arrivalTrackAtLocation != "" && schedule[i].arrivalTrackAtLocation != "x") {
+            trackAtLocation = schedule[i].arrivalTrackAtLocation;
+        }
+        else if (schedule[i].departureTrackAtLocation != "" && schedule[i].departureTrackAtLocation != "x") {
+            trackAtLocation = schedule[i].departureTrackAtLocation;
+        }
+        else if (schedule[i].arrivalTrackAtLocation != schedule[i].departureTrackAtLocation && schedule[i].arrivalTrackAtLocation != "" && schedule[i].departureTrackAtLocation != "") {
+            trackAtLocation = "Ank: " + schedule[i].arrivalTrackAtLocation + "<br>Avg: " + schedule[i].departureTrackAtLocation;
+        }
+        else {
+            trackAtLocation = "";
+        }
+        output += "<tr>";
+        output += "<td><a href='station.html' onclick='saveData(\"location\",\"" + schedule[i].locationSignature + "\");'>" + findStationName(schedule[i].locationSignature) + "</a></td>";
+        output += "<td>" + trackAtLocation + "</td>";
+        output += "<td>";
+        output += schedule[i].advertisedArrivalTime;
+        if (schedule[i].arrivalTechnicalTimeAtLocation) {
+            output += "<br><em>" + schedule[i].arrivalTechnicalTimeAtLocation + "</em>";
+        } 
+        output += "</td>";
+        output += "<td>";
+        output += schedule[i].advertisedDepartureTime;
+        if (schedule[i].departureTechnicalTimeAtLocation) {
+            output += "<br><em>" + schedule[i].departureTechnicalTimeAtLocation + "</em>";
+        }
+        output += "</td>";
+        output += "<td>";
+        for (let j in schedule[i].deviations) {
+         output += schedule[i].deviations[j] + "<br>";
+        }
+        output += "</td>";
+        output += "</tr>";
+    }
+    output += "</table>";
+    output += "<p class='w3-tiny w3-right w3-margin' style='font-size: 6pt !important'><em>Senast uppdaterat: " + new Date().toLocaleTimeString("sv-SE"); + "</em></p>";
+
+    document.getElementById("trainSchedule").innerHTML = output;
+    document.getElementById("trainIdentResult").textContent = obj.RESPONSE.RESULT[0].TrainAnnouncement[0].AdvertisedTrainIdent;
+}
+
 function renderArrivalBoard(obj) {
     let arrivals = createStationBoardRow(obj,"arr");
 
