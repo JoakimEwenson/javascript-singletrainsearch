@@ -194,14 +194,10 @@ function ApiCollector(data, cbFunction) {
             cbFunction(JSON.parse(this.responseText));
             document.getElementById("errorBox").style.display = "none";
         }
-        else {
-            // Add proper error handling
-            /*
-            if (document.readyState === "complete") {
-                document.getElementById("errorMsg").innerHTML = "Fel vid hämtning av data.";
-                document.getElementById("errorBox").style.display = "block";
-            }
-            */
+        else if (this.readyState == 4 && this.status == 404) {
+            console.log("Error: " + this.status);
+            document.getElementById("errorMsg").innerHTML = this.status;
+            document.getElementById("errorBox").style.display = "block";
         }
     };
 
