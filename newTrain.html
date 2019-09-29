@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+
+<html lang="SV-se">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+
+    <title>Tåginformation</title>
+
+    <link rel="stylesheet" href="css/w3.css">
+    <link rel="stylesheet" href="css/w3-colors-flat.css">
+    <link rel="stylesheet" href="css/extra.css">
+
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+
+    <script src="js/ApiCollector.js"></script>
+    <script src="js/TrainStation.js"></script>
+    <script src="https://kit.fontawesome.com/1ae2629c4c.js"></script>
+</head>
+
+<body>
+<!-- Info about train and departure time-->
+<div class="w3-flat-wet-asphalt w3-padding">
+<h1 class="w3-wide">18:10</h1>
+<h2>Karlstad</h2>
+<h6>Hallsberg, Degerfors, Kristinehamn</h6>
+<p class="w3-small">Bistro, Vagnsordning 1, 2, 3, 4<br></p>
+</div>
+<!-- Schedule -->
+<div class="w3-white">
+    <table class="w3-table">
+        <thead>
+            <tr>
+                <th>&nbsp;</th>
+                <th>Spår</th>
+                <th>Ank.</th>
+                <th>Avg.</th>
+                <th>Info</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><a href="station.html" onclick="saveData('location','Cst');">Stockholm Central</a></td>
+                <td>12a</td>
+                <td></td>
+                <td>18:10</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><a href="station.html" onclick="saveData('location','Söö');">Södertälje Syd</a></td>
+                <td>7</td>
+                <td></td>
+                <td>18:29</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><a href="station.html" onclick="saveData('location','K');">Katrineholm C</a></td>
+                <td>3</td>
+                <td>19:10</td>
+                <td>19:11</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><a href="station.html" onclick="saveData('location','Hpbg');">Hallsberg</a></td>
+                <td>2</td>
+                <td>19:39</td>
+                <td>19:40</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><a href="station.html" onclick="saveData('location','Dg');">Degerfors</a></td>
+                <td>4</td>
+                <td>20:11</td>
+                <td>20:11</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><a href="station.html" onclick="saveData('location','Khn');">Kristinehamn</a></td>
+                <td>1</td>
+                <td>20:32</td>
+                <td>20:32</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><a href="station.html" onclick="saveData('location','Ks');">Karlstad C</a></td>
+                <td>20</td>
+                <td>20:56</td>
+                <td></td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<!-- Time to departure -->
+<div class="w3-white w3-right w3-padding">
+    <span class="w3-right">Avgår om:</span><br>
+    <span id="nextPosition" class="w3-right w3-xxlarge">283 min</span>
+</div>
+
+</body>
+</html>
