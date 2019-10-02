@@ -778,8 +778,6 @@ function renderTrainSchedule(obj) {
     output += "<th>Spår</th>";
     output += "<th>Ank.</th>";
     output += "<th>Avg.</th>";
-    output += "<th>Diff ank.</th>";
-    output += "<th>Diff avg.</th>";
     output += "<th>Info</th>";
     output += "</tr>";
     output += "</thead>";
@@ -803,29 +801,27 @@ function renderTrainSchedule(obj) {
         output += "<td><a href='station.html' onclick='saveData(\"location\",\"" + schedule[i].locationSignature + "\");'>" + findStationName(schedule[i].locationSignature) + "</a></td>";
         output += "<td>" + trackAtLocation + "</td>";
         output += "<td>";
-        output += schedule[i].advertisedArrivalTime + "<br>";
+        output += schedule[i].advertisedArrivalTime + "";
         if (schedule[i].estimatedArrivalTime || schedule[i].actualArrivalTime) {
             if (schedule[i].actualArrivalTime) {
-                output += "<em>" + schedule[i].actualArrivalTime + "</em>";
+                output += "<br><em>" + schedule[i].actualArrivalTime + " (" + schedule[i].diffArrival + ")</em>";
             }
             else {
-                output += "<b>Ny tid: " + schedule[i].estimatedArrivalTime + "</b>";
+                output += "<br><b>Ny tid: " + schedule[i].estimatedArrivalTime + "</b>";
             }
         } 
         output += "</td>";
         output += "<td>";
-        output += schedule[i].advertisedDepartureTime + "<br>";
+        output += schedule[i].advertisedDepartureTime + "";
         if (schedule[i].estimatedDepartureTime || schedule[i].actualDepartureTime) {
             if (schedule[i].actualDepartureTime) {
-                output += "<em>" + schedule[i].actualDepartureTime + "</em>";
+                output += "<br><em>" + schedule[i].actualDepartureTime + " (" + schedule[i].diffDeparture + ")</em>";
             } 
             else {
-                output += "<b>Ny tid: " + schedule[i].estimatedDepartureTime + "</b>";
+                output += "<br><b>Ny tid: " + schedule[i].estimatedDepartureTime + "</b>";
             }
         }
         output += "</td>";
-        output += "<td>" + schedule[i].diffArrival + "</td>";
-        output += "<td>" + schedule[i].diffDeparture + "</td>";
         output += "<td>";
         for (let j in schedule[i].deviations) {
          output += schedule[i].deviations[j] + "<br>";
