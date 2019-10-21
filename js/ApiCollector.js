@@ -771,7 +771,7 @@ function renderTrainSchedule(obj) {
     let schedule = createSchedule(obj);
 
     output = "";
-    output += "<table class='w3-table w3-bordered w3-striped'>";
+    output += "<table class='w3-table w3-bordered'>";
     output += "<thead>";
     output += "<tr>";
     output += "<th>Plats</th>";
