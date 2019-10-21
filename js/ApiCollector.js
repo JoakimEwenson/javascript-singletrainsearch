@@ -577,7 +577,7 @@ function getTrainState(obj) {
 function renderStationList(obj) {
     let list = createStationList(obj);
     console.table(list);
-    output = "<table class='w3-table w3-bordered w3-striped'>";
+    output = "<table class='w3-table w3-bordered'>";
     output += "<thead>";
     output += "<tr>";
     output += "<th>Plats</th>";
@@ -901,7 +901,7 @@ function renderArrivalBoard(obj) {
     let arrivals = createStationBoardRow(obj,"arr");
 
     output = "";
-    output += "<table class='w3-table w3-bordered w3-striped'>";
+    output += "<table class='w3-table w3-bordered'>";
     output += "<thead>";
     output += "<tr class='w3-center'>";
     output += "<th>Tåg</th>";
@@ -947,7 +947,7 @@ function renderDepartureBoard(obj) {
     let departures = createStationBoardRow(obj,"dep");
 
     output = "";
-    output += "<table class='w3-table w3-bordered w3-striped'>";
+    output += "<table class='w3-table w3-bordered'>";
     output += "<thead>";
     output += "<tr class='w3-center'>"
     output += "<th>Tåg</th>";
@@ -1007,6 +1007,7 @@ function renderStationMessages(obj) {
             output += "</em></p>";
         }
         output += "<p>" + message[i].description + "</p>";
+        output += "<hr>";
     }
 
     if (message.length > 0) {
