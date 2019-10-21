@@ -660,6 +660,7 @@ function renderSingleTrainPosition(obj) {
     if (trainPosition.trainIdent == "") {
         output = "";
         //console.log("Render single train position, fail!");
+        document.title = "Tågläge";
     }
     else {
         if (trainPosition.technicalTime != "") {
