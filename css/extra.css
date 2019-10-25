@@ -4,6 +4,7 @@
 
 .table a {
     color: inherit;
+    text-decoration: underline;
 }
 
 .form-group label {
