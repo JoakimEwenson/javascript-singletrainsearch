@@ -1,72 +1,155 @@
 <!DOCTYPE html>
-
 <html lang="SV-se">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 
-    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
-    <meta http-equiv="Pragma" content="no-cache" />
-    <meta http-equiv="Expires" content="0" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
 
-    <title>Om tj&auml;nsten</title>
+  <title>Trafikinformation - om sidan</title>
 
-    <link rel="stylesheet" href="css/w3.css">
-    <link rel="stylesheet" href="css/w3-colors-flat.css">
-    <link rel="stylesheet" href="css/extra.css">
+  <!-- Favicon details -->
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
 
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
-    
-    <script src="https://kit.fontawesome.com/1ae2629c4c.js"></script>
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/extra.css">
+
+  <!-- JavaScript files -->
+  <script src="js/ApiCollector.js"></script>
+  <script src="js/TrainStation.js"></script>
+  <script src="https://kit.fontawesome.com/1ae2629c4c.js"></script>
+
 </head>
 
 <body>
 
-<!-- Navigation content-->
-<div class="w3-bar w3-xlarge w3-center w3-padding w3-flat-wet-asphalt">
-    <a href="index.html" title="Startsidan"><i class="fa fa-home"></i></a>
-    <a href="station.html" title="Stationss&ouml;kning" class="w3-margin-left"><i class="fas fa-map-signs"></i></a>
-    <a href="lista.html" title="Stationslista" class="w3-margin-left"><i class="fa fa-list"></i></a>
-    <a href="message.html" title="P&aring;g&aring;ende trafikst&ouml;rningar" class="w3-margin-left"><i class="fa fa-exclamation-triangle"></i></a>
-    <a href="train.html" title="T&aring;gs&ouml;kning" class="w3-margin-left"><i class="fa fa-train"></i></a>
-    <a href="about.html" title="Om tj&auml;nsten" class="w3-margin-left"><i class="fas fa-info-circle"></i></a>
-</div>
-<!-- End of navigation content-->
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
+    <div class="container">
+      <a class="navbar-brand" href="#" id="trainIdentHeader">Om sidan</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Hem</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="station.html">Stationssökning</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="message.html">Störningar</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="train.html">Tågsökning</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="about.html">Om sidan
+                <span class="sr-only">(nuvarande)</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
 
-<div class="w3-container w3-white w3-margin-top" style="max-width: 1500px; margin-left: auto; margin-right: auto;">
-    <h4>Allm&auml;n information</h4>
-    <p>
-        Detta &auml;r ett hobbyprojekt signerat <a href="https://www.ewenson.se/">Joakim Ewenson</a> och b&ouml;r inte ses som n&aring;got annat &auml;n just det, ett hobbyprojekt.
-    </p>
-    <p>
-        Den data som detta hobbyprojekt genererar kommer fr&aring;n Trafikverkets API f&ouml;r &ouml;ppna data och det &auml;r &auml;ven de som f&aring;r st&aring; f&ouml;r garantierna kring dess giltighet. 
-        Alla former av nya tider som presenteras &auml;r att ses som prelimin&auml;ra och kan komma att &auml;ndras med kort varsel, det l&auml;mnas inga garantier f&ouml;r eventuella &auml;ndringar som resulterar i missade t&aring;g och annat el&auml;nde.
-    </p>
-    <p>
-        Jag har gjort mitt b&auml;sta f&ouml;r att g&ouml;ra en n&aring;gorlunda bra presentation utav den information som finns att tillg&aring; baserat p&aring; min erfarenhet fr&aring;n j&auml;rnv&auml;gen som sektor. 
-        Vissa saker kan vara fullt naturliga f&ouml;r mig och helt orimliga f&ouml;r andra, just d&auml;rf&ouml;r uppskattar jag all form av feedback som kan komma in!
-    </p>
-    <h4>Trafikverkets &ouml;ppna data</h4>
-    <p>
-        Informationen som presenteras i den h&auml;r tj&auml;nsten kommer som sagt fr&aring;n Trafikverkets &ouml;ppna API med de brister och tillkortakommanden som den tj&auml;nsten har. 
-        Jag har, efter b&auml;sta f&ouml;rm&aring;ga, f&ouml;rs&ouml;kt att presentera det hela p&aring; ett enligt mig bra s&auml;tt.
-    </p>
-    <p>
-        Mer information om Trafikverkets &ouml;ppna API och den data som finns tillg&auml;ngligt i det finns p&aring; <a href="https://api.trafikinfo.trafikverket.se/" title="L&auml;s mer om Trafikverkets &ouml;ppna API">https://api.trafikinfo.trafikverket.se/</a>.
-    </p>
-    <h4>Tekniken bakom tj&auml;nsten</h4>
-    <p>
-        Denna tj&auml;nst &auml;r baserad p&aring; HTML, CSS (<a href="https://www.w3schools.com/w3css/" title="Information om W3.CSS">W3.CSS</a>) och JavaScript utan n&aring;gra ramverk inblandade. 
-        Sidan ritas upp i HTML och sedan p&aring;verkas DOMen via asynkron JavaScript som uppdaterar inneh&aring;llet p&aring; ett f&ouml;rbest&auml;mt intervall.
-        I framtiden hoppas jag kunna bygga om projektet s&aring; att det ist&auml;llet f&ouml;rlitar sig p&aring; fr&aring;n Trafikverket pushad data ist&auml;llet, f&ouml;r att spara p&aring; allas bandbredd och datorer.
-    </p>
-    <p>
-        <b><em>Observera att tj&auml;nsten sparar n&aring;gra f&aring; sp&aring;r av data i din webbl&auml;sarsession. Det som sparas &auml;r s&ouml;kt t&aring;gnummer och/eller stationssignatur samt s&ouml;kt datum. 
-            Detta f&ouml;r att kunna &aring;terh&auml;mta data vid omladdning utav sidan. Mer information &auml;n s&aring; &auml;r inte av intresse och inget sparas efter att du st&auml;ngt webbl&auml;sarf&ouml;nstret/webbl&auml;sarfliken.</em></b>
-    </p>
-    <h4>Slutligen</h4>
-    <p>
-        Intresserad av att hj&auml;lpa till? Intresserad av k&auml;llkoden? Tips? F&ouml;rslag? Buggar? Samtliga punkter rapporteras med f&ouml;rdel via kontaktformul&auml;ret p&aring; <a href="https://www.ewenson.se" title="ewenson.se">ewenson.se</a> eller via annan l&auml;mplig kanal som tilltalar dig b&auml;ttre.
-    </p>
-</div>
+  <!-- Page Content -->
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+
+        <!-- About information -->
+        <div id="aboutContent" class="mt-3">
+          <h4>Allm&auml;n information</h4>
+          <p class="font-weight-light">
+              Detta &auml;r ett hobbyprojekt signerat <a href="https://www.ewenson.se/">Joakim Ewenson</a> och b&ouml;r inte ses som n&aring;got annat &auml;n just det, ett hobbyprojekt.
+          </p>
+          <p class="font-weight-light">
+              Den data som detta hobbyprojekt genererar kommer fr&aring;n Trafikverkets API f&ouml;r &ouml;ppna data och det &auml;r &auml;ven de som f&aring;r st&aring; f&ouml;r garantierna kring dess giltighet. 
+              Alla former av nya tider som presenteras &auml;r att ses som prelimin&auml;ra och kan komma att &auml;ndras med kort varsel, det l&auml;mnas inga garantier f&ouml;r eventuella &auml;ndringar som resulterar i missade t&aring;g och annat el&auml;nde.
+          </p>
+          <p class="font-weight-light">
+              Jag har gjort mitt b&auml;sta f&ouml;r att g&ouml;ra en n&aring;gorlunda bra presentation utav den information som finns att tillg&aring; baserat p&aring; min erfarenhet fr&aring;n j&auml;rnv&auml;gen som sektor. 
+              Vissa saker kan vara fullt naturliga f&ouml;r mig och helt orimliga f&ouml;r andra, just d&auml;rf&ouml;r uppskattar jag all form av feedback som kan komma in!
+          </p>
+          <h4>Trafikverkets &ouml;ppna data</h4>
+          <p class="font-weight-light">
+              Informationen som presenteras i den h&auml;r tj&auml;nsten kommer som sagt fr&aring;n Trafikverkets &ouml;ppna API med de brister och tillkortakommanden som den tj&auml;nsten har. 
+              Jag har, efter b&auml;sta f&ouml;rm&aring;ga, f&ouml;rs&ouml;kt att presentera det hela p&aring; ett enligt mig bra s&auml;tt.
+          </p>
+          <p class="font-weight-light">
+              Mer information om Trafikverkets &ouml;ppna API och den data som finns tillg&auml;ngligt i det finns p&aring; <a href="https://api.trafikinfo.trafikverket.se/" title="L&auml;s mer om Trafikverkets &ouml;ppna API">https://api.trafikinfo.trafikverket.se/</a>.
+          </p>
+          <h4>Tekniken bakom tj&auml;nsten</h4>
+          <p class="font-weight-light">
+              Denna tj&auml;nst &auml;r baserad p&aring; HTML, CSS (<a href="https://getbootstrap.com" title="Information om Bootstrap">Bootstrap</a>) och JavaScript utan n&aring;gra ramverk inblandade. 
+              Sidan ritas upp i HTML och sedan p&aring;verkas DOMen via asynkron JavaScript som uppdaterar inneh&aring;llet p&aring; ett f&ouml;rbest&auml;mt intervall.
+              I framtiden hoppas jag kunna bygga om projektet s&aring; att det ist&auml;llet f&ouml;rlitar sig p&aring; fr&aring;n Trafikverket pushad data ist&auml;llet, f&ouml;r att spara p&aring; allas bandbredd och datorer.
+          </p>
+          <p class="font-weight-light">
+              <b><em>Observera att tj&auml;nsten sparar n&aring;gra f&aring; sp&aring;r av data i din webbl&auml;sarsession. Det som sparas &auml;r s&ouml;kt t&aring;gnummer och/eller stationssignatur samt s&ouml;kt datum. 
+                  Detta f&ouml;r att kunna &aring;terh&auml;mta data vid omladdning utav sidan. Mer information &auml;n s&aring; &auml;r inte av intresse och inget sparas efter att du st&auml;ngt webbl&auml;sarf&ouml;nstret/webbl&auml;sarfliken.</em></b>
+          </p>
+          <h4>Slutligen</h4>
+          <p class="font-weight-light">
+              Intresserad av att hj&auml;lpa till? Intresserad av k&auml;llkoden? Tips? F&ouml;rslag? Buggar? Samtliga punkter rapporteras med f&ouml;rdel via kontaktformul&auml;ret p&aring; <a href="https://www.ewenson.se" title="ewenson.se">ewenson.se</a> eller via annan l&auml;mplig kanal som tilltalar dig b&auml;ttre.
+          </p>
+        </div>
+        <!-- End of about information -->
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.slim.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+<!-- Train Message scripts-->
+
+<script>
+// Set up default values
+let myTimer;
+
+
+// Populate page with return
+function getStationMessages() {
+    clearInterval(myTimer);
+
+    let stationMessagesData = "<REQUEST>" +
+            "<LOGIN authenticationkey='" + apiKey + "' />" +
+            "<QUERY objecttype='TrainMessage' schemaversion='1.4' orderby='LastUpdateDateTime desc'>" +
+                "<FILTER />" +
+                "<INCLUDE>EventId</INCLUDE>" +
+                "<INCLUDE>StartDateTime</INCLUDE>" + 
+                "<INCLUDE>LastUpdateDateTime</INCLUDE>" +
+                "<INCLUDE>ExternalDescription</INCLUDE>" +
+                "<INCLUDE>Header</INCLUDE>" +
+                "<INCLUDE>PrognosticatedEndDateTimeTrafficImpact</INCLUDE>" +
+                "<INCLUDE>ReasonCodeText</INCLUDE>" +
+            "</QUERY>" +
+        "</REQUEST>";
+
+    ApiCollector(stationMessagesData,renderStationMessages);
+
+    // Set refresh interval for 5 min, 300 000 ms
+    myTimer = setInterval(function() {
+        ApiCollector(stationMessagesData,renderStationMessages);
+    }, 300000);
+
+    return true;
+}
+
+getStationMessages();
+</script>
+
+</body>
+
+</html>

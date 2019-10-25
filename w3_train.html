@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+
+<html lang="SV-se">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+
+    <title>Tågläge</title>
+
+    <link rel="stylesheet" href="css/w3.css">
+    <link rel="stylesheet" href="css/w3-colors-flat.css">
+    <link rel="stylesheet" href="css/extra.css">
+
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+
+    <script src="js/ApiCollector.js"></script>
+    <script src="js/TrainStation.js"></script>
+    <script src="https://kit.fontawesome.com/1ae2629c4c.js"></script>
+</head>
+
+<body>
+<!-- Navigation content-->
+<div class="w3-bar w3-xlarge w3-center w3-padding w3-flat-wet-asphalt">
+    <a href="index.html" title="Startsidan"><i class="fa fa-home"></i></a>
+    <a href="station.html" title="Stationssökning" class="w3-margin-left"><i class="fas fa-map-signs"></i></a>
+    <a href="lista.html" title="Stationslista" class="w3-margin-left"><i class="fa fa-list"></i></a>
+    <a href="message.html" title="Pågående trafikstörningar" class="w3-margin-left"><i class="fa fa-exclamation-triangle"></i></a>
+    <a href="train.html" title="Tågsökning" class="w3-margin-left"><i class="fa fa-train"></i></a>
+    <a href="about.html" title="Om tjänsten" class="w3-margin-left"><i class="fas fa-info-circle"></i></a>
+</div>
+<!-- End of navigation content-->
+<!-- Error content -->
+<div class="w3-container w3-margin-bottom w3-white w3-padding" id="errorBox" style="display: none; max-width: 1500px; margin-left: auto; margin-right: auto;">
+    <h4>INFO</h4>
+    <p id="errorMsg"></p>
+</div>
+<!-- End of error content -->
+<div class="w3-margin-top w3-white w3-responsive" id="trainState" style="display: none; max-width: 1500px; margin-left: auto; margin-right: auto;">
+        <h4 class="w3-margin"><i class="fa fa-train"></i>&nbsp;&nbsp;Status <span id="trainIdentHeader"></span></h4>
+        <div class="w3-container" id="stateContent">
+            <p id="trainData">
+            </p>
+            <p>
+                <span id="currentPosition"></span>
+            </p>
+            <p>
+                <span id="nextPosition"></span>
+            </p>
+            <p>
+                <span id="trainInfo"></span>
+            </p>
+            <p>
+                <span id="trainDeviations"></span>
+            </p>
+            <!-- This is where script will output data -->
+        </div>
+    </div>
+<!-- Schedule in form of a table below -->
+<div class="w3-margin-top w3-white w3-responsive" id="schedule" style="display: none; max-width: 1500px; margin-left: auto; margin-right: auto;">
+    <h4 class="w3-margin"><i class="fa fa-list"></i>&nbsp;&nbsp;Tidtabell <span id="trainIdentResult"></span></h4>
+    <span class="w3-margin-right w3-tiny w3-right" style="font-size: 6pt !important" id="scheduleTimestamp"></span>
+    <div id="trainSchedule">
+        <!-- This is where schedule script will output data -->
+    </div>
+</div>
+<!-- End of schedule table -->
+
+<!-- Form content -->
+<form class="w3-container w3-margin-top w3-white w3-padding" id="searchForm" style="display: block; max-width: 1500px; margin-left: auto; margin-right: auto;" onsubmit="event.preventDefault(); getTrainSchedule()">
+    <h4><i class="fa fa-train"></i>&nbsp;&nbsp;Sök enskilt tåg</h4>
+    <input id="trainIdent" type="number" class="w3-input" placeholder="Tågnummer"><br>
+    <input id="searchDate" type="date" class="w3-input" placeholder="Datum (YYYY-MM-DD)"><br>
+    <div class="w3-center">
+        <input type="submit" value="H&auml;mta uppgifter" class="w3-button w3-flat-wet-asphalt w3-margin-bottom" id="searchTrain">
+    </div>
+</form>
+
+<script>
+// Set up variables for later
+let searchTrainIdent;
+let searchDate = getToday();
+let endOfLine = false;
+let myTimer;
+
+if (sessionStorage.getItem("searchTrainIdent")) {
+    searchTrainIdent = sessionStorage.getItem("searchTrainIdent");
+    searchDate = sessionStorage.getItem("searchDate");
+    document.getElementById("trainIdent").value = searchTrainIdent;
+    document.getElementById("searchDate").value = searchDate;
+    getTrainSchedule();
+}
+
+function getTrainSchedule() {
+    clearInterval(myTimer);
+    searchTrainIdent = document.getElementById("trainIdent").value;
+    if (document.getElementById("searchDate").value) {
+        searchDate = document.getElementById("searchDate").value;
+    }
+    else {
+        searchDate = getToday();
+    }
+
+    // Set up SingleTrain request
+    let trainAnnouncementData = "<REQUEST>" +
+        "<LOGIN authenticationkey='" + apiKey + "' />" +
+            "<QUERY objecttype='TrainAnnouncement' schemaversion='1.5' orderby='AdvertisedTimeAtLocation asc, ActivityType asc'>" +
+                "<FILTER>" +
+                    "<EQ name='Advertised' value='true' />" +
+                    "<EQ name='AdvertisedTrainIdent' value='" + searchTrainIdent + "' />" +
+                    "<EQ name='ScheduledDepartureDateTime' value='" + searchDate + "' />" +
+                "</FILTER>" +
+                "<INCLUDE>LocationSignature</INCLUDE>" + 
+                "<INCLUDE>ActivityType</INCLUDE>" + 
+                "<INCLUDE>AdvertisedTrainIdent</INCLUDE>" + 
+                "<INCLUDE>TrackAtLocation</INCLUDE>" + 
+                "<INCLUDE>AdvertisedTimeAtLocation</INCLUDE>" + 
+                "<INCLUDE>EstimatedTimeAtLocation</INCLUDE>" + 
+                "<INCLUDE>TechnicalDateTime</INCLUDE>" + 
+                "<INCLUDE>TimeAtLocation</INCLUDE>" + 
+                "<INCLUDE>Deviation</INCLUDE>" + 
+            "</QUERY>" +
+        "</REQUEST>";
+
+    // Populate page with return
+    ApiCollector(trainAnnouncementData, renderTrainSchedule);
+    getTrainState(searchTrainIdent,searchDate);
+    getTrainPosition(searchTrainIdent, searchDate);
+    getNextStation(searchTrainIdent, searchDate);
+
+    // Check if train has reached end of line
+    if (!endOfLine) {
+        myTimer = setInterval(function() {
+        ApiCollector(trainAnnouncementData, renderTrainSchedule)
+        getTrainState(searchTrainIdent,searchDate);
+        getTrainPosition(searchTrainIdent, searchDate);
+        getNextStation(searchTrainIdent, searchDate);
+    }, 30000);
+    }
+
+    document.getElementById("schedule").style.display = "block";
+    // Set session storage items
+    sessionStorage.setItem("searchTrainIdent",searchTrainIdent);
+    sessionStorage.setItem("searchDate",searchDate);
+}
+
+function getTrainState(searchTrainIdent,searchDate) {
+    let trainStateAnnouncementData = "<REQUEST>" +
+        "<LOGIN authenticationkey='" + apiKey + "' />" +
+            "<QUERY objecttype='TrainAnnouncement' schemaversion='1.5' orderby='ActivityType desc' limit='1'>" +
+                "<FILTER>" +
+                    "<EQ name='Advertised' value='true' />" +
+                    "<EQ name='AdvertisedTrainIdent' value='" + searchTrainIdent + "' />" +
+                    "<EQ name='ScheduledDepartureDateTime' value='" + searchDate + "' />" +
+                    //"<EXISTS name='TimeAtLocation' value='false' />" +
+                "</FILTER>" +
+                "<INCLUDE>AdvertisedTrainIdent</INCLUDE>" + 
+                "<INCLUDE>TechnicalTrainIdent</INCLUDE>" + 
+                "<INCLUDE>ProductInformation</INCLUDE>" + 
+                "<INCLUDE>Operator</INCLUDE>" + 
+                "<INCLUDE>FromLocation</INCLUDE>" + 
+                "<INCLUDE>ToLocation</INCLUDE>" + 
+                "<INCLUDE>ViaToLocation</INCLUDE>" +
+                "<INCLUDE>ScheduledDepartureDateTime</INCLUDE>" + 
+                "<INCLUDE>Booking</INCLUDE>" + 
+                "<INCLUDE>OtherInformation</INCLUDE>" + 
+                "<INCLUDE>Service</INCLUDE>" + 
+                "<INCLUDE>TrainComposition</INCLUDE>" + 
+                "<INCLUDE>Deviation</INCLUDE>" + 
+                "<INCLUDE>WebLink</INCLUDE>" +
+            "</QUERY>" +
+        "</REQUEST>";
+    
+    ApiCollector(trainStateAnnouncementData,renderSingleTrainState);
+}
+
+function getTrainPosition(searchTrainIdent,searchDate) {
+    let trainPositionData = "<REQUEST>" +
+        "<LOGIN authenticationkey='" + apiKey + "' />" +
+            "<QUERY objecttype='TrainAnnouncement' schemaversion='1.5' orderby='TimeAtLocation desc' limit='1'>" +
+                "<FILTER>" +
+                    "<EQ name='AdvertisedTrainIdent' value='" + searchTrainIdent + "' />" +
+                    "<EQ name='ScheduledDepartureDateTime' value='" + searchDate + "' />" +
+                    "<EXISTS name='TimeAtLocation' value='true' />" +
+                "</FILTER>" +
+                "<INCLUDE>AdvertisedTrainIdent</INCLUDE>" + 
+                "<INCLUDE>LocationSignature</INCLUDE>" + 
+                "<INCLUDE>ActivityType</INCLUDE>" + 
+                "<INCLUDE>AdvertisedTimeAtLocation</INCLUDE>" + 
+                "<INCLUDE>TechnicalDateTime</INCLUDE>" + 
+                "<INCLUDE>TimeAtLocation</INCLUDE>" + 
+                "<INCLUDE>ToLocation.LocationName</INCLUDE>" +
+            "</QUERY>" +
+        "</REQUEST>";
+
+    ApiCollector(trainPositionData,renderSingleTrainPosition);
+}
+
+// TODO: Add check for non marked events with later events available
+function getNextStation(searchTrainIdent, searchDate) {
+    let nextStationData = "<REQUEST>" +
+            "<LOGIN authenticationkey='" + apiKey + "' />" +
+            "<QUERY objecttype='TrainAnnouncement' schemaversion='1.5' orderby='AdvertisedTimeAtLocation asc, ActivityType asc' limit='1'>" +
+                    "<FILTER>" +
+                        "<AND>" +
+                            "<EQ name='Advertised' value='true' />" +
+                            "<EQ name='AdvertisedTrainIdent' value='" + searchTrainIdent + "' />" +
+                            "<EQ name='ScheduledDepartureDateTime' value='" + searchDate + "' />" +
+                            "<EQ name='Canceled' value='false' />" +
+                            "<EXISTS name='TimeAtLocation' value='false' />" +
+                            "<EXISTS name='TrackAtLocation' value='true' />" +
+                            "<NE name='TrackAtLocation' value='-' />" +
+                            "<NE name='TrackAtLocation' value='x' />" +
+                        "</AND>" +
+                    "</FILTER>" +
+                    "<INCLUDE>ActivityType</INCLUDE>" +
+                    "<INCLUDE>AdvertisedTimeAtLocation</INCLUDE>" +
+                    "<INCLUDE>AdvertisedTrainIdent</INCLUDE>" +
+                    "<INCLUDE>EstimatedTimeAtLocation</INCLUDE>" +
+                    "<INCLUDE>LocationSignature</INCLUDE>" + 
+                    "<INCLUDE>TechnicalDateTime</INCLUDE>" +
+                    "<INCLUDE>TimeAtLocation</INCLUDE>" +
+                    "<INCLUDE>TrackAtLocation</INCLUDE>" +
+            "</QUERY>" +
+        "</REQUEST>";
+
+        ApiCollector(nextStationData, renderNextStation);
+}
+
+// Set today in searchDate field
+document.getElementById("searchDate").value = getToday();
+</script>
+</body>
+</html>

@@ -577,8 +577,8 @@ function getTrainState(obj) {
 function renderStationList(obj) {
     let list = createStationList(obj);
     console.table(list);
-    output = "<table class='w3-table w3-bordered'>";
-    output += "<thead>";
+    output = "<table class='table'>";
+    output += "<thead class='thead-dark'>";
     output += "<tr>";
     output += "<th>Plats</th>";
     output += "<th>Signatur</th>"
@@ -606,14 +606,14 @@ function renderSingleTrainState(obj) {
     }
     else {
         trainDataOutput = "";
-        trainDataOutput += "<b>Tåg:</b> <a href='" + trainState.webLink + "'>" + trainState.operator + "</a> tåg " + trainState.trainIdent;
+        trainDataOutput += "<a href='" + trainState.webLink + "'>" + trainState.operator + "</a> tåg " + trainState.trainIdent;
         if (trainState.technicalTrainIdent && trainState.technicalTrainIdent != trainState.trainIdent) {
             trainDataOutput += " <em>(tekniskt tågnummer: " + trainState.technicalTrainIdent + ")</em>";
         }
-        trainDataOutput += "<br>";
-        trainDataOutput += "<b>Sträcka:</b> " + findStationName(trainState.fromLocation) + " - " + findStationName(trainState.toLocation) + "<br>";
+        trainDataOutput += ", ";
+        trainDataOutput += "" + findStationName(trainState.fromLocation) + " mot " + findStationName(trainState.toLocation) + " ";
         if (trainState.viaLocations != "") {
-            trainDataOutput += "<b>Via:</b> ";
+            trainDataOutput += "via ";
             for (let j in trainState.viaLocations) {
                 if (j >= 1) {
                     prefix = ", ";
@@ -622,9 +622,9 @@ function renderSingleTrainState(obj) {
                 }
                 trainDataOutput += prefix + findStationName(trainState.viaLocations[j]);
             }
-            trainDataOutput += "<br>";
+            trainDataOutput += ".<br>";
         }
-        trainDataOutput += "<b>Datum:</b> " + new Date(trainState.scheduledDate).toLocaleDateString("sv-SE");
+        trainDataOutput += "Datum " + new Date(trainState.scheduledDate).toLocaleDateString("sv-SE");
     
         document.getElementById("trainData").innerHTML = trainDataOutput;
     
@@ -772,8 +772,8 @@ function renderTrainSchedule(obj) {
     let schedule = createSchedule(obj);
 
     output = "";
-    output += "<table class='w3-table w3-bordered'>";
-    output += "<thead>";
+    output += "<table class='table table-sm'>";
+    output += "<thead class='thead-dark'>";
     output += "<tr>";
     output += "<th>Plats</th>";
     output += "<th>Spår</th>";
@@ -831,7 +831,7 @@ function renderTrainSchedule(obj) {
         output += "</tr>";
     }
     output += "</table>";
-    output += "<p class='w3-tiny w3-right w3-margin' style='font-size: 6pt !important'><em>Senast uppdaterat: " + new Date().toLocaleTimeString("sv-SE"); + "</em></p>";
+    output += "<p class='text-muted text-right' style='font-size: 6pt !important'><em>Senast uppdaterat: " + new Date().toLocaleTimeString("sv-SE"); + "</em></p>";
 
     document.getElementById("trainSchedule").innerHTML = output;
     document.getElementById("trainIdentResult").textContent = obj.RESPONSE.RESULT[0].TrainAnnouncement[0].AdvertisedTrainIdent;
@@ -842,7 +842,7 @@ function renderTrainScheduleForPrint(obj) {
     console.log(schedule);
 
     output = "";
-    output += "<table class='w3-table w3-bordered'>";
+    output += "<table class=''>";
     output += "<thead>";
     output += "<tr>";
     output += "<th>Plats</th>";
@@ -891,7 +891,7 @@ function renderTrainScheduleForPrint(obj) {
         output += "</tr>";
     }
     output += "</table>";
-    output += "<p class='w3-tiny w3-right w3-margin' style='font-size: 6pt !important'><em>Senast uppdaterat: " + new Date().toLocaleTimeString("sv-SE"); + "</em></p>";
+    output += "<p class='text-right text-muted' style='font-size: 6pt !important'><em>Senast uppdaterat: " + new Date().toLocaleTimeString("sv-SE"); + "</em></p>";
 
     document.getElementById("trainSchedule").innerHTML = output;
     document.getElementById("trainIdentResult").textContent = obj.RESPONSE.RESULT[0].TrainAnnouncement[0].AdvertisedTrainIdent;
@@ -901,9 +901,9 @@ function renderArrivalBoard(obj) {
     let arrivals = createStationBoardRow(obj,"arr");
 
     output = "";
-    output += "<table class='w3-table w3-bordered'>";
-    output += "<thead>";
-    output += "<tr class='w3-center'>";
+    output += "<table class='table table-sm'>";
+    output += "<thead class='thead-dark'>";
+    output += "<tr class='text-center'>";
     output += "<th>Tåg</th>";
     output += "<th>Från</th>";
     output += "<th>Ank.tid</th>";
@@ -935,7 +935,7 @@ function renderArrivalBoard(obj) {
     }
     output += "</tbody>";
     output += "</table>";
-    output += "<p class='w3-tiny w3-right w3-margin' style='font-size: 6pt !important'><em>Senast uppdaterat: " + new Date().toLocaleTimeString("sv-SE"); + "</em></p>";
+    output += "<p class='text-right text-muted' style='font-size: 6pt !important'><em>Senast uppdaterat: " + new Date().toLocaleTimeString("sv-SE"); + "</em></p>";
 
     document.getElementById("arrivalLocation").innerHTML = findStationName(arrivals[0].locationSignature);
     document.getElementById("arrivalBoard").innerHTML = output;
@@ -947,9 +947,9 @@ function renderDepartureBoard(obj) {
     let departures = createStationBoardRow(obj,"dep");
 
     output = "";
-    output += "<table class='w3-table w3-bordered'>";
-    output += "<thead>";
-    output += "<tr class='w3-center'>"
+    output += "<table class='table table-sm'>";
+    output += "<thead class='thead-dark'>";
+    output += "<tr class='text-center'>"
     output += "<th>Tåg</th>";
     output += "<th>Till</th>";
     output += "<th>Avg.tid</th>";
@@ -982,7 +982,7 @@ function renderDepartureBoard(obj) {
     }
     output += "</tbody>";
     output += "</table>";
-    output += "<p class='w3-tiny w3-right w3-margin' style='font-size: 6pt !important'><em>Senast uppdaterat: " + new Date().toLocaleTimeString("sv-SE"); + "</em></p>";
+    output += "<p class='text-right text-muted' style='font-size: 6pt !important'><em>Senast uppdaterat: " + new Date().toLocaleTimeString("sv-SE"); + "</em></p>";
 
     document.getElementById("departureLocation").innerHTML = findStationName(departures[0].locationSignature);
     document.getElementById("departureBoard").innerHTML = output;
@@ -993,21 +993,23 @@ function renderStationMessages(obj) {
     let message = createStationMessageList(obj);
     output = "";
     for (let i in message) {
-        output += "<p style='text-transform: none'><b>" + message[i].header + "</b><br>";
-        if (message[i].startDateTime != "") {
-            output += "<em>";
-            output += "<i class='far fa-clock'></i> Starttid: " + new Date(message[i].startDateTime).toLocaleString("sv-SE");
-            if (message[i].updatedDateTime != "") {
-                output += " <i class='far fa-clock'></i> Senast uppdaterat: " + new Date(message[i].updatedDateTime).toLocaleString("sv-SE");
-    
-            }
-            if (message[i].estimatedEndDateTime != "") {
-                output += " <i class='far fa-clock'></i> Beräknat klart: " + new Date(message[i].estimatedEndDateTime).toLocaleString("sv-SE");
-            }
-            output += "</em></p>";
-        }
+        output += "<div class='card mb-3'>"
+        output += "<div class='card-header'><i class='fas fa-exclamation-circle'></i>&nbsp;&nbsp;" + message[i].header + "</div>";
+        output += "<div class='card-body'>";
         output += "<p>" + message[i].description + "</p>";
-        output += "<hr>";
+        if (message[i].startDateTime != "") {
+            output += "<small class='text-muted'>";
+            output += "<i class='far fa-clock'></i> Starttid: " + new Date(message[i].startDateTime).toLocaleString("sv-SE");
+            if (message[i].estimatedEndDateTime != "") {
+                output += "<br><i class='far fa-clock'></i> Beräknat klart: " + new Date(message[i].estimatedEndDateTime).toLocaleString("sv-SE");
+            }
+            if (message[i].updatedDateTime != "") {
+                output += "<br><i class='far fa-clock'></i> Senast uppdaterat: " + new Date(message[i].updatedDateTime).toLocaleString("sv-SE");
+            }
+            output += "</small>";
+        }
+        output += "</div>";
+        output += "</div>";
     }
 
     if (message.length > 0) {

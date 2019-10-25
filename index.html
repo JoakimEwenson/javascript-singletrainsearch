@@ -1,51 +1,136 @@
 <!DOCTYPE html>
-
 <html lang="SV-se">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 
-    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
-    <meta http-equiv="Pragma" content="no-cache" />
-    <meta http-equiv="Expires" content="0" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
 
-    <title>Tågsökning</title>
+  <title>Trafikinformation järnväg</title>
 
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-colors-flat.css">
-    <link rel="stylesheet" href="css/extra.css">
+  <!-- Favicon details -->
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
 
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
-    <script src="https://kit.fontawesome.com/1ae2629c4c.js"></script>
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/extra.css">
+
+  <!-- JavaScript files -->
+  <script src="js/ApiCollector.js"></script>
+  <script src="js/TrainStation.js"></script>
+  <script src="https://kit.fontawesome.com/1ae2629c4c.js"></script>
+
 </head>
 
-<body class="w3-large w3-flat-wet-asphalt">
-    
-<div class="w3-row-padding w3-display-middle w3-center w3-jumbo">
-    <div class="w3-col w3-container w3-padding">
-        <a href="station.html" title="Stationssökning"><i class="fas fa-map-signs"></i></a>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
+    <div class="container">
+      <a class="navbar-brand" href="#" id="trainIdentHeader">Trafikinformation järnväg</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="index.html">Hem
+                <span class="sr-only">(nuvarande)</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="station.html">Stationssökning</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="message.html">Störningar</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="train.html">Tågsökning</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="about.html">Om sidan</a>
+          </li>
+        </ul>
+      </div>
     </div>
-    <div class="w3-col w3-container w3-padding">
-        <a href="lista.html" title="Stationslista"><i class="fa fa-list"></i></a>
+  </nav>
+
+  <!-- Page Content -->
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+
+        <!-- About information -->
+        <div id="" class="mt-3">
+          <p class="lead">Välkommen till en trafikinformationstjänst om/för järnvägen skapad av Joakim Ewenson under 2019.</p>
+          <p class="font-weight-light">
+            Du kan i menyn ovanför välja vad du söker:
+            <ul class="list font-weight-light">
+              <li>störningsmeddelanden</li>
+              <li>information om ankomster och avgångar</li>
+              <li>trafikinformation om ett enskilt tåg</li>
+            </ul>
+            </p>
+            <p class="font-weight-light">
+              Förslag och/eller önskemål om ytterligare tjänster tas tacksamt emot. Samma gäller för eventuella buggrapporter.
+            </p>
+            <p class="font-weight-light">
+              Mejla till joakim (at) ewenson.se eller använd <a href="https://www.ewenson.se/blogg/kontakta-mig/">kontaktformuläret</a> på <a href="https://www.ewenson.se">ewenson.se</a> för att lättast komma i kontakt med mig.
+            </p>
+        </div>
+        <!-- End of about information -->
+
+      </div>
     </div>
-    <div class="w3-col w3-container w3-padding">
-        <a href="message.html" title="Pågående trafikstörningar"><i class="fa fa-exclamation-triangle"></i></a>
-    </div>
-    <div class="w3-col w3-container w3-padding">
-        <a href="train.html" title="Tågsökning"><i class="fa fa-train"></i></a>
-    </div>
-    <div class="w3-col w3-container w3-padding">
-        <a href="about.html" title="Om tjänsten"><i class="fas fa-info-circle"></i></a>
-    </div>
-</div>
-<p class="w3-wide w3-display-middle w3-center" style="text-transform: uppercase; line-height: 500%; display: none">
-    <i class="fas fa-map-signs"></i> <a href="station.html">Stationssökning</a><br>
-    <i class="fa fa-list"></i> <a href="lista.html">Stationslista</a><br>
-    <i class="fa fa-train"></i> <a href="train.html">Tågsökning</a><br>
-    <i class="fas fa-info-circle"></i> <a href="about.html">Om tjänsten</a>
-</p>
+  </div>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.slim.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+<!-- Train Message scripts-->
+
+<script>
+// Set up default values
+let myTimer;
+
+
+// Populate page with return
+function getStationMessages() {
+    clearInterval(myTimer);
+
+    let stationMessagesData = "<REQUEST>" +
+            "<LOGIN authenticationkey='" + apiKey + "' />" +
+            "<QUERY objecttype='TrainMessage' schemaversion='1.4' orderby='LastUpdateDateTime desc'>" +
+                "<FILTER />" +
+                "<INCLUDE>EventId</INCLUDE>" +
+                "<INCLUDE>StartDateTime</INCLUDE>" + 
+                "<INCLUDE>LastUpdateDateTime</INCLUDE>" +
+                "<INCLUDE>ExternalDescription</INCLUDE>" +
+                "<INCLUDE>Header</INCLUDE>" +
+                "<INCLUDE>PrognosticatedEndDateTimeTrafficImpact</INCLUDE>" +
+                "<INCLUDE>ReasonCodeText</INCLUDE>" +
+            "</QUERY>" +
+        "</REQUEST>";
+
+    ApiCollector(stationMessagesData,renderStationMessages);
+
+    // Set refresh interval for 5 min, 300 000 ms
+    myTimer = setInterval(function() {
+        ApiCollector(stationMessagesData,renderStationMessages);
+    }, 300000);
+
+    return true;
+}
+
+getStationMessages();
+</script>
 
 </body>
+
 </html>

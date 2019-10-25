@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+
+<html lang="SV-se">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+
+    <title>Om tj&auml;nsten</title>
+
+    <link rel="stylesheet" href="css/w3.css">
+    <link rel="stylesheet" href="css/w3-colors-flat.css">
+    <link rel="stylesheet" href="css/extra.css">
+
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    
+    <script src="https://kit.fontawesome.com/1ae2629c4c.js"></script>
+</head>
+
+<body>
+
+<!-- Navigation content-->
+<div class="w3-bar w3-xlarge w3-center w3-padding w3-flat-wet-asphalt">
+    <a href="index.html" title="Startsidan"><i class="fa fa-home"></i></a>
+    <a href="station.html" title="Stationss&ouml;kning" class="w3-margin-left"><i class="fas fa-map-signs"></i></a>
+    <a href="lista.html" title="Stationslista" class="w3-margin-left"><i class="fa fa-list"></i></a>
+    <a href="message.html" title="P&aring;g&aring;ende trafikst&ouml;rningar" class="w3-margin-left"><i class="fa fa-exclamation-triangle"></i></a>
+    <a href="train.html" title="T&aring;gs&ouml;kning" class="w3-margin-left"><i class="fa fa-train"></i></a>
+    <a href="about.html" title="Om tj&auml;nsten" class="w3-margin-left"><i class="fas fa-info-circle"></i></a>
+</div>
+<!-- End of navigation content-->
+
+<div class="w3-container w3-white w3-margin-top" style="max-width: 1500px; margin-left: auto; margin-right: auto;">
+    <h4>Allm&auml;n information</h4>
+    <p>
+        Detta &auml;r ett hobbyprojekt signerat <a href="https://www.ewenson.se/">Joakim Ewenson</a> och b&ouml;r inte ses som n&aring;got annat &auml;n just det, ett hobbyprojekt.
+    </p>
+    <p>
+        Den data som detta hobbyprojekt genererar kommer fr&aring;n Trafikverkets API f&ouml;r &ouml;ppna data och det &auml;r &auml;ven de som f&aring;r st&aring; f&ouml;r garantierna kring dess giltighet. 
+        Alla former av nya tider som presenteras &auml;r att ses som prelimin&auml;ra och kan komma att &auml;ndras med kort varsel, det l&auml;mnas inga garantier f&ouml;r eventuella &auml;ndringar som resulterar i missade t&aring;g och annat el&auml;nde.
+    </p>
+    <p>
+        Jag har gjort mitt b&auml;sta f&ouml;r att g&ouml;ra en n&aring;gorlunda bra presentation utav den information som finns att tillg&aring; baserat p&aring; min erfarenhet fr&aring;n j&auml;rnv&auml;gen som sektor. 
+        Vissa saker kan vara fullt naturliga f&ouml;r mig och helt orimliga f&ouml;r andra, just d&auml;rf&ouml;r uppskattar jag all form av feedback som kan komma in!
+    </p>
+    <h4>Trafikverkets &ouml;ppna data</h4>
+    <p>
+        Informationen som presenteras i den h&auml;r tj&auml;nsten kommer som sagt fr&aring;n Trafikverkets &ouml;ppna API med de brister och tillkortakommanden som den tj&auml;nsten har. 
+        Jag har, efter b&auml;sta f&ouml;rm&aring;ga, f&ouml;rs&ouml;kt att presentera det hela p&aring; ett enligt mig bra s&auml;tt.
+    </p>
+    <p>
+        Mer information om Trafikverkets &ouml;ppna API och den data som finns tillg&auml;ngligt i det finns p&aring; <a href="https://api.trafikinfo.trafikverket.se/" title="L&auml;s mer om Trafikverkets &ouml;ppna API">https://api.trafikinfo.trafikverket.se/</a>.
+    </p>
+    <h4>Tekniken bakom tj&auml;nsten</h4>
+    <p>
+        Denna tj&auml;nst &auml;r baserad p&aring; HTML, CSS (<a href="https://www.w3schools.com/w3css/" title="Information om W3.CSS">W3.CSS</a>) och JavaScript utan n&aring;gra ramverk inblandade. 
+        Sidan ritas upp i HTML och sedan p&aring;verkas DOMen via asynkron JavaScript som uppdaterar inneh&aring;llet p&aring; ett f&ouml;rbest&auml;mt intervall.
+        I framtiden hoppas jag kunna bygga om projektet s&aring; att det ist&auml;llet f&ouml;rlitar sig p&aring; fr&aring;n Trafikverket pushad data ist&auml;llet, f&ouml;r att spara p&aring; allas bandbredd och datorer.
+    </p>
+    <p>
+        <b><em>Observera att tj&auml;nsten sparar n&aring;gra f&aring; sp&aring;r av data i din webbl&auml;sarsession. Det som sparas &auml;r s&ouml;kt t&aring;gnummer och/eller stationssignatur samt s&ouml;kt datum. 
+            Detta f&ouml;r att kunna &aring;terh&auml;mta data vid omladdning utav sidan. Mer information &auml;n s&aring; &auml;r inte av intresse och inget sparas efter att du st&auml;ngt webbl&auml;sarf&ouml;nstret/webbl&auml;sarfliken.</em></b>
+    </p>
+    <h4>Slutligen</h4>
+    <p>
+        Intresserad av att hj&auml;lpa till? Intresserad av k&auml;llkoden? Tips? F&ouml;rslag? Buggar? Samtliga punkter rapporteras med f&ouml;rdel via kontaktformul&auml;ret p&aring; <a href="https://www.ewenson.se" title="ewenson.se">ewenson.se</a> eller via annan l&auml;mplig kanal som tilltalar dig b&auml;ttre.
+    </p>
+</div>

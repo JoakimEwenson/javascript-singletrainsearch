@@ -1,131 +1,79 @@
 <!DOCTYPE html>
+
 <html lang="SV-se">
-
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  <meta name="author" content="">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
 
-  <title>Trafikinformation - avgångar och ankomster</title>
+    <title>Stationsvy</title>
 
-  <!-- Favicon details -->
-  <link rel="icon" href="favicon.ico" type="image/x-icon">
-  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="css/w3.css">
+    <link rel="stylesheet" href="css/w3-colors-flat.css">
+    <link rel="stylesheet" href="css/extra.css">
 
-  <!-- Bootstrap core CSS -->
-  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
-  <!-- Custom CSS -->
-  <link rel="stylesheet" href="css/extra.css">
-
-  <!-- JavaScript files -->
-  <script src="js/ApiCollector.js"></script>
-  <script src="js/TrainStation.js"></script>
-  <script src="https://kit.fontawesome.com/1ae2629c4c.js"></script>
-
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    
+    <script src="js/ApiCollector.js"></script>
+    <script src="js/TrainStation.js"></script>
+    <script src="https://kit.fontawesome.com/1ae2629c4c.js"></script>
 </head>
 
 <body>
 
-  <!-- Navigation -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
-    <div class="container">
-      <a class="navbar-brand" href="#" id="departureLocation">Stationsinformation</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="index.html">Hem</a>
-          </li>
-          <li class="nav-item active">
-            <a class="nav-link" href="station.html">Stationssökning
-                <span class="sr-only">(nuvarande)</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="message.html">Störningar</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="train.html">Tågsökning</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="about.html">Om sidan</a>
-          </li>
-        </ul>
-      </div>
+<!-- Navigation content-->
+<div class="w3-bar w3-xlarge w3-center w3-padding w3-flat-wet-asphalt">
+    <a href="index.html" title="Startsidan"><i class="fa fa-home"></i></a>
+    <a href="station.html" title="Stationssökning" class="w3-margin-left"><i class="fas fa-map-signs"></i></a>
+    <a href="lista.html" title="Stationslista" class="w3-margin-left"><i class="fa fa-list"></i></a>
+    <a href="message.html" title="Pågående trafikstörningar" class="w3-margin-left"><i class="fa fa-exclamation-triangle"></i></a>
+    <a href="train.html" title="Tågsökning" class="w3-margin-left"><i class="fa fa-train"></i></a>
+    <a href="about.html" title="Om tjänsten" class="w3-margin-left"><i class="fas fa-info-circle"></i></a>
+</div>
+<!-- End of navigation content-->
+
+<!-- Error content -->
+<div class="w3-container w3-margin-bottom w3-white w3-padding" id="errorBox" style="display: none; max-width: 1000px; margin-left: auto; margin-right: auto;">
+    <h4>INFO</h4>
+    <p id="errorMsg"></p>
+</div>
+<!-- Schedule in form of a table below -->
+<div class="w3-row-padding w3-section w3-stretch w3-white w3-margin-top" style="max-width: 1500px; margin-left: auto; margin-right: auto;">
+    <div id="departureBoardDiv" class="w3-half w3-white w3-responsive" style="display: none;">
+        <h4 class="w3-margin"><i class="fa fa-list"></i>&nbsp;&nbsp;Avgångar <span id="departureLocation"></span></h4>
+        <span class="w3-margin w3-tiny w3-right" style="font-size: 6pt !important" id="departureTimestamp"></span>
+        <div id="departureBoard">
+            <!-- This is where schedule script will output data -->
+        </div>
     </div>
-  </nav>
-
-  <!-- Page Content -->
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-12">
-
-        <!-- Error content -->
-        <div class="" id="errorBox" style="display: none;">
-            <h4>INFO</h4>
-            <p id="errorMsg"></p>
+    <div id="arrivalBoardDiv" class="w3-half w3-white w3-responsive" style="display: none;">
+        <h4 class="w3-margin"><i class="fa fa-list"></i>&nbsp;&nbsp;Ankomster <span id="arrivalLocation"></span></h4>
+        <span class="w3-margin w3-tiny w3-right" style="font-size: 6pt !important" id="arrivalTimestamp"></span>
+        <div id="arrivalBoard">
+            <!-- This is where schedule script will output data -->
         </div>
-        <!-- End of error content -->
-
-        <!-- Arrivals and departures in form of a table below -->
-        <div class="mt-3">
-            <div id="departureBoardDiv" class="" style="display: none;">
-                <div id="departureBoard">
-                    <!-- This is where schedule script will output data -->
-                </div>
-            </div>
-            <div id="arrivalBoardDiv" class="" style="display: none;">
-                <h4 class="" style="display: none;"><i class="fa fa-list"></i>&nbsp;&nbsp;Ankomster <span id="arrivalLocation"></span></h4>
-                <div id="arrivalBoard">
-                    <!-- This is where schedule script will output data -->
-                </div>
-            </div>
-        </div>
-        <!-- End of arrivals and departures table -->
-
-        <!-- Known issues at the station -->
-        <div id="messageBoard" class="mt-3" style="display: none;">
-            <h4 class=""><i class="fa fa-exclamation-triangle"></i>&nbsp;&nbsp;Trafikinformation</h4>
-            <div class="" id="stationMessages">
-                <!-- This is where station messages are generated-->
-            </div>
-        </div>
-        <!-- End of issues board -->
-
-        <!-- Form content -->
-        <div class="card mb-5 mt-5">
-            <form id="searchForm" onsubmit="event.preventDefault(); getStationBoards()">
-              <div class="card-header">
-                <i class="fas fa-map-signs"></i>&nbsp;&nbsp;Sök avgångar och ankomster
-              </div>
-              <div class="card-body">
-                <div class="form-group">
-                  <label for="trainIdent">Stationssignatur</label>
-                  <input id="locationSignature" type="text" class="form-control" placeholder="Signatur">
-                  <small id="locationHelp" class="form-text text-muted"><a href="lista.html">Lista över stationssignaturer</a></small>
-                </div>
-                <div class="form-group text-center">
-                    <input type="submit" value="H&auml;mta uppgifter" class="btn btn-dark" id="searchTrain">
-                </div>
-              </div>
-            </form>
-          </div>
-          <!-- End of form content-->
-
-      </div>
     </div>
-  </div>
+</div>
+<div id="messageBoard" class="w3-row-padding w3-white w3-margin-top" style="display: none; max-width: 1500px; margin-left: auto; margin-right: auto;">
+    <h4 class="w3-margin"><i class="fa fa-exclamation-triangle"></i>&nbsp;&nbsp;Trafikinformation</h4>
+    <div class="w3-container" id="stationMessages">
+        <!-- This is where station messages are generated-->
+    </div>
+</div>
+<!-- End of schedule table -->
 
-  <!-- Bootstrap core JavaScript -->
-  <script src="vendor/jquery/jquery.slim.min.js"></script>
-  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-<!-- Train Message scripts-->
+<!-- Form content -->
+<form class="w3-container w3-white w3-margin-top w3-padding" id="searchForm" style="display: block; max-width: 1000px; margin-left: auto; margin-right: auto;" onsubmit="event.preventDefault(); getStationBoards()">
+    <h4><i class="fas fa-map-signs"></i>&nbsp;&nbsp;Sök driftplats</h4>
+    <input id="locationSignature" type="text" class="w3-input" placeholder="Plats"><br>
+    <div class="w3-center">
+        <input type="submit" value="H&auml;mta uppgifter" class="w3-button w3-flat-wet-asphalt w3-margin-bottom">
+    </div>
+</form>
 
 <script>
 // Set up default values
@@ -247,7 +195,5 @@ function getStationBoards() {
     return true;
 }
 </script>
-
 </body>
-
 </html>
