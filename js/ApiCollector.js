@@ -986,7 +986,6 @@ function renderDepartureBoard(obj) {
 
     document.getElementById("departureLocation").innerHTML = findStationName(departures[0].locationSignature);
     document.getElementById("departureBoard").innerHTML = output;
-    document.getElementById("departureTimestamp").textContent = "";
 }
 
 function renderStationMessages(obj) {
