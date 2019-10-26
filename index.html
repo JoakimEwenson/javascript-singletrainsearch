@@ -62,8 +62,8 @@
 
   <!-- Page Content -->
   <div class="container">
-    <div class="row">
-      <div class="col-lg-12">
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
 
         <!-- About information -->
         <div id="" class="mt-3">
@@ -92,44 +92,6 @@
   <!-- Bootstrap core JavaScript -->
   <script src="vendor/jquery/jquery.slim.min.js"></script>
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-<!-- Train Message scripts-->
-
-<script>
-// Set up default values
-let myTimer;
-
-
-// Populate page with return
-function getStationMessages() {
-    clearInterval(myTimer);
-
-    let stationMessagesData = "<REQUEST>" +
-            "<LOGIN authenticationkey='" + apiKey + "' />" +
-            "<QUERY objecttype='TrainMessage' schemaversion='1.4' orderby='LastUpdateDateTime desc'>" +
-                "<FILTER />" +
-                "<INCLUDE>EventId</INCLUDE>" +
-                "<INCLUDE>StartDateTime</INCLUDE>" + 
-                "<INCLUDE>LastUpdateDateTime</INCLUDE>" +
-                "<INCLUDE>ExternalDescription</INCLUDE>" +
-                "<INCLUDE>Header</INCLUDE>" +
-                "<INCLUDE>PrognosticatedEndDateTimeTrafficImpact</INCLUDE>" +
-                "<INCLUDE>ReasonCodeText</INCLUDE>" +
-            "</QUERY>" +
-        "</REQUEST>";
-
-    ApiCollector(stationMessagesData,renderStationMessages);
-
-    // Set refresh interval for 5 min, 300 000 ms
-    myTimer = setInterval(function() {
-        ApiCollector(stationMessagesData,renderStationMessages);
-    }, 300000);
-
-    return true;
-}
-
-getStationMessages();
-</script>
 
 </body>
 
