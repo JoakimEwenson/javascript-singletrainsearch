@@ -903,12 +903,12 @@ function renderArrivalBoard(obj) {
     output = "";
     output += "<table class='table table-sm'>";
     output += "<thead class='thead-dark'>";
-    output += "<tr class='text-center'>";
-    output += "<th>Tåg</th>";
-    output += "<th>Från</th>";
-    output += "<th>Ank.tid</th>";
-    output += "<th>Spår</th>";
-    output += "<th>Info</th>";
+    output += "<tr>";
+    output += "<th style='width: 10%'>Tåg</th>";
+    output += "<th style='width: 20%'>Från</th>";
+    output += "<th style='width: 20%'>Ank.tid</th>";
+    output += "<th style='width: 10%'>Spår</th>";
+    output += "<th style='width: 40%'>Info</th>";
     output += "</tr>";
     output += "</thead>";
     output += "<tbody>";
@@ -949,12 +949,12 @@ function renderDepartureBoard(obj) {
     output = "";
     output += "<table class='table table-sm'>";
     output += "<thead class='thead-dark'>";
-    output += "<tr class='text-center'>"
-    output += "<th>Tåg</th>";
-    output += "<th>Till</th>";
-    output += "<th>Avg.tid</th>";
-    output += "<th>Spår</th>";
-    output += "<th>Info</th>";
+    output += "<tr>"
+    output += "<th style='width: 10%'>Tåg</th>";
+    output += "<th style='width: 20%'>Till</th>";
+    output += "<th style='width: 20%'>Avg.tid</th>";
+    output += "<th style='width: 10%'>Spår</th>";
+    output += "<th style='width: 40%'>Info</th>";
     output += "</tr>";
     output += "</thead>";
     output += "<tbody>";

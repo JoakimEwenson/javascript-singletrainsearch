@@ -61,9 +61,9 @@
   </nav>
 
   <!-- Page Content -->
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-12">
+  <div class="container-fluid">
+    <div class="row justify-content-center">
+      <div class="col col-lg-12">
 
         <!-- Error content -->
         <div class="" id="errorBox" style="display: none;">
@@ -72,21 +72,27 @@
         </div>
         <!-- End of error content -->
 
+      </div>
+
+      <div class="col col-lg-4">
         <!-- Arrivals and departures in form of a table below -->
         <div class="mt-3">
             <div id="departureBoardDiv" class="" style="display: none;">
-                <div id="departureBoard">
-                    <!-- This is where schedule script will output data -->
-                </div>
-            </div>
-            <div id="arrivalBoardDiv" class="" style="display: none;">
-                <h4 class="" style="display: none;"><i class="fa fa-list"></i>&nbsp;&nbsp;Ankomster <span id="arrivalLocation"></span></h4>
-                <div id="arrivalBoard">
-                    <!-- This is where schedule script will output data -->
-                </div>
+                <div id="departureBoard"><!-- This is where schedule script will output data --></div>
             </div>
         </div>
+      </div>
+
+      <div class="col col-xs-12 col-sm-12 col-md-12 col-lg-4">
+          <div class="mt-3">
+            <div id="arrivalBoardDiv" class="" style="display: none;">
+                <h4 class="" style="display: none;"><i class="fa fa-list"></i>&nbsp;&nbsp;Ankomster <span id="arrivalLocation"></span></h4>
+                <div id="arrivalBoard"><!-- This is where schedule script will output data --></div>
+            </div>
+          </div>
+        </div>
         <!-- End of arrivals and departures table -->
+      <div class="col col-lg-8">
 
         <!-- Known issues at the station -->
         <div id="messageBoard" class="mt-3" style="display: none;">
@@ -97,7 +103,7 @@
         <!-- End of issues board -->
 
         <!-- Form content -->
-        <div class="card mb-5 mt-5">
+        <div class="card mb-3 mt-3">
             <form id="searchForm" onsubmit="event.preventDefault(); getStationBoards()">
               <div class="card-header">
                 <i class="fas fa-map-signs"></i>&nbsp;&nbsp;Sök avgångar och ankomster
@@ -117,6 +123,7 @@
           <!-- End of form content-->
 
       </div>
+
     </div>
   </div>
 
