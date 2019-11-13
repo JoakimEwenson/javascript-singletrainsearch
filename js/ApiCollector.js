@@ -772,13 +772,17 @@ function renderTrainSchedule(obj) {
     let schedule = createSchedule(obj);
 
     output = "";
-    output += "<table class='table table-sm'>";
+    output += "<table class='table table-sm table-striped'>";
     output += "<thead class='thead-dark'>";
     output += "<tr>";
     output += "<th>Plats</th>";
     output += "<th>Spår</th>";
     output += "<th>Ank.</th>";
     output += "<th>Avg.</th>";
+    output += "<th>Eg. ank.</th>";
+    output += "<th>Eg. avg.</th>";
+    output += "<th>Diff Ank.</th>";
+    output += "<th>Diff Avg.</th>";
     output += "<th>Info</th>";
     output += "</tr>";
     output += "</thead>";
@@ -803,26 +807,30 @@ function renderTrainSchedule(obj) {
         output += "<td>" + trackAtLocation + "</td>";
         output += "<td>";
         output += schedule[i].advertisedArrivalTime + "";
-        if (schedule[i].estimatedArrivalTime || schedule[i].actualArrivalTime) {
-            if (schedule[i].actualArrivalTime) {
-                output += "<br><em>" + schedule[i].actualArrivalTime + " (" + schedule[i].diffArrival + ")</em>";
-            }
-            else {
-                output += "<br><b>Ny tid: " + schedule[i].estimatedArrivalTime + "</b>";
-            }
-        } 
+        if (schedule[i].estimatedArrivalTime) {
+            output += "<br><b>Ny tid: " + schedule[i].estimatedArrivalTime + "</b>";
+        }
         output += "</td>";
         output += "<td>";
         output += schedule[i].advertisedDepartureTime + "";
-        if (schedule[i].estimatedDepartureTime || schedule[i].actualDepartureTime) {
-            if (schedule[i].actualDepartureTime) {
-                output += "<br><em>" + schedule[i].actualDepartureTime + " (" + schedule[i].diffDeparture + ")</em>";
-            } 
-            else {
-                output += "<br><b>Ny tid: " + schedule[i].estimatedDepartureTime + "</b>";
-            }
+        if (schedule[i].estimatedDepartureTime) {
+            output += "<br><b>Ny tid: " + schedule[i].estimatedDepartureTime + "</b>";
         }
         output += "</td>";
+        if (schedule[i].actualArrivalTime) {
+            output += "<td>" + schedule[i].actualArrivalTime + "</td>";
+        }
+        else {
+            output += "<td></td>";
+        }
+        if (schedule[i].actualArrivalTime) {
+            output += "<td>" + schedule[i].actualDepartureTime + "</td>";
+        }
+        else {
+            output += "<td></td>";
+        }
+        output += "<td>" + schedule[i].diffArrival + "</td>";
+        output += "<td>" + schedule[i].diffDeparture + "</td>";
         output += "<td>";
         for (let j in schedule[i].deviations) {
          output += schedule[i].deviations[j] + "<br>";
