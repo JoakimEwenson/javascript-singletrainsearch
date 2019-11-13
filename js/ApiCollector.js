@@ -823,7 +823,7 @@ function renderTrainSchedule(obj) {
         else {
             output += "<td></td>";
         }
-        if (schedule[i].actualArrivalTime) {
+        if (schedule[i].actualDepartureTime) {
             output += "<td>" + schedule[i].actualDepartureTime + "</td>";
         }
         else {
