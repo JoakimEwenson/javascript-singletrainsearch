@@ -207,8 +207,11 @@
           "<LOGIN authenticationkey='" + apiKey + "' />" +
               "<QUERY objecttype='TrainAnnouncement' schemaversion='1.5' orderby='ActivityType desc' limit='1'>" +
                   "<FILTER>" +
+                      "<OR>" +
+                        "<EQ name='AdvertisedTrainIdent' value='" + searchTrainIdent + "' />" +
+                        "<EQ name='TechnicalTrainIdent' value='" + searchTrainIdent + "' />" +
+                      "</OR>" +
                       "<EQ name='Advertised' value='true' />" +
-                      "<EQ name='AdvertisedTrainIdent' value='" + searchTrainIdent + "' />" +
                       "<EQ name='ScheduledDepartureDateTime' value='" + searchDate + "' />" +
                       //"<EXISTS name='TimeAtLocation' value='false' />" +
                   "</FILTER>" +
@@ -237,9 +240,12 @@
           "<LOGIN authenticationkey='" + apiKey + "' />" +
               "<QUERY objecttype='TrainAnnouncement' schemaversion='1.5' orderby='TimeAtLocation desc' limit='1'>" +
                   "<FILTER>" +
+                    "<OR>" +
                       "<EQ name='AdvertisedTrainIdent' value='" + searchTrainIdent + "' />" +
-                      "<EQ name='ScheduledDepartureDateTime' value='" + searchDate + "' />" +
-                      "<EXISTS name='TimeAtLocation' value='true' />" +
+                      "<EQ name='TechnicalTrainIdent' value='" + searchTrainIdent + "' />" +
+                    "</OR>" +
+                    "<EQ name='ScheduledDepartureDateTime' value='" + searchDate + "' />" +
+                    "<EXISTS name='TimeAtLocation' value='true' />" +
                   "</FILTER>" +
                   "<INCLUDE>AdvertisedTrainIdent</INCLUDE>" + 
                   "<INCLUDE>LocationSignature</INCLUDE>" + 
@@ -261,8 +267,11 @@
               "<QUERY objecttype='TrainAnnouncement' schemaversion='1.5' orderby='AdvertisedTimeAtLocation asc, ActivityType asc' limit='1'>" +
                       "<FILTER>" +
                           "<AND>" +
-                              "<EQ name='Advertised' value='true' />" +
+                            "<OR>" +
                               "<EQ name='AdvertisedTrainIdent' value='" + searchTrainIdent + "' />" +
+                              "<EQ name='TechnicalTrainIdent' value='" + searchTrainIdent + "' />" +
+                            "</OR>" +
+                              "<EQ name='Advertised' value='true' />" +
                               "<EQ name='ScheduledDepartureDateTime' value='" + searchDate + "' />" +
                               "<EQ name='Canceled' value='false' />" +
                               "<EXISTS name='TimeAtLocation' value='false' />" +
