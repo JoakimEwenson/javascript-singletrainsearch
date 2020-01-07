@@ -803,7 +803,7 @@ function renderTrainSchedule(obj) {
             trackAtLocation = "";
         }
         output += "<tr>";
-        output += "<td><a href='station.html' onclick='saveData(\"location\",\"" + schedule[i].locationSignature + "\");'>" + findStationName(schedule[i].locationSignature) + "</a></td>";
+        output += "<td><a href='station.html' onclick='saveData(\"location\",\"" + schedule[i].locationSignature + "\");'>" + schedule[i].locationSignature + "</a></td>";
         output += "<td>" + trackAtLocation + "</td>";
         output += "<td>";
         output += schedule[i].advertisedArrivalTime + "";
@@ -877,7 +877,7 @@ function renderTrainScheduleForPrint(obj) {
             trackAtLocation = "";
         }
         output += "<tr>";
-        output += "<td><a href='station.html' onclick='saveData(\"location\",\"" + schedule[i].locationSignature + "\");'>" + findStationName(schedule[i].locationSignature) + "</a></td>";
+        output += "<td><a href='station.html' onclick='saveData(\"location\",\"" + schedule[i].locationSignature + "\");'>" + schedule[i].locationSignature + "</a></td>";
         output += "<td>" + trackAtLocation + "</td>";
         output += "<td>";
         output += schedule[i].advertisedArrivalTime;
@@ -923,7 +923,7 @@ function renderArrivalBoard(obj) {
     for (let i in arrivals) {
         output += "<tr>";
         output += "<td><a href='train.html' onclick='saveData(\"train\",\"" + arrivals[i].trainIdent + "\",\"" + new Date(arrivals[i].scheduledDate).toLocaleDateString("sv-SE") + "\");'>" + arrivals[i].trainIdent + "</a></td>";
-        output += "<td><a href='station.html' onclick='saveData(\"location\",\"" + arrivals[i].endPointLocation + "\");'>" + findStationName(arrivals[i].endPointLocation) + "</a></td>";
+        output += "<td><a href='station.html' onclick='saveData(\"location\",\"" + arrivals[i].endPointLocation + "\");'>" + arrivals[i].endPointLocation + "</a></td>";
         output += "<td class=''><i class='far fa-clock'></i> ";
         output += new Date(arrivals[i].advertisedTime).toLocaleTimeString("sv-SE", localeOptions)
         if (arrivals[i].actualTime) {
@@ -969,7 +969,7 @@ function renderDepartureBoard(obj) {
     for (let i in departures) {
         output += "<tr>";
         output += "<td><a href='train.html' onclick='saveData(\"train\",\"" + departures[i].trainIdent + "\",\"" + new Date(departures[i].scheduledDate).toLocaleDateString("sv-SE") + "\");'>" + departures[i].trainIdent + "</a></td>";
-        output += "<td><a href='station.html' onclick='saveData(\"location\",\"" + departures[i].endPointLocation + "\");'>" + findStationName(departures[i].endPointLocation) + "</a></td>";
+        output += "<td><a href='station.html' onclick='saveData(\"location\",\"" + departures[i].endPointLocation + "\");'>" + departures[i].endPointLocation + "</a></td>";
         output += "<td><i class='far fa-clock'></i> ";
         output += new Date(departures[i].advertisedTime).toLocaleTimeString("sv-SE", localeOptions);
         if (departures[i].actualTime) {
